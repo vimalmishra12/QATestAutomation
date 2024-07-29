@@ -1,0 +1,14 @@
+{"login": 
+{
+"teacher": 
+{
+"userName_tbox" : "Want to use a different",
+"password_tbox" : "Password*",
+"loginPassword_eye" : "Show",
+"forgotPassword" : "Forgotten your password?",
+"login_btn" : "Log in"
+"signup_btn" : "Don't have an account yet?",
+
+}
+}
+}
