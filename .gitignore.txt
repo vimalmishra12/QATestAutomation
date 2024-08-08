@@ -1,2 +1,8 @@
 node_modules/
 package-lock.json
+testAutomation_v1.0/logs/
+testAutomation_v1.0/output/
+testAutomation_v1.0/allure-results/
+testAutomation_v1.0/core/utils/PageStructorGenerator/node_modules/
+testAutomation_v1.0/core/utils/PageStructorGenerator/outputFile/
+testAutomation_v1.0/core/utils/PageStructorGenerator/uploads/
