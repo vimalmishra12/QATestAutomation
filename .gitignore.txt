@@ -1,3 +1,7 @@
 node_modules/
 package-lock.json
 allure-results/
+logs/
+output/
+core/utils/PageStructorGenerator/node_modules/
+core/utils/PageStructorGenerator/outputFile
