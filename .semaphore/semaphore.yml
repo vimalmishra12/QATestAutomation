@@ -21,6 +21,7 @@ blocks:
           - sudo mv chromedriver /usr/local/bin/chromedriver
           - chromedriver --version
           - google-chrome --version
+          - sudo apt-get install -y sendmail
       jobs:
         - name: C1LoginTest
           commands:
@@ -30,3 +31,8 @@ blocks:
             - npm install
             - cache store
             - npm run loginFeatureTest
+            - echo "Subject: Build Notification
+              Build Status: $SEMAPHORE_JOB_RESULT
+              Project: $SEMAPHORE_PROJECT_NAME
+              Branch: $SEMAPHORE_GIT_BRANCH
+              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
