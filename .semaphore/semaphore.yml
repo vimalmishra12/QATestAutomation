@@ -31,7 +31,8 @@ blocks:
             - npm install
             - cache store
             - npm run loginFeatureTest
-            - echo "Subject: Build Notification
+            - |
+              echo "Subject: Build Notification
               Build Status: $SEMAPHORE_JOB_RESULT
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
