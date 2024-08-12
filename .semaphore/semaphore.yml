@@ -38,7 +38,7 @@ blocks:
               else
                 STATUS="failed"
               fi
-              echo "Subject: Build Notification
+              echo "Subject: C1 Functional Test Result
               Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
