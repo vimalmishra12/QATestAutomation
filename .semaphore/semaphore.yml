@@ -31,9 +31,15 @@ blocks:
             - npm install
             - cache store
             - npm run loginFeatureTest
-            - 'if [ $? -eq 0 ]; then export JOB_RESULT="passed"; else export JOB_RESULT="failed"; fi'
-            - echo "Subject: C1 Functional Test Result
-              Build Status: $JOB_RESULT
+            - |
+              RESULT=$?
+              if [ $RESULT -eq 0 ]; then
+                STATUS="passed"
+              else
+                STATUS="failed"
+              fi
+              echo "Subject: Build Notification
+              Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
               Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
