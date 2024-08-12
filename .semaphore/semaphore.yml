@@ -5,21 +5,49 @@ agent:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: Basic Test
+  - name: C1Automation Test
     task:
       prologue:
         commands:
+          - set -x
           - checkout
           - sudo apt-get update
+          - sudo apt-get remove -y google-chrome-stable
+          - sudo apt-get install -y wget unzip
+          - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+          - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+          - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+          - unzip chromedriver_linux64.zip
+          - sudo mv chromedriver /usr/local/bin/chromedriver
+          - chromedriver --version
+          - google-chrome --version
           - sudo apt-get install -y git
       jobs:
-        - name: Simple Git Test
+        - name: C1LoginTest
           commands:
+            - set -x
+            - cd testAutomation_v1.0
+            - sem-version node 14.21.3
+            - cache restore
+            - npm install
+            - cache store
+            - 'npm run loginFeatureTest || { echo "Login feature test failed"; exit 1; }'
             - |
-              set -x
-
+              RESULT=$?
+              if [ $RESULT -eq 0 ]; then
+                STATUS="passed"
+              else
+                STATUS="failed"
+              fi
+              echo "Subject: C1 Functional Test Result
+              Build Status: $STATUS
+              Project: $SEMAPHORE_PROJECT_NAME
+              Branch: $SEMAPHORE_GIT_BRANCH
+              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
+            - echo "Starting report upload to GitHub..."
+            - |
               # Define the path to the test reports and GitHub repository
-              REPORT_DIR="reports"  # Use a simple test path
+              REPORT_DIR="reports"  # Update this path to your reports directory
               GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"
               GIT_BRANCH="reports"
 
@@ -27,10 +55,18 @@ blocks:
               git config --global user.name "CI Bot"
               git config --global user.email "ci-bot@example.com"
 
-              # Test git operations
-              git clone -b $GIT_BRANCH $GIT_REPO repo_dir
-              echo "This is a test file" > repo_dir/test.txt
+              # Clone the repository branch
+              echo "Cloning the repository..."
+              git clone -b $GIT_BRANCH $GIT_REPO repo_dir || { echo "Git clone failed"; exit 1; }
+
+              # Copy reports
+              echo "Copying reports..."
+              cp -r $REPORT_DIR/* repo_dir/ || { echo "Copying reports failed"; exit 1; }
+
+              # Commit and push
               cd repo_dir
               git add .
-              git commit -m "Add test file"
-              git push origin $GIT_BRANCH
+              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA"
+              echo "Pushing changes to GitHub..."
+              git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
+            - echo "Reports have been successfully pushed to GitHub."
