@@ -21,7 +21,7 @@ blocks:
           - sudo mv chromedriver /usr/local/bin/chromedriver
           - chromedriver --version
           - google-chrome --version
-          - sudo apt-get install -y sendmail
+          - sudo apt-get install -y git
       jobs:
         - name: C1LoginTest
           commands:
@@ -43,3 +43,20 @@ blocks:
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
               Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
+
+              # Define the path to the test reports and GitHub repository
+              REPORT_DIR="reports"  # Update this path to your reports directory
+              GIT_REPO="https://PrathamGupta17:<your-access-token>@github.com/PrathamGupta17/tic-tac-toe.git"
+              GIT_BRANCH="reports"
+
+              # Configure Git
+              git config --global user.name "CI Bot"
+              git config --global user.email "ci-bot@example.com"
+
+              # Clone the repository branch, commit the reports, and push
+              git clone -b $GIT_BRANCH $GIT_REPO repo_dir
+              cp -r $REPORT_DIR/* repo_dir/
+              cd repo_dir
+              git add .
+              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA"
+              git push origin $GIT_BRANCH
