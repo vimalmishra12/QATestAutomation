@@ -32,7 +32,7 @@ blocks:
             - cache store
             - npm run loginFeatureTest
             - 'if [ $? -eq 0 ]; then export JOB_RESULT="passed"; else export JOB_RESULT="failed"; fi'
-            - echo "Subject: Build Notification
+            - echo "Subject: C1 Functional Test Result Notification
               Build Status: $JOB_RESULT
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
