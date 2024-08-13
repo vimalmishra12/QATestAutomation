@@ -4,12 +4,12 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-env_vars:
-  - name: GITHUB_TOKEN
-    value: <GITHUB_TOKEN_FROM_SECRETS>
 blocks:
   - name: C1Automation Test
     task:
+      env_vars:
+        - name: GITHUB_TOKEN
+          value: <GITHUB_TOKEN_FROM_SECRETS>
       prologue:
         commands:
           - checkout
