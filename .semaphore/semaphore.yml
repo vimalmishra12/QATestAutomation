@@ -50,7 +50,7 @@ blocks:
               TEST_RESULTS_DIR="testResults"
 
               # Clone the reports branch
-              git clone --branch $GIT_BRANCH $GIT_REPO repo
+              git clone --branch $GIT_BRANCH $GIT_REPO repo || { echo "Cloning failed"; exit 1; }
               cd repo
 
               # Copy the new test results
@@ -60,4 +60,4 @@ blocks:
               # Commit and push the changes
               git add .
               git -c user.name='semaphore' -c user.email='semaphore@semaphoreci.com' commit -m "Updated test results"
-              git push origin $GIT_BRANCH
+              git push origin $GIT_BRANCH || { echo "Pushing failed"; exit 1; }
