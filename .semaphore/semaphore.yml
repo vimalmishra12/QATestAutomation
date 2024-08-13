@@ -25,39 +25,71 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - cd testAutomation_v1.0
-            - sem-version node 14.21.3
-            - cache restore
-            - npm install
-            - cache store
-            - npm run loginFeatureTest
-            - |
-              RESULT=$?
-              if [ $RESULT -eq 0 ]; then
-                STATUS="passed"
-              else
-                STATUS="failed"
-              fi
-              echo "Subject: C1 Functional Test Result
-              Build Status: $STATUS
-              Project: $SEMAPHORE_PROJECT_NAME
-              Branch: $SEMAPHORE_GIT_BRANCH
-              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
-            - |
-              # Push test results to GitHub repository
-              GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"
-              GIT_BRANCH="reports"
-              TEST_RESULTS_DIR="testResults"
-
-              # Clone the reports branch
-              git clone --branch $GIT_BRANCH $GIT_REPO repo || { echo "Cloning failed"; exit 1; }
-              cd repo
-
-              # Copy the new test results
-              mkdir -p $TEST_RESULTS_DIR
-              cp -r ../$TEST_RESULTS_DIR/* $TEST_RESULTS_DIR/
-
-              # Commit and push the changes
-              git add .
-              git -c user.name='semaphore' -c user.email='semaphore@semaphoreci.com' commit -m "Updated test results"
-              git push origin $GIT_BRANCH || { echo "Pushing failed"; exit 1; }
+            - 'version: v1.0'
+            - 'name: SampleTest'
+            - 'agent:'
+            - '  machine:'
+            - '    type: e1-standard-2'
+            - '    os_image: ubuntu2004'
+            - 'blocks:'
+            - '  - name: C1Automation Test'
+            - '    task:'
+            - '      prologue:'
+            - '        commands:'
+            - '          - checkout'
+            - '          - sudo apt-get update'
+            - '          - sudo apt-get remove -y google-chrome-stable'
+            - '          - sudo apt-get install -y wget unzip'
+            - '          - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+            - '          - sudo dpkg -i google-chrome-stable_current_amd64.deb'
+            - '          - sudo apt-get install -f -y'
+            - '          - wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+            - '          - unzip chromedriver_linux64.zip'
+            - '          - sudo mv chromedriver /usr/local/bin/chromedriver'
+            - '          - chromedriver --version'
+            - '          - google-chrome --version'
+            - '          - sudo apt-get install -y sendmail'
+            - '      jobs:'
+            - '        - name: C1LoginTest'
+            - '          commands:'
+            - '            - cd testAutomation_v1.0'
+            - '            - sem-version node 14.21.3'
+            - '            - cache restore'
+            - '            - npm install'
+            - '            - cache store'
+            - '            - npm run loginFeatureTest'
+            - '            - |'
+            - '              RESULT=$?'
+            - '              if [ $RESULT -eq 0 ]; then'
+            - '                STATUS="passed"'
+            - '              else'
+            - '                STATUS="failed"'
+            - '              fi'
+            - '              echo "Subject: C1 Functional Test Result'
+            - '              Build Status: $STATUS'
+            - '              Project: $SEMAPHORE_PROJECT_NAME'
+            - '              Branch: $SEMAPHORE_GIT_BRANCH'
+            - '              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com'
+            - '            - |'
+            - '              # Check if the testResults directory exists'
+            - '              if [ ! -d "../testResults" ]; then'
+            - '                echo "Directory ../testResults does not exist."'
+            - '                exit 1'
+            - '              fi'
+            - '              # Push test results to GitHub repository'
+            - '              GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"'
+            - '              GIT_BRANCH="reports"'
+            - '              TEST_RESULTS_DIR="testResults"'
+            - '              # Clone the reports branch'
+            - '              git clone --branch $GIT_BRANCH $GIT_REPO repo || { echo "Cloning failed"; exit 1; }'
+            - '              cd repo'
+            - '              # Copy the new test results'
+            - '              mkdir -p $TEST_RESULTS_DIR'
+            - '              cp -r ../$TEST_RESULTS_DIR/* $TEST_RESULTS_DIR/'
+            - '              # Commit and push the changes'
+            - '              git add .'
+            - '              git -c user.name=''semaphore'' -c user.email=''semaphore@semaphoreci.com'' commit -m "Updated test results"'
+            - '              git push origin $GIT_BRANCH || { echo "Pushing failed"; exit 1; }'
+            - 'env_vars:'
+            - '  - name: GITHUB_TOKEN'
+            - '    value: "<GITHUB_TOKEN_FROM_SECRETS>"'
