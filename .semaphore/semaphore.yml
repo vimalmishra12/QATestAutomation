@@ -77,3 +77,5 @@ blocks:
               echo "Pushing changes to GitHub..."
               git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
             - echo "Reports have been successfully pushed to GitHub."
+      secrets:
+        - name: Vimal
