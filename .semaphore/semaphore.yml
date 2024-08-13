@@ -48,6 +48,8 @@ blocks:
                 mkdir -p ../testResults
                 # Optionally create a dummy file to test the copy process
                 touch ../testResults/dummy_result.txt
+              else
+                echo "Directory ../testResults exists."
               fi
             - |
               echo "Starting report upload to GitHub..."
@@ -71,7 +73,7 @@ blocks:
               # Commit and push
               cd repo
               git add .
-              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA"
+              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA" || { echo "Git commit failed"; exit 1; }
               echo "Pushing changes to GitHub..."
               git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
             - echo "Reports have been successfully pushed to GitHub."
