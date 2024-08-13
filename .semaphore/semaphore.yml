@@ -51,7 +51,6 @@ blocks:
               fi
             - |
               echo "Starting report upload to GitHub..."
-
               GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"
               GIT_BRANCH="reports"
               TEST_RESULTS_DIR="../testResults"
@@ -76,6 +75,5 @@ blocks:
               echo "Pushing changes to GitHub..."
               git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
             - echo "Reports have been successfully pushed to GitHub."
-      env_vars:
-        - name: GITHUB_TOKEN
-          value: <GITHUB_TOKEN_FROM_SECRETS>
+      secrets:
+        - name: Vimal
