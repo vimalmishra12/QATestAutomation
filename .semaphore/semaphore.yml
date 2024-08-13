@@ -25,7 +25,8 @@ blocks:
         - name: C1LoginTest
           commands:
             - cd testAutomation_v1.0
-            - sem-version node 14.21.3
+            - nvm install 14.21.3
+            - nvm use 14.21.3
             - cache restore
             - npm install
             - cache store
@@ -43,19 +44,18 @@ blocks:
               Branch: $SEMAPHORE_GIT_BRANCH
               Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
             - |
-              if [ ! -d "../testResults" ]; then
-                echo "Directory ../testResults does not exist. Creating directory for testing."
-                mkdir -p ../testResults
+              # Ensure the testResults directory exists
+              if [ ! -d "../testAutomation_v1.0/output/reports/TestReports" ]; then
+                echo "Directory ../testAutomation_v1.0/output/reports/TestReports does not exist. Creating directory."
+                mkdir -p ../testAutomation_v1.0/output/reports/TestReports
                 # Optionally create a dummy file to test the copy process
-                touch ../testResults/dummy_result.txt
-              else
-                echo "Directory ../testResults exists."
+                touch ../testAutomation_v1.0/output/reports/TestReports/dummy_result.txt
               fi
             - |
               echo "Starting report upload to GitHub..."
               GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"
               GIT_BRANCH="reports"
-              TEST_RESULTS_DIR="../testResults"
+              REPORTS_DIR="../testAutomation_v1.0/output/reports/TestReports"
 
               # Configure Git
               git config --global user.name "CI Bot"
@@ -67,15 +67,16 @@ blocks:
 
               # Copy reports
               echo "Copying reports..."
-              mkdir -p repo/$TEST_RESULTS_DIR
-              cp -r $TEST_RESULTS_DIR/* repo/$TEST_RESULTS_DIR/ || { echo "Copying reports failed"; exit 1; }
+              mkdir -p repo/$(basename $REPORTS_DIR)
+              cp -r $REPORTS_DIR/* repo/$(basename $REPORTS_DIR)/ || { echo "Copying reports failed"; exit 1; }
 
               # Commit and push
               cd repo
               git add .
-              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA" || { echo "Git commit failed"; exit 1; }
+              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA"
               echo "Pushing changes to GitHub..."
               git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
             - echo "Reports have been successfully pushed to GitHub."
       secrets:
-        - name: Vimal
+        - name: GITHUB_TOKEN
+          value: <YOUR_GITHUB_TOKEN>
