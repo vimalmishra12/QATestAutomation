@@ -3,8 +3,8 @@
         "login": {
             "user": {
                 "validStudent1": {
-                    "email": "hutudibrulli-3717@yopmail.com",
-                    "password": "Compro@1234",
+                    "email": "comprotestuser+prodvmtea1@gmail.com",
+                    "password": "Compro11",
                     "role": "student",
                     "name": "hutudibrulli-3717 auto",
                     "class": [
@@ -139,8 +139,8 @@
                     "info": {}
                 },
                 "validInstructorUser1": {
-                    "email": "culineziffa-4105@yopmail.com",
-                    "password": "Compro@1234",
+                    "email": "comprotestuser+prodvmtea1@gmail.com",
+                    "password": "Compro11",
                     "role": "instructor",
                     "name": "culineziffa-4105 teacher",
                     "courses": [

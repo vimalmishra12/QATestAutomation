@@ -4,7 +4,7 @@ var sts;
 
 module.exports = {
 
-    ENG_LAND_TC_1: async function () {
+    TST_LAND_TC_1: async function () {
 
         sts = await landing.isInitialized();
         assertion.assertEqual(sts.pageStatus, true, "Landing page status mismatch");
@@ -15,26 +15,26 @@ module.exports = {
     },
 
     
-    ENG_LAND_TC_2: async function (testdata) {
+    TST_LAND_TC_2: async function (testdata) {
         sts = await landing.click_signupBtn();
         await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
 
 
     },
 
-    ENG_LAND_TC_3: async function (testdata) {
+    TST_LAND_TC_3: async function (testdata) {
         sts = await landing.click_loginBtn();
         await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
 
 
     },
 
-    ENG_LAND_TC_4: async function (testdata) {
+    TST_LAND_TC_4: async function (testdata) {
         sts = await landing.click_languageSelector_dropdown(testdata);
         await assertion.assertEqual(sts, true, "languageSelector_dropdown are not Clicked");
     },
 
-    ENG_LAND_TC_5: async function (testdata) {
+    TST_LAND_TC_5: async function (testdata) {
         await browser.pause(1000);
         sts = await landing.getData_landingPage(testdata);
         await assertion.assertEqual(sts.headingText, testdata.headingText, "headingText Values is not as expected.");

@@ -70,22 +70,26 @@ return res;
 },
 
 click_login_btn: async function () {
-await logger.logInto(await stackTrace.get());
-var res;
-res =await action.click(this.login_btn);
-if (true == res) {
- await logger.logInto(await stackTrace.get(), " login_btn is clicked");
-}
-else {
-await logger.logInto(await stackTrace.get(), res +"login_btn is NOT clicked", 'error');
-}
-return res;
-},
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res =await action.click(this.login_btn);
+    if (true == res) {
+     await logger.logInto(await stackTrace.get(), " login_btn is clicked");
+    res =await require ('./dashboard.page').isInitialized();
+    }
+    else {
+    await logger.logInto(await stackTrace.get(), res +"login_btn is NOT clicked", 'error');
+    }
+   //console.log(res);
+    return res;
+    },
 
 click_signup_btn: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
+console.log(this.signup_btn);
 res =await action.click(this.signup_btn);
+console.log(res);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " signup_btn is clicked");
 res =await require ('./signup.page').isInitialized();

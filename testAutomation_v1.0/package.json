@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "landingFeatureTest": "./node_modules/.bin/wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
-    "loginFeatureTest": "./node_modules/.bin/wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
-    "visualAcceptance": "./node_modules/.bin/wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
+    "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
+    "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
   },
   "keywords": [],
   "author": "",

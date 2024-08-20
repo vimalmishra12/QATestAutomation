@@ -18,16 +18,12 @@
                 "loginPassword_eye": "a[aria-label=\"Show\"]",
                 "forgotPassword": "a[title=\"Forgotten your password?\"]",
                 "login_btn": "input[value=\"Log in\"]",
-                "signup_btn": "a[title=\"Don\"t have an account yet?\"]"
+                "signup_btn": "a[title=\"Don't have an account yet?\"]"
             },
             "SignUpPage": {
                 "signUpEmailPage_btn": "[data-tid=button-signup]"
             },
-            "widgets": {
-                "loaderIcon": "[data-tid=image-loader]",
-                "snackbarInfo_txt": "[data-tid=text-info] p, [data-tid=text-error], [data-tid=text-success]",
-                "snackbarClose_btn": "[data-tid=button-close]"
-            },
+
             "appShell": {
                 "headerbandDiv": "header > div",
                 "toggleSidebarBtn": "[aria-label=toggle-sidebar]",
@@ -77,6 +73,7 @@
                 "myMaterialBtn": "[data-tid=button-materials]"
             },
             "dashboard": {
+                "help_btn" : "a[id*=\"hdr-help-dd\"]",
                 "pageTitle": "[data-tid=text-pageTitle]",
                 "createPlaylistBtn": "[data-tid=button-createPlaylist]",
                 "addBookBtn": "[data-tid=button-addBook]",
