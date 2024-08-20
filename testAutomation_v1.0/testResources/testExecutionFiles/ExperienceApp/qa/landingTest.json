@@ -15,7 +15,7 @@
         ],
         "Test": [
             {
-                "id": "ENG_LAND_TC_5",
+                "id": "TST_LAND_TC_5",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": [
@@ -45,7 +45,7 @@
         ],
         "Test": [
             {
-                "id": "ENG_LAND_TC_3",
+                "id": "TST_LAND_TC_3",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": []
@@ -70,7 +70,7 @@
         "Before": [],
         "Test": [
             {
-                "id": "ENG_LAND_TC_2",
+                "id": "TST_LAND_TC_2",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": []
@@ -95,7 +95,7 @@
         "Before": [],
         "Test": [
             {
-                "id": "ENG_LAND_TC_4",
+                "id": "TST_LAND_TC_4",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": [
