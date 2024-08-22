@@ -38,8 +38,12 @@ blocks:
               else
                 STATUS="failed"
               fi
+
+              # Construct the Semaphore Result URL
+              SEMAPHORE_RESULT_URL="https://Vimalmishra12.semaphoreci.com/projects/$SEMAPHORE_PROJECT_ID/workflows/$SEMAPHORE_WORKFLOW_ID"
               echo "Subject: C1 Functional Test Result
               Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
-              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
+              Commit: $SEMAPHORE_GIT_SHA
+              Semaphore Result: $SEMAPHORE_RESULT_URL" | sendmail vimal.mishra@comprotechnologies.com
