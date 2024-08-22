@@ -1,5 +1,5 @@
 version: v1.0
-name: automationTest
+name: SampleTest
 agent:
   machine:
     type: e1-standard-2
@@ -9,6 +9,18 @@ blocks:
     task:
       prologue:
         commands:
+          - checkout
+          - sudo apt-get update
+          - sudo apt-get remove -y google-chrome-stable
+          - sudo apt-get install -y wget unzip
+          - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+          - sudo dpkg -i google-chrome-stable_current_amd64.deb
+          - sudo apt-get install -f -y
+          - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+          - unzip chromedriver_linux64.zip
+          - sudo mv chromedriver /usr/local/bin/chromedriver
+          - chromedriver --version
+          - google-chrome --version
           - sudo apt-get install -y sendmail
       jobs:
         - name: C1LoginTest
@@ -26,10 +38,8 @@ blocks:
               else
                 STATUS="failed"
               fi
-              SEMAPHORE_RESULT_URL="https://{your_org_name}.semaphoreci.com/projects/$SEMAPHORE_PROJECT_ID/workflows/$SEMAPHORE_WORKFLOW_ID"
               echo "Subject: C1 Functional Test Result
               Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
-              Commit: $SEMAPHORE_GIT_SHA
-              Semaphore Result: $SEMAPHORE_RESULT_URL" | sendmail vimal.mishra@comprotechnologies.com
+              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
