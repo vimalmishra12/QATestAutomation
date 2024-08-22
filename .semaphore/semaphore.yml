@@ -1,5 +1,5 @@
 version: v1.0
-name: SampleTest1
+name: SampleTest
 agent:
   machine:
     type: e1-standard-2
@@ -14,23 +14,23 @@ blocks:
           - sudo apt-get remove -y google-chrome-stable
           - sudo apt-get install -y wget unzip
           - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-          - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+          - sudo dpkg -i google-chrome-stable_current_amd64.deb
+          - sudo apt-get install -f -y
           - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
           - unzip chromedriver_linux64.zip
           - sudo mv chromedriver /usr/local/bin/chromedriver
           - chromedriver --version
           - google-chrome --version
-          - sudo apt-get install -y git sendmail
+          - sudo apt-get install -y sendmail
       jobs:
         - name: C1LoginTest
           commands:
             - cd testAutomation_v1.0
-            - nvm install 14.21.3
-            - nvm use 14.21.3
+            - sem-version node 14.21.3
             - cache restore
             - npm install
             - cache store
-            - 'npm run loginFeatureTest || { echo "Login feature test failed"; exit 1; }'
+            - npm run loginFeatureTest
             - |
               RESULT=$?
               if [ $RESULT -eq 0 ]; then
@@ -42,40 +42,5 @@ blocks:
               Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
-              Commit: $SEMAPHORE_GIT_SHA" | sendmail vimal.mishra@comprotechnologies.com
-            - |
-              # Ensure the testResults directory exists
-              if [ ! -d "../testAutomation_v1.0/output/reports/TestReports" ]; then
-                echo "Directory ../testAutomation_v1.0/output/reports/TestReports does not exist. Creating directory."
-                mkdir -p ../testAutomation_v1.0/output/reports/TestReports
-                # Optionally create a dummy file to test the copy process
-                touch ../testAutomation_v1.0/output/reports/TestReports/dummy_result.txt
-              fi
-            - |
-              echo "Starting report upload to GitHub..."
-              GIT_REPO="https://PrathamGupta17:${GITHUB_TOKEN}@github.com/PrathamGupta17/tic-tac-toe.git"
-              GIT_BRANCH="reports"
-              REPORTS_DIR="../testAutomation_v1.0/output/reports/TestReports"
-
-              # Configure Git
-              git config --global user.name "CI Bot"
-              git config --global user.email "ci-bot@example.com"
-
-              # Clone the reports branch
-              echo "Cloning the repository..."
-              git clone --branch $GIT_BRANCH $GIT_REPO repo || { echo "Git clone failed"; exit 1; }
-
-              # Copy reports
-              echo "Copying reports..."
-              mkdir -p repo/$(basename $REPORTS_DIR)
-              cp -r $REPORTS_DIR/* repo/$(basename $REPORTS_DIR)/ || { echo "Copying reports failed"; exit 1; }
-
-              # Commit and push
-              cd repo
-              git add .
-              git commit -m "Add test reports for $SEMAPHORE_GIT_SHA"
-              echo "Pushing changes to GitHub..."
-              git push origin $GIT_BRANCH || { echo "Git push failed"; exit 1; }
-            - echo "Reports have been successfully pushed to GitHub."
-      secrets:
-        - name: Vimal
+              Commit: $SEMAPHORE_GIT_SHA
+              Semaphore Result: $SEMAPHORE_WORKFLOW_URL" | sendmail vimal.mishra@comprotechnologies.com
