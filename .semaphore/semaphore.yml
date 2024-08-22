@@ -46,4 +46,4 @@ blocks:
               Project: $SEMAPHORE_PROJECT_NAME
               Branch: $SEMAPHORE_GIT_BRANCH
               Commit: $SEMAPHORE_GIT_SHA
-              Semaphore Result: $SEMAPHORE_RESULT_URL" | sendmail vimal.mishra@comprotechnologies.com
+              Semaphore Result: $SEMAPHORE_RESULT_URL" | sendmail vimal.mishra@comprotechnologies.com || echo "Sendmail failed"
