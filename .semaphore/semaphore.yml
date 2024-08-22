@@ -40,7 +40,7 @@ blocks:
               fi
 
               # Construct the Semaphore Result URL
-              SEMAPHORE_RESULT_URL="https://Vimalmishra12.semaphoreci.com/projects/$SEMAPHORE_PROJECT_ID/workflows/$SEMAPHORE_WORKFLOW_ID"
+              SEMAPHORE_RESULT_URL="https://vimalmishra12.semaphoreci.com/workflows/{workflow_id}?pipeline_id={pipeline_id}"
               echo "Subject: C1 Functional Test Result
               Build Status: $STATUS
               Project: $SEMAPHORE_PROJECT_NAME
