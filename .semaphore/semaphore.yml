@@ -4,6 +4,11 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
+schedule:
+  - name: Daily C1LoginTest
+    cron: 00 15 * * *
+    branch: setup-semaphore
+    pipeline_file: semaphore.yml
 blocks:
   - name: C1Automation Test
     task:
