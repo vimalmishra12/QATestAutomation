@@ -5,7 +5,7 @@ var argv = require('yargs').argv;
 var folder = fs.readdirSync('../../output/reports/');
 var envData = JSON.parse(fs.readFileSync('../../env.json'));
 var errorMailingList = 'akhil.aggarwal@comprotechnologies.com,rupsi.mehta@comprotechnologies.com,vimal.mishra@comprotechnologies.com,megha.garg@comprotechnologies.com';
-var semaphoreJob = 'https://semaphoreci.com/vimalmishra12/' + argv.projectName + '/branches/' + argv.branchName + '/builds/' + argv.buildNumber;
+var semaphoreJob = 'https://semaphoreci.com/comprodlsengage/' + argv.projectName + '/branches/' + argv.branchName + '/builds/' + argv.buildNumber;
 
 var funcReportDir = '../../output/reports/' + folder[0];
 var visReportDir = funcReportDir + '/visual';
@@ -136,17 +136,9 @@ async function sendMail(mailingList, mailsubject, content, contentType) {
         service: 'gmail',
         auth: {
             user: argv.emailId,
-            pass: argv.CIPipeline
+            pass: argv.emailPwd
         }
     });
-
-//         let transporter = nodemailer.createTransport({
-//     host: "smtp.gmail.com",
-//     auth: {
-//       pass: "ljtokzaortvqdqdj",
-//       user: "randomdump1702@gmail.com",
-//     },
-//   });
     if (contentType == 'html') {
         info = await transporter.sendMail({
             from: '"C1-test-report" <' + argv.emailId + '>', // sender address
