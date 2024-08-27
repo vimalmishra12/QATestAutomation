@@ -77,88 +77,38 @@
           "visualTest": true
         },
         {
-          "id": "TST_IDEN_TC_5",
-          "description": "Validate that the login button is disabled if email is left blank",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_6",
-          "description": "Validate that the login button is disabled if password is left blank",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_7",
-          "description": "Validate that the user is able to login successfully with an existing account",
-          "tags": ""
-        },
-        {
-          "id": "TST_IDEN_TC_9",
-          "description": "Validate that the user is able to mask/unmask the password by clicking eye icon",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_10",
-          "description": "Validate login with valid Email ID (Entered in UPPERCASE) & password",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_11",
-          "description": "Validate user is not able to login with invalid Email ID/format",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_12",
-          "description": "Validate message If user enter non-existing/unregistered Email ID while login",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_13",
-          "description": "Validate user is not able to login with invalid password",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_14",
-          "description": "Validate that user is able to log on entering leading and trailing spaces in the email id",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_15",
-          "description": "Validate that the login button is clicked on pressing 'ENTER' key on the login page",
+          "id": "TST_APPS_TC_1",
+          "description": "Click Sign Up button",
           "tags": "P1",
           "visualTest": true
         },
         {
-          "id": "TST_IDEN_TC_16",
-          "description": "Validate that Reset Password page is launched on clicking 'Forgot Password' button",
-          "tags": "P1",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_4",
-          "description": "Validate that the user is able to change the language on the login page",
-          "tags": "P1",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_23",
-          "description": "Validate Onboarding Welcome page appears for a user who is signed up but not onboarded",
-          "tags": "P1",
-          "visualTest": true
-        },
-        {
-          "id": "TST_IDEN_TC_24",
-          "description": "On Login page, click the Sign Up button",
+          "id": "TST_APPS_TC_2",
+          "description": "Click Sign Up button",
           "tags": "P1",
           "visualTest": true
         }
+     
+      ]
+    }, {
+      "modulename": "appShell",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/appShell.test.js",
+      "testcase": [
+       
+        {
+          "id": "TST_APPS_TC_1",
+          "description": "Click on prod drop down",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_APPS_TC_2",
+          "description": "Click Log out button",
+          "tags": "P1",
+          "visualTest": true
+        }
+     
       ]
     },
     {
