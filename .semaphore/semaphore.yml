@@ -83,9 +83,11 @@ blocks:
             - export emailId="randomdump1702@gmail.com"
             - 'export emailPwd="${SECRETS_EmailCredentials_emailPwd}"'
             - export mailingList="vimal.mishra@comprotechnologies.com"
+            - echo "Email ID: $emailId"
+            - echo "Mailing List: $mailingList"
             - echo "Running mailer.js with parameters and logging additional details"
             - |
-              node mailer.js --appType="ExperienceApp" \
+              node /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/mailer.js --appType="ExperienceApp" \
                              --testEnv="qa" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
