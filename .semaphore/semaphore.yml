@@ -4,11 +4,6 @@ agent:
   machine:
     type: e2-standard-2
     os_image: ubuntu2204
-secrets:
-  - name: EmailCredentials
-    type: env
-    env:
-      - name: EMAIL_PWD
 blocks:
   - name: C1LoginTest
     task:
@@ -88,7 +83,7 @@ blocks:
             - export emailId="randomdump1702@gmail.com"
             - export mailingList="vimal.mishra@comprotechnologies.com"
             - export emailPwd="$EMAIL_PWD"
-            - echo "Running mailer.js with the parameters and logging additional details"
+            - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="ExperienceApp" \
