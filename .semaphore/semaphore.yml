@@ -84,7 +84,7 @@ blocks:
             - export mailingList="vimal.mishra@comprotechnologies.com"
             - echo "Fetching emailPwd from secrets"
             - |
-              emailPwd=$(cat /run/secrets/EmailCredentials | grep 'emailPwd' | cut -d '=' -f2)
+              emailPwd=$(cat /run/secrets/EmailCredentials)
               echo "Logging emailPwd value for verification (do not use in production!)"
               echo "emailPwd value: $emailPwd"
             - echo "Running mailer.js with parameters and logging additional details"
