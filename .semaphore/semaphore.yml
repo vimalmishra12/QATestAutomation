@@ -85,10 +85,12 @@ blocks:
             - echo "Fetching emailPwd from secrets"
             - |
               emailPwd=$(cat /run/secrets/EmailCredentials)
-              echo "Logging emailPwd value for verification (do not use in production!)"
-              echo "emailPwd value: $emailPwd"
-            - echo "Running mailer.js with parameters and logging additional details"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
+              echo "Extracted emailPwd length: ${#emailPwd}"
+              if [ -z "$emailPwd" ]; then
+                echo "Error: emailPwd is empty or not set correctly"
+                exit 1
+              fi
+            - echo "Running mailer.js with parameters"
             - |
               node mailer.js --appType="ExperienceApp" \
                              --testEnv="qa" \
