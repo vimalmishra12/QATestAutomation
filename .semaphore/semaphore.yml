@@ -82,7 +82,10 @@ blocks:
             - echo "Setting environment variables for mailer.js"
             - export emailId="randomdump1702@gmail.com"
             - export mailingList="vimal.mishra@comprotechnologies.com"
-            - export emailPwd="$EMAIL_PWD"
+            - echo "Fetching emailPwd from secrets"
+            - export emailPwd=$(cat /run/secrets/EmailCredentials)
+            - echo "Logging emailPwd value for verification (do not use in production!)"
+            - echo "emailPwd value: $emailPwd"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
@@ -100,6 +103,5 @@ blocks:
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
-      env_vars:
-        - name: EMAIL_PWD
-          value: ljtokzaortvqdqdj
+      secrets:
+        - name: EmailCredentials
