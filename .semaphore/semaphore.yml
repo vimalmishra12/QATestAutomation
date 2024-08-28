@@ -9,6 +9,11 @@ blocks:
     task:
       jobs:
         - name: C1LoginTest
+          secrets:
+            - name: EmailCredentials
+              type: env
+              env:
+                - name: EMAIL_PWD
           commands:
             - echo "Starting prologue commands"
             - checkout
@@ -81,13 +86,12 @@ blocks:
             - sleep 10
             - echo "Setting environment variables for mailer.js"
             - export emailId="randomdump1702@gmail.com"
-            - 'export emailPwd="${SECRETS_EmailCredentials_emailPwd}"'
             - export mailingList="vimal.mishra@comprotechnologies.com"
-            - echo "Email ID: $emailId"
-            - echo "Mailing List: $mailingList"
+            - export emailPwd="$EMAIL_PWD"
             - echo "Running mailer.js with parameters and logging additional details"
+            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
-              node /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/mailer.js --appType="ExperienceApp" \
+              node mailer.js --appType="ExperienceApp" \
                              --testEnv="qa" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
