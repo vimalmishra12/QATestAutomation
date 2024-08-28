@@ -83,9 +83,10 @@ blocks:
             - export emailId="randomdump1702@gmail.com"
             - export mailingList="vimal.mishra@comprotechnologies.com"
             - echo "Fetching emailPwd from secrets"
-            - export emailPwd=$(cat /run/secrets/EmailCredentials)
-            - echo "Logging emailPwd value for verification (do not use in production!)"
-            - echo "emailPwd value: $emailPwd"
+            - |
+              emailPwd=$(cat /run/secrets/EmailCredentials)
+              echo "Logging emailPwd value for verification (do not use in production!)"
+              echo "emailPwd value: $emailPwd"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
