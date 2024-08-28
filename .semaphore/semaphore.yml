@@ -79,13 +79,11 @@ blocks:
               fi
             - echo "Waiting for log file to be completely written"
             - sleep 10
-            - echo "Setting Environment variables for mailer.js"
+            - echo "Setting environment variables for mailer.js"
             - export emailId="randomdump1702@gmail.com"
             - 'export emailPwd="${SECRETS_EmailCredentials_emailPwd}"'
-            - echo "Email password for debugging: $emailPwd"
             - export mailingList="vimal.mishra@comprotechnologies.com"
             - echo "Running mailer.js with parameters and logging additional details"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="ExperienceApp" \
                              --testEnv="qa" \
