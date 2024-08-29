@@ -82,7 +82,21 @@ blocks:
             - echo "Setting environment variables for mailer.js"
             - export emailId="randomdump1702@gmail.com"
             - export mailingList="vimal.mishra@comprotechnologies.com"
-            - echo "Directly using emailPwd as environment variable"
+            - echo "Fetching emailPwd from secrets"
+            - |
+              emailPwd=$(cat /run/secrets/EmailCredentials)
+              echo "Extracted emailPwd length: ${#emailPwd}"
+              if [ -z "$emailPwd" ]; then
+                echo "Error: emailPwd is empty or not set correctly"
+                exit 1
+              fi
+            - echo "Verifying environment variables before running mailer.js"
+            - echo "SEMAPHORE_PROJECT_NAME: $SEMAPHORE_PROJECT_NAME"
+            - echo "SEMAPHORE_GIT_BRANCH: $SEMAPHORE_GIT_BRANCH"
+            - echo "STATUS: $STATUS"
+            - echo "emailId: $emailId"
+            - echo "mailingList: $mailingList"
+            - echo "emailPwd length: '${#emailPwd}"'
             - echo "Running mailer.js with parameters"
             - |
               node mailer.js --appType="ExperienceApp" \
@@ -97,7 +111,7 @@ blocks:
                              --triggerSource="Semaphore" \
                              > /home/semaphore/mailer.log 2>&1
             - echo "mailer.js script execution completed with exit code $?"
-            - 'echo "Mailer.js log:"'
+            - 'echo "Mailer.js log content:"'
             - cat /home/semaphore/mailer.log
       secrets:
         - name: EmailCredentials
