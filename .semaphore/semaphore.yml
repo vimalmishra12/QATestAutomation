@@ -82,14 +82,7 @@ blocks:
             - echo "Setting environment variables for mailer.js"
             - export emailId="randomdump1702@gmail.com"
             - export mailingList="vimal.mishra@comprotechnologies.com"
-            - echo "Fetching emailPwd from secrets"
-            - |
-              emailPwd=$(cat /run/secrets/EmailCredentials)
-              echo "Extracted emailPwd length: ${#emailPwd}"
-              if [ -z "$emailPwd" ]; then
-                echo "Error: emailPwd is empty or not set correctly"
-                exit 1
-              fi
+            - echo "Directly using emailPwd as environment variable"
             - echo "Running mailer.js with parameters"
             - |
               node mailer.js --appType="ExperienceApp" \
