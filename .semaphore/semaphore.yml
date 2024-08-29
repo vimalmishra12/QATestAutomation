@@ -87,3 +87,5 @@ blocks:
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="ExperienceApp" \
+      secrets:
+        - name: Cred
