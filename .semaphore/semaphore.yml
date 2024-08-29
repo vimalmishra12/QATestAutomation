@@ -86,4 +86,4 @@ blocks:
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
       secrets:
-        - name: EmailCredentials
+        - EmailCredentials
