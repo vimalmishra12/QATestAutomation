@@ -7,6 +7,7 @@
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
+    "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
     "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
   },
   "keywords": [],
