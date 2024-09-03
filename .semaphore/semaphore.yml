@@ -79,7 +79,7 @@ blocks:
               fi
             - echo "Waiting for log file to be completely written"
             - echo "Waiting for log file to be completely written"
-            - sleep 10
+            - sleep 5
             - echo "Setting environment variables for mailer.js"
             - export appType="ExperienceApp"
             - export emailId="randomdump1702@gmail.com"
@@ -87,12 +87,12 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - export mailingList="vimal.mishra@comprotechnologies.com"
+            - 'export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"'
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="$appType" \
-                             --testEnv="qa" \
+                             --testEnv="Prod" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
                              --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
