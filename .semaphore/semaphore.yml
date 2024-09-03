@@ -92,7 +92,7 @@ blocks:
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="$appType" \
-                             --testEnv="QA" \
+                             --testEnv="qa" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
                              --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
@@ -108,10 +108,12 @@ blocks:
             - cat /home/semaphore/mailer.log
       secrets:
         - name: Cred
-promotions:
+      promotions: null
   - name: main
     pipeline_file: semaphore.yml
     auto_promote_on:
       - result: finished
         branch:
           - main
+    task:
+      jobs: []
