@@ -7,7 +7,8 @@
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
-    "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
+    "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
+    "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
   },
   "keywords": [],
   "author": "",
@@ -26,8 +27,9 @@
     "browserstack-local": "^1.4.8",
     "chai": "^4.3.6",
     "chrome": "^0.1.0",
-    "chromedriver": "latest",
+    "chromedriver": "^128.0.0",
     "combine-image": "1.0.3",
+    "create-wdio": "^7.1.1",
     "css-selector-parser": "^1.4.1",
     "css-selector-tools": "^1.0.9",
     "csv-parse": "^4.16.2",
@@ -48,7 +50,6 @@
     "rimraf": "^3.0.2",
     "selenium-webdriver": "^4.0.0",
     "tesults": "^1.1.1",
-    "create-wdio": "^7.1.1",
     "wdio-chromedriver-service": "8.0.1",
     "wdio-novus-visual-regression-service": "^1.2.5",
     "wdio-timeline-reporter": "^5.1.4",
