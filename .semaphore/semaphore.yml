@@ -9,6 +9,7 @@ promotions:
     pipeline_file: semaphore.yml
     auto_promote_on:
       - branch: main
+        result: finished
 blocks:
   - name: C1LoginTest
     task:
@@ -113,3 +114,8 @@ blocks:
             - cat /home/semaphore/mailer.log
       secrets:
         - name: Cred
+promotions:
+  - name: main
+    pipeline_file: semaphore.yml
+    auto_promote_on:
+      - branch: main
