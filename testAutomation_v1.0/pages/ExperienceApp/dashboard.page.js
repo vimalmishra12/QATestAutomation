@@ -30,6 +30,7 @@ module.exports = {
           ? await action.getText(this.help_btn)
           : null,
     };
+    console.log(obj);
     return obj;
   },
 
