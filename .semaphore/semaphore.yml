@@ -78,7 +78,6 @@ blocks:
                 echo "Timeline log file found: $LOG_FILE"
               fi
             - echo "Waiting for log file to be completely written"
-            - echo "Waiting for log file to be completely written"
             - sleep 10
             - echo "Setting environment variables for mailer.js"
             - export appType="ExperienceApp"
@@ -108,12 +107,10 @@ blocks:
             - cat /home/semaphore/mailer.log
       secrets:
         - name: Cred
-      promotions: null
+promotions:
   - name: main
     pipeline_file: semaphore.yml
     auto_promote_on:
       - result: finished
         branch:
           - main
-    task:
-      jobs: []
