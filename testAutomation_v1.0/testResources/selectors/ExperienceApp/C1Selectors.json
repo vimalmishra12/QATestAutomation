@@ -78,7 +78,7 @@
         "help_btn": "a[qid='cHeader-hlp-1']",
         "progress_btn": "div[class=\"border-top-grey pb-1\"] div[class=\"tile-column p-0 my-3\"] a[aria-label=\"See Progress\"]",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
-        "ebook_btn": "div[class=\"material-tile pb-3\"] div:nth-child(1) div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
+        "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
         "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]"
       },
