@@ -4,6 +4,11 @@ agent:
   machine:
     type: e2-standard-2
     os_image: ubuntu2204
+promotions:
+  main:
+    pipeline_file: semaphore.yml
+    auto_promote_on:
+      - branch: main
 blocks:
   - name: C1LoginTest
     task:
