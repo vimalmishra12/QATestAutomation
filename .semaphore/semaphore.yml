@@ -92,7 +92,7 @@ blocks:
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="$appType" \
-                             --testEnv="Production" \
+                             --testEnv="QA" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
                              --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
