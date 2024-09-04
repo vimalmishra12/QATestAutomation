@@ -25,6 +25,8 @@
             },
 
             "appShell": {
+                "userDrop_down" : "a[qid=\"cHeader-2\"]",
+                "logout_btn" : "button[qid=\"cHeader-7\"]",
                 "headerbandDiv": "header > div",
                 "toggleSidebarBtn": "[aria-label=toggle-sidebar]",
                 "custLogo": "[data-tid=image-headerLogo]",

@@ -1,7 +1,0 @@
-testAutomation_v1.0/node_modules/
-testAutomation_v1.0/package-lock.json
-testAutomation_v1.0/allure-results/
-testAutomation_v1.0/logs/
-output/
-core/utils/PageStructorGenerator/node_modules/
-core/utils/PageStructorGenerator/outputFile

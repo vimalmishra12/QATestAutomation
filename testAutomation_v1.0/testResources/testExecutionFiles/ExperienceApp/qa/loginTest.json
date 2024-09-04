@@ -1,6 +1,6 @@
 {
     "Suite1": {
-        "Name": "Validation of Login Page ",
+        "Name": "Validation of Login Page",
         "TestCaseRepo": [
             "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
         ],
@@ -62,13 +62,25 @@
                "description": "",
                "testFile": "./test/ExperienceApp/login.test.js",
                "testData": []
-           }
+           },
+           {
+            "id": "TST_APPS_TC_1",
+            "description": "",
+            "testFile": "./test/ExperienceApp/appShell.test.js",
+            "testData": []
+        },
+        {
+            "id": "TST_APPS_TC_2",
+            "description": "",
+            "testFile": "./test/ExperienceApp/appShell.test.js",
+            "testData": []
+        }
         ],
         "AfterEach": [],
         "After": []
     },
     "Suite2": {
-      "Name": "Validation of Login page features",
+      "Name": "Validation of Sign up page launch from Login Page",
       "TestCaseRepo": [
           "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
       ],
