@@ -84,7 +84,7 @@ module.exports = {
     res = await action.click(this.progress_btn);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " progress_btn is clicked");
-      res = await require("./progress.page").isInitialized();
+      res = await require("./progress.page.js").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -98,13 +98,17 @@ module.exports = {
   click_praticeExtra_btn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    var res2 = {
+      pageStatus: await action.waitForDisplayed(this.praticeExtra_btn),
+    };
     res = await action.click(this.praticeExtra_btn);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " praticeExtra_btn is clicked"
       );
-      res = await require("./practiceExtra.page").isInitialized();
+      res = await require("./practiceExtra.page.js").isInitialized();
+      console.log("haha", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -112,6 +116,7 @@ module.exports = {
         "error"
       );
     }
+    console.log("Button", res);
     return res;
   },
 
@@ -121,7 +126,7 @@ module.exports = {
     res = await action.click(this.ebook_btn);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " ebook_btn is clicked");
-      res = await require("./eBook.page").isInitialized();
+      res = await require("./eBook.page.js").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -138,7 +143,7 @@ module.exports = {
     res = await action.click(this.homework_btn);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " homework_btn is clicked");
-      res = await require("./myHomework.page").isInitialized();
+      res = await require("./myHomework.page.js").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -158,7 +163,7 @@ module.exports = {
         await stackTrace.get(),
         " myProgress_btn is clicked"
       );
-      res = await require("./myProgress.page").isInitialized();
+      res = await require("./myProgress.page.js").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),

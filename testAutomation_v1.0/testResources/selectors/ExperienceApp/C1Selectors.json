@@ -82,6 +82,21 @@
         "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
         "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]"
       },
+      "progress": {
+        "progress": "h1[qid='clView-6']"
+      },
+      "eBook": {
+        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2"
+      },
+      "practiceExtra": {
+        "practice_extra": "h2[class='mb-0']"
+      },
+      "myProgress": {
+        "my_progress": ".page-title.mt-3"
+      },
+      "myHomework": {
+        "back_btn": "a[qid='aView-4']"
+      },
       "classDrawer": {
         "classDrawerHeader": "[data-tid=text-drawerHeaderTitle]",
         "classDrawerTitle": "[data-tid=text-ClassesTitle]",
