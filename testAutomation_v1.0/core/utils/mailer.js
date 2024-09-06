@@ -5,7 +5,13 @@ var argv = require('yargs').argv;
 var folder = fs.readdirSync('../../output/reports/');
 var envData = JSON.parse(fs.readFileSync('../../env.json'));
 var errorMailingList = 'akhil.aggarwal@comprotechnologies.com,rupsi.mehta@comprotechnologies.com,vimal.mishra@comprotechnologies.com,megha.garg@comprotechnologies.com';
-var semaphoreJob = 'https://semaphoreci.com/comprodlsengage/' + argv.projectName + '/branches/' + argv.branchName + '/builds/' + argv.buildNumber;
+//var semaphoreJob = 'https://semaphoreci.com/comprodlsengage/' + argv.projectName + '/branches/' + argv.branchName + '/builds/' + argv.buildNumber;
+var semaphoreJob = 'https://vimalmishra12.semaphoreci.com' + '/jobs/' + argv.jobID;
+//var semaphoreJob = 'https://vimalmishra12.semaphoreci.com/projects/QATestAutomation';
+
+// var semaphoreJob = process.argv.includes('--jobUrl') ? process.argv[process.argv.indexOf('--jobUrl') + 1] : 'https://vimalmishra12.semaphoreci.com/projects/QATestAutomation';
+
+// console.log('Semaphore Job URL:', semaphoreJob);
 
 var funcReportDir = '../../output/reports/' + folder[0];
 var visReportDir = funcReportDir + '/visual';
