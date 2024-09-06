@@ -133,6 +133,67 @@
       ]
     },
     {
+      "modulename": "dashboard",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/dashboard.test.js",
+      "testcase": [
+        {
+          "id": "TST_DASH_TC_1",
+          "description": "Validate Dashboard page is launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_2",
+          "description": "Validate that the Help button is clickable on the Dashboard",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_3",
+          "description": "Validate that the Progress button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_4",
+          "description": "Validate that the Practice Extra button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "Validate that the eBook button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_6",
+          "description": "Validate that the Homework button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_7",
+          "description": "Validate that the My Progress button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_8",
+          "description": "Validate that the Dashboard data is retrieved correctly, including Help button status",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_9",
+          "description": "Validate that active class buttons (Progress, Practice Extra, eBook, Homework, My Progress) are retrieved correctly",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
+    {
       "modulename": "appShell",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/appShell.test.js",
