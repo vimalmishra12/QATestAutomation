@@ -105,5 +105,36 @@
     ],
     "AfterEach": [],
     "After": []
+  },
+  "Suite3": {
+    "Name": "Validation of Forget Password",
+    "TestCaseRepo": [
+      "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+    ],
+    "Before": [
+      {
+        "id": "launchUrl",
+        "description": "",
+        "testFile": "./core/runner/launchUrl.js",
+        "testData": []
+      },
+      {
+        "id": "TST_LAND_TC_3",
+        "description": "",
+        "testFile": "./test/ExperienceApp/landing.test.js",
+        "testData": []
+      }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      {
+        "id": "TST_LOGI_TC_4",
+        "description": "",
+        "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": []
+      }
+    ],
+    "AfterEach": [],
+    "After": []
   }
 }

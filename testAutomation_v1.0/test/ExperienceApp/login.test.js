@@ -31,13 +31,11 @@ module.exports = {
 
   TST_LOGI_TC_4: async function (testdata) {
     sts = await login.click_forgotPassword();
-    await assertion.assertEqual(sts, true, "forgotPassword are not Clicked");
+    await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
   TST_LOGI_TC_5: async function (testdata) {
-    console.log("one");
     sts = await login.click_login_btn();
-    console.log("two", sts);
     await assertion.assertEqual(
       sts.pageStatus,
       true,

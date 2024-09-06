@@ -17,6 +17,13 @@
         "login_btn": "Log in",
         "signup_btn": "Don't have an account yet?"
       },
+      "resetPassword": {
+        "resetPassword": "Reset password",
+        "resetPassword_Btn": "Reset password",
+        "enterEmailText": "Enter your email address *",
+        "backToLogin": "Back to login",
+        "emailWarningText": "This field is required"
+      },
       "appShell": {
         "dashboardTxt": "Dashboard",
         "browseTxt": "Browse",

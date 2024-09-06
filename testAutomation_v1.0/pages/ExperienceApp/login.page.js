@@ -82,6 +82,18 @@ module.exports = {
     return res;
   },
 
+  // click_forgotPassword: async function () {
+  // await logger.logInto(await stackTrace.get());
+  // var res;
+  // res =await action.click(this.forgotPassword);
+  // if (true == res) {
+  //  await logger.logInto(await stackTrace.get(), " forgotPassword is clicked");
+  // }
+  // else {
+  // await logger.logInto(await stackTrace.get(), res +"forgotPassword is NOT clicked", 'error');
+  // }
+  // return res;
+  // },
   click_forgotPassword: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
@@ -91,6 +103,7 @@ module.exports = {
         await stackTrace.get(),
         " forgotPassword is clicked"
       );
+      res = await require("./resetPassword.page").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),

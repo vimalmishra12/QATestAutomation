@@ -16,11 +16,11 @@ blocks:
             - sudo apt-get remove -y google-chrome-stable
             - sudo apt-get install -y wget unzip
             - echo "Downloading and installing Google Chrome"
-            - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+            - "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
             - sudo dpkg -i google-chrome-stable_current_amd64.deb
             - sudo apt-get install -f -y
             - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+            - "wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip"
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/chromedriver
             - chromedriver --version
@@ -80,17 +80,23 @@ blocks:
             - echo "Waiting for log file to be completely written"
             - sleep 10
             - echo "Setting environment variables for mailer.js"
+            - export appType="ExperienceApp"
+            - export testEnv="qa"
             - export emailId="randomdump1702@gmail.com"
-            - export emailPwd="ljtokzaortvqdqdj"
-            - export mailingList="vimal.mishra@comprotechnologies.com"
+            - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
+            - echo "$SEMAPHORE_JOB_ID"
+            - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
+            - echo "$SEMAPHORE_WORKFLOW_NUMBER"
+            - 'export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"'
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
-              node mailer.js --appType="ExperienceApp" \
-                             --testEnv="qa" \
+              node mailer.js --appType="$appType" \
+                             --testEnv="$testEnv" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
-                             --buildNumber="124" \
+                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
+                             --jobID="$SEMAPHORE_JOB_ID" \
                              --mailingList="$mailingList" \
                              --jobResult="$STATUS" \
                              --emailId="$emailId" \
