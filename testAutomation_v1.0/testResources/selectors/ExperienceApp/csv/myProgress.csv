@@ -1,0 +1,2 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+my_progress,.page-title.mt-3,h1,myProgress,,isInitialization,,My progress

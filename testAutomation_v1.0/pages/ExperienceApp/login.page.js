@@ -1,7 +1,7 @@
-'use strict';
-var action = require('../../core/actionLibrary/baseActionLibrary.js');
+"use strict";
+var action = require("../../core/actionLibrary/baseActionLibrary.js");
 var selectorFile = jsonParserUtil.jsonParser(selectorDir);
-var appShellPage = require('./appShell.page.js');
+var appShellPage = require("./appShell.page.js");
 
 module.exports = {
   page_header: selectorFile.css.ComproC1.login.page_header,
@@ -37,11 +37,11 @@ module.exports = {
           : false,
       userName_tbox:
         (await action.getElementCount(this.userName_tbox)) > 0
-          ? await action.getAttribute(this.userName_tbox, 'placeholder')
+          ? await action.getAttribute(this.userName_tbox, "placeholder")
           : null,
       password_tbox:
         (await action.getElementCount(this.password_tbox)) > 0
-          ? await action.getAttribute(this.password_tbox, 'placeholder')
+          ? await action.getAttribute(this.password_tbox, "placeholder")
           : null,
       loginPassword_eye:
         (await action.getElementCount(this.loginPassword_eye)) > 0
@@ -70,13 +70,13 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        ' loginPassword_eye is clicked'
+        " loginPassword_eye is clicked"
       );
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'loginPassword_eye is NOT clicked',
-        'error'
+        res + "loginPassword_eye is NOT clicked",
+        "error"
       );
     }
     return res;
@@ -101,14 +101,14 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        ' forgotPassword is clicked'
+        " forgotPassword is clicked"
       );
-      res = await require('./resetPassword.page').isInitialized();
+      res = await require("./resetPassword.page").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'forgotPassword is NOT clicked',
-        'error'
+        res + "forgotPassword is NOT clicked",
+        "error"
       );
     }
     return res;
@@ -119,13 +119,14 @@ module.exports = {
     var res;
     res = await action.click(this.login_btn);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), ' login_btn is clicked');
-      res = await require('./dashboard.page').isInitialized();
+      await logger.logInto(await stackTrace.get(), " login_btn is clicked");
+      console.log("haha");
+      res = await require("./dashboard.page").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'login_btn is NOT clicked',
-        'error'
+        res + "login_btn is NOT clicked",
+        "error"
       );
     }
     //console.log(res);
@@ -139,13 +140,13 @@ module.exports = {
     res = await action.click(this.signup_btn);
     console.log(res);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), ' signup_btn is clicked');
-      res = await require('./signup.page').isInitialized();
+      await logger.logInto(await stackTrace.get(), " signup_btn is clicked");
+      res = await require("./signup.page").isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'signup_btn is NOT clicked',
-        'error'
+        res + "signup_btn is NOT clicked",
+        "error"
       );
     }
     return res;
@@ -158,13 +159,13 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        'Value is entered in userName_tbox'
+        "Value is entered in userName_tbox"
       );
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'Value is NOT entered in userName_tbox',
-        'error'
+        res + "Value is NOT entered in userName_tbox",
+        "error"
       );
     }
     return res;
@@ -177,13 +178,13 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        'Value is entered in password_tbox'
+        "Value is entered in password_tbox"
       );
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + 'Value is NOT entered in password_tbox',
-        'error'
+        res + "Value is NOT entered in password_tbox",
+        "error"
       );
     }
     return res;
