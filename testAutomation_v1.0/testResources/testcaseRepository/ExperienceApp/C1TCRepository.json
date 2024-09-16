@@ -72,8 +72,7 @@
         {
           "id": "TST_LOGI_TC_5",
           "description": "Click Login button",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
         },
         {
           "id": "TST_LOGI_TC_6",
@@ -201,8 +200,8 @@
         {
           "id": "TST_APPS_TC_1",
           "description": "Click on prod drop down",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
+          
         },
         {
           "id": "TST_APPS_TC_2",
