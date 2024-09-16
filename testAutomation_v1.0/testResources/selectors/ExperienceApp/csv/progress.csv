@@ -1,0 +1,2 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+progress,h1[qid='clView-6'],h1,progress,,isInitialization,,Progress

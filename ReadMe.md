@@ -4,7 +4,7 @@
 1. npm install
 2. npm run [script name available in the package.json]
 
-Refer [google doc](https://docs.google.com/document/d/1Eh6gFHoB3nrjEXZpuPFgRtZBXzX3IplUABiJ4iyS7xU/edit#) section for Steps to Run Engage Automation Test on Mobile Devices for more details.
+Refer [google doc](https://docs.google.com/document/d/1Eh6gFHoB3nrjEXZpuPFgRtZBXzX3IplUABiJ4iyS7xU/edit#) section for Steps to Run C1 Automation Test on Mobile Devices for more details.
 
 ----
 ## Run Tests using Command Line parameters

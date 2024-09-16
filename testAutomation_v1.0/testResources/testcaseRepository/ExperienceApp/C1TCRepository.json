@@ -3,7 +3,6 @@
   "appdetails": "",
   "selectorFile": "./testResources/selectors/ExperienceApp/C1Selectors.json",
   "modules": [
-   
     {
       "modulename": "Landing",
       "moduleId": "",
@@ -23,7 +22,7 @@
         },
         {
           "id": "TST_LAND_TC_3",
-          "description": "Validate that the sign in page is launched on clicking the 'Log in' button",
+          "description": "Valid in' butate that the sign in page is launched on clicking the 'Logton",
           "tags": "P1",
           "visualTest": true
         },
@@ -59,6 +58,12 @@
           "visualTest": true
         },
         {
+          "id": "TST_LOGI_TC_4",
+          "description": "Click on Forget Password",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
           "id": "TST_LOGI_TC_2",
           "description": "Set Password value ",
           "tags": "P3",
@@ -67,8 +72,7 @@
         {
           "id": "TST_LOGI_TC_5",
           "description": "Click Login button",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
         },
         {
           "id": "TST_LOGI_TC_6",
@@ -88,19 +92,116 @@
           "tags": "P1",
           "visualTest": true
         }
-     
       ]
-    }, {
+    },
+    {
+      "modulename": "ResetPassword",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/resetPassword.test.js",
+      "testcase": [
+        {
+          "id": "TST_RESE_TC_1",
+          "description": "Reset Password Page initialized or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_RESE_TC_2",
+          "description": "Reset Password Button clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_RESE_TC_3",
+          "description": "Enter Email Text clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_RESE_TC_4",
+          "description": "Login Page is launched or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_RESE_TC_5",
+          "description": "Get Data Reset Password",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "dashboard",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/dashboard.test.js",
+      "testcase": [
+        {
+          "id": "TST_DASH_TC_1",
+          "description": "Validate Dashboard page is launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_2",
+          "description": "Validate that the Help button is clickable on the Dashboard",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_3",
+          "description": "Validate that the Progress button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_4",
+          "description": "Validate that the Practice Extra button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "Validate that the eBook button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_6",
+          "description": "Validate that the Homework button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_7",
+          "description": "Validate that the My Progress button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_8",
+          "description": "Validate that the Dashboard data is retrieved correctly, including Help button status",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_9",
+          "description": "Validate that active class buttons (Progress, Practice Extra, eBook, Homework, My Progress) are retrieved correctly",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
+    {
       "modulename": "appShell",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/appShell.test.js",
       "testcase": [
-       
         {
           "id": "TST_APPS_TC_1",
           "description": "Click on prod drop down",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
+          
         },
         {
           "id": "TST_APPS_TC_2",
@@ -108,7 +209,6 @@
           "tags": "P1",
           "visualTest": true
         }
-     
       ]
     },
     {
