@@ -94,7 +94,23 @@
         "progress": "h1[qid='clView-6']"
       },
       "eBook": {
-        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2"
+        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2",
+        "contentButton": "button[qid=\"72\"]",
+        "toolsButton": "button[qid=\"73\"]",
+        "closeButton": "button.close-button > em.nemo-close-new[title=\"Close\"]",
+        "homeButton": "button[qid=\"71\"]",
+        "myNotes": "div.notes-title",
+        "cqaEbookEvolveDropdown": "button[qid=\"ebook-button-1\"]",
+        "cqaTestEbookOnlyAssets": "a[qid=\"ebook-list-item-3\"]",
+        "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "pageNumber": "button[qid=\"toc-6\"]"
+      },
+      "eBookContents": {
+        "cqaTestProd": "div[title=\"cqa-test-prod-desktopfoc\"] div"
+      },
+      "eBookTools": {
+        "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "Timer": "button[qid=\"94\"]"
       },
       "practiceExtra": {
         "practice_extra": "h2[class='mb-0']"

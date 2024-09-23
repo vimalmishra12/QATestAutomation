@@ -8,6 +8,7 @@
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
+    "eBookFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTest.json' --windowWidth=1600 --windowHeight=900",
     "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
     "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
   },

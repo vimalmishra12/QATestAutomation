@@ -149,6 +149,17 @@
           "myProgress_btn": "My progress"
         }
       },
+      "eBook": {
+        "teacher": {
+          "cqa_ebook_evolve": "cqa-ebook-evolve",
+          "myNotes": "My notes"
+        }
+      },
+      "eBookContents": {
+        "teacher": {
+          "cqaTestProd": "cqa-test-prod-desktopfoc"
+        }
+      },
       "createClassPage": {
         "pageTitle": "Create a new class",
         "pageSubTitle": "Add your class details and start inviting students, creating assignments, and viewing progress.",

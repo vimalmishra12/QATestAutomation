@@ -194,6 +194,109 @@
       ]
     },
     {
+      "modulename": "eBook",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/eBook.test.js",
+      "testcase": [
+        {
+          "id": "TST_EBOO_TC_1",
+          "description": "Validate eBook page is initialized correctly",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_2",
+          "description": "Validate that the Content button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_3",
+          "description": "Validate that the Tools button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_4",
+          "description": "Validate that the Close button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_5",
+          "description": "Validate that the Home button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_6",
+          "description": "Validate that the cqaEbookEvolveDropdown is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_7",
+          "description": "Validate that the cqaTestEbookOnlyAssets is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_8",
+          "description": "Validate that the Notes button is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_9",
+          "description": "Validate that the Page Number button is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_10",
+          "description": "Validate that eBook evolve data matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_11",
+          "description": "Validate that eText toolbar data matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_12",
+          "description": "Validate that eBook contents data matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_13",
+          "description": "Validate that eBook Tools Notes data matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_14",
+          "description": "Validate that eBook Content Dropdown matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_15",
+          "description": "Validate that cqaTestEbookOnlyAssets matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_16",
+          "description": "Validate that eBook Tools data matches the expected values",
+          "tags": "P2",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "appShell",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/appShell.test.js",
