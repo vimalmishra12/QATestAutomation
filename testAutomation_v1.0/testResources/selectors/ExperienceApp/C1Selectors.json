@@ -3,10 +3,13 @@
     "ComproC1": {
       "landing": {
         "headingText": ".heading1.mb-3",
+        "headingText_Nemo": "h1.heading1, h1.heading1 > span.heading2",
         "subheadingText": "div[class=\"main-content\"] h2",
+        "subheadingText_Nemo": "h2[data-v-b8a92fbd]",
         "signupBtn": "a[qid=\"home-1\"]",
         "loginBtn": "a[qid=\"home-2\"]",
         "brandLogo_img": "img[alt=\"Shield\"]",
+        "brandLogo_img_Nemo": "img[alt='Cambridge Logo']",
         "languageSelector_dropdown": "[qid=\"header-10\"]",
         "languageSelector_dropdown_list": "[class*=\"lang-dropdown-item\"]"
       },
@@ -32,8 +35,9 @@
         "emailWarningText": "span[role='alert']"
       },
 
-      "appShell": {
+        "appShell": {
         "userDrop_down": "a[qid=\"cHeader-2\"]",
+        "userDrop_down_Nemo": "#dropdownMenuButtonUserProfile",
         "logout_btn": "button[qid=\"cHeader-7\"]",
         "headerbandDiv": "header > div",
         "toggleSidebarBtn": "[aria-label=toggle-sidebar]",
@@ -83,24 +87,30 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a[qid='cHeader-hlp-1']",
+        "help_btn": "#dropdownMenuButtonUserHelp , a[qid='cHeader-hlp-1']",
         "progress_btn": "div[class=\"border-top-grey pb-1\"] div[class=\"tile-column p-0 my-3\"] a[aria-label=\"See Progress\"]",
-        "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
+        "progress_btn_Nemo": "a.progress-link",
+        "praticeExtra_btn": "body app div[id='bundleCollapse-974120e4-5b7d-45f1-b653-887a75d284c3-cqaumbrellaformigtest1'] div div div:nth-child(1) div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
+        "praticeExtra_btn_Nemo": "div[id='bundleCollapse-986c29bd-586a-442c-a50e-65a6542567b1-nlpsecondarytest1'] div:nth-child(2) div:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
-        "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
-        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]"
+        "ebook_btn_Nemo": "body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)",
+        "assignment_btn_Nemo": "button[qid='homework-btn-974120e4-5b7d-45f1-b653-887a75d284c3']",
+        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
+        "myProgress_btn_Nemo": "a[qid='agg-progress-link-974120e4-5b7d-45f1-b653-887a75d284c3'] p"
       },
       "progress": {
         "progress": "h1[qid='clView-6']"
       },
       "eBook": {
-        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2"
+        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2",
+        "cqaebookwithoutp_DT_Nemo": "button[qid='90']"
       },
       "practiceExtra": {
         "practice_extra": "h2[class='mb-0']"
       },
       "myProgress": {
-        "my_progress": ".page-title.mt-3"
+        "my_progress": ".page-title.mt-3",
+        "my_progress_Nemo": "h1[qid='clView-6']"
       },
       "myHomework": {
         "back_btn": "a[qid='aView-4']"

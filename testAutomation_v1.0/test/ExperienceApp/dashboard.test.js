@@ -32,8 +32,9 @@ module.exports = {
     await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
+  //HW btn changed to assignment_btn_Nemo
   TST_DASH_TC_6: async function (testdata) {
-    sts = await dashboard.click_homework_btn();
+    sts = await dashboard.click_assignment_btn_Nemo();
     await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
@@ -54,27 +55,29 @@ module.exports = {
   TST_DASH_TC_9: async function (testdata) {
     sts = await dashboard.getData_activeClasses(testdata);
     await assertion.assertEqual(
-      sts.progress_btn,
+      sts.progress_btn_Nemo,
       testdata.progress_btn,
       "progress_btn Values is not as expected."
     );
     await assertion.assertEqual(
-      sts.praticeExtra_btn,
+      sts.praticeExtra_btn_Nemo,
       testdata.praticeExtra_btn,
       "praticeExtra_btn Values is not as expected."
     );
     await assertion.assertEqual(
-      sts.ebook_btn,
+      sts.ebook_btn_Nemo,
       testdata.ebook_btn,
       "ebook_btn Values is not as expected."
     );
+
+    //HW btn changed to assignment_btn_Nemo
     await assertion.assertEqual(
-      sts.homework_btn,
-      testdata.homework_btn,
+      sts.assignment_btn_Nemo,
+      testdata.assignment_btn_Nemo,
       "homework_btn Values is not as expected."
     );
     await assertion.assertEqual(
-      sts.myProgress_btn,
+      sts.myProgress_btn_Nemo,
       testdata.myProgress_btn,
       "myProgress_btn Values is not as expected."
     );

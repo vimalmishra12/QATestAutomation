@@ -37,8 +37,8 @@ module.exports = {
     TST_LAND_TC_5: async function (testdata) {
         await browser.pause(1000);
         sts = await landing.getData_landingPage(testdata);
-        await assertion.assertEqual(sts.headingText, testdata.headingText, "headingText Values is not as expected.");
-        await assertion.assertEqual(sts.subheadingText, testdata.subheadingText, "subheadingText Values is not as expected.");
+        await assertion.assertEqual(sts.headingText_Nemo, testdata.headingText, "headingText Values is not as expected.");
+        await assertion.assertEqual(sts.subheadingText_Nemo, testdata.subheadingText, "subheadingText Values is not as expected.");
         // await assertion.assertEqual(sts.signupBtn, testdata.signupBtn, "signupBtn Values is not as expected.");
         // await assertion.assertEqual(sts.loginBtn, testdata.loginBtn, "loginBtn Values is not as expected.");
         // await assertion.assertEqual(sts.brandLogo_img, true, "brandLogo_img Values is not as expected.");

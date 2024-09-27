@@ -13,6 +13,7 @@ module.exports = {
     res = {
       pageStatus: await action.waitForDisplayed(this.back_btn),
     };
+    console.log("Before return in isInitiazed", res);
     return res;
   },
 
