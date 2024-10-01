@@ -8,7 +8,7 @@
         "footerAccesibility" : "a[qid=\"cFooter-3\"]",
         "footerOurApproaches" : "a[qid=\"cFooter-5\"]",
         "footerSiteFeedback" : "a[qid=\"cFooter-4\"]",
-        "footerFAQs" : "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
+        "footerFAQ" : "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
         "footerCambridgeOneSchool" : "a[qid=\"cFooter-9\"][aria-label=\"Cambridge One for schools\"]",
         "footerHelp" : "a[qid=\"cFooter-6\"]",
         "footerCambridgeUniversity" : ".copyright.mb-0"
@@ -38,16 +38,26 @@
             "footerHelpLang" : ".current-language-label"
 
         },
-        "siteFeedback": {
-          "cambridgeCustomerSurvey" : "img[alt=\"Cambridge Customer Survey\"]",
-          "ifYouRequireSupportPlease" : "span:nth-child(1)"         
-        },
+
+        "footerSiteFeedback": 
+          {
+          "ifYouRequireSupport" : "form[id=\"survey\"] div label h2 span",
+          "next" : "input[value=\"Next\"]"
+
+          },
+
         "accesibility": 
         {
         "footerAccessibility" : ".accessibility",
         "footerAccesibilityBack" : ".back-text"
 
         },
+        "footerFAQ": 
+        {
+              "promotedArticle" : ".promoted-title",
+              "back" : "a[href=\"https://www.cambridgeone.org/login\"]"
+        },
+
 
 
       "landing": {

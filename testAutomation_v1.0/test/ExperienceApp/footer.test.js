@@ -8,6 +8,12 @@ sts = await footer.click_footerTermsOfUse();
 await assertion.assertEqual(sts.pageStatus, true,"Page is not launched. ");
 },
 
+
+// TST_FOOT_TC_1 :   async function (testdata) { 
+//     sts = await footer.click_footerTermsOfUse();
+//     await assertion.assertEqual(sts, true,"Page is not launched. ");
+//     },
+
 TST_FOOT_TC_2 :   async function (testdata) { 
 sts = await footer.click_footerPrivacy();
 await assertion.assertEqual(sts.pageStatus, true,"Page is not launched. ");
@@ -25,17 +31,19 @@ await assertion.assertEqual(sts.pageStatus, true,"Page is not launched. ");
 
 // },
 
-// TST_FOOT_TC_5 :   async function (testdata) { 
-// sts = await footer.click_footerSiteFeedback();
-// await assertion.assertEqual(sts.pageStatus, true,"Page is not launched. ");
+TST_FOOT_TC_5 :   async function (testdata) { 
+sts = await footer.click_footerSiteFeedback();
+await assertion.assertEqual(sts, true,"Page is not launched.");
 
-// },
+},
 
-// TST_FOOT_TC_6 :   async function (testdata) { 
-// sts = await footer.click_footerFAQs();
-// await assertion.assertEqual(sts.pageStatus, true,"Page is not launched. ");
 
-// },
+TST_FOOT_TC_6 :   async function (testdata) { 
+
+sts = await footer.click_footerFAQ();
+await assertion.assertEqual(sts, true,"Page is not launched. ");
+
+},
 
 TST_FOOT_TC_7 :   async function (testdata) { 
 sts = await footer.click_footerCambridgeOneSchool();

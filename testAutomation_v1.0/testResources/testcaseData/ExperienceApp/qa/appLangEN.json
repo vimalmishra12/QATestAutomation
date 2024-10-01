@@ -2,7 +2,10 @@
   "C1": {
 
 
-    
+    "footerSiteFeedback": {
+      "ifYouRequireSupport" : "If you require support",
+      "next" : "submit"
+    },
 
     "footer":   {
       "footerTermsOfUse" : "Terms of use",
@@ -20,9 +23,13 @@
       "footerCambridgeOneForSchools" : "Do I need a school account?",
       "footerBack" : "Back"
 
-    },
+       },
 
-
+      "footerFAQ": 
+        {
+            "promotedArticle" : "Promoted articles",
+            "back" : "« Go back to Cambridge One"
+        },
 
     "appContent": {
       "language": "EN - English (UK)",
