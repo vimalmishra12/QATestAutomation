@@ -161,6 +161,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.closeButton);
+    console.log("Clicked");
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " closeButton is clicked");
       res = await require("./eBook.page").isInitialized();
@@ -171,6 +172,7 @@ module.exports = {
         "error"
       );
     }
+    console.log("this is res", res);
     return res;
   },
 
@@ -200,6 +202,13 @@ module.exports = {
         await stackTrace.get(),
         " cqaEbookEvolveDropdown is clicked"
       );
+
+      res = await action.getCSSProperty(
+        "a[qid='ebook-list-item-5']",
+        "background-color"
+      );
+
+      console.log("this is res", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -213,12 +222,15 @@ module.exports = {
   click_cqaTestEbookOnlyAssets: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+
     res = await action.click(this.cqaTestEbookOnlyAssets);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " cqaTestEbookOnlyAssets is clicked"
       );
+
+      console.log("this is res", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -232,7 +244,11 @@ module.exports = {
   click_notes: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    await action.waitForDocumentLoad();
+
     res = await action.click(this.notes);
+    // Browser.pause(30);
+    console.log("this is notes res", res);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " notes is clicked");
     } else {

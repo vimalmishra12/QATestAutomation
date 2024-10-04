@@ -150,10 +150,9 @@
         }
       },
       "eBook": {
-        "teacher": {
-          "cqa_ebook_evolve": "cqa-ebook-evolve",
-          "myNotes": "My notes"
-        }
+        "cqa_ebook_evolve": "cqa-ebook-evolve",
+        "myNotes": "My notes",
+        "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
       "eBookContents": {
         "teacher": {

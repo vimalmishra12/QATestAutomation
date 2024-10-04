@@ -67,10 +67,21 @@
         "testData": []
       },
       {
-        "id": "TST_EBOO_TC_11",
+        "id": "TST_EBOO_TC_8",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_13",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+            "jsonPath": "C1.appContent.eBook"
+          }
+        ]
       }
     ],
     "AfterEach": [],
