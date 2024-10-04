@@ -24,7 +24,7 @@ getData_CambridgeOneForSchools: async function ()
 await logger.logInto(await stackTrace.get());
 var obj;
 obj = {
-footerCambridgeOneForSchools:(( await action.getElementCount(this.footerCambridgeOneForSchools)) > 0) ? await action.getText(this.footerCambridgeOneForSchools) : null,
+footerCambridgeOneForSchools:(( await action.getElementCount(this.footerCambridgeOneForSchool)) > 0) ? await action.getText(this.footerCambridgeOneForSchools) : null,
 footerBack:(( await action.getElementCount(this.footerBack)) > 0) ? await action.getText(this.footerBack) : null,
 }
  return obj; 

@@ -2,64 +2,65 @@
   "css": {
     "ComproC1": {
 
+      "newAssignment": {
+        "cancel" : "button[qid=\"pAssignment-9\"]",
+        "back" : "a[qid=\"cView-44\"] span[class=\"nav-heading\"]"
+      },
+
+      "teaDashAssignment":  {
+        "teaDashClassData" : "a[qid=\"class-card-dataorg_mqa-sierra-prod1qsyq-u4W6\"]",
+        "teaDashAssignments" : "a[qid=\"class-card-assignmentorg_mqa-sierra-prod1qsyq-u4W6\"]",
+        "teaDashMaterial" : "a[qid=\"class-card-materialsorg_mqa-sierra-prod1qsyq-u4W6\"]"
+
+      },
+      "assignment": {
+        "classData" : "a[qid=\"cView-43\"] span[class=\"nav-heading\"]",
+        "assignments" : "a[qid=\"cView-44\"] span[class=\"nav-heading\"]",
+        "materials" : "a[qid=\"cView-45\"] span[class=\"nav-heading\"]",
+        "createAssignment" : ".mx-auto"
+      },
       "footer":  {
         "footerTermsOfUse" : "a[qid=\"cFooter-1\"]",
         "footerPrivacyNotice" : "a[qid=\"cFooter-2\"]",
         "footerAccesibility" : "a[qid=\"cFooter-3\"]",
-        "footerOurApproaches" : "a[qid=\"cFooter-5\"]",
+        "footerOurApproach" : "a[qid=\"cFooter-5\"]",
         "footerSiteFeedback" : "a[qid=\"cFooter-4\"]",
         "footerFAQ" : "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
         "footerCambridgeOneSchool" : "a[qid=\"cFooter-9\"][aria-label=\"Cambridge One for schools\"]",
-        "footerHelp" : "a[qid=\"cFooter-6\"]",
-        "footerCambridgeUniversity" : ".copyright.mb-0"
-
+        "footerHelp" : "a[qid=\"cFooter-6\"]"
         },
-
         "footerCambridgeOneForSchool": {
             "footerCambridgeOneForSchools" : ".heading-title",
             "footerBack" : ".back-text"
-
         },
-
-
         "term": {
           "termsHealding" :"h1.heading1.align-self-center[data-v-7a24da20]",
-          "termBack" : "qid\".back-text\"undefined"
-
+          "termBack" : ".back-text"
         },
-
         "privacy": {
             "privacyHealding" : ".heading1.align-self-center",
             "privacyBack" : ".back-text"
          },
-      
-        "footerHelp": {
-            "footerHelpBack" : "a[href=\"https://www.cambridgeone.org/login\"]",
-            "footerHelpLang" : ".current-language-label"
-
-        },
-
-        "footerSiteFeedback": 
-          {
+       "footerSiteFeedback": {
           "ifYouRequireSupport" : "form[id=\"survey\"] div label h2 span",
           "next" : "input[value=\"Next\"]"
-
-          },
-
-        "accesibility": 
-        {
+        },
+        "footerOurApproach": {
+          "languageAssessment" : "a[href=\"https://www.cambridgeenglish.org/\"][data-coh-settings=\"{ \"xs\":{\"link_interaction\":\"click-through-to-link\"} }\"]",
+          "languageLearningMaterials" : "a[href=\"https://www.cambridge.org/cambridgeenglish/\"]"
+        },
+      "accesibility": {
         "footerAccessibility" : ".accessibility",
         "footerAccesibilityBack" : ".back-text"
-
-        },
-        "footerFAQ": 
-        {
+      },
+      "footerFAQ": {
               "promotedArticle" : ".promoted-title",
               "back" : "a[href=\"https://www.cambridgeone.org/login\"]"
-        },
-
-
-
+      },
+      "footerHelp": {
+        "promotedArticles" : "main[role=\"main\"] div section section section h2",
+        "footerHelpBack" : "a[href=\"https://www.cambridgeone.org/login\"]"
+      },
       "landing": {
         "headingText": ".heading1.mb-3",
         "subheadingText": "div[class=\"main-content\"] h2",
@@ -142,7 +143,10 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a[qid='cHeader-hlp-1']",
+        
+
+       "help_btn": "a[qid='cHeader-hlp-1'] ,.help-text.text-white", 
+
         "progress_btn": "div[class=\"border-top-grey pb-1\"] div[class=\"tile-column p-0 my-3\"] a[aria-label=\"See Progress\"]",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",

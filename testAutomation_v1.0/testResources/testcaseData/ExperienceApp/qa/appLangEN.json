@@ -1,35 +1,60 @@
 {
   "C1": {
 
-
+    "newAssignment": {
+      "cancel" : "Cancel",
+      "back" : "Back"
+    },
+    "teaDashAssignment":{
+      "teaDashClassData" : "Class data",
+      "teaDashAssignments" : "Assignments",
+      "teaDashMaterial" : "Materials"
+    },
+    "assignment": {
+      "classData" : "Class data",
+      "assignments" : "Assignments",
+      "materials" : "Materials",
+      "createAssignment" : "Create assignment" 
+    },
     "footerSiteFeedback": {
       "ifYouRequireSupport" : "If you require support",
       "next" : "submit"
     },
-
     "footer":   {
       "footerTermsOfUse" : "Terms of use",
       "footerPrivacyNotice" : "Privacy notice",
       "footerAccesibility" : "Accessibility",
-      "footerOurApproaches" : "Our approach",
+      "footerOurApproach" : "Our approach",
       "footerSiteFeedback" : "Site feedback",
-      "footerFAQs" : "FAQs",
+      "footerFAQ" : "FAQs",
       "footerCambridgeOneSchool" : "Cambridge One for schools",
       "footerHelp" : "Help",
       "footerCambridgeUniversity" : "© Cambridge University Press &"
       },
-
       "footerCambridgeOneForSchool": {
       "footerCambridgeOneForSchools" : "Do I need a school account?",
       "footerBack" : "Back"
-
        },
 
-      "footerFAQ": 
-        {
+      "accesibility": {
+        "footerAccessibility" : "Accesibility",
+        "footerAccesibilityBack" : "Back"
+      },
+
+      "footerFAQ": {
             "promotedArticle" : "Promoted articles",
             "back" : "« Go back to Cambridge One"
-        },
+      },
+      "footerOurApproach": {
+          "languageAssessment" : "Language Assessment",
+          "languageLearningMaterials" : "Language Learning materials"
+      },
+
+    "footerHelp":{
+      "promotedArticles" : "Promoted articles",
+      "footerHelpBack" : "« Go back to Cambridge One"
+
+    },
 
     "appContent": {
       "language": "EN - English (UK)",

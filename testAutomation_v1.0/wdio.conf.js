@@ -1,3 +1,4 @@
+
 "use strict";
 require("./env.conf.js");
 //let QaTouchReporter = require('wdio-qatouch-reporter/lib/index');

@@ -7,7 +7,7 @@ module.exports = {
 footerTermsOfUse: selectorFile.css.ComproC1.footer.footerTermsOfUse,
 footerPrivacyNotice: selectorFile.css.ComproC1.footer.footerPrivacyNotice,
 footerAccesibility: selectorFile.css.ComproC1.footer.footerAccesibility,
-footerOurApproaches: selectorFile.css.ComproC1.footer.footerOurApproaches,
+footerOurApproach: selectorFile.css.ComproC1.footer.footerOurApproach,
 footerSiteFeedback: selectorFile.css.ComproC1.footer.footerSiteFeedback,
 footerFAQ: selectorFile.css.ComproC1.footer.footerFAQ,
 footerCambridgeOneSchool: selectorFile.css.ComproC1.footer.footerCambridgeOneSchool,
@@ -18,6 +18,10 @@ promotedArticle: selectorFile.css.ComproC1.footerFAQ.promotedArticle,
 back: selectorFile.css.ComproC1.footerFAQ.back,
 ifYouRequireSupport: selectorFile.css.ComproC1.footerSiteFeedback.ifYouRequireSupport,
 next: selectorFile.css.ComproC1.footerSiteFeedback.next,
+languageAssessment: selectorFile.css.ComproC1.footerOurApproach.languageAssessment,
+languageLearningMaterials: selectorFile.css.ComproC1.footerOurApproach.languageLearningMaterials,
+promotedArticles: selectorFile.css.ComproC1.footerHelp.promotedArticles,
+footerHelpBack: selectorFile.css.ComproC1.footerHelp.footerHelpBack,
 
 
 isInitialized: async function ()
@@ -229,23 +233,74 @@ await logger.logInto(await stackTrace.get(), res +"footerAccesibility is NOT cli
 return res;
 },
 
-click_footerOurApproaches: async function () {
-await logger.logInto(await stackTrace.get());
+// click_footerOurApproach: async function () {
+// await logger.logInto(await stackTrace.get());
 
-var res;
+// var res;
 
-browser.pause(3000);
-action.waitForDocumentLoad();
-action.waitForDisplayed(this.footerOurApproaches);
-res =await action.click(this.footerOurApproaches);
-if (true == res) {
- await logger.logInto(await stackTrace.get(), " footerOurApproaches is clicked");
-res =await require ('./ourApproaches.page').isInitialized();
-}
-else {
-await logger.logInto(await stackTrace.get(), res +"footerOurApproaches is NOT clicked", 'error');
-}
-return res;
+// browser.pause(3000);
+// action.waitForDocumentLoad();
+// action.waitForDisplayed(this.footerOurApproaches);
+// res =await action.click(this.footerOurApproaches);
+// if (true == res) {
+//  await logger.logInto(await stackTrace.get(), " footerOurApproaches is clicked");
+// res =await require ('./ourApproaches.page').isInitialized();
+// }
+// else {
+// await logger.logInto(await stackTrace.get(), res +"footerOurApproaches is NOT clicked", 'error');
+// }
+// return res;
+// },
+
+click_footerOurApproach: async function () { 
+    await logger.logInto(await stackTrace.get());
+    let res;
+
+    // Wait for the footer link to be displayed and click it
+    await action.waitForDocumentLoad();
+    await action.waitForDisplayed(this.footerOurApproach);
+    res = await action.click(this.footerOurApproach);
+
+    console.log("res is : ",res);
+
+    if (res === true) {
+        await logger.logInto(await stackTrace.get(), "footer site feedback  is clicked");
+
+        // Pause to allow the new window to open
+        await browser.pause(3000); 
+
+        // Get all window handles
+        const allWindows = await browser.getWindowHandles();
+        const currentWindow = await browser.getWindowHandle(); // Get the current window
+
+        if (allWindows.length > 1) {
+            // Switch to the new window (assuming it's the last one opened)
+            browser.pause(500);
+            await browser.switchToWindow(allWindows[1]);
+            await logger.logInto(await stackTrace.get(), "Switched to new window");
+
+            // Wait for the element with the id '.promoted-title' to be displayed
+            const isDisplayed = await $(this.languageLearningMaterials).isDisplayed();
+            browser.pause(500);
+
+            // Add assertion for the '.promoted-title' element
+            if (isDisplayed) {
+                await logger.logInto(await stackTrace.get(), "Element languageLearningMaterials is displayed on the new window.");
+            } else {
+                await logger.logInto(await stackTrace.get(), "Element languageLearningMaterials is NOT displayed", 'error');
+            }
+
+            // After your assertion, you can close the new window and switch back to the original window if needed
+            await browser.closeWindow();  // Close the new window
+            await browser.switchToWindow(currentWindow);  // Switch back to the original window
+        } else {
+            await logger.logInto(await stackTrace.get(), "No new window detected", 'error');
+        }
+    } else {
+        await logger.logInto(await stackTrace.get(), res + "footer our approaches is NOT clicked", 'error');
+    }
+   // console.log("res val : ",res);
+    return res;
 },
 
 click_footerSiteFeedback: async function () { 
@@ -351,31 +406,57 @@ await logger.logInto(await stackTrace.get(), res +"footerCambridgeOneSchool is N
 return res;
 },
 
-click_footerHelp: async function () {
-await logger.logInto(await stackTrace.get());
+click_footerHelp: async function () { 
+    await logger.logInto(await stackTrace.get());
+    let res;
 
-console.log("debugger 0");
-var res;
+    // Wait for the footer link to be displayed and click it
+    await action.waitForDocumentLoad();
+    await action.waitForDisplayed(this.footerHelp);
+    res = await action.click(this.footerHelp);
 
- browser.pause(3000);
-action.waitForDocumentLoad();
-action.waitForDisplayed(this.footerHelp);
+    console.log("res is : ",res);
 
-console.log(" debug purpose 1");
+    if (res === true) {
+        await logger.logInto(await stackTrace.get(), "footer help page   is clicked");
 
+        // Pause to allow the new window to open
+        await browser.pause(3000); 
 
-res =await action.click(this.footerHelp);
-console.log(" debug purpose 2");
-if (true == res) {
-    console.log(" debug purpose 3");
- await logger.logInto(await stackTrace.get(), " footerHelp is clicked");
-res =await require ('./footerHelp.page.js').isInitialized();
+        // Get all window handles
+        const allWindows = await browser.getWindowHandles();
+        const currentWindow = await browser.getWindowHandle(); // Get the current window
+
+        if (allWindows.length > 1) {
+            // Switch to the new window (assuming it's the last one opened)
+            browser.pause(500);
+            await browser.switchToWindow(allWindows[1]);
+            await logger.logInto(await stackTrace.get(), "Switched to new window");
+
+            // Wait for the element with the id '.promoted-title' to be displayed
+            const isDisplayed = await $(this.promotedArticles).isDisplayed();
+
+            browser.pause(500);
+
+            // Add assertion for the '.promoted-title' element
+            if (isDisplayed) {
+                await logger.logInto(await stackTrace.get(), "Element promotedArticles is displayed on the new window.");
+            } else {
+                await logger.logInto(await stackTrace.get(), "Element promotedArticles is NOT displayed", 'error');
+            }
+
+            // After your assertion, you can close the new window and switch back to the original window if needed
+            await browser.closeWindow();  // Close the new window
+            await browser.switchToWindow(currentWindow);  // Switch back to the original window
+        } else {
+            await logger.logInto(await stackTrace.get(), "No new window detected", 'error');
+        }
+    } else {
+        await logger.logInto(await stackTrace.get(), res + "footer help is NOT clicked", 'error');
+    }
+   // console.log("res val : ",res);
+    return res;
 }
-else {
-await logger.logInto(await stackTrace.get(), res +"footerHelp is NOT clicked", 'error');
-}
-return res;
-},
 
 }
 

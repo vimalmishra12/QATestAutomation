@@ -5,6 +5,81 @@
   "modules": [
 
     {
+      "modulename": "Assignment",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/assignment.test.js",
+      "testcase": [
+        {
+          "id": "TST_ASSI_TC_1",
+          "description": "Validate that Tea Dashboard Class Data page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ASSI_TC_2",
+          "description": "Validate that Tea Dashboard Assignments page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ASSI_TC_3",
+          "description": "Validate that Tea Dashboard Material page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ASSI_TC_4",
+          "description": "Validate the create assignment page ",
+          "tags": "P1",
+          "visualTest": true
+         
+        },
+        {
+          "id": "TST_ASSI_TC_5",
+          "description": "Validate Tea Dashboard Data matches expected values",
+          "tags": "P1",
+          "visualTest": true
+        }
+      ]
+    },
+    
+
+    {
+      "modulename": "TeaDashAssignment",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/teaDashAssignment.test.js",
+      "testcase": [
+        {
+          "id": "TST_TEAD_TC_1",
+          "description": "Validate that Tea Dashboard Class Data page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TEAD_TC_2",
+          "description": "Validate that Tea Dashboard Assignments page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TEAD_TC_3",
+          "description": "Validate that Tea Dashboard Material page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TEAD_TC_4",
+          "description": "Validate Tea Dashboard Data matches expected values",
+          "tags": "P1",
+          "visualTest": true
+        }
+      ]
+    },
+
+
+    
+
+    {
       "modulename": "Footer",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/footer.test.js",
@@ -56,13 +131,8 @@
           "description": "Validate Help page is launched correctly",
           "tags": "P1",
           "visualTest": true
-        },
-        {
-          "id": "TST_FOOT_TC_9",
-          "description": "Validate footer data is displayed correctly",
-          "tags": "P1",
-          "visualTest": true
         }
+        
       ]
     },
 
