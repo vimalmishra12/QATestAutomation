@@ -122,6 +122,16 @@
       "myHomework": {
         "back_btn": "a[qid='aView-4']"
       },
+      "notes": {
+        "eBookNotesHeadingTxt": "div.notes-title",
+        "eBookAddNotesBtn": "button.add-note-button",
+        "eBookAddNotesTextarea": "textarea[qid=\"notes-9IgNfocur4WZF5gB-10\"]",
+        "eBookSaveNotesBtn": "button[qid=\"notes-9IgNfocur4WZF5gB-4\"]",
+        "eBookDeleteNotesBtn": "button[qid=\"notes-9IgNfocur4WZF5gB-3\"]",
+        "eBookNotesViewMoreBtn": "button[qid=\"notes-9IgNfocur4WZF5gB-17\"]",
+        "eBookViewMoreDeleteNotestBtn": "a[qid=\"notes-9IgNfocur4WZF5gB-20\"]",
+        "eBookNoteModalDeleteButton": "button[qid=\"notes-9IgNfocur4WZF5gB-9\"]"
+      },
       "classDrawer": {
         "classDrawerHeader": "[data-tid=text-drawerHeaderTitle]",
         "classDrawerTitle": "[data-tid=text-ClassesTitle]",
