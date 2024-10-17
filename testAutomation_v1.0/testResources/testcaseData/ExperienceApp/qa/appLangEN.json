@@ -176,6 +176,12 @@
           "cqaTestProd": "cqa-test-prod-desktopfoc"
         }
       },
+      "notes": {
+        "teacher": {
+          "eBookNotesHeadingTxt": "My notes",
+          "eBookSaveNotesBtn": "Test Note1"
+        }
+      },
       "createClassPage": {
         "pageTitle": "Create a new class",
         "pageSubTitle": "Add your class details and start inviting students, creating assignments, and viewing progress.",

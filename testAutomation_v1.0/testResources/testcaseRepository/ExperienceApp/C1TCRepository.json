@@ -389,6 +389,67 @@
       ]
     },
     {
+      "modulename": "notes",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/notes.test.js",
+      "testcase": [
+        {
+          "id": "TST_NOTE_TC_1",
+          "description": "Validate the 'Add Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_2",
+          "description": "Validate the 'Add Notes' text area is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_3",
+          "description": "Validate values are set in the 'Add Notes' text area on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_4",
+          "description": "Validate the 'Save Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_5",
+          "description": "Validate the 'Delete Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_6",
+          "description": "Validate the 'View More' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_7",
+          "description": "Validate the 'View More Delete Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_8",
+          "description": "Validate the 'Delete Notes' button in the modal is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_9",
+          "description": "Validate the eBook Notes content matches the expected data",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "appShell",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/appShell.test.js",
