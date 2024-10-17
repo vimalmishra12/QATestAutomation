@@ -9,6 +9,23 @@
         "loginBtn": "Log in",
         "languageSelector_dropdown": "En"
       },
+      "eBookLearningPageHyperlink": {
+        "hyperLinkAnswer" : "Answers",
+        "hyperLinkAnswer2" : "Answers",
+        "hyperlinkAudio" : "Audio"
+      },
+      "hyperLinkAnswerWindow": {
+        "hyperAnswerReveal" : "Reveal",
+        "hyperAnswerClose" : "Close",
+        "hyperAnswerFullScreen" : "Enter fullscreen",
+        "hyperAnswerQuestion" : "Watch or listen to Part 1 and"
+      },
+
+      "hyperlinkAudio": {
+        "hyperAudioPlay_pause" : "Play",
+        "hyperAudioClose" : "Close"
+      },
+
       "login": {
         "userName_tbox": "Want to use a different",
         "password_tbox": "Password*",
@@ -614,6 +631,15 @@
           "applySettingsBtn_lineHeight_narrow": "19.2px"
         }
       },
+
+      "pageNoDialogBox": {
+        "pageNoOneBtn" : "1",
+        "pageNoTwoBtn" : "2",
+        "pageNoClearBtn" : "Clear",
+        "pageNoGoToPageBtn" : "Go to page",
+        "pageNOShow" : "12-13"
+      },
+
       "flipbook": {
         "doubleLayoutTOC": "p. 2 - 3",
         "singleLayoutTOC": "p. 2",

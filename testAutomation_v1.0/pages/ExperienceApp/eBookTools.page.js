@@ -65,4 +65,17 @@ module.exports = {
     }
     return res;
   },
+  click_pageNoGoToPageBtn: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res =await action.click(this.pageNoGoToPageBtn);
+    if (true == res) {
+     await logger.logInto(await stackTrace.get(), " pageNoGoToPageBtn is clicked");
+    }
+    else {
+    await logger.logInto(await stackTrace.get(), res +"pageNoGoToPageBtn is NOT clicked", 'error');
+    }
+    return res;
+    },
+
 };

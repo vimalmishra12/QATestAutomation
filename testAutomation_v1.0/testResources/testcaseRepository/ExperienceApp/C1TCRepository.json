@@ -293,7 +293,99 @@
           "description": "Validate that eBook Tools data matches the expected values",
           "tags": "P2",
           "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_1",
+          "description": "Validate that pageNoOneBtn  is  Clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_2",
+          "description": "Validate that pageNoTwoBtn  is  Clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_3",
+          "description": "page No Clear Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_4",
+          "description": "page No go to Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_5",
+          "description": "page NO Show  btn is clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_1",
+          "description": "Validate that HyperLinkAnswer is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_2",
+          "description": "Validate that HyperLink Audio is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_4",
+          "description": "Validate that HyperLinkAnswer  2 is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        
+        {
+          "id": "TST_HYPE_TC_1",
+          "description": "Successfully clicks the hyper answer reveal button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_2",
+          "description": "Successfully clicks the hyper answer close button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_3",
+          "description": "Successfully clicks the hyper answer full screen button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_4",
+          "description": "Successfully retrieves the data associated with the hyper answer",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_1",
+          "description": "Validate that HyperLink Audio Play/Pause button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_2",
+          "description": "Validate that HyperLink Audio Close button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_3",
+          "description": "Validate that HyperLink Audio Play/Pause and Close button data matches expected values",
+          "tags": "P2",
+          "visualTest": false
         }
+        
       ]
     },
     {
