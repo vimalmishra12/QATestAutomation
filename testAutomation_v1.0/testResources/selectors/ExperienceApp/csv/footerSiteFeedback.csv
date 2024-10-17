@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+ifYouRequireSupport,span:nth-child(1),span,siteFeedbackPage,,,,If you require support
+next,input[value='Next'],input,siteFeedbackPage,,,,submit

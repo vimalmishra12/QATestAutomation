@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+hyperAudioPlay_pause,button[class='plyr__control playpause plyr__control--pressed plyr__tab-focus'] div[class='icon--pressed'] span[class='glyph'],a,ebookHyperlinkAudio,,,,play
+hyperAudioClose,div[class='title-section dragger'] i[class='nemo-font nemo-cross'],button,ebookHyperlinkAudio,,,,Close

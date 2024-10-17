@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+cancel,button[qid='pAssignment-9'],button,newAssignmetPage,,,assignment.page,Cancel
+back,a[qid='cView-44'] span[class='nav-heading'],a,newAssignmetPage,,,assignment.page,Back

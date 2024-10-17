@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+termsHealding,h1.heading1.align-self-center[data-v-7a24da20],h1,termPage,,,,Terms of use
+termBack,.back-text,span,termPage,,,login.page,Back

@@ -1,0 +1,5 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+hyperAnswerReveal,a[title='Reveal'],a,ebookHyperlinkAnswer,,,,Reveal
+hyperAnswerClose,button[class='close-button'],button,ebookHyperlinkAnswer,,,,Close
+hyperAnswerFullScreen,i[title='Enter fullscreen'],a,ebookHyperlinkAnswer,,,,Enter fullscreen
+hyperAnswerQuestion,div[id='rubric-0'] p,p,ebookHyperlinkAnswer,,,,Watch or listen to Part 1 and
