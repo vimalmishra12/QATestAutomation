@@ -257,6 +257,262 @@
       ]
     },
     {
+      "modulename": "eBook",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/eBook.test.js",
+      "testcase": [
+        {
+          "id": "TST_EBOO_TC_1",
+          "description": "Validate eBook page is initialized correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_2",
+          "description": "Validate that the Content button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_3",
+          "description": "Validate that the Tools button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_4",
+          "description": "Validate that the Close button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_5",
+          "description": "Validate that the Home button is clickable and the page is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_6",
+          "description": "Validate that the cqaEbookEvolveDropdown is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_7",
+          "description": "Validate that the cqaTestEbookOnlyAssets is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_8",
+          "description": "Validate that the Notes button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_9",
+          "description": "Validate that the Page Number button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_10",
+          "description": "Validate that eBook evolve data matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_11",
+          "description": "Validate that eText toolbar data matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_12",
+          "description": "Validate that eBook contents data matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_13",
+          "description": "Validate that eBook Tools Notes data matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_14",
+          "description": "Validate that eBook Content Dropdown matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_15",
+          "description": "Validate that cqaTestEbookOnlyAssets matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_16",
+          "description": "Validate that eBook Tools data matches the expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_1",
+          "description": "Validate that pageNoOneBtn  is  Clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_2",
+          "description": "Validate that pageNoTwoBtn  is  Clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_3",
+          "description": "page No Clear Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_4",
+          "description": "page No go to Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_5",
+          "description": "page NO Show  btn is clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_1",
+          "description": "Validate that HyperLinkAnswer is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_2",
+          "description": "Validate that HyperLink Audio is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOOK_TC_4",
+          "description": "Validate that HyperLinkAnswer  2 is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        
+        {
+          "id": "TST_HYPE_TC_1",
+          "description": "Successfully clicks the hyper answer reveal button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_2",
+          "description": "Successfully clicks the hyper answer close button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_3",
+          "description": "Successfully clicks the hyper answer full screen button",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_TC_4",
+          "description": "Successfully retrieves the data associated with the hyper answer",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_1",
+          "description": "Validate that HyperLink Audio Play/Pause button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_2",
+          "description": "Validate that HyperLink Audio Close button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_HYPE_AUD_TC_3",
+          "description": "Validate that HyperLink Audio Play/Pause and Close button data matches expected values",
+          "tags": "P2",
+          "visualTest": false
+        }
+        
+      ]
+    },
+    {
+      "modulename": "notes",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/notes.test.js",
+      "testcase": [
+        {
+          "id": "TST_NOTE_TC_1",
+          "description": "Validate the 'Add Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_2",
+          "description": "Validate the 'Add Notes' text area is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_3",
+          "description": "Validate values are set in the 'Add Notes' text area on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_4",
+          "description": "Validate the 'Save Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_5",
+          "description": "Validate the 'Delete Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_6",
+          "description": "Validate the 'View More' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_7",
+          "description": "Validate the 'View More Delete Notes' button is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_8",
+          "description": "Validate the 'Delete Notes' button in the modal is clicked on the eBook page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_9",
+          "description": "Validate the eBook Notes content matches the expected data",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "appShell",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/appShell.test.js",

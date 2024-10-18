@@ -1,0 +1,9 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+footerTermsOfUse,"a[qid=\""cFooter-1\""]",a,footerPage,,,terms.page,Terms of use
+footerPrivacyNotice,"a[qid=\""cFooter-2\""]",a,footerPage,,,privacy.page,Privacy notice
+footerAccesibility,"a[qid=\""cFooter-3\""]",a,footerPage,,,accesibility.page,Accessibility
+footerOurApproach,"a[qid=\""cFooter-5\""]",a,footerPage,,,footerOurApproach.page,Our approach
+footerSiteFeedback,"a[qid=\""cFooter-4\""]",a,footerPage,,,footerSiteFeedback.page,Site feedback
+footerFAQ,"a[qid=\""cFooter-9\""][aria-label=\""FAQs\""]",a,footerPage,,,footerFAQ.page,FAQs
+footerCambridgeOneSchool,"a[qid=\""cFooter-9\""][aria-label=\""Cambridge One for schools\""]",a,footerPage,,,footerCambridgeOneForSchool.page,Cambridge One for schools
+footerHelp,"a[qid=\""cFooter-6\""]",a,footerPage,,,footerHelp.page,Help

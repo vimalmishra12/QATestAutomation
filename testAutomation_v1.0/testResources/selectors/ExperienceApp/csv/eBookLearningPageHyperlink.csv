@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+hyperLinkAnswer,div[id='ee-overlays11-2'] img,a,ebookLearningHyperlink,,,,Answers
+hyperlinkAudio,div[id='ee-overlays11-0'] img,a,ebookLearningHyperlink,,,,Audio

@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+promotedArticle,.promoted-title,h2,fAQPage,,,,Promoted articles
+Back,"a[href=\""https://www.cambridgeone.org/login\""]",a,fAQPage,,,login.page,« Go back to Cambridge One

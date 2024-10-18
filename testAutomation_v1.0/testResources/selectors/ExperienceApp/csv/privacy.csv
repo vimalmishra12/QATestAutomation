@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+privacyHealding,.heading1.align-self-center,h1,privacyNoticePage,,,,Privacy Notice
+privacyBack,.back-text,span,privacyNoticePage,,,login.page,Back
