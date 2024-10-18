@@ -1,0 +1,5 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+classData,a[qid='cView-43'] span[class='nav-heading'],span,assignmentPage,,,classdata.Page,Class data
+assignments,a[qid='cView-44'] span[class='nav-heading'],span,assignmentPage,,,assignments.Page,Assignments
+materials,a[qid='cView-45'] span[class='nav-heading'],span,assignmentPage,,,materials.Page,Materials
+createAssignment,.mx-auto,span,assignmentPage,,,newAssignmet.page,Create assignment

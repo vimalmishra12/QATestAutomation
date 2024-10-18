@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+footerAccessibility,.accessibility,h1,footerAccessibility,,,,Accesibility
+footerAccesibilityBack,.back-text,span,footerAccessibility,,,login.page,Back

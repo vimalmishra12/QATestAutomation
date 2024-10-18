@@ -6,7 +6,7 @@ import {
   appendFileSync,
   readFileSync,
   writeFile,
-  FSWatcher
+  FSWatcher,
 } from 'fs';
 import { resolve, sep, isAbsolute } from 'path';
 import { generateMarkup } from './components/generate-markup';
@@ -37,7 +37,7 @@ export class TimelineService {
 
   setReporterOptions(config: WdioConfiguration) {
     const timelineFilter = config.reporters.filter(
-      item => Array.isArray(item) && item[0] === 'timeline'
+      (item) => Array.isArray(item) && item[0] === 'timeline'
     );
     if (timelineFilter.length === 0) {
       throw new Error(
@@ -103,6 +103,7 @@ export class TimelineService {
   beforeCommand(commandName) {
     const { screenshotStrategy } = this.reporterOptions;
     if (screenshotStrategy === BEFORE_CLICK && 'click' === commandName) {
+      console.log('Hellio 106');
       browser.takeScreenshot();
     }
   }
@@ -110,9 +111,11 @@ export class TimelineService {
   afterTest(test) {
     const { screenshotStrategy } = this.reporterOptions;
     if (screenshotStrategy === BEFORE_CLICK) {
+      console.log('Hellio 114');
       browser.takeScreenshot();
     }
     if (screenshotStrategy === ON_ERROR && !test.passed) {
+      console.log('Hellio 118');
       browser.takeScreenshot();
     }
   }
@@ -121,9 +124,7 @@ export class TimelineService {
     if (this.reporterOptions.images && this.reporterOptions.images.resize) {
       let { quality, reductionRatio } = this.reporterOptions.images;
       console.log(
-        `TIMELINE:ScreenshotService: Attempting to resize ${
-          screenshots.length
-        } images`
+        `TIMELINE:ScreenshotService: Attempting to resize ${screenshots.length} images`
       );
       quality =
         Number.isInteger(quality) && quality > 0 && quality <= 100
@@ -135,7 +136,7 @@ export class TimelineService {
         reductionRatio <= 5
           ? Math.round(reductionRatio)
           : 1;
-      const promises = screenshots.map(filePath =>
+      const promises = screenshots.map((filePath) =>
         waitForFileExistsAndResize(filePath, quality, reductionRatio)
       );
       return Promise.all(promises);
@@ -144,11 +145,71 @@ export class TimelineService {
   }
 
   getFileName() {
-    return `${this.resolvedOutputDir}/${this.reporterOptions.fileName ||
-      'timeline-report.html'}`;
+    return `${this.resolvedOutputDir}/${
+      this.reporterOptions.fileName || 'timeline-report.html'
+    }`;
   }
 
-  onComplete() {
+  // onComplete() {
+  //   const folderAndChangeLogFileExists =
+  //     existsSync(this.resolvedOutputDir) && existsSync(this.changeLogFile);
+
+  //   // close watcher
+  //   this.watcher.close();
+
+  //   if (folderAndChangeLogFileExists) {
+  //     const runnerLogFiles = readFileSync(this.changeLogFile, 'utf-8')
+  //       .split('\n')
+  //       .filter((line) => line !== '');
+
+  //     const results = [];
+
+  //     Array.from(new Set(runnerLogFiles))
+  //       .filter((line) => line !== '')
+  //       .forEach((file) => {
+  //         let runnerResult;
+  //         try {
+  //           const reportLogPath = `${this.resolvedOutputDir}/${file}`;
+  //           const reportLog = readFileSync(reportLogPath).toString();
+  //           if (reportLog) {
+  //             runnerResult = JSON.parse(reportLog);
+  //           }
+  //         } catch (error) {
+  //           console.log(error);
+  //         } finally {
+  //           runnerResult && results.push(runnerResult);
+  //         }
+  //       });
+
+  //     const combinedTestResults = this.generateTestResults(results);
+  //     const screenshots = deepSearch('screenshots', combinedTestResults);
+  //     console.log('screenshots', screenshots);
+  //     const flattenedArrayOfScreenshots = [].concat.apply([], screenshots);
+  //     console.log('flattenedArrayOfScreenshots', flattenedArrayOfScreenshots);
+
+  //     return this.resize(flattenedArrayOfScreenshots).then(() =>
+  //       new Promise((resolve) => {
+  //         const body = generateMarkup(combinedTestResults);
+  //         const finalHtml = indexHtml(body);
+  //         resolve(finalHtml);
+  //       })
+  //         .then((finalHtml) =>
+  //           writeFilePromiseSync(this.getFileName(), finalHtml)
+  //         )
+  //         .then(() => {
+  //           const cyan = '\x1b[35m';
+  //           console.log(
+  //             `${cyan}--------\n${cyan}TIMELINE REPORTER: Created ${this.getFileName()}\n${cyan}--------`
+  //           );
+  //         })
+  //         .catch((error) => {
+  //           throw error;
+  //         })
+  //     );
+  //   }
+  // }
+
+  async onComplete() {
     const folderAndChangeLogFileExists =
       existsSync(this.resolvedOutputDir) && existsSync(this.changeLogFile);
 
@@ -158,13 +219,13 @@ export class TimelineService {
     if (folderAndChangeLogFileExists) {
       const runnerLogFiles = readFileSync(this.changeLogFile, 'utf-8')
         .split('\n')
-        .filter(line => line !== '');
+        .filter((line) => line !== '');
 
       const results = [];
 
       Array.from(new Set(runnerLogFiles))
-        .filter(line => line !== '')
-        .forEach(file => {
+        .filter((line) => line !== '')
+        .forEach((file) => {
           let runnerResult;
           try {
             const reportLogPath = `${this.resolvedOutputDir}/${file}`;
@@ -181,27 +242,31 @@ export class TimelineService {
 
       const combinedTestResults = this.generateTestResults(results);
       const screenshots = deepSearch('screenshots', combinedTestResults);
+      console.log('screenshots', screenshots);
       const flattenedArrayOfScreenshots = [].concat.apply([], screenshots);
+      console.log('flattenedArrayOfScreenshots', flattenedArrayOfScreenshots);
 
-      return this.resize(flattenedArrayOfScreenshots).then(() =>
-        new Promise(resolve => {
-          const body = generateMarkup(combinedTestResults);
-          const finalHtml = indexHtml(body);
-          resolve(finalHtml);
-        })
-          .then(finalHtml =>
-            writeFilePromiseSync(this.getFileName(), finalHtml)
-          )
-          .then(() => {
-            const cyan = '\x1b[35m';
-            console.log(
-              `${cyan}--------\n${cyan}TIMELINE REPORTER: Created ${this.getFileName()}\n${cyan}--------`
-            );
-          })
-          .catch(error => {
-            throw error;
-          })
-      );
+      try {
+        // Resize screenshots (await ensures that the resizing is done before proceeding)
+        console.log('flattenedArrayOfScreenshots', flattenedArrayOfScreenshots);
+        await this.resize(flattenedArrayOfScreenshots);
+
+        // Generate final HTML markup
+        const body = generateMarkup(combinedTestResults);
+        const finalHtml = indexHtml(body);
+
+        // Write the final HTML file and await its completion
+        await writeFilePromiseSync(this.getFileName(), finalHtml);
+
+        // Log the success message
+        const cyan = '\x1b[35m';
+        console.log(
+          `${cyan}--------\n${cyan}TIMELINE REPORTER: Created ${this.getFileName()}\n${cyan}--------`
+        );
+      } catch (error) {
+        console.error('Error in processing test results:', error);
+        throw error; // Rethrow the error after logging it
+      }
     }
   }
 
@@ -244,20 +309,20 @@ export class TimelineService {
         skipped,
         total,
         unknown,
-        duration: totalDuration
+        duration: totalDuration,
       },
-      specs: results.map(result => ({
+      specs: results.map((result) => ({
         start: result.start,
         end: result.end,
         duration: result.duration,
         filename: result.specs[0],
         browser: this.getBrowserNameAndCombo(result.capabilities),
-        suites: result.suites.map(suite => ({
+        suites: result.suites.map((suite) => ({
           title: suite.title,
           duration: suite.duration,
           start: suite.start,
           end: suite.end,
-          tests: suite.tests.map(test => ({
+          tests: suite.tests.map((test) => ({
             browser: this.getBrowserNameAndCombo(result.capabilities),
             title: test.title,
             start: test.start,
@@ -267,10 +332,10 @@ export class TimelineService {
             screenshots: test.screenshots || [],
             error: test.error,
             context: test.context,
-            embedImages: this.reporterOptions.embedImages
-          }))
-        }))
-      }))
+            embedImages: this.reporterOptions.embedImages,
+          })),
+        })),
+      })),
     };
   }
 }

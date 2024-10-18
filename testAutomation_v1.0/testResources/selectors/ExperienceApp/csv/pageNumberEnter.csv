@@ -1,0 +1,6 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+pageNoOneBtn,a[qid='toc-7'],a,pageNumberDialogBox,,,,1
+pageNoTwoBtn,"qid""a[qid='toc-8']",a,pageNumberDialogBox,,,,2
+pageNoClearBtn,a[qid='toc-16'],a,pageNumberDialogBox,,,,Clear
+pageNoGoToPageBtn,a[qid='toc-18'],a,pageNumberDialogBox,,,,Go to page
+pageNOShow,span[class='ng-tns-c606183087-2 ng-star-inserted'],span,pageNumberDialogBox,,,,12_13

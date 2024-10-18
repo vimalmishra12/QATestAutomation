@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+promotedArticles,main[role='main'] div section section section h2,h2,footerHelpPage,,,,Promoted articles
+footerHelpBack,a[href='https://www.cambridgeone.org/login'],a,footerHelpPage,,,login.page,« Go back to Cambridge One
