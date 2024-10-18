@@ -3,6 +3,70 @@
   "appdetails": "",
   "selectorFile": "./testResources/selectors/ExperienceApp/C1Selectors.json",
   "modules": [
+
+    {
+      "modulename": "Footer",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/footer.test.js",
+      "testcase": [
+        {
+          "id": "TST_FOOT_TC_1",
+          "description": "Validate Terms of Use page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_2",
+          "description": "Validate Privacy Notice page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_3",
+          "description": "Validate Accessibility page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_4",
+          "description": "Validate Our Approaches page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_5",
+          "description": "Validate Site Feedback page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_6",
+          "description": "Validate FAQs page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_7",
+          "description": "Validate Cambridge One School page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_8",
+          "description": "Validate Help page is launched correctly",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_FOOT_TC_9",
+          "description": "Validate footer data is displayed correctly",
+          "tags": "P1",
+          "visualTest": true
+        }
+      ]
+    },
+
+
     {
       "modulename": "Landing",
       "moduleId": "",
@@ -72,8 +136,7 @@
         {
           "id": "TST_LOGI_TC_5",
           "description": "Click Login button",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
         },
         {
           "id": "TST_LOGI_TC_6",
@@ -457,8 +520,8 @@
         {
           "id": "TST_APPS_TC_1",
           "description": "Click on prod drop down",
-          "tags": "P1",
-          "visualTest": true
+          "tags": "P1"
+          
         },
         {
           "id": "TST_APPS_TC_2",

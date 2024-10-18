@@ -1,5 +1,29 @@
 {
   "C1": {
+
+
+    
+
+    "footer":   {
+      "footerTermsOfUse" : "Terms of use",
+      "footerPrivacyNotice" : "Privacy notice",
+      "footerAccesibility" : "Accessibility",
+      "footerOurApproaches" : "Our approach",
+      "footerSiteFeedback" : "Site feedback",
+      "footerFAQs" : "FAQs",
+      "footerCambridgeOneSchool" : "Cambridge One for schools",
+      "footerHelp" : "Help",
+      "footerCambridgeUniversity" : "© Cambridge University Press &"
+      },
+
+      "footerCambridgeOneForSchool": {
+      "footerCambridgeOneForSchools" : "Do I need a school account?",
+      "footerBack" : "Back"
+
+    },
+
+
+
     "appContent": {
       "language": "EN - English (UK)",
       "landing": {
