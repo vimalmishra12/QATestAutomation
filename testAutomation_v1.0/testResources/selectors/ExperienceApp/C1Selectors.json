@@ -166,7 +166,8 @@
         "pageNoTwoBtn": "a[qid=\"toc-8\"]",
         "pageNoClearBtn": "a[qid=\"toc-16\"]",
         "pageNoGoToPageBtn": "a[qid=\"toc-18\"]",
-        "pageNOShow": "span[class=\"ng-tns-c606183087-2 ng-star-inserted\"]"
+        "pageNOShow": "button[qid=\"toc-6\"]"
+
       },
 
       "eBookContents": {
