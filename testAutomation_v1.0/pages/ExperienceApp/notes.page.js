@@ -74,7 +74,8 @@ module.exports = {
         await stackTrace.get(),
         " eBookAddNotesBtn is clicked"
       );
-      res = await action.waitForDisplayed(this.eBookNotesViewMoreBtn);
+      res = await action.waitForDisplayed(this.eBookDeleteNotesBtn);
+      console.log("Hello res", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
