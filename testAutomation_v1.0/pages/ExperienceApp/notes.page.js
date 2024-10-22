@@ -75,7 +75,7 @@ module.exports = {
         " eBookAddNotesBtn is clicked"
       );
       res = await action.waitForDisplayed(this.eBookDeleteNotesBtn);
-      console.log("Hello res", res);
+      
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -124,6 +124,7 @@ module.exports = {
         "error"
       );
     }
+    console.log ("viaml page", res);
     return res;
   },
 
