@@ -23,6 +23,20 @@ module.exports = {
     return res;
   },
 
+  acceptCookies: async function() {
+    await action.waitForDisplayed('a[qid="cookies-2"]') ; 
+    const cookieButtonSelector = 'a[qid="cookies-2"]'; // Replace with the actual selector
+    const isCookieBannerVisible = await $(cookieButtonSelector).isDisplayed();
+    console.log("iscookie" , isCookieBannerVisible )
+
+    if (isCookieBannerVisible) {
+      console.log("clicking")
+
+        const res = await $(cookieButtonSelector).click();
+        console.log("clickedd" , res)
+    }
+},
+
   login_Data: async function () {
     await logger.logInto(await stackTrace.get());
     var obj;
