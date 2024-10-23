@@ -148,6 +148,7 @@ module.exports = {
   click_contentButton: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    await action.waitForDisplayed(this.contentButton);
     res = await action.click(this.contentButton);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " contentButton is clicked");
@@ -251,7 +252,7 @@ module.exports = {
         await stackTrace.get(),
         " cqaTestEbookOnlyAssets is clicked"
       );
-
+      await browser.pause (4000);
       console.log("this is res", res);
     } else {
       await logger.logInto(
@@ -286,6 +287,8 @@ module.exports = {
   click_pageNumber: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    await browser.pause(500);
+    await action.waitForDisplayed(this.pageNumber);
     res = await action.click(this.pageNumber);
     //console.log("res val is :-- :- "+res)
 
@@ -307,6 +310,8 @@ module.exports = {
 
   click_pageNoOneBtn: async function () {
     await logger.logInto(await stackTrace.get());
+    action.waitForDocumentLoad();
+    browser.pause(500);
     var res;
     res =await action.click(this.pageNoOneBtn);
     if (true == res) {

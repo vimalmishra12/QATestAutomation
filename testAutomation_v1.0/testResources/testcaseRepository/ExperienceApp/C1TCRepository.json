@@ -226,7 +226,7 @@
           "id": "TST_DASH_TC_5",
           "description": "Validate that the eBook button is clickable and navigates correctly",
           "tags": "P3",
-          "visualTest": true
+          "visualTest": false
         },
         {
           "id": "TST_DASH_TC_6",
@@ -263,7 +263,7 @@
           "id": "TST_EBOO_TC_1",
           "description": "Validate eBook page is initialized correctly",
           "tags": "P3",
-          "visualTest": true
+          "visualTest": false
         },
         {
           "id": "TST_EBOO_TC_2",
@@ -287,7 +287,7 @@
           "id": "TST_EBOO_TC_5",
           "description": "Validate that clicking the Home button navigates to dashboard page ",
           "tags": "P3",
-          "visualTest": true
+          "visualTest": false
         },
         {
           "id": "TST_EBOO_TC_6",
@@ -305,7 +305,7 @@
           "id": "TST_EBOO_TC_8",
           "description": "Validate that the Notes pane opens correctly",
           "tags": "P3",
-          "visualTest": true
+          "visualTest": false
         },
         {
           "id": "TST_EBOO_TC_9",
@@ -457,31 +457,31 @@
           "id": "TST_NOTE_TC_1",
           "description": "Validate the 'Add Notes' button is working as expected",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_2",
           "description": "Validate the 'Add Notes' text area is clicked on the eBook page",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_3",
           "description": "Validate values are set in the 'Add Notes' text area on the eBook page",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_4",
           "description": " Validate the Added notes is saved after clicking Save note button",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_5",
           "description": "Validate the 'Delete Notes' button is clicked on the eBook page",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_6",
@@ -493,19 +493,19 @@
           "id": "TST_NOTE_TC_7",
           "description": "Validate the clicking 'Delete Notes' button opens the confirmation modal",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_8",
           "description": "Validate that clicking 'yes' button in conformation dialog box, notes are deleted",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         },
         {
           "id": "TST_NOTE_TC_9",
           "description": "Validate the user Added Notes content matches the expected data",
           "tags": "P3",
-          "visualTest": false
+          "visualTest": true
         }
       ]
     },
