@@ -144,6 +144,7 @@
         "cqaTestEbookOnlyAssets": "a[qid=\"ebook-list-item-3\"]",
         "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
         "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "timer": "button[qid=\"94\"]",
         "pageNumber": "button[qid=\"toc-6\"]"
       },
       "eBookLearningPageHyperlink": {
@@ -167,6 +168,25 @@
         "pageNoClearBtn": "a[qid=\"toc-16\"]",
         "pageNoGoToPageBtn": "a[qid=\"toc-18\"]",
         "pageNOShow": "button[qid=\"toc-6\"]"
+
+      },
+
+      "timer": {
+      "timerCountUp" : "button[qid=\"toc-64\"]",
+      "timerCountDownClear" : "button[title=\"Clear\"]",
+      "timerCountDownMute" : "button[title=\"Mute\"]",
+      "timerCountDownClose" : "button[qid=\"toc-63\"]",
+      "timerCountDownPlay" : "button[qid=\"toc-78\"]",
+      "timerBtnOne" : "a[qid=\"toc-67\"]",
+      "timerBtnTwo" : "a[qid=\"toc-68\"]",
+      "timerBtnthree" : "a[qid=\"toc-69\"]",
+      "timerCountDown" : "button[qid=\"toc-65\"]",
+      "timerCountUpClose" : "button[qid=\"toc-63\"]",
+      "timerCountUpPause" : "button[qid=\"toc-83\"]",
+      "timerCountUpPlay" : ".fa.fa-play.play-button",
+      "timerReset" : "button[title=\"Reset\"]",
+      "timerCountDownUnmute" : "button[title=\"Unmute\"]",
+      "timerCountDownPause" : ".fa.fa-pause.pause-button"
 
       },
 

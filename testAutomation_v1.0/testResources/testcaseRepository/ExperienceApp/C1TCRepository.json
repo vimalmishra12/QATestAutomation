@@ -254,6 +254,113 @@
         }
       ]
     },
+
+
+    {
+      "modulename": "timer",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/timer.test.js",
+      "testcase": [
+        {
+          "id": "TST_TIME_TC_1",
+          "description": "Click the timer count up button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_2",
+          "description": "Click the timer count down clear button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_3",
+          "description": "Click the timer count down mute button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_4",
+          "description": "Click the timer count down close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_5",
+          "description": "Click the timer count down play button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_6",
+          "description": "Click the timer button one",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_7",
+          "description": "Click the timer button two",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_8",
+          "description": "Click the timer button three",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_9",
+          "description": "Click the timer count down button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_10",
+          "description": "Click the timer count up close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_11",
+          "description": "Click the timer count up play button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_12",
+          "description": "Get and validate timer count down data",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_13",
+          "description": "Get and validate timer count up data",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_14",
+          "description": "Click the timer count down pause button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_15",
+          "description": "Get and validate timer count down unmute data",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_16",
+          "description": "Get and validate timer count up data",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },    
+   
+
     {
       "modulename": "eBook",
       "moduleId": "",
@@ -353,6 +460,12 @@
           "id": "TST_EBOO_TC_16",
           "description": "Validate that eBook Tools data matches the expected values",
           "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_17",
+          "description": "Validate that the Timer panel opens correctly",
+          "tags": "P3",
           "visualTest": true
         },
         {

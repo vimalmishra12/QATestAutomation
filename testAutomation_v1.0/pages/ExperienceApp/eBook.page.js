@@ -16,6 +16,7 @@ module.exports = {
   cqaTestEbookOnlyAssets:
     selectorFile.css.ComproC1.eBook.cqaTestEbookOnlyAssets,
   notes: selectorFile.css.ComproC1.eBook.notes,
+  timer: selectorFile.css.ComproC1.eBook.timer,
   pageNumber: selectorFile.css.ComproC1.eBook.pageNumber,
 
   pageNoOneBtn: selectorFile.css.ComproC1.pageNoDialogBox.pageNoOneBtn,
@@ -277,6 +278,25 @@ module.exports = {
       await logger.logInto(
         await stackTrace.get(),
         res + "notes is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+  click_timer: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.timer);
+    
+   // console.log("this is notes res", res);
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " timer is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "timer is NOT clicked",
         "error"
       );
     }

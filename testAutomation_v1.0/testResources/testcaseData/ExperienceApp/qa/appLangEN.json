@@ -21,8 +21,23 @@
       "footerBack" : "Back"
 
     },
-
-
+    "timer":{
+      "timerCountUp" : "Count up",
+      "timerCountDownClear" : "Clear",
+      "timerCountDownMute" : "Mute",
+      "timerCountDownClose" : "Close",
+      "timerCountDownPlay" : "Play",
+      "timerBtnOne" : "BtnOne",
+      "timerBtnTwo" : "btnTwo",
+      "timerBtnthree" : "btnThree",
+      "timerCountDown" : "Count Down",
+      "timerCountUpClose" : "Close",
+      "timerCountUpPause" : "Pause",
+      "timerCountUpPlay" : "Play",
+      "timerReset" : "Reset",
+      "timerCountDownUnmute" : "Unmute",
+      "timerCountDownPause" : "Pause"
+    },
 
     "appContent": {
       "language": "EN - English (UK)",
