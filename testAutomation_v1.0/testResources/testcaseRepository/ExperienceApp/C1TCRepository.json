@@ -329,13 +329,13 @@
         },
         {
           "id": "TST_TIME_TC_12",
-          "description": "Get and validate timer count down data",
+          "description": "click the timer reset button",
           "tags": "P2",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_13",
-          "description": "Get and validate timer count up data",
+          "description": "click timer CountDown Unmute button",
           "tags": "P2",
           "visualTest": true
         },
@@ -347,7 +347,7 @@
         },
         {
           "id": "TST_TIME_TC_15",
-          "description": "Get and validate timer count down unmute data",
+          "description": "Get and validate timer count down data",
           "tags": "P2",
           "visualTest": true
         },
