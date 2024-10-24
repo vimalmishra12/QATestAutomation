@@ -155,6 +155,7 @@
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
         "hyperAnswerClose": "button[class=\"close-button\"]",
         "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
+        "hyperAnswerExitFullScreen":"img[title=\"Exit fullscreen\"]",
         "hyperAnswerQuestion": "div[id=\"rubric-0\"] p"
       },
       "hyperlinkAudio": {

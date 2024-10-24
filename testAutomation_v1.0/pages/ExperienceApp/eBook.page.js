@@ -31,6 +31,8 @@ module.exports = {
   hyperAnswerReveal: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerReveal,
   hyperAnswerClose: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerClose,
   hyperAnswerFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerFullScreen,
+  hyperAnswerExitFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerExitFullScreen,
+
   hyperAnswerQuestion: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
 
   hyperAudioPlay_pause: selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioPlay_pause,
@@ -396,9 +398,7 @@ module.exports = {
 
    
         
-        //  await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
-        //  await $(this.hyperAnswerFullScreen).click();
-        //  await browser.pause(3000)
+        
 
 
         //  const cookieButtonSelector = 'cookies-2'; // Replace with the actual selector
@@ -428,13 +428,20 @@ module.exports = {
         //   element.click();
         //  }, $("img[title=\"Exit fullscreen\"]"));
 
-        // await $("img[title=\"Exit fullscreen\"]").waitForDisplayed(); 
-        // await $("img[title=\"Exit fullscreen\"]").click();
-        // await browser.pause(3000)
+       
+        await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
+        await $(this.hyperAnswerFullScreen).click();
+        await browser.pause(3000)
 
         await $(this.hyperAnswerReveal).waitForDisplayed(); 
         await $(this.hyperAnswerReveal).click();
         await browser.pause(3000)
+
+        await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
+        await $(this.hyperAnswerExitFullScreen).click();
+        await browser.pause(3000)
+
+        
 
         await $(this.hyperAnswerClose).waitForDisplayed(); 
         await $(this.hyperAnswerClose).click();
@@ -497,12 +504,25 @@ module.exports = {
           console.log("val of res is hyperLinkAnswer 2: ",res );
           if (true == res) {
             await logger.logInto(await stackTrace.get(), " hyperLinkAnswer 2 is clicked");
-  
-          
+
+
+
+          await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
+          await $(this.hyperAnswerFullScreen).click();
+          await browser.pause(3000)
+
           await $(this.hyperAnswerReveal).waitForDisplayed(); 
           await $(this.hyperAnswerReveal).click();
           await browser.pause(3000)
   
+
+          await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
+          await $(this.hyperAnswerExitFullScreen).click();
+          await browser.pause(3000)
+
+
+          
+          
           await $(this.hyperAnswerClose).waitForDisplayed(); 
           await $(this.hyperAnswerClose).click();
           await browser.pause(3000)
