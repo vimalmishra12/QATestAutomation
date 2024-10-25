@@ -17,6 +17,7 @@ module.exports = {
     selectorFile.css.ComproC1.eBook.cqaTestEbookOnlyAssets,
   notes: selectorFile.css.ComproC1.eBook.notes,
   timer: selectorFile.css.ComproC1.eBook.timer,
+  drawingTool: selectorFile.css.ComproC1.eBook.drawingTool,
   pageNumber: selectorFile.css.ComproC1.eBook.pageNumber,
 
   pageNoOneBtn: selectorFile.css.ComproC1.pageNoDialogBox.pageNoOneBtn,
@@ -300,6 +301,26 @@ module.exports = {
       await logger.logInto(
         await stackTrace.get(),
         res + "timer is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
+  click_drawingTool: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.drawingTool);
+    
+   
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " drawing  tool is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "drawing tool is NOT clicked",
         "error"
       );
     }

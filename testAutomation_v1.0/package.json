@@ -16,7 +16,8 @@
     "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='ebookLearningHyperlinkVC_V.1.0.json' --windowWidth=1600 --windowHeight=900",
     "eBookFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --windowWidth=1600 --windowHeight=900",
     "notesFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='notesTest.json' --windowWidth=1600 --windowHeight=900",
-    "timerFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='timerTest_VC.json' --windowWidth=1600 --windowHeight=900"
+    "timerFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='timerTest_VC.json' --windowWidth=1600 --windowHeight=900",
+    "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900"
   },
   "keywords": [],
   "author": "",

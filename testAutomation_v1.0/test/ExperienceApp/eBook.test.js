@@ -156,6 +156,11 @@ module.exports = {
     sts = await eBook.click_timer();
     await assertion.assertEqual(sts, true, "notes are not Clicked");
   },
+  
+  TST_EBOO_TC_18: async function (testdata) {
+    sts = await eBook.click_drawingTool();
+    await assertion.assertEqual(sts, true, "drawing tool  are not Clicked");
+  },
 
 
 

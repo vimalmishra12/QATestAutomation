@@ -469,6 +469,12 @@
           "visualTest": true
         },
         {
+          "id": "TST_EBOO_TC_18",
+          "description": "Validate that the drawing tool opens correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
           "id": "TST_PAGE_TC_1",
           "description": "Validate that pageNoOneBtn  is  Clicked ",
           "tags": "P2",
@@ -622,6 +628,66 @@
         }
       ]
     },
+
+    {
+      "modulename": "drawingTool",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/drawingTool.test.js",
+      "testcase": [
+        
+          {
+              "id": "TST_DRAW_TC_1",
+              "description": "Validate that Scribble tool is clickable and active",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_2",
+              "description": "Validate that Pen Colour tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_3",
+              "description": "Validate that Pen Width tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_4",
+              "description": "Validate that Eraser tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_5",
+              "description": "Validate that Undo function works correctly",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_6",
+              "description": "Validate that Redo function works correctly",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_7",
+              "description": "Validate that Presentation mode is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_8",
+              "description": "Validate that all drawing tool data matches expected values",
+              "tags": "P2",
+              "visualTest": true
+          }
+      ]
+      
+      
+    },
+
     {
       "modulename": "appShell",
       "moduleId": "",

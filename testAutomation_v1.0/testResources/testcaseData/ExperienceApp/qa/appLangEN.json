@@ -53,6 +53,18 @@
         "hyperLinkAnswer2" : "Answers",
         "hyperlinkAudio" : "Audio"
       },
+
+      "drawingTool":  {
+          "drawingToolScribble" : "Scribble",
+          "drawingToolPenColour" : "Pen colour",
+          "drawingToolPenWidth" : "Pen width",
+          "drawingToolHighlighter" : "Highlighter",
+          "drawingToolEraser" : "Eraser",
+          "drawingToolUndo" : "Undo",
+          "drawingToolRedo" : "Redo",
+          "drawingToolPresentation" : "presentation"
+      },
+
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal" : "Reveal",
         "hyperAnswerClose" : "Close",
