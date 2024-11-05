@@ -6,13 +6,10 @@ var res;
 
 module.exports = {
     headingText: selectorFile.css.ComproC1.landing.headingText,
-    headingText_Nemo: selectorFile.css.ComproC1.landing.headingText_Nemo,
     subheadingText: selectorFile.css.ComproC1.landing.subheadingText,
-    subheadingText_Nemo: selectorFile.css.ComproC1.landing.subheadingText_Nemo,
     signupBtn: selectorFile.css.ComproC1.landing.signupBtn,
     loginBtn: selectorFile.css.ComproC1.landing.loginBtn,
     brandLogo_img: selectorFile.css.ComproC1.landing.brandLogo_img,
-    brandLogo_img_Nemo: selectorFile.css.ComproC1.landing.brandLogo_img_Nemo,
     languageSelector_dropdown: selectorFile.css.ComproC1.landing.languageSelector_dropdown,
     languageSelector_dropdown_list: selectorFile.css.ComproC1.landing.languageSelector_dropdown_list,
 
@@ -22,7 +19,7 @@ module.exports = {
         await logger.logInto(await stackTrace.get());
         await action.waitForDocumentLoad();
         res = {
-            pageStatus: await action.waitForDisplayed(this.brandLogo_img_Nemo),
+            pageStatus: await action.waitForDisplayed(this.brandLogo_img),
         };
         return res;
     },
@@ -34,9 +31,7 @@ module.exports = {
      
         obj = {
             headingText: ((await action.getElementCount(this.headingText)) > 0) ? await action.getText(this.headingText) : null,
-            headingText_Nemo: ((await action.getElementCount(this.headingText_Nemo)) > 0) ? await action.getText(this.headingText_Nemo) : null,
             subheadingText: ((await action.getElementCount(this.subheadingText)) > 0) ? await action.getText(this.subheadingText) : null,
-            subheadingText_Nemo: ((await action.getElementCount(this.subheadingText_Nemo)) > 0) ? await action.getText(this.subheadingText_Nemo) : null,
             signupBtn: ((await action.getElementCount(this.signupBtn)) > 0) ? await action.getText(this.signupBtn) : null,
             loginBtn: ((await action.getElementCount(this.loginBtn)) > 0) ? await action.getText(this.loginBtn) : null,
             brandLogo_img: ((await action.getElementCount(this.brandLogo_img)) > 0) ? await action.waitForDisplayed(this.brandLogo_img) : false,

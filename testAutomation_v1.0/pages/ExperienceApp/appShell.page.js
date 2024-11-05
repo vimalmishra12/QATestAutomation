@@ -5,7 +5,6 @@ var appShellPage = require('./appShell.page.js')
 
 module.exports = {
 userDrop_down: selectorFile.css.ComproC1.appShell.userDrop_down,
-userDrop_down_Nemo: selectorFile.css.ComproC1.appShell.userDrop_down_Nemo,
 logout_btn: selectorFile.css.ComproC1.appShell.logout_btn,
 
 
@@ -35,7 +34,7 @@ logout_btn:((await action.getElementCount(this.logout_btn)) > 0) ? await action.
 click_userDrop_down: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
-res =await action.click(this.userDrop_down_Nemo);
+res =await action.click(this.userDrop_down);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " userDrop_down is clicked");
 }

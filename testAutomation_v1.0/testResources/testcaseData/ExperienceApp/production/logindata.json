@@ -90,6 +90,14 @@
           "class": [],
           "info": {}
         },
+        "automationTeacher": {
+          "email": "automationteacher@mailsac.com",
+          "password": "Compro11",
+          "role": "teacher",
+          "name": "automationTeacher ln",
+          "class": [],
+          "info": {}
+        },
         "validStudent5": {
           "email": "difusionqa.stud44@yopmail.com",
           "password": "Compro@1234",

@@ -1,20 +1,24 @@
-"use strict";
-var action = require("../../core/actionLibrary/baseActionLibrary.js");
+'use strict';
+var action = require('../../core/actionLibrary/baseActionLibrary.js');
 var selectorFile = jsonParserUtil.jsonParser(selectorDir);
-var appShellPage = require("./appShell.page.js");
+var appShellPage = require('./appShell.page.js');
 
 module.exports = {
   help_btn: selectorFile.css.ComproC1.dashboard.help_btn,
   progress_btn: selectorFile.css.ComproC1.dashboard.progress_btn,
   progress_btn_Nemo: selectorFile.css.ComproC1.dashboard.progress_btn_Nemo,
   praticeExtra_btn: selectorFile.css.ComproC1.dashboard.praticeExtra_btn,
-  praticeExtra_btn_Nemo: selectorFile.css.ComproC1.dashboard.praticeExtra_btn_Nemo,
+  praticeExtra_btn_Nemo:
+    selectorFile.css.ComproC1.dashboard.praticeExtra_btn_Nemo,
   ebook_btn: selectorFile.css.ComproC1.dashboard.ebook_btn,
   ebook_btn_Nemo: selectorFile.css.ComproC1.dashboard.ebook_btn_Nemo,
   homework_btn: selectorFile.css.ComproC1.dashboard.homework_btn,
   assignment_btn_Nemo: selectorFile.css.ComproC1.dashboard.assignment_btn_Nemo,
   myProgress_btn: selectorFile.css.ComproC1.dashboard.myProgress_btn,
   myProgress_btn_Nemo: selectorFile.css.ComproC1.dashboard.myProgress_btn_Nemo,
+  createNewClass: selectorFile.css.ComproC1.dashboard.createNewClass,
+  activeClassCard: selectorFile.css.ComproC1.dashboard.activeClassCard,
+  dismiss_btn: selectorFile.css.ComproC1.dashboard.dismiss_btn,
 
   isInitialized: async function () {
     var res;
@@ -77,12 +81,12 @@ module.exports = {
     var res;
     res = await action.click(this.help_btn);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), " help_btn is clicked");
+      await logger.logInto(await stackTrace.get(), ' help_btn is clicked');
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "help_btn is NOT clicked",
-        "error"
+        res + 'help_btn is NOT clicked',
+        'error'
       );
     }
     return res;
@@ -93,13 +97,13 @@ module.exports = {
     var res;
     res = await action.click(this.progress_btn_Nemo);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), " progress_btn is clicked");
-      res = await require("./progress.page.js").isInitialized();
+      await logger.logInto(await stackTrace.get(), ' progress_btn is clicked');
+      res = await require('./progress.page.js').isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "progress_btn is NOT clicked",
-        "error"
+        res + 'progress_btn is NOT clicked',
+        'error'
       );
     }
     return res;
@@ -115,18 +119,18 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        " praticeExtra_btn is clicked"
+        ' praticeExtra_btn is clicked'
       );
-      res = await require("./practiceExtra.page.js").isInitialized();
-      console.log("haha", res);
+      res = await require('./practiceExtra.page.js').isInitialized();
+      console.log('haha', res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "praticeExtra_btn is NOT clicked",
-        "error"
+        res + 'praticeExtra_btn is NOT clicked',
+        'error'
       );
     }
-    console.log("Button", res);
+    console.log('Button', res);
     return res;
   },
 
@@ -136,21 +140,20 @@ module.exports = {
     browser.pause(10000);
     res = await action.click(this.ebook_btn_Nemo);
     await browser.pause(10000);
-    console.log("Button", res);
+    console.log('Button', res);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), " ebook_btn is clicked");
-      res = await require("./eBook.page.js").isInitialized();
+      await logger.logInto(await stackTrace.get(), ' ebook_btn is clicked');
+      res = await require('./eBook.page.js').isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "ebook_btn is NOT clicked",
-        "error"
+        res + 'ebook_btn is NOT clicked',
+        'error'
       );
     }
-    console.log("Before Return", res);
+    console.log('Before Return', res);
     return res;
   },
-
 
   // This HW button function need to be removed once assigment_btn_Nemo is moved to prod.
   click_homework_btn: async function () {
@@ -158,13 +161,13 @@ module.exports = {
     var res;
     res = await action.click(this.assignment_btn_Nemo);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), " homework_btn is clicked");
-      res = await require("./myHomework.page.js").isInitialized();
+      await logger.logInto(await stackTrace.get(), ' homework_btn is clicked');
+      res = await require('./myHomework.page.js').isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "homework_btn is NOT clicked",
-        "error"
+        res + 'homework_btn is NOT clicked',
+        'error'
       );
     }
     return res;
@@ -174,18 +177,23 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     browser.pause(10000);
-    res = await action.click(this.assignment_btn_Nemo);
-    console.log("Button", res);
-    console.log("Assignment value",this.assignment_btn_Nemo);
+    const assignment_button = await action.findElements(
+      this.assignment_btn_Nemo
+    );
+    const first_btn = assignment_button[0];
+    console.log('X', assignment_button);
+    res = await action.click(first_btn);
+    console.log('Button', res);
+    console.log('Assignment value', this.assignment_btn_Nemo);
     await browser.pause(10000);
     if (true == res) {
-      await logger.logInto(await stackTrace.get(), " homework_btn is clicked");
-      res = await require("./myHomework.page.js").isInitialized();
+      await logger.logInto(await stackTrace.get(), ' homework_btn is clicked');
+      res = await require('./myHomework.page.js').isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "homework_btn is NOT clicked",
-        "error"
+        res + 'homework_btn is NOT clicked',
+        'error'
       );
     }
     return res;
@@ -198,16 +206,76 @@ module.exports = {
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        " myProgress_btn is clicked"
+        ' myProgress_btn is clicked'
       );
-      res = await require("./myProgress.page.js").isInitialized();
+      res = await require('./myProgress.page.js').isInitialized();
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "myProgress_btn is NOT clicked",
-        "error"
+        res + 'myProgress_btn is NOT clicked',
+        'error'
       );
     }
+    return res;
+  },
+
+  click_createNewClass: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.createNewClass);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' createNewClass is clicked'
+      );
+      browser.pause(10000);
+      res = await require('./createNewClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'createNewClass is NOT clicked',
+        'error'
+      );
+    }
+    return res;
+  },
+
+  click_activeClassCard: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.activeClassCard);
+    console.log('RES VAL', res);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' activeClassCard is clicked'
+      );
+      res = await require('./activeClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'activeClassCard is NOT clicked',
+        'error'
+      );
+    }
+    console.log('RES VAL BEFORE RETURN', res);
+    return res;
+  },
+
+  click_dismiss_btn: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.dismiss_btn);
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), ' dismiss_btn is clicked');
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'dismiss_btn is NOT clicked',
+        'error'
+      );
+    }
+    console.log('RES VAL BEFORE RETURN', res);
     return res;
   },
 };

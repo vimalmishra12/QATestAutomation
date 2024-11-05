@@ -50,95 +50,9 @@
       },
       "dashboard": {
         "teacher": {
-          "pageTitle": "Dashboard",
-          "createPlaylistBtn": "Create Playlist",
-          "addBookBtn": "Add Book",
-          "cardSliderTitle": "Getting started",
-          "cardSliderSubtitle": "Use your dashboard to pin your textbooks and create classes for your students to join.",
-          "cardSliderLeftBtn": "",
-          "cardSliderRightBtn": "",
-          "actionCardTitles": [
-            "Adding Books",
-            "Using Classes",
-            "Using Playlists"
-          ],
-          "actionCardSubtitles": [
-            "Save your class books to your dashboard to quickly access your book materials.",
-            "Create a class to see student progress, view submitted work and create assignments.",
-            "Any playlists you create will be added here for you to view, share, and use in your classes."
-          ],
-          "actionCardBtns": ["Add Book", "Create Class", "Create Playlist"],
-          "myBooksHeading": "My Books",
-          "noBooksTitle": "No Books added yet",
-          "noBooksSubtitle": "Any books you save while browsing the catalog will be added here for you to view later.",
-          "noBooks_addBookBtn": "Add Book",
-          "myPlaylistsHeading": "My Playlists",
-          "noPlaylistsTitle": "No Playlist created yet",
-          "noPlaylistsSubTitle": "Any playlists you create will be added here for you to view, share, and use in your classes.",
-          "noPlaylists_createBtn": "Create Playlist",
-          "viewBookBtn": "View",
-          "bookMenu_viewClassOption": "View Classes",
-          "bookMenu_createClassOption": "Create New Class",
-          "bookMenu_removeOption": "Remove from My Books",
-          "bookMenu_openFlipbookOption": "Open Flipbook",
-          "removeBook_title": "Remove from My Books?",
-          "removeBook_subTitle1": "This will remove the book - ",
-          "removeBook_subTitle2": " - from your My Books list.",
-          "removeBook_cancelBtn": "Cancel",
-          "removeBook_removeBtn": "Remove",
-          "createPlaylist_label": "Playlist Name",
-          "createPlaylist_cancelBtn": "Cancel",
-          "createPlaylist_createBtn": "Create",
-          "exploreHeading": "Explore",
-          "viewAllBtn": "View All",
-          "resourceTitle": [
-            "Interactive Activities",
-            "Videos",
-            "Online Class",
-            "Teacher Training",
-            "Today in Class",
-            "Projectables"
-          ],
-          "resourceSubtitle": [
-            "Find here hundreds of interactive exercises to improve your vocabulary.",
-            "New & trending video resources to pair with your lessons.",
-            "Discover live training from other teachers.",
-            "Resources to help you improve your classroom lessons.",
-            "See recent news to pair with lessons and activities.",
-            "Top activities to project in your classroom."
-          ],
-          "recentlyViewedHeading": "Recently Viewed",
-          "recentMaterialsBtn": "Recent Materials",
-          "addNewMaterialBtn": "Add New Material",
-          "noMaterialTitle": [
-            "No Materials created yet",
-            "No recent materials"
-          ],
-          "noMaterialSubtitle": [
-            "Any materials you create or modify will be shown here for you to view and assign to your class",
-            "Any materials you create or modify in the last 30 days will be shown here for you to view and assign to your class."
-          ],
-          "viewAllMaterialBtn": "View All Materials",
-          "createNewLabel": "Create New",
-          "blankQuizOption": "Blank Quiz",
-          "blankSurveyOption": "Blank Survey",
-          "newResourceOption": "New Resource",
-          "previewMaterialOption": "Preview",
-          "editMaterialOption": "Edit",
-          "duplicateMaterialOption": "Duplicate",
-          "deleteMaterialOption": "Delete",
-          "deleteMaterialDialogTitle": "Delete Material?",
-          "deleteMaterialDialogSubtitle": "This will remove the material \"Acceptance Quiz\" from your library",
-          "deleteMaterialDialogWarning": "This process is unrecoverable and your data will be lost forever.",
-          "deleteMaterialDialogCancelBtn": "Cancel",
-          "deleteMaterialDialogDeleteBtn": "Delete",
-          "editMaterialDialogTitle": "Edit Quiz",
-          "editMaterialDialogSubtitle": "Editing this quiz will create a new version and will not impact the classes where it is already added.",
-          "editMaterialDialogEditBtn": "Continue to Edit",
-          "editMaterialDialogCancelBtn": "Cancel",
-          "addToClassDialogTitle": "New Access",
-          "addToClassDialogSubtitle": "Add this material to your class to make it assignable in that class.",
-          "addToClassMenuCloseBtn": ""
+          "createNewClass": "Create new class",
+          "activeClassCard": "Active Class",
+          "dismiss_btn": "Dismiss"
         },
         "student": {
           "help_btn": "Help",
@@ -148,6 +62,34 @@
           "homework_btn": "My homework",
           "assignment_btn_Nemo": "My assignments",
           "myProgress_btn": "My progress"
+        }
+      },
+      "enterClassDetails": {
+        "teacher": {
+          "enterClassDetails": "Enter class details",
+          "back_btn": "Back",
+          "enterClassName": "e.g. CS 2 English",
+          "enterYourSchool": "Enter your school",
+          "cancel_btn": "Cancel",
+          "next_btn": "Next",
+          "addClassMaterials": "Add class materials",
+          "cancel_btn_classMaterial": "Cancel",
+          "addLater_Btn": "Add later",
+          "classSuccessfullyCreated": "Class successfully created",
+          "dashboard_btn": "Go to dashboard",
+          "cancelThisClass": "Cancel this class?",
+          "yesCancel_btn": "Yes, cancel",
+          "noKeep_btn": "No, keep",
+          "addMaterial_btn": "Add material",
+          "addToClass_Btn": "Add to class",
+          "finish_btn": "Finish"
+        }
+      },
+      "activeClass": {
+        "teacher": {
+          "actionButton": "Actions",
+          "deleteClass": "Delete class",
+          "yesDelete_Btn": "Yes, delete"
         }
       },
       "createClassPage": {

@@ -2,14 +2,11 @@
   "css": {
     "ComproC1": {
       "landing": {
-        "headingText": ".heading1.mb-3",
-        "headingText_Nemo": "h1.heading1, h1.heading1 > span.heading2",
-        "subheadingText": "div[class=\"main-content\"] h2",
-        "subheadingText_Nemo": "h2[data-v-b8a92fbd]",
+        "headingText": ".heading1.mb-3, h1.heading1, h1.heading1 > span.heading2",
+        "subheadingText": "div[class=\"main-content\"] h2, div[class='main-content text-center text-md-start'] h2",
         "signupBtn": "a[qid=\"home-1\"]",
         "loginBtn": "a[qid=\"home-2\"]",
-        "brandLogo_img": "img[alt=\"Shield\"]",
-        "brandLogo_img_Nemo": "img[alt='Cambridge Logo']",
+        "brandLogo_img": "img[alt=\"Shield\"], img[alt='Cambridge Logo']",
         "languageSelector_dropdown": "[qid=\"header-10\"]",
         "languageSelector_dropdown_list": "[class*=\"lang-dropdown-item\"]"
       },
@@ -35,9 +32,8 @@
         "emailWarningText": "span[role='alert']"
       },
 
-        "appShell": {
-        "userDrop_down": "a[qid=\"cHeader-2\"]",
-        "userDrop_down_Nemo": "#dropdownMenuButtonUserProfile",
+      "appShell": {
+        "userDrop_down": "a[qid=\"cHeader-2\"], #dropdownMenuButtonUserProfile",
         "logout_btn": "button[qid=\"cHeader-7\"]",
         "headerbandDiv": "header > div",
         "toggleSidebarBtn": "[aria-label=toggle-sidebar]",
@@ -87,16 +83,19 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "#dropdownMenuButtonUserHelp , a[qid='cHeader-hlp-1']",
-        "progress_btn": "div[class=\"border-top-grey pb-1\"] div[class=\"tile-column p-0 my-3\"] a[aria-label=\"See Progress\"]",
+        "help_btn": "#dropdownMenuButtonUserHelp , a[qid='cHeader-hlp-2'], a[qid='cHeader-hlp-1']",
+        "progress_btn": "div[class='border-top-grey pb-1'] div[class='tile-column p-0 my-3'] a[aria-label='See Progress'] , a.progress-link",
         "progress_btn_Nemo": "a.progress-link",
-        "praticeExtra_btn": "body app div[id='bundleCollapse-974120e4-5b7d-45f1-b653-887a75d284c3-cqaumbrellaformigtest1'] div div div:nth-child(1) div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
+        "praticeExtra_btn": "body app div[id='bundleCollapse-974120e4-5b7d-45f1-b653-887a75d284c3-cqaumbrellaformigtest1'] div div div:nth-child(1) div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1) , div[id='bundleCollapse-986c29bd-586a-442c-a50e-65a6542567b1-nlpsecondarytest1'] div:nth-child(2) div:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "praticeExtra_btn_Nemo": "div[id='bundleCollapse-986c29bd-586a-442c-a50e-65a6542567b1-nlpsecondarytest1'] div:nth-child(2) div:nth-child(1) div:nth-child(1) a:nth-child(1)",
-        "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
-        "ebook_btn_Nemo": "body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)",
-        "assignment_btn_Nemo": "button[qid='homework-btn-974120e4-5b7d-45f1-b653-887a75d284c3']",
-        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
-        "myProgress_btn_Nemo": "a[qid='agg-progress-link-974120e4-5b7d-45f1-b653-887a75d284c3'] p"
+        "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1) , body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)",
+        "ebook_btn_Nemo": "body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)",
+        "assignment_btn_Nemo": "button[qid='l-db-cc-btn-1']",
+        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"] , body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > a:nth-child(2) > p:nth-child(2)",
+        "myProgress_btn_Nemo": "body > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > a:nth-child(2) > p:nth-child(2)",
+        "createNewClass": ".btn.btn-main-color-1-bordered.add-button.d-flex.align-items-center.justify-content-center",
+        "activeClassCard": "div.heading-container:nth-of-type(1) a.class-title.mx-2",
+        "dismiss_btn": ".dismiss"
       },
       "progress": {
         "progress": "h1[qid='clView-6']"
@@ -114,6 +113,35 @@
       },
       "myHomework": {
         "back_btn": "a[qid='aView-4']"
+      },
+      "createNewClass": {
+        "enterClassDetails": ".form-heading, .add-class-details-heading",
+        "back_btn": "div[class='my-3 create-class-header'] span:nth-child(2)",
+        "enterClassName": "input[placeholder=\"e.g. CS 2 English\"]",
+        "startDate": "input[value=\"Thu, Oct 3, 2024\"]",
+        "endDate": "input[value=\"Thu, Oct 2, 2025\"]",
+        "enterYourSchool": "input[placeholder=\"Enter your school\"]",
+        "cancel_btn": "button[qid=\"create-class-cancel-button\"]",
+        "next_btn": "button[qid=\"create-class-next-button\"] , button[qid='create-class-3']",
+        "addClassMaterials": ".materials-heading",
+        "cancel_btn_classMaterial": "button[qid=\"create-class-cancel-button\"], button[qid='create-class-2']",
+        "addLater_Btn": "button[qid=\"create-class-finish-button\"]",
+        "classSuccessfullyCreated": ".heading",
+        "dashboard_btn": "a[qid=\"go-to-dashboard-btn-id\"] , button[qid='class-created-success-1']",
+        "cancelThisClass": "div[role=\"document\"] div div h3",
+        "yesCancel_btn": ".btn-text.btn-yes.p-3",
+        "noKeep_btn": "button[data-bs-dismiss=\"modal\"], button[qid='cancel-modal-2']",
+        "addMaterial_btn": "button[qid='add-class-materials-button-3']",
+        "addMaterial_input": "input[qid=\"material-modal-filter-input\"]",
+        "dev_test_ebook_bundle_104_bundle": "label[for='material6'] div , label[for='product1'] div[class='check']",
+        "addToClass_Btn": "button[qid=\"material-modal-add-to-class-btn\"] , button[qid='add-material-save-7']",
+        "finish_btn": "button[qid=\"create-class-finish-button\"] , button[qid='create-class-4']",
+        "dev_test_ebook_bundle_104_bundle_dropdown" : "a[qid=\"add-material-product-0\"]"
+      },
+      "activeClass": {
+        "actionButton": "a[qid=\"cView-70\"]",
+        "deleteClass": "a[qid='cView-13']",
+        "yesDelete_Btn": "button[qid=\"cView-48\"]"
       },
       "classDrawer": {
         "classDrawerHeader": "[data-tid=text-drawerHeaderTitle]",
