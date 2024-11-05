@@ -10,7 +10,6 @@ var sts;
 module.exports = {
   TST_EBOO_TC_1: async function () {
     sts = await eBook.isInitialized();
-    console.log("this is sts1", sts);
     await assertion.assertEqual(
       sts.pageStatus,
       true,
@@ -20,7 +19,6 @@ module.exports = {
 
   TST_EBOO_TC_2: async function (testdata) {
     sts = await eBook.click_contentButton();
-    console.log("this is sts2", sts);
     await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
@@ -31,7 +29,6 @@ module.exports = {
 
   TST_EBOO_TC_4: async function (testdata) {
     sts = await eBook.click_closeButton();
-    console.log("this is sts", sts);
     await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
@@ -116,7 +113,6 @@ module.exports = {
   },
 
   TST_EBOO_TC_13: async function (testdata) {
-    console.log("this is testdata", testdata);
     sts = await eBook.getData_ebookToolsNotes(testdata);
     await assertion.assertEqual(
       sts.myNotes,
@@ -255,12 +251,43 @@ module.exports = {
     await assertion.assertEqual(sts.hyperAudioClose, testdata.hyperAudioClose,"hyperAudioClose Values is not as expected.");
     },
       
-    
+    // Test cases for Additional features
 
+    TST_EBOO_TC_17 :   async function (testdata) { 
+      sts = await eBook.click_toggleLayoutBtn();
+      await assertion.assertEqual(sts, testdata.singlePage,"toggleLayoutBtn are not Clicked");
+      await browser.pause(2000);
+      },
 
-
-
-
+      TST_EBOO_TC_22 :   async function (testdata) { 
+        sts = await eBook.click_toggleLayoutBtn();
+        await assertion.assertEqual(sts, testdata.doublePage,"toggleLayoutBtn are not Clicked");
+        await browser.pause(2000);
+        },
+      
+      TST_EBOO_TC_18 :   async function (testdata) { 
+      sts = await eBook.click_fitToScreenBtn();
+      await assertion.assertEqual(sts, true,"fitToScreenBtn are not Clicked");
+      await browser.pause(2000);
+      },
+      
+      TST_EBOO_TC_19 :   async function (testdata) { 
+      sts = await eBook.click_fitToWidthBtn();
+      await assertion.assertEqual(sts, true,"fitToWidthBtn are not Clicked");
+      await browser.pause(2000);
+      },
+      
+      TST_EBOO_TC_20 :   async function (testdata) { 
+      sts = await eBook.click_zoomInBtn();
+      await assertion.assertEqual(sts, true,"zoomInBtn are not Clicked");
+      await browser.pause(2000);
+      },
+      
+      TST_EBOO_TC_21 :   async function (testdata) { 
+      sts = await eBook.click_zoomOutBtn();
+      await assertion.assertEqual(sts, true,"zoomOutBtn are not Clicked");
+      await browser.pause(2000);
+      },
 
 };
 

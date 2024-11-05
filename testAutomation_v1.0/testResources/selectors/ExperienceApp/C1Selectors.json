@@ -144,7 +144,15 @@
         "cqaTestEbookOnlyAssets": "a[qid=\"ebook-list-item-3\"]",
         "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
         "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
-        "pageNumber": "button[qid=\"toc-6\"]"
+        "pageNumber": "button[qid=\"toc-6\"]",
+        "toggleLayoutBtn" : "button[qid=\"77\"]",
+        "doublePage" : "#readerpagedivB",
+        "singlePage" : ".reader-display-none",
+        "fitToScreenBtn" : "button[qid=\"97\"]",
+        "fitToWidthBtn" : "button[qid=\"98\"]",
+        "readerContainerWrapper" : "#reader-container-wrapper",
+        "zoomInBtn" : "button[qid=\"96\"]",
+        "zoomOutBtn" : "button[qid=\"95\"]"
       },
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer": "div[id=\"ee-overlays11-2\"] img",

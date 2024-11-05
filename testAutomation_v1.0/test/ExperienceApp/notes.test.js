@@ -21,9 +21,9 @@ module.exports = {
 
   // Set the value in the Add Notes Text Area and verify it
   TST_NOTE_TC_3: async function (testdata) {
-    console.log("Hellio", testdata.eBookSaveNotesBtn);
+
     sts = await notes.set_eBookAddNotesTextarea(testdata.eBookSaveNotesBtn);
-    console.log("this is ", sts);
+
     await assertion.assertEqual(
       sts,
       true,
@@ -34,7 +34,7 @@ module.exports = {
   // Click on the Save Notes Button and verify the saved notes
   TST_NOTE_TC_4: async function (testdata) {
     sts = await notes.click_eBookSaveNotesBtn();
-    await assertion.assertEqual(sts, testdata.notes, "status mismatch");
+    await assertion.assertEqual(sts, testdata.eBookSaveNotesBtn, "status mismatch");
   },
 
   // Click on the Delete Notes Button
@@ -80,13 +80,6 @@ module.exports = {
   // Get the Notes Content and verify its values
   TST_NOTE_TC_9: async function (testdata) {
     sts = await notes.getData_notesContent(testdata);
-    console.log("72", sts);
-    console.log("73", testdata);
-    console.log(
-      "75",
-      testdata.eBookNotesHeadingTxt,
-      testdata.eBookSaveNotesBtn
-    );
     await assertion.assertEqual(
       sts.eBookNotesHeadingTxt,
       testdata.eBookNotesHeadingTxt,
