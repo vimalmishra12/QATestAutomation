@@ -79,12 +79,61 @@
             "description": "",
             "testFile": "./test/ExperienceApp/drawingTool.test.js",
             "testData": []
-        }
+        },
+        
+        {
+          "id": "TST_EBOO_TC_5",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "",
+          "testFile": "./test/ExperienceApp/dashboard.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_EBOO_TC_3",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_EBOO_TC_18",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_DRAW_TC_4",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+       },
+       {
+        "id": "TST_EBOO_TC_5",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },{
+        "id": "TST_DASH_TC_5",
+        "description": "",
+        "testFile": "./test/ExperienceApp/dashboard.test.js",
+        "testData": []
+      }
+
+
+      
+
+
        
   
       ],
       "AfterEach": [],
       "After": []
     }
+
+   
   }
   

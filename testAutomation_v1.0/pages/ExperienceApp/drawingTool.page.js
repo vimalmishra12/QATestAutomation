@@ -50,10 +50,6 @@ res =await action.click(this.drawingToolScribble);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " drawingToolScribble is clicked");
 
-
-
-
-
  const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
 
  // Scroll the canvas into view, if necessary
@@ -66,23 +62,19 @@ if (true == res) {
      id: 'mouse1',
      parameters: { pointerType: 'mouse' },
      actions: [
-       { type: 'pointerMove', origin: canvasElement, x: 100, y: 100 }, // Starting point
-       { type: 'pointerDown', button: 0 },
-       { type: 'pointerMove', origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-       { type: 'pointerMove', origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-       { type: 'pointerMove', origin: canvasElement, x: 250, y: 250 }, // Ending point
-       { type: 'pointerUp', button: 0 } // Release mouse button
-     ]
+      { type: 'pointerMove', origin: canvasElement, x: 100, y: 100}, // Starting point
+      { type: 'pointerDown', button: 0 },
+      { type: 'pointerMove', origin: canvasElement, x: 150, y: 150 }, // Draw to this point
+      { type: 'pointerMove', origin: canvasElement, x: 200, y: 200 }, // Continue drawing
+      { type: 'pointerMove', origin: canvasElement, x: 250, y: 250 }, // Ending point
+      { type: 'pointerUp', button: 0 } // Release mouse button
+    ]
    }
  ]);
  
  // Release all actions
  await browser.releaseActions();
  
-
-
-
-
 // const canvasSelector = this.drawingToolPresentation ; // Replace with your canvas selector
 
 // // Move to the starting point of your drawing
@@ -136,8 +128,6 @@ if (true == res) {
 // await browser.releaseActions();
 
 
-
-
 }
 else {
 await logger.logInto(await stackTrace.get(), res +"drawingToolScribble is NOT clicked", 'error');
@@ -177,6 +167,34 @@ var res;
 res =await action.click(this.drawingToolEraser);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " drawingToolEraser is clicked");
+
+
+ const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
+
+ // Scroll the canvas into view, if necessary
+ await canvasElement.scrollIntoView();
+ 
+ // Define drawing actions using performActions
+ await browser.performActions([
+   {
+     type: 'pointer',
+     id: 'mouse1',
+     parameters: { pointerType: 'mouse' },
+     actions: [
+       { type: 'pointerMove', origin: canvasElement, x: 100, y: 100}, // Starting point
+       { type: 'pointerDown', button: 0 },
+       { type: 'pointerMove', origin: canvasElement, x: 150, y: 150 }, // Draw to this point
+       { type: 'pointerMove', origin: canvasElement, x: 200, y: 200 }, // Continue drawing
+       { type: 'pointerMove', origin: canvasElement, x: 250, y: 250 }, // Ending point
+       { type: 'pointerUp', button: 0 } // Release mouse button
+     ]
+   }
+ ]);
+ 
+ // Release all actions
+ await browser.releaseActions();
+
+
 }
 else {
 await logger.logInto(await stackTrace.get(), res +"drawingToolEraser is NOT clicked", 'error');

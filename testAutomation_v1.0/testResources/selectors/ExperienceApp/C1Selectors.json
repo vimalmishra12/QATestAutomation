@@ -158,7 +158,6 @@
           "drawingToolUndo" : "div[class=\"drawing-tools-menu ng-tns-c606183087-2 left-side ng-star-inserted pen-selected\"] img[alt=\"Undo\"]",
           "drawingToolRedo" : "div[class=\"drawing-tools-menu ng-tns-c606183087-2 left-side ng-star-inserted pen-selected\"] img[alt=\"Redo\"]",
           "drawingToolPresentation" : "div[id=\"drawing-tools-container-B\"] canvas"
-
       },
 
       "eBookLearningPageHyperlink": {
@@ -183,7 +182,6 @@
         "pageNoClearBtn": "a[qid=\"toc-16\"]",
         "pageNoGoToPageBtn": "a[qid=\"toc-18\"]",
         "pageNOShow": "button[qid=\"toc-6\"]"
-
       },
 
       "timer": {
