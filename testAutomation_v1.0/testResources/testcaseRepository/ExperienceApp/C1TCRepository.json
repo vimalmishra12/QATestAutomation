@@ -445,7 +445,45 @@
           "description": "Validate that HyperLink Audio Play/Pause and Close button data matches expected values",
           "tags": "P2",
           "visualTest": false
+        }, 
+
+        {
+          "id": "TST_EBOO_TC_17",
+          "description": "Validate that the eBook Toggle Layout button is clickable & returns single page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_22",
+          "description": "Validate that the eBook Toggle Layout button is clickable & returns double page",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_18",
+          "description": "Validate that the eBook Fit to Screen button is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_19",
+          "description": "Validate that the eBook Fit to Width button is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_20",
+          "description": "Validate that the eBook Zoom In button is clickable",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_21",
+          "description": "Validate that the eBook Zoom Out button is clickable",
+          "tags": "P3",
+          "visualTest": false
         }
+
       ]
     },
     {
