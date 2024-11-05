@@ -109,14 +109,12 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.eBookSaveNotesBtn);
-    console.log("this is 111 res", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " eBookSaveNotesBtn is clicked"
       );
       res = await action.getValue(this.eBookAddNotesTextarea);
-      console.log("this is 118 res", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -124,7 +122,6 @@ module.exports = {
         "error"
       );
     }
-    console.log ("viaml page", res);
     return res;
   },
 
@@ -138,7 +135,6 @@ module.exports = {
         " eBookDeleteNotesBtn is clicked"
       );
       res = await action.getValue(this.eBookAddNotesTextarea);
-      console.log("this is 139 res", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -192,14 +188,12 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.eBookNoteModalDeleteButton);
-    console.log("193", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " eBookNoteModalDeleteButton is clicked"
       );
       res = await this.getData_notesContent().eBookAddNotesTextarea;
-      console.log("200", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -213,7 +207,6 @@ module.exports = {
   set_eBookAddNotesTextarea: async function (value) {
     var res;
     await logger.logInto(await stackTrace.get());
-    console.log("hjk", this.eBookAddNotesTextarea);
     res = await action.setValue(this.eBookAddNotesTextarea, value);
 
     if (true == res) {
