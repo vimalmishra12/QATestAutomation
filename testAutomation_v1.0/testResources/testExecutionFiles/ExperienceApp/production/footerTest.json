@@ -20,7 +20,7 @@
                "testFile": "./test/ExperienceApp/landing.test.js",
                "testData": [
                    {
-                       "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+                       "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
                        "jsonPath": "C1.appContent.landing"
                    }
                ]
@@ -66,7 +66,7 @@
                "testFile": "./test/ExperienceApp/landing.test.js",
                "testData": [
                    {
-                       "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+                       "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
                        "jsonPath": "C1.appContent.landing"
                    }
                ]
@@ -112,7 +112,7 @@
                "testFile": "./test/ExperienceApp/landing.test.js",
                "testData": [
                    {
-                       "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+                       "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
                        "jsonPath": "C1.appContent.landing"
                    }
                ]
@@ -158,7 +158,7 @@
                "testFile": "./test/ExperienceApp/landing.test.js",
                "testData": [
                    {
-                       "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+                       "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
                        "jsonPath": "C1.appContent.landing"
                    }
                ]
