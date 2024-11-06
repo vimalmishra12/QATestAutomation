@@ -241,7 +241,7 @@ module.exports = {
 
       await browser.pause(2000); 
       res = await action.getCSSProperty(
-        "a[qid='ebook-list-item-2']",
+        "a[qid='ebook-list-item-5']",
         "background-color"
       );
     } else {
