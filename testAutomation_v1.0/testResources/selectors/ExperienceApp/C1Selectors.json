@@ -150,15 +150,28 @@
       },
 
       "drawingTool": {
-          "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
-          "drawingToolPenColour" : "button[id=\"penColorDropdown\"] div[class=\"pen-color-inner-circle ng-tns-c606183087-2\"]",
-          "drawingToolPenWidth" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-inner-circle ng-tns-c606183087-2 line-weight-4\"]",
-          "drawingToolHighlighter" : "button[qid=\"86\"] img[alt=\"Highlighter\"]",
-          "drawingToolEraser" : "button[class=\"ng-tns-c606183087-2 left-side\"] img[alt=\"Eraser\"]",
-          "drawingToolUndo" : "div[class=\"drawing-tools-menu ng-tns-c606183087-2 left-side ng-star-inserted pen-selected\"] img[alt=\"Undo\"]",
-          "drawingToolRedo" : "div[class=\"drawing-tools-menu ng-tns-c606183087-2 left-side ng-star-inserted pen-selected\"] img[alt=\"Redo\"]",
-          "drawingToolPresentation" : "div[id=\"drawing-tools-container-B\"] canvas"
+        "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
+        "drawingToolPenColour" : "button[id=\"penColorDropdown\"] div[class=\"pen-color-inner-circle ng-tns-c606183087-2\"]",
+        "drawingToolPenWidth" : "button[id=\"penStrokeDropdown\"] div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"]",
+        "drawingToolHighlighter" : "button[qid=\"86\"] img[alt=\"Highlighter\"]",
+        "drawingToolEraser" : "button[class=\"ng-tns-c606183087-2 left-side\"] img[alt=\"Eraser\"]",
+        "drawingToolUndo" : "button.undo-button[qid=\"88\"]",
+        "drawingToolRedo" :"button.redo-button[qid=\"89\"]",
+
+        "drawingToolPresentation" : "div[id=\"drawing-tools-container-B\"] canvas",
+        "penColourGreen" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(0, 179, 46);\"]",
+        "penColourBlue" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=\"background-color: rgb(0, 2, 255);\"]",
+        "penColourRed" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(185, 0, 0);\"]",
+        "penColourBlack" : "div[class=\"pen-color-dropdown ng-tns-c606183087-2 dropright ng-star-inserted show\"] div:nth-child(4) button:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1)",
+        "penStroke4" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-4\"]",
+        "penStroke3" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-3\"]",
+        "penStroke2" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-2\"]",
+        "penStroke1" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-1\"]"
+        
       },
+      
+
+
 
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer": "div[id=\"ee-overlays11-2\"] img",

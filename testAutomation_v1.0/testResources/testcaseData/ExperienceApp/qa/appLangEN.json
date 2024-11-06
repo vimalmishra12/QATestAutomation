@@ -55,14 +55,23 @@
       },
 
       "drawingTool":  {
-          "drawingToolScribble" : "Scribble",
+         "drawingToolScribble" : "Scribble",
           "drawingToolPenColour" : "Pen colour",
           "drawingToolPenWidth" : "Pen width",
           "drawingToolHighlighter" : "Highlighter",
           "drawingToolEraser" : "Eraser",
           "drawingToolUndo" : "Undo",
           "drawingToolRedo" : "Redo",
-          "drawingToolPresentation" : "presentation"
+          "drawingToolPresentation" : "presentation",
+          "penColourGreen" : "Page - 64-65 / 106 1 2 3 4",
+          "penColourBlue" : "Page - 64-65 / 106 1 2 3 4",
+          "penColourRed" : "Page - 64-65 / 106 1 2 3 4",
+          "penColourBlack" : "Page - 64-65 / 106 1 2 3 4",
+          "penStroke4" : "Page - 64-65 / 106 1 2 3 4",
+          "penStroke3" : "Page - 64-65 / 106 1 2 3 4",
+          "penStroke2" : "Page - 64-65 / 106 1 2 3 4",
+          "penStroke1" : "Page - 64-65 / 106 1 2 3 4"
+
       },
 
       "hyperLinkAnswerWindow": {

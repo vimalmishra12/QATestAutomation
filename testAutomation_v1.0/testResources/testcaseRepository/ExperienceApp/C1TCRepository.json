@@ -682,7 +682,64 @@
               "description": "Validate that all drawing tool data matches expected values",
               "tags": "P2",
               "visualTest": true
+          },
+          {
+            "id": "TST_DRAW_TC_9",
+            "description": "Validate that highlighter tool is clickable and active",
+            "tags": "P3",
+            "visualTest": false
+        }
+        ,
+          {
+              "id": "TST_DRAW_TC_10",
+              "description": "Validate that green pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_11",
+              "description": "Validate that blue pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_12",
+              "description": "Validate that red pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_13",
+              "description": "Validate that black pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_14",
+              "description": "Validate that pen stroke width 4 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_15",
+              "description": "Validate that pen stroke width 3 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_16",
+              "description": "Validate that pen stroke width 2 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_17",
+              "description": "Validate that pen stroke width 1 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
           }
+      
+      
       ]
       
       
