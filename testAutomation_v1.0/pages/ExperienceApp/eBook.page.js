@@ -18,6 +18,7 @@ module.exports = {
   notes: selectorFile.css.ComproC1.eBook.notes,
   timer: selectorFile.css.ComproC1.eBook.timer,
   drawingTool: selectorFile.css.ComproC1.eBook.drawingTool,
+  showAndHideSelection:selectorFile.css.ComproC1.eBook.showAndHideSelection,
   pageNumber: selectorFile.css.ComproC1.eBook.pageNumber,
 
   pageNoOneBtn: selectorFile.css.ComproC1.pageNoDialogBox.pageNoOneBtn,
@@ -326,6 +327,27 @@ module.exports = {
     }
     return res;
   },
+
+  click_showAndHideSelection: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.showAndHideSelection);
+    
+   
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " showAndHideSelection  tool is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "showAndHideSelection tool is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
 
   click_pageNumber: async function () {
     await logger.logInto(await stackTrace.get());

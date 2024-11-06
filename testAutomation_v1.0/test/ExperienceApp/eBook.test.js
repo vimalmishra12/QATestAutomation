@@ -162,6 +162,11 @@ module.exports = {
     await assertion.assertEqual(sts, true, "drawing tool  are not Clicked");
   },
 
+  TST_EBOO_TC_19: async function (testdata) {
+    sts = await eBook.click_showAndHideSelection();
+    await assertion.assertEqual(sts, true, "show/Hide  Selection tool  are not Clicked");
+  },
+
 
 
   TST_PAGE_TC_1 :   async function (testdata) { 

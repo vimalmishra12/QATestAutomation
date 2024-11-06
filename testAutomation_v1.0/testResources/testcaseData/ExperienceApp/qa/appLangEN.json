@@ -230,6 +230,8 @@
       "eBook": {
         "cqa_ebook_evolve": "cqa-ebook-evolve",
         "myNotes": "My notes",
+        "showAndHideSelection":"Show/Hide selection",
+
         "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
       "eBookContents": {

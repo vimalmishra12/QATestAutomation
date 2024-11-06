@@ -475,6 +475,12 @@
           "visualTest": true
         },
         {
+          "id": "TST_EBOO_TC_19",
+          "description": "Validate that the showAndHideSelection tool opens correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
           "id": "TST_PAGE_TC_1",
           "description": "Validate that pageNoOneBtn  is  Clicked ",
           "tags": "P2",

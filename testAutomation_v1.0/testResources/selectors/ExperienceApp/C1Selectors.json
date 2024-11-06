@@ -145,6 +145,7 @@
         "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
         "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
         "timer": "button[qid=\"94\"]",
+        "showAndHideSelection":"button[qid=\"91\"]",
         "drawingTool" :"button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]"
       },
