@@ -469,7 +469,7 @@
           "visualTest": true
         },
         {
-          "id": "TST_EBOO_TC_18",
+          "id": "TST_EBOO_TC_51",
           "description": "Validate that the drawing tool opens correctly",
           "tags": "P3",
           "visualTest": true
