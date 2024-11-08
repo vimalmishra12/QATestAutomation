@@ -251,6 +251,182 @@
           "description": "Validate that active class buttons (Progress, Practice Extra, eBook, Homework, My Progress) are retrieved correctly",
           "tags": "P2",
           "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_10",
+          "description": "Validate that the Create New Class page is launched correctly",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_11",
+          "description": "Validate if Active class page is launched correctly",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "Create New  Class",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/createNewClass.test.js",
+      "testcase": [
+        {
+          "id": "TST_ENTE_TC_1",
+          "description": "Validate that the Create new class page is launched and initialized correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_2",
+          "description": "Validate that the back button is clickable and the page is launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_3",
+          "description": "Validate that the class name is entered correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_4",
+          "description": "Validate that the start date is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_5",
+          "description": "Validate that the end date is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_6",
+          "description": "Validate that the school name is entered correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_7",
+          "description": "Validate that the cancel button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_8",
+          "description": "Validate that the class details are fetched and match the expected data",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_9",
+          "description": "Validate that the next button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_10",
+          "description": "Validate that the cancel button in class materials is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_11",
+          "description": "Validate that the add later button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_12",
+          "description": "Validate that the dashboard button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_13",
+          "description": "Validate that the no keep button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_17",
+          "description": "Validate that the yes cancel button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_18",
+          "description": "Validate that the finish button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_19",
+          "description": "Validate that the add to class button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_20",
+          "description": "Validate that the eBook bundle button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_21",
+          "description": "Validate that the add material input field is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_22",
+          "description": "Validate that the add material button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_23",
+          "description": "Validate that the eBook bundle dropdown is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "Delete Class",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/activeClass.test.js",
+      "testcase": [
+        {
+          "id": "TST_ACTI_TC_1",
+          "description": "Validate that the action button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_2",
+          "description": "Validate that the delete class button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_3",
+          "description": "Validate that the yes delete button is clickable and the page status is updated correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_4",
+          "description": "Validate that the dropdown data matches the expected action button and delete class values",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_5",
+          "description": "Validate that the delete modal data matches the expected yes delete button values",
+          "tags": "P3",
+          "visualTest": true
         }
       ]
     },

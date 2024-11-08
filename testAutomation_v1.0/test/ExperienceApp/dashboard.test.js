@@ -79,4 +79,16 @@ module.exports = {
       "myProgress_btn Values is not as expected."
     );
   },
+
+  TST_DASH_TC_10: async function (testdata) {
+    sts = await dashboard.click_createNewClass();
+    await browser.pause(1000);
+    await assertion.assertEqual(sts.pageStatus, true, 'Page is not launched. ');
+  },
+
+  TST_DASH_TC_11: async function (testdata) {
+    sts = await dashboard.click_activeClassCard();
+    await assertion.assertEqual(sts.pageStatus, true, 'Page is not launched. ');
+  },
+
 };
