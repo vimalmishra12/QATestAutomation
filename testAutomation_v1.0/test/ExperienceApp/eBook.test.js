@@ -147,6 +147,24 @@ module.exports = {
       "notes Values is not as expected."
     );
   },
+
+  TST_EBOO_TC_17: async function (testdata) {
+    sts = await eBook.click_timer();
+    await assertion.assertEqual(sts, true, "notes are not Clicked");
+  },
+  
+  TST_EBOO_TC_18: async function (testdata) {
+    sts = await eBook.click_drawingTool();
+    await assertion.assertEqual(sts, true, "drawing tool  are not Clicked");
+  },
+
+  TST_EBOO_TC_19: async function (testdata) {
+    sts = await eBook.click_showAndHideSelection();
+    await assertion.assertEqual(sts, true, "show/Hide  Selection tool  are not Clicked");
+  },
+
+
+
   TST_PAGE_TC_1 :   async function (testdata) { 
     sts = await pageNoDialogBox.click_pageNoOneBtn();
     await assertion.assertEqual(sts, true,"pageNoOneBtn are not Clicked");

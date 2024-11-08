@@ -254,6 +254,113 @@
         }
       ]
     },
+
+
+    {
+      "modulename": "timer",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/timer.test.js",
+      "testcase": [
+        {
+          "id": "TST_TIME_TC_1",
+          "description": "Click the timer count up button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_2",
+          "description": "Click the timer count down clear button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_3",
+          "description": "Click the timer count down mute button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_4",
+          "description": "Click the timer count down close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_5",
+          "description": "Click the timer count down play button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_6",
+          "description": "Click the timer button one",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_7",
+          "description": "Click the timer button two",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_8",
+          "description": "Click the timer button three",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_9",
+          "description": "Click the timer count down button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_10",
+          "description": "Click the timer count up close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_11",
+          "description": "Click the timer count up play button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_12",
+          "description": "click the timer reset button",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_13",
+          "description": "click timer CountDown Unmute button",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_14",
+          "description": "Click the timer count down pause button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_15",
+          "description": "Get and validate timer count down data",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_16",
+          "description": "Get and validate timer count up data",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },    
+   
+
     {
       "modulename": "eBook",
       "moduleId": "",
@@ -353,6 +460,24 @@
           "id": "TST_EBOO_TC_16",
           "description": "Validate that eBook Tools data matches the expected values",
           "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_17",
+          "description": "Validate that the Timer panel opens correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_18",
+          "description": "Validate that the drawing tool opens correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_19",
+          "description": "Validate that the showAndHideSelection tool opens correctly",
+          "tags": "P3",
           "visualTest": true
         },
         {
@@ -547,6 +672,157 @@
         }
       ]
     },
+
+
+    {
+      "modulename": "showHideSelection",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/showHideSelection.test.js",
+      "testcase": [
+        {
+          "id": "TST_SHOW_TC_1",
+          "description": "Validate that the hideSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_2",
+          "description": "Validate that the showSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_3",
+          "description": "Validate that the closeSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_4",
+          "description": "Validate that show and hide selection values match the expected values",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    
+
+    {
+      "modulename": "drawingTool",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/drawingTool.test.js",
+      "testcase": [
+        
+          {
+              "id": "TST_DRAW_TC_1",
+              "description": "Validate that Scribble tool is clickable and active",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_2",
+              "description": "Validate that Pen Colour tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_3",
+              "description": "Validate that Pen Width tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_4",
+              "description": "Validate that Eraser tool is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_5",
+              "description": "Validate that Undo function works correctly",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_6",
+              "description": "Validate that Redo function works correctly",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_7",
+              "description": "Validate that Presentation mode is clickable and active",
+              "tags": "P3",
+              "visualTest": true
+          },
+          {
+              "id": "TST_DRAW_TC_8",
+              "description": "Validate that all drawing tool data matches expected values",
+              "tags": "P2",
+              "visualTest": true
+          },
+          {
+            "id": "TST_DRAW_TC_9",
+            "description": "Validate that highlighter tool is clickable and active",
+            "tags": "P3",
+            "visualTest": false
+        }
+        ,
+          {
+              "id": "TST_DRAW_TC_10",
+              "description": "Validate that green pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_11",
+              "description": "Validate that blue pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_12",
+              "description": "Validate that red pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_13",
+              "description": "Validate that black pen color is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_14",
+              "description": "Validate that pen stroke width 4 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_15",
+              "description": "Validate that pen stroke width 3 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_16",
+              "description": "Validate that pen stroke width 2 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          },
+          {
+              "id": "TST_DRAW_TC_17",
+              "description": "Validate that pen stroke width 1 is clickable and selected",
+              "tags": "P3",
+              "visualTest": false
+          }
+      
+      
+      ]
+      
+      
+    },
+
     {
       "modulename": "appShell",
       "moduleId": "",

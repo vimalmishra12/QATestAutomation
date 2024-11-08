@@ -15,6 +15,9 @@ module.exports = {
   cqaTestEbookOnlyAssets:
     selectorFile.css.ComproC1.eBook.cqaTestEbookOnlyAssets,
   notes: selectorFile.css.ComproC1.eBook.notes,
+  timer: selectorFile.css.ComproC1.eBook.timer,
+  drawingTool: selectorFile.css.ComproC1.eBook.drawingTool,
+  showAndHideSelection:selectorFile.css.ComproC1.eBook.showAndHideSelection,
   pageNumber: selectorFile.css.ComproC1.eBook.pageNumber,
 
   pageNoOneBtn: selectorFile.css.ComproC1.pageNoDialogBox.pageNoOneBtn,
@@ -31,14 +34,12 @@ module.exports = {
   hyperlinkAudio:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperlinkAudio,
 
-  hyperAnswerReveal:
-    selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerReveal,
-  hyperAnswerClose:
-    selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerClose,
-  hyperAnswerFullScreen:
-    selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerFullScreen,
-  hyperAnswerQuestion:
-    selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
+  hyperAnswerReveal: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerReveal,
+  hyperAnswerClose: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerClose,
+  hyperAnswerFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerFullScreen,
+  hyperAnswerExitFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerExitFullScreen,
+
+  hyperAnswerQuestion: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
 
   hyperAudioPlay_pause:
     selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioPlay_pause,
@@ -292,6 +293,66 @@ module.exports = {
     }
     return res;
   },
+  click_timer: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.timer);
+    
+   // console.log("this is notes res", res);
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " timer is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "timer is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
+  click_drawingTool: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.drawingTool);
+    
+   
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " drawing  tool is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "drawing tool is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
+  click_showAndHideSelection: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    await action.waitForDocumentLoad();
+
+    res = await action.click(this.showAndHideSelection);
+    
+   
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), " showAndHideSelection  tool is clicked");
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "showAndHideSelection tool is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
 
   click_pageNumber: async function () {
     await logger.logInto(await stackTrace.get());
@@ -405,20 +466,18 @@ module.exports = {
     }
   },
 
-  click_hyperLinkAnswer: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    res = await action.click(this.hyperLinkAnswer);
-    console.log("val of res is hyperLinkAnswer: ", res);
-    if (true == res) {
-      await logger.logInto(
-        await stackTrace.get(),
-        " hyperLinkAnswer is clicked"
-      );
+        click_hyperLinkAnswer: async function () {
+        await logger.logInto(await stackTrace.get());
+        var res;
+        res =await action.click(this.hyperLinkAnswer);
+        console.log("val of res is hyperLinkAnswer: ",res );
+        if (true == res) {
+          await logger.logInto(await stackTrace.get(), " hyperLinkAnswer is clicked");
 
-      //  await $(this.hyperAnswerFullScreen).waitForDisplayed();
-      //  await $(this.hyperAnswerFullScreen).click();
-      //  await browser.pause(3000)
+   
+        
+        
+
 
       //  const cookieButtonSelector = 'cookies-2'; // Replace with the actual selector
       //  const isCookieBannerVisible = await $(cookieButtonSelector).isDisplayed();
@@ -445,13 +504,20 @@ module.exports = {
       //   element.click();
       //  }, $("img[title=\"Exit fullscreen\"]"));
 
-      // await $("img[title=\"Exit fullscreen\"]").waitForDisplayed();
-      // await $("img[title=\"Exit fullscreen\"]").click();
-      // await browser.pause(3000)
+       
+        await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
+        await $(this.hyperAnswerFullScreen).click();
+        await browser.pause(3000)
 
-      await $(this.hyperAnswerReveal).waitForDisplayed();
-      await $(this.hyperAnswerReveal).click();
-      await browser.pause(3000);
+        await $(this.hyperAnswerReveal).waitForDisplayed(); 
+        await $(this.hyperAnswerReveal).click();
+        await browser.pause(3000)
+
+        await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
+        await $(this.hyperAnswerExitFullScreen).click();
+        await browser.pause(3000)
+
+        
 
       await $(this.hyperAnswerClose).waitForDisplayed();
       await $(this.hyperAnswerClose).click();
@@ -507,41 +573,52 @@ module.exports = {
     return res;
   },
 
-  click_hyperLinkAnswer2: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    res = await action.click(this.hyperLinkAnswer2);
-    console.log("val of res is hyperLinkAnswer 2: ", res);
-    if (true == res) {
-      await logger.logInto(
-        await stackTrace.get(),
-        " hyperLinkAnswer 2 is clicked"
-      );
+        click_hyperLinkAnswer2: async function () {
+          await logger.logInto(await stackTrace.get());
+          var res;
+          res =await action.click(this.hyperLinkAnswer2);
+          console.log("val of res is hyperLinkAnswer 2: ",res );
+          if (true == res) {
+            await logger.logInto(await stackTrace.get(), " hyperLinkAnswer 2 is clicked");
 
-      await $(this.hyperAnswerReveal).waitForDisplayed();
-      await $(this.hyperAnswerReveal).click();
-      await browser.pause(3000);
 
-      await $(this.hyperAnswerClose).waitForDisplayed();
-      await $(this.hyperAnswerClose).click();
-      await browser.pause(3000);
 
-      //     // After your assertion, you can close the new window and switch back to the original window if needed
-      //     await browser.closeWindow();  // Close the new window
-      //     await browser.switchToWindow(currentWindow);  // Switch back to the original window
-      // } else {
-      //   console.log("after pause   old  window ")
-      //     await logger.logInto(await stackTrace.get(), "No new window detected", 'error');
-      // }
-    } else {
-      await logger.logInto(
-        await stackTrace.get(),
-        res + "hyperLinkAnswer is NOT clicked",
-        "error"
-      );
-    }
-    return res;
-  },
+          await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
+          await $(this.hyperAnswerFullScreen).click();
+          await browser.pause(3000)
+
+          await $(this.hyperAnswerReveal).waitForDisplayed(); 
+          await $(this.hyperAnswerReveal).click();
+          await browser.pause(3000)
+  
+
+          await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
+          await $(this.hyperAnswerExitFullScreen).click();
+          await browser.pause(3000)
+
+
+          
+          
+          await $(this.hyperAnswerClose).waitForDisplayed(); 
+          await $(this.hyperAnswerClose).click();
+          await browser.pause(3000)
+  
+         
+  
+            //     // After your assertion, you can close the new window and switch back to the original window if needed
+            //     await browser.closeWindow();  // Close the new window
+            //     await browser.switchToWindow(currentWindow);  // Switch back to the original window
+            // } else {
+            //   console.log("after pause   old  window ")
+            //     await logger.logInto(await stackTrace.get(), "No new window detected", 'error');
+            // }
+  
+          }
+          else {
+          await logger.logInto(await stackTrace.get(), res +"hyperLinkAnswer is NOT clicked", 'error');
+          }
+          return res;
+          },
 
   click_hyperlinkAudio: async function () {
     await logger.logInto(await stackTrace.get());

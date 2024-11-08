@@ -144,6 +144,9 @@
         "cqaTestEbookOnlyAssets": "a[qid=\"ebook-list-item-3\"]",
         "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
         "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "timer": "button[qid=\"94\"]",
+        "showAndHideSelection":"button[qid=\"91\"]",
+        "drawingTool" :"button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]",
         "toggleLayoutBtn" : "button[qid=\"77\"]",
         "doublePage" : "#readerpagedivB",
@@ -154,6 +157,37 @@
         "zoomInBtn" : "button[qid=\"96\"]",
         "zoomOutBtn" : "button[qid=\"95\"]"
       },
+
+      "showHideSelection": {
+          "hideSelection" : "button[qid=\"93\"]",
+          "showSelection" : "button[qid=\"92\"]",
+          "closeSelection" : "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]"
+      },
+
+      "drawingTool": {
+        "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
+        "drawingToolPenColour" : "button[id=\"penColorDropdown\"] div[class=\"pen-color-inner-circle ng-tns-c606183087-2\"]",
+        "drawingToolPenWidth" : "button[id=\"penStrokeDropdown\"] div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"]",
+        "drawingToolHighlighter" : "button[qid=\"86\"] img[alt=\"Highlighter\"]",
+        "drawingToolEraser" : "button[class=\"ng-tns-c606183087-2 left-side\"] img[alt=\"Eraser\"]",
+        "drawingToolUndo" : "button.undo-button[qid=\"88\"]",
+        "drawingToolRedo" :"button.redo-button[qid=\"89\"]",
+
+        "drawingToolPresentation" : "div[id=\"drawing-tools-container-B\"] canvas",
+        "penColourGreen" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(0, 179, 46);\"]",
+        "penColourBlue" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=\"background-color: rgb(0, 2, 255);\"]",
+        "penColourRed" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(185, 0, 0);\"]",
+        "penColourBlack" : "div[class=\"pen-color-dropdown ng-tns-c606183087-2 dropright ng-star-inserted show\"] div:nth-child(4) button:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1)",
+        "penStroke4" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-4\"]",
+        "penStroke3" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-3\"]",
+        "penStroke2" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-2\"]",
+        "penStroke1" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-1\"]"
+        
+      },
+      
+
+
+
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer": "div[id=\"ee-overlays11-2\"] img",
         "hyperLinkAnswer2": "div[id=\"ee-overlays11-4\"] img",
@@ -163,6 +197,7 @@
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
         "hyperAnswerClose": "button[class=\"close-button\"]",
         "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
+        "hyperAnswerExitFullScreen":"img[title=\"Exit fullscreen\"]",
         "hyperAnswerQuestion": "div[id=\"rubric-0\"] p"
       },
       "hyperlinkAudio": {
@@ -175,6 +210,24 @@
         "pageNoClearBtn": "a[qid=\"toc-16\"]",
         "pageNoGoToPageBtn": "a[qid=\"toc-18\"]",
         "pageNOShow": "button[qid=\"toc-6\"]"
+      },
+
+      "timer": {
+      "timerCountUp" : "button[qid=\"toc-64\"]",
+      "timerCountDownClear" : "button[title=\"Clear\"]",
+      "timerCountDownMute" : "button[title=\"Mute\"]",
+      "timerCountDownClose" : "button[qid=\"toc-63\"]",
+      "timerCountDownPlay" : "button[qid=\"toc-78\"]",
+      "timerBtnOne" : "a[qid=\"toc-67\"]",
+      "timerBtnTwo" : "a[qid=\"toc-68\"]",
+      "timerBtnthree" : "a[qid=\"toc-69\"]",
+      "timerCountDown" : "button[qid=\"toc-65\"]",
+      "timerCountUpClose" : "button[qid=\"toc-63\"]",
+      "timerCountUpPause" : "button[qid=\"toc-83\"]",
+      "timerCountUpPlay" : ".fa.fa-play.play-button",
+      "timerReset" : "button[title=\"Reset\"]",
+      "timerCountDownUnmute" : "button[title=\"Unmute\"]",
+      "timerCountDownPause" : ".fa.fa-pause.pause-button"
 
       },
 
