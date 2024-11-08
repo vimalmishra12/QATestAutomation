@@ -1,6 +1,6 @@
 {
     "Suite1": {
-        "Name": "Validation of Landing Page Features and Content (English)",
+        "Name": "Validation of Landing Page Content (English)",
         "TestCaseRepo": [
             "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
         ],
@@ -15,13 +15,7 @@
         ],
         "Test": [
             {
-                "id": "ENG_LAND_TC_1",
-                "description": "",
-                "testFile": "./test/ExperienceApp/landing.test.js",
-                "testData": []
-            },
-            {
-                "id": "ENG_LAND_TC_5",
+                "id": "TST_LAND_TC_5",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": [
@@ -30,15 +24,28 @@
                         "jsonPath": "C1.appContent.landing"
                     }
                 ]
-            },
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    },
+    "Suite2": {
+        "Name": "Validation of Landing Page Sign In Feature",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "Before": [],
+        "BeforeEach": [
             {
-                "id": "ENG_LAND_TC_2",
+                "id": "launchUrl",
                 "description": "",
-                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testFile": "./core/runner/launchUrl.js",
                 "testData": []
-            },
+            }
+        ],
+        "Test": [
             {
-                "id": "ENG_LAND_TC_3",
+                "id": "TST_LAND_TC_3",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": []
@@ -47,12 +54,12 @@
         "AfterEach": [],
         "After": []
     },
-    "Suite2": {
-        "Name": "Validation of Landing Page Features and Content (Spanish)",
+    "Suite3": {
+        "Name": "Validation of Landing Page Sign Up Feature",
         "TestCaseRepo": [
             "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
         ],
-        "Before": [
+        "BeforeEach": [
             {
                 "id": "launchUrl",
                 "description": "",
@@ -60,27 +67,41 @@
                 "testData": []
             }
         ],
-        "BeforeEach": [],
+        "Before": [],
         "Test": [
             {
-                "id": "ENG_LAND_TC_4",
+                "id": "TST_LAND_TC_2",
+                "description": "",
+                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testData": []
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    },
+    "Suite4": {
+        "Name": "Validation of Landing Page \"Language Selector\" Feature",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Before": [],
+        "Test": [
+            {
+                "id": "TST_LAND_TC_4",
                 "description": "",
                 "testFile": "./test/ExperienceApp/landing.test.js",
                 "testData": [
                     {
                         "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangES.json",
                         "jsonPath": "C1.appContent.language"
-                    }
-                ]
-            },
-            {
-                "id": "ENG_LAND_TC_5",
-                "description": "",
-                "testFile": "./test/ExperienceApp/landing.test.js",
-                "testData": [
-                    {
-                        "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangES.json",
-                        "jsonPath": "C1.appContent.landing"
                     }
                 ]
             }
