@@ -1,6 +1,46 @@
 {
   "css": {
     "ComproC1": {
+      "footer": {
+        "footerTermsOfUse": "a[qid=\"cFooter-1\"]",
+        "footerPrivacyNotice": "a[qid=\"cFooter-2\"]",
+        "footerAccesibility": "a[qid=\"cFooter-3\"]",
+        "footerOurApproaches": "a[qid=\"cFooter-5\"]",
+        "footerSiteFeedback": "a[qid=\"cFooter-4\"]",
+        "footerFAQs": "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
+        "footerCambridgeOneSchool": "a[qid=\"cFooter-9\"][aria-label=\"Cambridge One for schools\"]",
+        "footerHelp": "a[qid=\"cFooter-6\"]",
+        "footerCambridgeUniversity": ".copyright.mb-0"
+      },
+
+      "footerCambridgeOneForSchool": {
+        "footerCambridgeOneForSchools": ".heading-title",
+        "footerBack": ".back-text"
+      },
+
+      "term": {
+        "termsHealding": "h1.heading1.align-self-center[data-v-7a24da20]",
+        "termBack": "qid\".back-text\"undefined"
+      },
+
+      "privacy": {
+        "privacyHealding": ".heading1.align-self-center",
+        "privacyBack": ".back-text"
+      },
+
+      "footerHelp": {
+        "footerHelpBack": "a[href=\"https://www.cambridgeone.org/login\"]",
+        "footerHelpLang": ".current-language-label"
+      },
+      "siteFeedback": {
+        "cambridgeCustomerSurvey": "img[alt=\"Cambridge Customer Survey\"]",
+        "ifYouRequireSupportPlease": "span:nth-child(1)"
+      },
+      "accesibility": {
+        "footerAccessibility": ".accessibility",
+        "footerAccesibilityBack": ".back-text"
+      },
+
       "landing": {
         "headingText": ".heading1.mb-3",
         "subheadingText": "div[class=\"main-content\"] h2",
@@ -84,9 +124,9 @@
       },
       "dashboard": {
         "help_btn": "a[qid='cHeader-hlp-1']",
-        "progress_btn": "div[class=\"border-top-grey pb-1\"] div[class=\"tile-column p-0 my-3\"] a[aria-label=\"See Progress\"]",
+        "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress']",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
-        "ebook_btn": "div:nth-child(3) div:nth-child(1) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
+        "ebook_btn": ".tile-section-1",
         "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
         "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]"
       },
@@ -94,7 +134,56 @@
         "progress": "h1[qid='clView-6']"
       },
       "eBook": {
-        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2"
+        "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2",
+        "contentButton": "button[qid=\"72\"]",
+        "toolsButton": "button[qid=\"73\"]",
+        "closeButton": "button.close-button > em.nemo-close-new",
+        "homeButton": "button[qid=\"71\"]",
+        "myNotes": "div.notes-title",
+        "cqaEbookEvolveDropdown": "button[qid=\"ebook-button-1\"]",
+        "cqaTestEbookOnlyAssets": "a[qid=\"ebook-list-item-3\"]",
+        "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
+        "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "pageNumber": "button[qid=\"toc-6\"]",
+        "toggleLayoutBtn" : "button[qid=\"77\"]",
+        "doublePage" : "#readerpagedivB",
+        "singlePage" : ".reader-display-none",
+        "fitToScreenBtn" : "button[qid=\"97\"]",
+        "fitToWidthBtn" : "button[qid=\"98\"]",
+        "readerContainerWrapper" : "#reader-container-wrapper",
+        "zoomInBtn" : "button[qid=\"96\"]",
+        "zoomOutBtn" : "button[qid=\"95\"]"
+      },
+      "eBookLearningPageHyperlink": {
+        "hyperLinkAnswer": "div[id=\"ee-overlays11-2\"] img",
+        "hyperLinkAnswer2": "div[id=\"ee-overlays11-4\"] img",
+        "hyperlinkAudio": "div[id=\"ee-overlays11-0\"] img"
+      },
+      "hyperLinkAnswerWindow": {
+        "hyperAnswerReveal": "a[title=\"Reveal\"]",
+        "hyperAnswerClose": "button[class=\"close-button\"]",
+        "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
+        "hyperAnswerQuestion": "div[id=\"rubric-0\"] p"
+      },
+      "hyperlinkAudio": {
+        "hyperAudioPlay_pause": "div[class=\"ctrls\"] div[class=\"icon--not-pressed\"] span[class=\"glyph\"]",
+        "hyperAudioClose": "div[class=\"title-section dragger\"] i[class=\"nemo-font nemo-cross\"]"
+      },
+      "pageNoDialogBox": {
+        "pageNoOneBtn": "a[qid=\"toc-7\"]",
+        "pageNoTwoBtn": "a[qid=\"toc-8\"]",
+        "pageNoClearBtn": "a[qid=\"toc-16\"]",
+        "pageNoGoToPageBtn": "a[qid=\"toc-18\"]",
+        "pageNOShow": "button[qid=\"toc-6\"]"
+
+      },
+
+      "eBookContents": {
+        "cqaTestProd": "div[title=\"cqa-test-prod-desktopfoc\"] h1"
+      },
+      "eBookTools": {
+        "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
+        "Timer": "button[qid=\"94\"]"
       },
       "practiceExtra": {
         "practice_extra": "h2[class='mb-0']"
@@ -104,6 +193,16 @@
       },
       "myHomework": {
         "back_btn": "a[qid='aView-4']"
+      },
+      "notes": {
+        "eBookNotesHeadingTxt": "div.notes-title",
+        "eBookAddNotesBtn": "button.add-note-button",
+        "eBookAddNotesTextarea": "textarea[maxlength=\"1000\"][placeholder=\"Type here...\"]",
+        "eBookSaveNotesBtn": "button[class=\"save-note\"]",
+        "eBookDeleteNotesBtn": "button[class=\"cancel-note-button ng-star-inserted\"]",
+        "eBookNotesViewMoreBtn": "#dropdownMenuButton.cancel-note-button",
+        "eBookViewMoreDeleteNotestBtn": "a.dropdown-item[data-target^=\"#deleteSingleNoteModal\"]",
+        "eBookNoteModalDeleteButton": "button#deleteSingleNoteModalDeleteButton"
       },
       "classDrawer": {
         "classDrawerHeader": "[data-tid=text-drawerHeaderTitle]",

@@ -1,2 +1,11 @@
 Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
-cqa_ebook_evolve,.eboook-selected.ng-tns-c606183087-2,div,ebookEvolve,,isInitialization,,cqa-ebook-evolve
+eBookLaunchBtn,.eboook-selected.ng-tns-c606183087-2,div,ebookEvolve,,isInitialization,,cqa-ebook-evolve
+eBookTocBtn,button[qid='72'],button,eTextToolBar,,,eBookContents.page,
+eBookToolsBtn,button[qid='73'],button,eTextToolBar,,,eBookTools.page,
+eBookTocCloseBtn,"button.close-button > em.nemo-close-new[title=""Close""]",button,ebookContents,,,eBook.page,
+eBookHomeBtn,button[qid='71'],button,eTextToolBar,,,dashboard.page,
+eBookNotesHeadingTxt,div.notes-title,div,ebookToolsNotes,,,,My Notes
+eBookTocDropdown,button[qid='ebook-button-1'],button,ebookContent,,,,
+eBookNewBookLaunchBtn,a[qid='ebook-list-item-3'],a,ebookContentDropdown,,,,
+eBookNotesBtn,div:nth-child(4) div:nth-child(2) button:nth-child(1),button,ebookTools,,,,
+eBookPageNavigateBtn,button[qid='toc-6'],button,eTextToolBar,,,,

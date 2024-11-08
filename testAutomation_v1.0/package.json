@@ -1,3 +1,4 @@
+
 {
   "name": "testAutomation",
   "version": "0.9.4",
@@ -5,11 +6,16 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
-    "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
-    "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
-    "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
-    "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
+
+    "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
+    "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
+    "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
+    "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='eBookTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
+    "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='ebookLearningHyperlinkVC_V.1.0.json' --windowWidth=1600 --windowHeight=900",
+    "eBookFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='eBookTestMaster_v.0.json' --windowWidth=1600 --windowHeight=900",
+    "notesFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='notesTest.json' --windowWidth=1600 --windowHeight=900"
   },
   "keywords": [],
   "author": "",

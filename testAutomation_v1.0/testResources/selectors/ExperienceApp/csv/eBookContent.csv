@@ -1,0 +1,2 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+cqaTestProd,div[title='cqa-test-prod-desktopfoc'] div,div,ebookContents,,isInitialization,,cqa-test-prod-desktopfoc

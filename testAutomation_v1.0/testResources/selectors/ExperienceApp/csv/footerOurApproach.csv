@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+languageAssessment,"a[href='https://www.cambridgeenglish.org/'][data-coh-settings='{ ""xs"":{""link_interaction"":""click-through-to-link""} }']",a,ourApproachPage,,,,Language Assessment
+languageLearningMaterials,a[href='https://www.cambridge.org/cambridgeenglish/'],a,ourApproachPage,,,,Language Learning materials

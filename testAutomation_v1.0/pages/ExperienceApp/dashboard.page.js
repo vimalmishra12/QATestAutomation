@@ -120,20 +120,36 @@ module.exports = {
     return res;
   },
 
+  
   click_ebook_btn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
-    res = await action.click(this.ebook_btn);
-    if (true == res) {
-      await logger.logInto(await stackTrace.get(), " ebook_btn is clicked");
-      res = await require("./eBook.page.js").isInitialized();
+    const kthElement = await action.getKthElement(this.ebook_btn, 3);
+    if (kthElement) {
+      res = await action.click(kthElement);
+
+      if (res === true) {
+        await logger.logInto(
+          await stackTrace.get(),
+          "4th ebook_btn is clicked"
+        );
+        res = await require("./eBook.page.js").isInitialized();
+      } else {
+        await logger.logInto(
+          await stackTrace.get(),
+          res + " - 4th ebook_btn is NOT clicked",
+          "error"
+        );
+      }
     } else {
       await logger.logInto(
         await stackTrace.get(),
-        res + "ebook_btn is NOT clicked",
+        "4th ebook_btn could not be found",
         "error"
       );
+      res = null;
     }
+
     return res;
   },
 

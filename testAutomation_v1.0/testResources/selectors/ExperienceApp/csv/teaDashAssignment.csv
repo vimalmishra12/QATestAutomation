@@ -1,0 +1,4 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+teaDashClassData,a[qid='class-card-dataorg_mqa-sierra-prod1qsyq-u4W6'],a,teaDash,,,classdata.page,Class data
+teaDashAssignments,a[qid='class-card-assignmentorg_mqa-sierra-prod1qsyq-u4W6'],a,teaDash,,,assignments.page,Assignments
+teaDashMaterial,a[qid='class-card-materialsorg_mqa-sierra-prod1qsyq-u4W6'],a,teaDash,,,materials.page,Materials

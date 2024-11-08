@@ -1,0 +1,3 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+footerCambridgeOneForSchools,.heading-title,h1,CambridgeOneForSchoolsPage,,,,Cambridge One For Schools 
+footerBack,.back-text,span,CambridgeOneForSchoolsPage,,,login.Page,Back

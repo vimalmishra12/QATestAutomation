@@ -1,0 +1,9 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+eBookNotesHeadingTxt,div.notes-title,div,notesContent,,,,My notes
+eBookAddNotesBtn,button.add-note-button,button,notesContent,,,eBookViewMoreDeleteNotestBtn,
+eBookAddNotesTextarea,"textarea[qid=""notes-9IgNfocur4WZF5gB-10""]",textarea,notesContent,,,,
+eBookSaveNotesBtn,"button[qid=""notes-9IgNfocur4WZF5gB-4""]",button,notesContent,,,eBookAddNotesTextarea,Test Note1
+eBookDeleteNotesBtn,"button[qid=""notes-9IgNfocur4WZF5gB-3""]",button,notesContent,,,,
+eBookNotesViewMoreBtn,"button[qid=""notes-9IgNfocur4WZF5gB-17""]",button,notesContent,,,eBookViewMoreDeleteNotestBtn,
+eBookViewMoreDeleteNotestBtn,"a[qid=""notes-9IgNfocur4WZF5gB-20""]",a,notesContent,,,,
+eBookNoteModalDeleteButton,"button[qid=""notes-9IgNfocur4WZF5gB-9""]",button,notesContent,,,eBookNotesHeadingTxt,

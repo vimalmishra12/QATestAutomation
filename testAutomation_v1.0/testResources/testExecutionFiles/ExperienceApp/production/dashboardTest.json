@@ -23,7 +23,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -34,7 +34,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -60,7 +60,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
             "jsonPath": "C1.appContent.dashboard.student"
           }
         ]
@@ -71,7 +71,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
             "jsonPath": "C1.appContent.dashboard.student"
           }
         ]
@@ -111,7 +111,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -122,7 +122,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -171,7 +171,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -182,7 +182,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -230,7 +230,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -241,7 +241,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -289,7 +289,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -300,7 +300,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
