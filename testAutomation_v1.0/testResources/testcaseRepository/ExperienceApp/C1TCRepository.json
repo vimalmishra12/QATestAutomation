@@ -475,7 +475,7 @@
           "visualTest": true
         },
         {
-          "id": "TST_EBOO_TC_19",
+          "id": "TST_EBOO_TC_23",
           "description": "Validate that the showAndHideSelection tool opens correctly",
           "tags": "P3",
           "visualTest": true
