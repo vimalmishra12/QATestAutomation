@@ -59,7 +59,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     await action.waitForDocumentLoad();
     res = {
-      pageStatus: await action.waitForDisplayed(this.cqa_ebook_evolve),
+      pageStatus: await action.waitForDisplayed(this.homeButton),
     };
     return res;
   },
@@ -241,7 +241,7 @@ module.exports = {
 
       await browser.pause(2000); 
       res = await action.getCSSProperty(
-        "a[qid='ebook-list-item-2']",
+        "a[qid='ebook-list-item-5']",
         "background-color"
       );
     } else {

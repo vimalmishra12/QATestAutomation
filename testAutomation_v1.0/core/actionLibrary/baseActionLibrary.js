@@ -316,6 +316,16 @@ module.exports = {
         }
     },
 
+    getKthElement: async function (selector, k) {
+        const elements = await this.findElements(selector);
+        if (k < 0 || k >= elements.length) {
+          console.warn("Invalid k: index out of range");
+          return null;
+        }
+        return elements[k];
+      },
+    
+
     scrollIntoView: async function (selector, options) {
         message = "element:" + selector;
         try {
