@@ -49,7 +49,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     await action.waitForDocumentLoad();
     res = {
-      pageStatus : await action.waitForDisplayed(this.cqa_ebook_evolve),
+      pageStatus : await action.waitForDisplayed(this.homeButton),
     };
     return res;
   },

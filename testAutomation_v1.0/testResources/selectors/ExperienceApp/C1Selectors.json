@@ -150,6 +150,12 @@
         "pageNumber": "button[qid=\"toc-6\"]"
       },
 
+      "showHideSelection": {
+          "hideSelection" : "button[qid=\"93\"]",
+          "showSelection" : "button[qid=\"92\"]",
+          "closeSelection" : "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]"
+      },
+
       "drawingTool": {
         "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
         "drawingToolPenColour" : "button[id=\"penColorDropdown\"] div[class=\"pen-color-inner-circle ng-tns-c606183087-2\"]",

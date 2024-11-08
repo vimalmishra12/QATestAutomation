@@ -635,6 +635,40 @@
       ]
     },
 
+
+    {
+      "modulename": "showHideSelection",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/showHideSelection.test.js",
+      "testcase": [
+        {
+          "id": "TST_SHOW_TC_1",
+          "description": "Validate that the hideSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_2",
+          "description": "Validate that the showSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_3",
+          "description": "Validate that the closeSelection tool is clickable and active",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_4",
+          "description": "Validate that show and hide selection values match the expected values",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    
+
     {
       "modulename": "drawingTool",
       "moduleId": "",

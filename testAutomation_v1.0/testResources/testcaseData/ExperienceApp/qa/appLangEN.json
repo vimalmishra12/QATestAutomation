@@ -234,6 +234,13 @@
 
         "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
+
+      "showHideSelection": {
+          "hideSelection" : "Hide Selection",
+          "showSelection" : "Show Selection",
+          "closeSelection" : "close"
+      },
+
       "eBookContents": {
         "teacher": {
           "cqaTestProd": "cqa-test-prod-desktopfoc"
