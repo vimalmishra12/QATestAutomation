@@ -19,6 +19,11 @@
     "notesFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='notesTest.json' --windowWidth=1600 --windowHeight=900",
     "highlighterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='highlighterTest.json' --windowWidth=1600 --windowHeight=900",
     "timerFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='timerTest_VC.json' --windowWidth=1600 --windowHeight=900",
+    "nextPreviousPageTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='nextPreviousPageButtonTest.json' --windowWidth=1600 --windowHeight=900",
+
+
+
+
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
     "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClass.json' --windowWidth=1600 --windowHeight=900",
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900"
