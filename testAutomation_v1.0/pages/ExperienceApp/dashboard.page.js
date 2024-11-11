@@ -10,6 +10,8 @@ module.exports = {
   ebook_btn: selectorFile.css.ComproC1.dashboard.ebook_btn,
   homework_btn: selectorFile.css.ComproC1.dashboard.homework_btn,
   myProgress_btn: selectorFile.css.ComproC1.dashboard.myProgress_btn,
+  createNewClass: selectorFile.css.ComproC1.dashboard.createNewClass,
+  activeClassCard: selectorFile.css.ComproC1.dashboard.activeClassCard,
 
   isInitialized: async function () {
     var res;
@@ -189,4 +191,48 @@ module.exports = {
     }
     return res;
   },
+
+  click_createNewClass: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.createNewClass);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' createNewClass is clicked'
+      );
+      browser.pause(10000);
+      res = await require('./createNewClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'createNewClass is NOT clicked',
+        'error'
+      );
+    }
+    return res;
+  },
+
+  click_activeClassCard: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.activeClassCard);
+    console.log('RES VAL', res);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' activeClassCard is clicked'
+      );
+      res = await require('./activeClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'activeClassCard is NOT clicked',
+        'error'
+      );
+    }
+    console.log('RES VAL BEFORE RETURN', res);
+    return res;
+  },
+
 };
