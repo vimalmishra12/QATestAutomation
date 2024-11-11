@@ -475,6 +475,18 @@
           "visualTest": true
         },
         {
+          "id": "TST_EBOO_TC_53",
+          "description": "Validate that next page button ebok working correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_54",
+          "description": "Validate that previous page button ebok working correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
           "id": "TST_EBOO_TC_23",
           "description": "Validate that the showAndHideSelection tool opens correctly",
           "tags": "P3",

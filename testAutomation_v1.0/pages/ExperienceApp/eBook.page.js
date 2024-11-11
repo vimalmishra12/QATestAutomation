@@ -54,6 +54,8 @@ module.exports = {
     selectorFile.css.ComproC1.eBook.readerContainerWrapper,
   zoomInBtn: selectorFile.css.ComproC1.eBook.zoomInBtn,
   zoomOutBtn: selectorFile.css.ComproC1.eBook.zoomOutBtn,
+  nextPage: selectorFile.css.ComproC1.eBook.nextPage,
+  previousPage: selectorFile.css.ComproC1.eBook.previousPage,
 
   isInitialized: async function () {
     var res;
@@ -873,6 +875,49 @@ module.exports = {
     return res;
   },
 
+  click_previousPage: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+
+    res = await action.click(this.previousPage);
+    //res = await action.click("button[qid='75']");
+    await browser.pause(2000);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        " previous page button is clicked"
+      );
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "previous page button is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+  click_nextPage: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.nextPage);
+   //res = await action.click("button[qid='76']");
+   await browser.pause(2000);
+
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        " next page button is clicked"
+      );
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "next page button is NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
   click_zoomOutBtn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
@@ -908,4 +953,6 @@ module.exports = {
     }
     return res;
   },
+
+
 };
