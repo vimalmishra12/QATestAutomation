@@ -123,7 +123,7 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a[qid='cHeader-hlp-1'], button[qid='cHeader-hlp-2']",
+        "help_btn": "a[qid='cHeader-hlp-1'], button[qid='cHeader-hlp-2'], a[qid='cHeader-hlp-2']",
         "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress']",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": ".tile-section-1",
