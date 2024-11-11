@@ -463,7 +463,7 @@
           "visualTest": true
         },
         {
-          "id": "TST_EBOO_TC_17",
+          "id": "TST_EBOO_TC_52",
           "description": "Validate that the Timer panel opens correctly",
           "tags": "P3",
           "visualTest": true

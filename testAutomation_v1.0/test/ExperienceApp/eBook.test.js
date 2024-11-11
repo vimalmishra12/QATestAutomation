@@ -148,7 +148,7 @@ module.exports = {
     );
   },
 
-  TST_EBOO_TC_17: async function (testdata) {
+  TST_EBOO_TC_52: async function (testdata) {
     sts = await eBook.click_timer();
     await assertion.assertEqual(sts, true, "notes are not Clicked");
   },
