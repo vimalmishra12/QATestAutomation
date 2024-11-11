@@ -148,17 +148,17 @@ module.exports = {
     );
   },
 
-  TST_EBOO_TC_17: async function (testdata) {
+  TST_EBOO_TC_52: async function (testdata) {
     sts = await eBook.click_timer();
     await assertion.assertEqual(sts, true, "notes are not Clicked");
   },
   
-  TST_EBOO_TC_18: async function (testdata) {
+  TST_EBOO_TC_51: async function (testdata) {
     sts = await eBook.click_drawingTool();
     await assertion.assertEqual(sts, true, "drawing tool  are not Clicked");
   },
 
-  TST_EBOO_TC_19: async function (testdata) {
+  TST_EBOO_TC_23: async function (testdata) {
     sts = await eBook.click_showAndHideSelection();
     await assertion.assertEqual(sts, true, "show/Hide  Selection tool  are not Clicked");
   },
