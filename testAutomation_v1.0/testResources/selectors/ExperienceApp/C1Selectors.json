@@ -166,10 +166,10 @@
 
       "drawingTool": {
         "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
-        "drawingToolPenColour" : "button[id=\"penColorDropdown\"] div[class=\"pen-color-inner-circle ng-tns-c606183087-2\"]",
-        "drawingToolPenWidth" : "button[id=\"penStrokeDropdown\"] div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"]",
+        "drawingToolPenColour" : "button[id=\"penColorDropdown\"]",
+        "drawingToolPenWidth" : "button[id=\"penStrokeDropdown\"]",
         "drawingToolHighlighter" : "button[qid=\"86\"] img[alt=\"Highlighter\"]",
-        "drawingToolEraser" : "button[class=\"ng-tns-c606183087-2 left-side\"] img[alt=\"Eraser\"]",
+        "drawingToolEraser" : "div.delete-menu[qid=\"87\"][title=\"Eraser\"] > button.left-side > img[alt=\"Eraser\"]",
         "drawingToolUndo" : "button.undo-button[qid=\"88\"]",
         "drawingToolRedo" :"button.redo-button[qid=\"89\"]",
 
@@ -178,10 +178,10 @@
         "penColourBlue" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=\"background-color: rgb(0, 2, 255);\"]",
         "penColourRed" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(185, 0, 0);\"]",
         "penColourBlack" : "div[class=\"pen-color-dropdown ng-tns-c606183087-2 dropright ng-star-inserted show\"] div:nth-child(4) button:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1)",
-        "penStroke4" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-4\"]",
-        "penStroke3" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-3\"]",
-        "penStroke2" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-2\"]",
-        "penStroke1" : "div[class=\"pen-stroke-circle-container ng-tns-c606183087-2\"] div[class=\"pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-1\"]"
+        "penStroke4" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-4",
+        "penStroke3" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-3",
+        "penStroke2" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-2",
+        "penStroke1" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-1"
         
       },
       

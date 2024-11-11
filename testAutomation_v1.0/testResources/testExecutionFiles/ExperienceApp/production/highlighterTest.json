@@ -64,29 +64,139 @@
           "testData": []
         },
         {
-            "id": "TST_EBOO_TC_51",
-            "description": "",
-            "testFile": "./test/ExperienceApp/eBook.test.js",
-            "testData": []
-        }
+          "id": "TST_EBOO_TC_51",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+      }
       
       ],
       "BeforeEach": [],
       "Test": [
         
+        
         {
-            "id": "TST_EBOO_TC_51",
-            "description": "",
-            "testFile": "./test/ExperienceApp/eBook.test.js",
-            "testData": []
+          "id": "TST_DRAW_TC_2",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
         },
+      
         {
-            "id": "TST_DRAW_TC_2",
+          "id": "TST_DRAW_TC_10",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+        },
+
+        {
+          "id": "TST_DRAW_TC_3",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+        },
+      
+        {
+          "id": "TST_DRAW_TC_14",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+        },
+    
+       
+        {
+            "id": "TST_DRAW_TC_1",
             "description": "",
             "testFile": "./test/ExperienceApp/drawingTool.test.js",
             "testData": []
-          }
+        },
 
+        {
+          "id": "TST_DRAW_TC_5",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_DRAW_TC_6",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+        },
+
+       
+        
+        {
+          "id": "TST_EBOO_TC_5",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "",
+          "testFile": "./test/ExperienceApp/dashboard.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_EBOO_TC_3",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_EBOO_TC_51",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
+        },
+        {
+          "id": "TST_DRAW_TC_4",
+          "description": "",
+          "testFile": "./test/ExperienceApp/drawingTool.test.js",
+          "testData": []
+       },
+
+
+
+
+       {
+        "id": "TST_EBOO_TC_5",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_DASH_TC_5",
+        "description": "",
+        "testFile": "./test/ExperienceApp/dashboard.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_3",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_51",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_DRAW_TC_9",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": []
+     }
+      ,
+      {
+        "id": "TST_DRAW_TC_4",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": []
+      }
 
       
 

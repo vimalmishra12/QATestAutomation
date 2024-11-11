@@ -63,6 +63,12 @@
           "description": "",
           "testFile": "./test/ExperienceApp/eBook.test.js",
           "testData": []
+        }, 
+        {
+          "id": "TST_EBOO_TC_23",
+          "description": "",
+          "testFile": "./test/ExperienceApp/eBook.test.js",
+          "testData": []
         }
        
       
@@ -70,14 +76,8 @@
       "BeforeEach": [],
       "Test": [
         
-        {
-          "id": "TST_EBOO_TC_23",
-          "description": "",
-          "testFile": "./test/ExperienceApp/eBook.test.js",
-          "testData": []
-        }
-       ,
-        {
+       
+       {
             "id": "TST_SHOW_TC_2",
             "description": "",
             "testFile": "./test/ExperienceApp/showHideSelection.test.js",

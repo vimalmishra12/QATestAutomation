@@ -319,6 +319,7 @@ module.exports = {
     await action.waitForDocumentLoad();
 
     res = await action.click(this.drawingTool);
+    console.log("clicked 322" , res)
     
    
     if (true == res) {

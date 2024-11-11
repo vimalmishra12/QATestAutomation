@@ -196,7 +196,9 @@ click_drawingToolHighlighter: async function () {
 click_drawingToolPenColour: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
+console.log("199" , this.drawingToolPenColour )
 res =await action.click(this.drawingToolPenColour);
+console.log("199 clicked" , res )
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " drawingToolPenColour is clicked");
 }
@@ -222,11 +224,14 @@ return res;
 click_drawingToolEraser: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
+//console.log("101",this.drawingToolEraser);
 res =await action.click(this.drawingToolEraser);
+//console.log("102 clicked",res );
+
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " drawingToolEraser is clicked");
 
-
+ //console.log("103 clicked");
  const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
 
  // Scroll the canvas into view, if necessary
