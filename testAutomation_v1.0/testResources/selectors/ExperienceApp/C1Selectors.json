@@ -186,7 +186,10 @@
         "fitToWidthBtn" : "button[qid=\"98\"]",
         "readerContainerWrapper" : "#reader-container-wrapper",
         "zoomInBtn" : "button[qid=\"96\"]",
-        "zoomOutBtn" : "button[qid=\"95\"]"
+        "zoomOutBtn" : "button[qid=\"95\"]",
+        "nextPage" : "button[qid=\"76\"]",
+        "previousPage": "button[qid=\"75\"]"
+
       },
 
       "showHideSelection": {

@@ -208,7 +208,9 @@
       },
       "eBookViewerControls" : {
         "singlePage" : "single-page", 
-        "doublePage" : "double-page"
+        "doublePage" : "double-page",
+        "nextPage" : "Next page",
+        "previousPage" : "Previous page"
       },
       "createClassPage": {
         "pageTitle": "Create a new class",

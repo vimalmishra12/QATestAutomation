@@ -157,6 +157,14 @@ module.exports = {
     sts = await eBook.click_drawingTool();
     await assertion.assertEqual(sts, true, "drawing tool  are not Clicked");
   },
+  TST_EBOO_TC_53: async function (testdata) {
+    sts = await eBook.click_nextPage();
+    await assertion.assertEqual(sts, true, "ebook next page button not clicked");
+  },
+  TST_EBOO_TC_54: async function (testdata) {
+    sts = await eBook.click_previousPage();
+    await assertion.assertEqual(sts, true, "ebook previous page button  are not Clicked");
+  },
 
   TST_EBOO_TC_23: async function (testdata) {
     sts = await eBook.click_showAndHideSelection();
