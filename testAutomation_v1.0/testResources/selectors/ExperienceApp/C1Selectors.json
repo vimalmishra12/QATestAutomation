@@ -123,12 +123,43 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a[qid='cHeader-hlp-1']",
+        "help_btn": "a[qid='cHeader-hlp-1'], button[qid='cHeader-hlp-2'], a[qid='cHeader-hlp-2']",
         "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress']",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": ".tile-section-1",
         "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
-        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]"
+        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
+        "createNewClass": ".btn.btn-main-color-1-bordered.add-button.d-flex.align-items-center.justify-content-center",
+        "activeClassCard": "div.heading-container:nth-of-type(1) a.class-title.mx-2"
+      },
+      "createNewClass": {
+        "enterClassDetails": ".form-heading, .add-class-details-heading",
+        "back_btn": "div[class='my-3 create-class-header'] span:nth-child(2)",
+        "enterClassName": "input[placeholder=\"e.g. CS 2 English\"]",
+        "startDate": "input[value=\"Thu, Oct 3, 2024\"]",
+        "endDate": "input[value=\"Thu, Oct 2, 2025\"]",
+        "enterYourSchool": "input[placeholder=\"Enter your school\"]",
+        "cancel_btn": "button[qid=\"create-class-cancel-button\"]",
+        "next_btn": "button[qid=\"create-class-next-button\"] , button[qid='create-class-3']",
+        "addClassMaterials": ".materials-heading",
+        "cancel_btn_classMaterial": "button[qid=\"create-class-cancel-button\"], button[qid='create-class-2']",
+        "addLater_Btn": "button[qid=\"create-class-finish-button\"]",
+        "classSuccessfullyCreated": ".heading",
+        "dashboard_btn": "a[qid=\"go-to-dashboard-btn-id\"] , button[qid='class-created-success-1']",
+        "cancelThisClass": "div[role=\"document\"] div div h3",
+        "yesCancel_btn": ".btn-text.btn-yes.p-3",
+        "noKeep_btn": "button[data-bs-dismiss=\"modal\"], button[qid='cancel-modal-2']",
+        "addMaterial_btn": "button[qid='add-class-materials-button-3']",
+        "addMaterial_input": "input[qid=\"material-modal-filter-input\"]",
+        "dev_test_ebook_bundle_104_bundle": "label[for='material6'] div , label[for='product1'] div[class='check']",
+        "addToClass_Btn": "button[qid=\"material-modal-add-to-class-btn\"] , button[qid='add-material-save-7']",
+        "finish_btn": "button[qid=\"create-class-finish-button\"] , button[qid='create-class-4']",
+        "dev_test_ebook_bundle_104_bundle_dropdown" : "a[qid=\"add-material-product-0\"]"
+      },
+      "activeClass": {
+        "actionButton": "a[qid=\"cView-70\"]",
+        "deleteClass": "a[qid='cView-13']",
+        "yesDelete_Btn": "button[qid=\"cView-48\"]"
       },
       "progress": {
         "progress": "h1[qid='clView-6']"
