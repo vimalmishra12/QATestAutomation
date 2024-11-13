@@ -38,6 +38,8 @@ module.exports = {
 
   getData_activeClasses: async function () {
     await logger.logInto(await stackTrace.get());
+    const ebook = await action.getKthElement(this.ebook_btn, 3);
+    const res = await action.getText(ebook) ; 
     var obj;
     obj = {
       progress_btn:
@@ -49,8 +51,8 @@ module.exports = {
           ? await action.getText(this.praticeExtra_btn)
           : null,
       ebook_btn:
-        (await action.getElementCount(this.ebook_btn)) > 0
-          ? await action.getText(this.ebook_btn)
+        ( await action.getElementCount(this.ebook_btn)) > 0
+          ? await action.getText(ebook)
           : null,
       homework_btn:
         (await action.getElementCount(this.homework_btn)) > 0
