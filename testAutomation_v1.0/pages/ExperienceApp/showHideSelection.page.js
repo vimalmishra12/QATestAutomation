@@ -46,38 +46,19 @@ click_hideSelection: async function () {
     if (true == res) {
     await logger.logInto(await stackTrace.get(), " hideSelection is clicked");
 
-    const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
-
-    // Scroll the canvas into view, if necessary
-    await canvasElement.scrollIntoView();
-    
-    // Define drawing actions using performActions
-    await browser.performActions([
-      {
-        type: 'pointer',
-        id: 'mouse1',
-        parameters: { pointerType: 'mouse' },
-        actions: [
-         { type: 'pointerMove', origin: canvasElement, x: 100, y: 100}, // Starting point
-         { type: 'pointerDown', button: 0 },
-         { type: 'pointerMove', origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-         { type: 'pointerMove', origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-         { type: 'pointerMove', origin: canvasElement, x: 250, y: 250 }, // Ending point
-         { type: 'pointerUp', button: 0 } // Release mouse button
-       ]
-      }
-    ]);
-   
-   
-    
-    // Release all actions
-   
-    await browser.releaseActions();
-       
-    await browser.pause(10000);
-   
-   
-
+    // await action.dragAndDropWithPath(this.drawingToolPresentation,
+      //   100,100,
+      //   300,300 ,
+      //   [
+      //     { x: 100, y: 150 },
+      //     { x: 300, y: 200 }
+      //   ]  
+      //)
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        100,100,
+        300,300 
+      )
+      await browser.pause(500);
 
     }
     else {
@@ -92,37 +73,10 @@ var res= true;
 //res =await action.click(this.showSelection);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " showSelection is clicked");
- //console.log("slow selection is clicked ");
 
- const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
-
- // Scroll the canvas into view, if necessary
- await canvasElement.scrollIntoView();
- 
- // Define drawing actions using performActions
- await browser.performActions([
-   {
-     type: 'pointer',
-     id: 'mouse1',
-     parameters: { pointerType: 'mouse' },
-     actions: [
-      { type: 'pointerMove', origin: canvasElement, x: 100, y: 100}, // Starting point
-      { type: 'pointerDown', button: 0 },
-      { type: 'pointerMove', origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-      { type: 'pointerMove', origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-      { type: 'pointerMove', origin: canvasElement, x: 250, y: 250 }, // Ending point
-      { type: 'pointerUp', button: 0 } // Release mouse button
-    ]
-   }
- ]);
-
-
- 
- // Release all actions
-
- await browser.releaseActions();
+ await action.dragAndDropWithPath(this.drawingToolPresentation,100,100,300,300)
     
- await browser.pause(10000);
+ await browser.pause(5000);
 
 
  
