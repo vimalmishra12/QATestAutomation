@@ -118,79 +118,20 @@ module.exports = {
         " drawingToolScribble is clicked"
       );
 
-      const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        100,100,
+        300,300 ,
+        [
+          { x: 100, y: 150 },
+          { x: 300, y: 200 }
+        ]  
+      )
+      // await action.dragAndDropWithPath(this.drawingToolPresentation,
+      //   100,100,
+      //   300,300 
+      // )
+      await browser.pause(500);
 
-      // Scroll the canvas into view, if necessary
-      await canvasElement.scrollIntoView();
-
-      // Define drawing actions using performActions
-      await browser.performActions([
-        {
-          type: "pointer",
-          id: "mouse1",
-          parameters: { pointerType: "mouse" },
-          actions: [
-            { type: "pointerMove", origin: canvasElement, x: 100, y: 100 }, // Starting point
-            { type: "pointerDown", button: 0 },
-            { type: "pointerMove", origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-            { type: "pointerMove", origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-            { type: "pointerMove", origin: canvasElement, x: 250, y: 250 }, // Ending point
-            { type: "pointerUp", button: 0 }, // Release mouse button
-          ],
-        },
-      ]);
-
-      // Release all actions
-      await browser.releaseActions();
-
-      // const canvasSelector = this.drawingToolPresentation ; // Replace with your canvas selector
-
-      // // Move to the starting point of your drawing
-      // await action.moveTo(canvasSelector, 100, 100);
-
-      // // Press the left mouse button down to start drawing
-      // await browser.buttonDown(0);
-
-      // // Move to different coordinates to simulate drawing a line or shape
-      // await action.moveTo(canvasSelector, 150, 150);
-      // await action.moveTo(canvasSelector, 200, 200);
-      // await action.moveTo(canvasSelector, 250, 250);
-
-      // // Release the mouse button to finish drawing
-      // await browser.buttonUp(0);
-
-      // const canvasSelector = this.drawingToolPresentation; // Update this with your actual canvas selector
-      // const canvasElement = await $(canvasSelector);
-
-      // // Ensure the canvas is visible in the viewport
-      // await canvasElement.scrollIntoView();
-
-      // // Get canvas dimensions and location
-      // const canvasPosition = await canvasElement.getLocation();
-      // const canvasSize = await canvasElement.getSize();
-
-      // // Define safe starting coordinates within the canvas
-      // const startX = Math.round(canvasPosition.x + 10);  // Adjust to a smaller offset if needed
-      // const startY = Math.round(canvasPosition.y + 10);
-
-      // // Perform the drawing action within the bounds of the canvas
-      // await browser.performActions([
-      //   {
-      //     type: 'pointer',
-      //     id: 'mouse1',
-      //     parameters: { pointerType: 'mouse' },
-      //     actions: [
-      //       { type: 'pointerMove', origin: canvasElement, x: startX, y: startY },
-      //       { type: 'pointerDown', button: 0 },
-      //       { type: 'pointerMove', origin: canvasElement, x: startX + Math.min(canvasSize.width - 20, 50), y: startY + Math.min(canvasSize.height - 20, 50) },
-      //       { type: 'pointerMove', origin: canvasElement, x: startX + Math.min(canvasSize.width - 20, 100), y: startY + Math.min(canvasSize.height - 20, 100) },
-      //       { type: 'pointerUp', button: 0 }
-      //     ]
-      //   }
-      // ]);
-
-      // // Release all actions after completion
-      // await browser.releaseActions();
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -211,30 +152,19 @@ module.exports = {
         " drawingToolScribble is clicked"
       );
 
-      const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
-
-      // Scroll the canvas into view, if necessary
-      await canvasElement.scrollIntoView();
-
-      // Define drawing actions using performActions
-      await browser.performActions([
-        {
-          type: "pointer",
-          id: "mouse1",
-          parameters: { pointerType: "mouse" },
-          actions: [
-            { type: "pointerMove", origin: canvasElement, x: 100, y: 100 }, // Starting point
-            { type: "pointerDown", button: 0 },
-            { type: "pointerMove", origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-            { type: "pointerMove", origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-            { type: "pointerMove", origin: canvasElement, x: 250, y: 250 }, // Ending point
-            { type: "pointerUp", button: 0 }, // Release mouse button
-          ],
-        },
-      ]);
-
-      // Release all actions
-      await browser.releaseActions();
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        50,50,
+        350,350 ,
+        [
+          { x: 100, y: 160 },
+          { x: 310, y: 200 }
+        ]  
+      )
+      // await action.dragAndDropWithPath(this.drawingToolPresentation,
+      //   100,100,
+      //   300,300 
+      // )
+      await browser.pause(500);
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -298,31 +228,16 @@ module.exports = {
         " drawingToolEraser is clicked"
       );
 
-      //console.log("103 clicked");
-      const canvasElement = await $(this.drawingToolPresentation); // Ensure the canvas selector is correct
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        100,100,
+        300,300 
+        
+      )
 
-      // Scroll the canvas into view, if necessary
-      await canvasElement.scrollIntoView();
+      await browser.pause(500)
 
-      // Define drawing actions using performActions
-      await browser.performActions([
-        {
-          type: "pointer",
-          id: "mouse1",
-          parameters: { pointerType: "mouse" },
-          actions: [
-            { type: "pointerMove", origin: canvasElement, x: 100, y: 100 }, // Starting point
-            { type: "pointerDown", button: 0 },
-            { type: "pointerMove", origin: canvasElement, x: 150, y: 150 }, // Draw to this point
-            { type: "pointerMove", origin: canvasElement, x: 200, y: 200 }, // Continue drawing
-            { type: "pointerMove", origin: canvasElement, x: 250, y: 250 }, // Ending point
-            { type: "pointerUp", button: 0 }, // Release mouse button
-          ],
-        },
-      ]);
 
-      // Release all actions
-      await browser.releaseActions();
+
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -376,7 +291,7 @@ module.exports = {
     var res;
     res = await action.click(this.drawingToolPresentation);
 
-    console.log("vikrant 1", res);
+    //console.log("vikrant 1", res);
 
     if (true == res) {
       await logger.logInto(
