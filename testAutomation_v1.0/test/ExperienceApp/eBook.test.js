@@ -159,11 +159,12 @@ module.exports = {
   },
   TST_EBOO_TC_53: async function (testdata) {
     sts = await eBook.click_nextPage();
-    await assertion.assertEqual(sts, true, "ebook next page button not clicked");
+    //console.log("2001  "+sts+"   "+testdata.pageNumber);
+    await assertion.assertEqual(sts, testdata.pageNumber14, "ebook next page button not clicked");
   },
   TST_EBOO_TC_54: async function (testdata) {
     sts = await eBook.click_previousPage();
-    await assertion.assertEqual(sts, true, "ebook previous page button  are not Clicked");
+    await assertion.assertEqual(sts, testdata.pageNumber12, "ebook previous page button  are not Clicked");
   },
 
   TST_EBOO_TC_23: async function (testdata) {
