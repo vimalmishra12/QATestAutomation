@@ -1,4 +1,3 @@
-
 {
   "name": "testAutomation",
   "version": "0.9.4",
@@ -6,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
@@ -20,10 +18,7 @@
     "highlighterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='highlighterTest.json' --windowWidth=1600 --windowHeight=900",
     "timerFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='timerTest_VC.json' --windowWidth=1600 --windowHeight=900",
     "nextPreviousPageTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='nextPreviousPageButtonTest.json' --windowWidth=1600 --windowHeight=900",
-
     "toolsFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='toolsFeatureTest.json' --windowWidth=1600 --windowHeight=900",
-
-
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
     "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClass.json' --windowWidth=1600 --windowHeight=900",
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900"
