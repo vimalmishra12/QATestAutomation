@@ -51,7 +51,12 @@
         "id": "TST_DASH_TC_5",
         "description": "",
         "testFile": "./test/ExperienceApp/dashboard.test.js",
-        "testData": []
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "jsonPath": "C1.login.user.validStudent1"
+          }
+        ]
       }
     ],
     "BeforeEach": [],
@@ -197,7 +202,12 @@
         "id": "TST_DASH_TC_5",
         "description": "",
         "testFile": "./test/ExperienceApp/dashboard.test.js",
-        "testData": []
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "jsonPath": "C1.login.user.validStudent1"
+          }
+        ]
       }
     ],
     "BeforeEach": [],
@@ -341,7 +351,12 @@
         "id": "TST_DASH_TC_5",
         "description": "",
         "testFile": "./test/ExperienceApp/dashboard.test.js",
-        "testData": []
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "jsonPath": "C1.login.user.validStudent1"
+          }
+        ]
       }
     ],
     "BeforeEach": [],
