@@ -881,12 +881,15 @@ module.exports = {
 
     res = await action.click(this.previousPage);
     //res = await action.click("button[qid='75']");
-    await browser.pause(2000);
+    await browser.pause(9000);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " previous page button is clicked"
       );
+
+      const pageText = await $(this.pageNOShow).getText();
+      res=pageText;
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -899,15 +902,20 @@ module.exports = {
   click_nextPage: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    
     res = await action.click(this.nextPage);
-   //res = await action.click("button[qid='76']");
-   await browser.pause(2000);
-
+   
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " next page button is clicked"
       );
+      await action.waitForDisplayed(this.pageNOShow)
+      await browser.pause(9000);
+      const pageText = await $(this.pageNOShow).getText(); // or getProperty('innerText') if getText() doesn't work as expected
+    
+      res=pageText;
+
     } else {
       await logger.logInto(
         await stackTrace.get(),
