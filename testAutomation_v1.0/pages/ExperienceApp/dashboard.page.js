@@ -36,9 +36,9 @@ module.exports = {
     return obj;
   },
 
-  getData_activeClasses: async function () {
+  getData_activeClasses: async function (testdata) {
     await logger.logInto(await stackTrace.get());
-    const ebook = await action.getKthElement(this.ebook_btn, 3);
+    const ebook = await action.getKthElement(this.ebook_btn,  testdata[1].launchEbook);
     const res = await action.getText(ebook) ; 
     var obj;
     obj = {
@@ -125,10 +125,11 @@ module.exports = {
   },
 
   
-  click_ebook_btn: async function () {
+  click_ebook_btn: async function (testdata) {
     await logger.logInto(await stackTrace.get());
     var res;
-    const kthElement = await action.getKthElement(this.ebook_btn, 3);
+    console.log("this is testdata 131" , testdata)
+    const kthElement = await action.getKthElement(this.ebook_btn, testdata.launchEbook);
     if (kthElement) {
       res = await action.click(kthElement);
 
