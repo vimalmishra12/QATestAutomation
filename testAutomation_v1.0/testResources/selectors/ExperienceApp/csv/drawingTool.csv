@@ -1,0 +1,17 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+drawingToolScribble,button[qid='85'] img[alt='Scribble'],button,drawingTool,,,,Scribble
+drawingToolPenColour,button[id='penColorDropdown'] div[class='pen-color-inner-circle ng-tns-c606183087-2'],button,drawingTool,,,,Pen colour
+drawingToolPenWidth,button[id='penStrokeDropdown'] div[class='pen-stroke-circle-container ng-tns-c606183087-2'],button,drawingTool,,,,Pen width
+drawingToolHighlighter,button[qid='86'] img[alt='Highlighter'],buttom,drawingTool,,,,Highlighter
+drawingToolEraser,button[class='ng-tns-c606183087-2 left-side'] img[alt='Eraser'],button,drawingTool,,,,Eraser
+drawingToolUndo,button.undo-button[qid='88'],button,drawingTool,,,,Undo
+drawingToolRedo,button.undo-button[qid='89'],button,drawingTool,,,,Redo
+drawingToolPresentation,div[id='drawing-tools-container-B'] canvas,button,drawingTool,,,,presentation
+penColourGreen,".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=""background-color: rgb(0, 179, 46);""]",button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penColourBlue,".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=""background-color: rgb(0, 2, 255);""]",button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penColourRed,".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=""background-color: rgb(185, 0, 0);""]",button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penColourBlack,".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=""background-color: rgb(0,0,0);""]",button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penStroke4,div[class='pen-stroke-circle-container ng-tns-c606183087-2'] div[class='pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-4'],button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penStroke3,div[class='pen-stroke-circle-container ng-tns-c606183087-2'] div[class='pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-3'],button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penStroke2,div[class='pen-stroke-circle-container ng-tns-c606183087-2'] div[class='pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-2'],button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
+penStroke1,div[class='pen-stroke-circle-container ng-tns-c606183087-2'] div[class='pen-stroke-outer-circle ng-tns-c606183087-2 line-weight-1'],button,drawingTool,,,,Page - 64-65 / 106 1 2 3 4
