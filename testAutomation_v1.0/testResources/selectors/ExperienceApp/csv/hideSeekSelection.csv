@@ -1,0 +1,4 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+hideSelection, button[qid='93'],button,showAndHideSelection,,,,Hide Selection
+showSelection,button[qid='92'],button,showAndHideSelection,,,,Show Selection
+closeSelection,"i.nemo-close-new.nemo-font[aria-hidden=""true""]",button,showAndHideSelection,,,,close

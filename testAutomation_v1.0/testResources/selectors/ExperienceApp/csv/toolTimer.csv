@@ -1,0 +1,16 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+timerCountUp,button[qid='toc-64'],button,timerCountDown,,,,Count up
+timerCountDownClear,button[title='Clear'],button,timerCountDown,,,,Clear
+timerCountDownMute,button[title='Mute'],button,timerCountDown,,,,Mute
+timerCountDownClose,button[qid='toc-63'],button,timerCountDown,,,,Close
+timerCountDownPlay,button[qid='toc-78'],button,timerCountDown,,,,Play
+timerBtnOne,a[qid='toc-67'],a,timerCountDown,,,,BtnOne
+timerBtnTwo,a[qid='toc-68'],a,timerCountDown,,,,btnTwo
+timerBtnthree,a[qid='toc-69'],a,timerCountDown,,,,btnThree
+timerCountDown,button[qid='toc-65'],button,timerCountUp,,,,Count Down
+timerCountUpClose,button[qid='toc-63'],button,timerCountUp,,,,Close
+timerCountUpPause,button[qid='toc-83'],,timerCountUp,,,,Pause
+timerCountUpPlay,.fa.fa-play.play-button,button,timerCountUp,,,,Play
+timerReset,button[title='Reset'],button,timerCountDown,,,,Reset
+timerCountDownUnmute,button[title='Unmute'],button,timerCountDown,,,,Unmute
+timerCountDownPause,.fa.fa-pause.pause-button,button,timerCountDown,,,,Pause
