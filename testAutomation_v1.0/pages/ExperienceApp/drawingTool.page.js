@@ -118,18 +118,18 @@ module.exports = {
         " drawingToolScribble is clicked"
       );
 
-      await action.dragAndDropWithPath(this.drawingToolPresentation,
-        100,100,
-        300,300 ,
-        [
-          { x: 100, y: 150 },
-          { x: 300, y: 200 }
-        ]  
-      )
       // await action.dragAndDropWithPath(this.drawingToolPresentation,
       //   100,100,
-      //   300,300 
+      //   300,300 ,
+      //   [
+      //     { x: 100, y: 150 },
+      //     { x: 300, y: 200 }
+      //   ]  
       // )
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        100,100,
+        300,300 
+      )
       await browser.pause(500);
 
     } else {
@@ -152,18 +152,18 @@ module.exports = {
         " drawingToolScribble is clicked"
       );
 
-      await action.dragAndDropWithPath(this.drawingToolPresentation,
-        50,50,
-        350,350 ,
-        [
-          { x: 100, y: 160 },
-          { x: 310, y: 200 }
-        ]  
-      )
       // await action.dragAndDropWithPath(this.drawingToolPresentation,
       //   100,100,
-      //   300,300 
+      //   300,300 ,
+      //   [
+      //     { x: 100, y: 150 },
+      //     { x: 300, y: 200 }
+      //   ]  
       // )
+      await action.dragAndDropWithPath(this.drawingToolPresentation,
+        100,100,
+        300,300 
+      )
       await browser.pause(500);
     } else {
       await logger.logInto(
@@ -234,7 +234,7 @@ module.exports = {
         
       )
 
-      await browser.pause(500)
+      await browser.pause(1000)
 
 
 
