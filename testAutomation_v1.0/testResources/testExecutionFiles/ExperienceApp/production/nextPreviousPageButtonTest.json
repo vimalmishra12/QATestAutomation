@@ -1,6 +1,6 @@
 {
     "Suite1": {
-      "Name": "Validation of hide sheek   Page",
+      "Name": "Validation of next previous   Page",
       "TestCaseRepo": [
         "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
       ],

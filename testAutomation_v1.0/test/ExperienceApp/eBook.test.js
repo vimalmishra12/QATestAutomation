@@ -172,8 +172,6 @@ module.exports = {
     await assertion.assertEqual(sts, true, "show/Hide  Selection tool  are not Clicked");
   },
 
-
-
   TST_PAGE_TC_1 :   async function (testdata) { 
     sts = await pageNoDialogBox.click_pageNoOneBtn();
     await assertion.assertEqual(sts, true,"pageNoOneBtn are not Clicked");
