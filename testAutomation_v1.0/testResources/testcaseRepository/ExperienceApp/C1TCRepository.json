@@ -224,7 +224,7 @@
         },
         {
           "id": "TST_DASH_TC_5",
-          "description": "Validate that the eBook button is clickable and navigates correctly",
+          "description": "Validate that the selected eBook is launched",
           "tags": "P3",
           "visualTest": false
         },
@@ -556,7 +556,7 @@
         },
         {
           "id": "TST_EBOO_TC_3",
-          "description": "Validate that the Tools button opens correctly",
+          "description": "Validate that the Tools button is launched",
           "tags": "P3",
           "visualTest": true
         },
@@ -646,7 +646,7 @@
         },
         {
           "id": "TST_EBOO_TC_51",
-          "description": "Validate that the drawing tool opens correctly",
+          "description": "Validate that the drawing tool is launched",
           "tags": "P3",
           "visualTest": true
         },
@@ -903,25 +903,25 @@
         
           {
               "id": "TST_DRAW_TC_1",
-              "description": "Validate that Scribble tool is clickable and active",
+              "description": "Validate that drawing tool (pen) draw line based on selected pen color & width",
               "tags": "P3",
               "visualTest": false
           },
           {
               "id": "TST_DRAW_TC_2",
-              "description": "Validate that Pen Colour tool is clickable and active",
+              "description": "Validate clicking on the Pen color opens pen color options",
               "tags": "P3",
               "visualTest": true
           },
           {
               "id": "TST_DRAW_TC_3",
-              "description": "Validate that Pen Width tool is clickable and active",
+              "description": "Validate that clicking on the Pen width opens the pen width options",
               "tags": "P3",
               "visualTest": true
           },
           {
               "id": "TST_DRAW_TC_4",
-              "description": "Validate that Eraser tool is clickable and active",
+              "description": "Validate that Eraser tool works correctly",
               "tags": "P3",
               "visualTest": true
           },
@@ -951,14 +951,14 @@
           },
           {
             "id": "TST_DRAW_TC_9",
-            "description": "Validate that highlighter tool is clickable and active",
+            "description": "Validate that the highlighter tool works",
             "tags": "P3",
             "visualTest": false
         }
         ,
           {
               "id": "TST_DRAW_TC_10",
-              "description": "Validate that green pen color is clickable and selected",
+              "description": "Validate that the user is able to select Green color from available pen colors",
               "tags": "P3",
               "visualTest": false
           },
@@ -982,9 +982,9 @@
           },
           {
               "id": "TST_DRAW_TC_14",
-              "description": "Validate that pen stroke width 4 is clickable and selected",
+              "description": "Validate that the user is able to select pen stroke width 4 from available width options",
               "tags": "P3",
-              "visualTest": false
+              "visualTest": true
           },
           {
               "id": "TST_DRAW_TC_15",
