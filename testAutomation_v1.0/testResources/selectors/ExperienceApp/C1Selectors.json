@@ -46,7 +46,7 @@
         "subheadingText": "div[class=\"main-content\"] h2",
         "signupBtn": "a[qid=\"home-1\"]",
         "loginBtn": "a[qid=\"home-2\"]",
-        "brandLogo_img": "img[alt=\"Shield\"]",
+        "brandLogo_img": "img[alt=\"Cambridge Logo\"]",
         "languageSelector_dropdown": "[qid=\"header-10\"]",
         "languageSelector_dropdown_list": "[class*=\"lang-dropdown-item\"]"
       },

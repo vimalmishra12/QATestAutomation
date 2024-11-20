@@ -670,7 +670,7 @@
         },
         {
           "id": "TST_PAGE_TC_1",
-          "description": "Validate that pageNoOneBtn  is  Clicked ",
+          "description": "Validate that user is able click Page No One button",
           "tags": "P2",
           "visualTest": true
         },
@@ -905,7 +905,7 @@
               "id": "TST_DRAW_TC_1",
               "description": "Validate that drawing tool (pen) draw line based on selected pen color & width",
               "tags": "P3",
-              "visualTest": false
+              "visualTest": true
           },
           {
               "id": "TST_DRAW_TC_2",
