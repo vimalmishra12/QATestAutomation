@@ -14,7 +14,7 @@ module.exports = {
     selectorFile.css.ComproC1.notes.eBookViewMoreDeleteNotestBtn,
   eBookNoteModalDeleteButton:
     selectorFile.css.ComproC1.notes.eBookNoteModalDeleteButton,
-
+    
   isInitialized: async function () {
     var res;
     await logger.logInto(await stackTrace.get());
@@ -75,7 +75,6 @@ module.exports = {
         " eBookAddNotesBtn is clicked"
       );
       res = await action.waitForDisplayed(this.eBookDeleteNotesBtn);
-      
     } else {
       await logger.logInto(
         await stackTrace.get(),
