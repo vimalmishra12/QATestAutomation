@@ -439,55 +439,55 @@
       "testcase": [
         {
           "id": "TST_TIME_TC_1",
-          "description": "Click the timer count up button",
+          "description": "Validate that user is able to select timer Count up button",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_2",
-          "description": "Click the timer count down clear button",
+          "description": "Validate Under the Count down, user is able to clear the previously entered time",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_3",
-          "description": "Click the timer count down mute button",
+          "description": "Validate Under the Count down, user is able to select Mute button",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_4",
-          "description": "Click the timer count down close button",
+          "description": "Click the timer count down Close button",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_5",
-          "description": "Click the timer count down play button",
+          "description": "Validate Under the Count down, user is able to Start count down",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_6",
-          "description": "Click the timer button one",
+          "description": "Validate Under the Count down, user is able to slecte timer button One",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_7",
-          "description": "Click the timer button two",
+          "description": "Validate Under the Count down, user is able to select timer button Two",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_8",
-          "description": "Click the timer button three",
+          "description": "Validate Under the Count down, user is able to select timer button Three",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_9",
-          "description": "Click the timer count down button",
+          "description": "Validate that user is able to select timer Count down option",
           "tags": "P3",
           "visualTest": true
         },
@@ -505,19 +505,19 @@
         },
         {
           "id": "TST_TIME_TC_12",
-          "description": "click the timer reset button",
+          "description": "Validate that user is able to reset button the timer",
           "tags": "P2",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_13",
-          "description": "click timer CountDown Unmute button",
+          "description": "Validate Under the Count down, user is able to select Unmute button",
           "tags": "P2",
           "visualTest": true
         },
         {
           "id": "TST_TIME_TC_14",
-          "description": "Click the timer count down pause button",
+          "description": "Validate that user is able to pause timer count down ",
           "tags": "P3",
           "visualTest": true
         },
@@ -592,7 +592,7 @@
         },
         {
           "id": "TST_EBOO_TC_9",
-          "description": "Validate that the Page Number button is clickable",
+          "description": "Validate that the user is able to launch 'Go to page option'",
           "tags": "P3",
           "visualTest": true
         },
