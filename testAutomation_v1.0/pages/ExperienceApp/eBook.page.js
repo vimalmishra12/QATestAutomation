@@ -425,6 +425,7 @@ module.exports = {
       );
 
       var pageStatus = await action.waitForDisplayed(this.pageNOShow);
+      await browser.pause(1000);
 
       //console.log("page no stauus ",pageStatus);
     } else {

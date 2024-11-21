@@ -9,19 +9,40 @@ module.exports = {
     await assertion.assertEqual(
       sts,
       true,
-      "Hide Selection button is not Clicked"
+     "hide Selection functionality did not work as expected."
     );
+
+    if (sts) {
+      console.log("TST_SHOW_TC_1: Test case passed. Hide Selection is verified.");
+    }
   },
 
   // Test case to validate the "Show Selection" button is clickable.
+  // TST_SHOW_TC_2: async function (testdata) {
+  //   sts = await showHideSelection.click_showSelection();
+  //   await assertion.assertEqual(
+  //     sts,
+  //     true,
+  //     "Show Selection button is not Clicked"
+  //   );
+  // },
+
   TST_SHOW_TC_2: async function (testdata) {
-    sts = await showHideSelection.click_showSelection();
+    // Call the click_showSelection function and store the result
+    const sts = await showHideSelection.click_showSelection();
+
+    // Assert that the result is true (indicating success)
     await assertion.assertEqual(
-      sts,
-      true,
-      "Show Selection button is not Clicked"
+        sts,
+        true,
+        "Show Selection functionality did not work as expected."
     );
-  },
+
+    if (sts) {
+        console.log("TST_SHOW_TC_2: Test case passed. Show Selection is verified.");
+    }
+},
+
 
   // Test case to validate the "Close Selection" button is clickable.
   TST_SHOW_TC_3: async function (testdata) {
