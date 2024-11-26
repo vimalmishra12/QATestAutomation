@@ -24,7 +24,7 @@
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900"
   },
   "keywords": [],
-  "author": "",
+  "author": "","capabilities": {},
   "license": "ISC",
   "dependencies": {
     "@applitools/eyes-webdriverio": "^5.35.7",
