@@ -227,8 +227,8 @@ module.exports = {
 
      // mannnually changed id "TST_EBOO_TC_1" to "TST_EBOOK_TC_1"
      TST_EBOOK_TC_4 :   async function (testdata) { 
-      sts = await eBookLearningPageHyperlink.click_hyperLinkAnswer2();
-      await assertion.assertEqual(sts, true,"hyperLinkAnswer are not Clicked");
+      sts = await eBookLearningPageHyperlink.click_hyperLinkVideo();
+      await assertion.assertEqual(sts, true,"hyperLinkVideo are not Clicked");
       },
 
     //hyper link answer  clicked new window 

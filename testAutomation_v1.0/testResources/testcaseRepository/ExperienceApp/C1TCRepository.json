@@ -712,7 +712,7 @@
         },
         {
           "id": "TST_EBOOK_TC_4",
-          "description": "Validate that HyperLinkAnswer  2 is clickable",
+          "description": "Validate that HyperLinkVideo is clickable",
           "tags": "P3",
           "visualTest": true
         },
