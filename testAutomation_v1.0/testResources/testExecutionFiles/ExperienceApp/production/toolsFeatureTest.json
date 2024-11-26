@@ -790,6 +790,51 @@
       }
     ],
     "AfterEach": [],
-    "After": []
+    "After": [
+      {
+        "id": "TST_EBOO_TC_9",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_PAGE_TC_2",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_PAGE_TC_1",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_PAGE_TC_4",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_5",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_APPS_TC_1",
+        "description": "",
+        "testFile": "./test/ExperienceApp/appShell.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_APPS_TC_2",
+        "description": "",
+        "testFile": "./test/ExperienceApp/appShell.test.js",
+        "testData": []
+      }
+    ]
   }
+
 }

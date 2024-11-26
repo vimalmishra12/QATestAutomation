@@ -223,16 +223,19 @@
 
 
       "eBookLearningPageHyperlink": {
-        "hyperLinkAnswer": "div[id=\"ee-overlays11-2\"] img",
-        "hyperLinkAnswer2": "div[id=\"ee-overlays11-4\"] img",
-        "hyperlinkAudio": "div[id=\"ee-overlays11-0\"] img"
+        "hyperLinkAnswer": "div[id=\"ee-overlays11-7\"] img",
+        "hyperLinkVideo": "div[id=\"ee-overlays11-0\"] img",
+        "hyperlinkAudio": "div[id=\"ee-overlays11-3\"] img"
       },
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
         "hyperAnswerClose": "button[class=\"close-button\"]",
         "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
         "hyperAnswerExitFullScreen":"img[title=\"Exit fullscreen\"]",
-        "hyperAnswerQuestion": "div[id=\"rubric-0\"] p"
+        "hyperAnswerQuestion": "div[id=\"rubric-0\"] p",
+        "hyperVideoPlay": "span[title=\"Play\"]",
+        "hyperVideoClose": "button[qid=\"vid-0\"]"
+
       },
       "hyperlinkAudio": {
         "hyperAudioPlay_pause": "div[class=\"ctrls\"] div[class=\"icon--not-pressed\"] span[class=\"glyph\"]",

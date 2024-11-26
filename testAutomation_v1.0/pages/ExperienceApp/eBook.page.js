@@ -29,13 +29,15 @@ module.exports = {
 
   hyperLinkAnswer:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkAnswer,
-  hyperLinkAnswer2:
-    selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkAnswer2,
+    hyperLinkVideo:
+    selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkVideo,
   hyperlinkAudio:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperlinkAudio,
 
   hyperAnswerReveal: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerReveal,
   hyperAnswerClose: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerClose,
+  hyperVideoClose: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperVideoClose,
+  hyperVideoPlay: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperVideoPlay,
   hyperAnswerFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerFullScreen,
   hyperAnswerExitFullScreen: selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerExitFullScreen,
 
@@ -425,6 +427,7 @@ module.exports = {
       );
 
       var pageStatus = await action.waitForDisplayed(this.pageNOShow);
+      await browser.pause(1000);
 
       //console.log("page no stauus ",pageStatus);
     } else {
@@ -576,34 +579,34 @@ module.exports = {
     return res;
   },
 
-        click_hyperLinkAnswer2: async function () {
+        click_hyperLinkVideo: async function () {
           await logger.logInto(await stackTrace.get());
           var res;
-          res =await action.click(this.hyperLinkAnswer2);
-          console.log("val of res is hyperLinkAnswer 2: ",res );
+          res =await action.click(this.hyperLinkVideo);
+          console.log("val of res is hyperLinkVideo 2: ",res );
           if (true == res) {
-            await logger.logInto(await stackTrace.get(), " hyperLinkAnswer 2 is clicked");
+            await logger.logInto(await stackTrace.get(), " hyperLinkVideo 2 is clicked");
 
 
 
-          await $(this.hyperAnswerFullScreen).waitForDisplayed(); 
-          await $(this.hyperAnswerFullScreen).click();
-          await browser.pause(3000)
+          // await $(this.hyperVideoPlay).waitForDisplayed(); 
+          // await $(this.hyperVideoPlay).click();
+          // await browser.pause(3000)
 
-          await $(this.hyperAnswerReveal).waitForDisplayed(); 
-          await $(this.hyperAnswerReveal).click();
-          await browser.pause(3000)
+          // await $(this.hyperAnswerReveal).waitForDisplayed(); 
+          // await $(this.hyperAnswerReveal).click();
+          // await browser.pause(3000)
   
 
-          await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
-          await $(this.hyperAnswerExitFullScreen).click();
-          await browser.pause(3000)
+          // await $(this.hyperAnswerExitFullScreen).waitForDisplayed(); 
+          // await $(this.hyperAnswerExitFullScreen).click();
+          // await browser.pause(3000)
 
 
           
           
-          await $(this.hyperAnswerClose).waitForDisplayed(); 
-          await $(this.hyperAnswerClose).click();
+          await $(this.hyperVideoClose).waitForDisplayed(); 
+          await $(this.hyperVideoClose).click();
           await browser.pause(3000)
   
          

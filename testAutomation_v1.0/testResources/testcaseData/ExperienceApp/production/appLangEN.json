@@ -35,14 +35,16 @@
       },
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer" : "Answers",
-        "hyperLinkAnswer2" : "Answers",
+        "hyperLinkVideo" : "Video",
         "hyperlinkAudio" : "Audio"
       },
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal" : "Reveal",
         "hyperAnswerClose" : "Close",
         "hyperAnswerFullScreen" : "Enter fullscreen",
-        "hyperAnswerQuestion" : "Watch or listen to Part 1 and"
+        "hyperAnswerQuestion" : "Watch or listen to Part 1 and",  
+        "hyperVideoPlay" : "Play Video",
+        "hyperVideoClose" : "video Close "
       },
 
       "hyperlinkAudio": {
