@@ -154,7 +154,7 @@
         "dev_test_ebook_bundle_104_bundle": "label[for='material6'] div , label[for='product1'] div[class='check']",
         "addToClass_Btn": "button[qid=\"material-modal-add-to-class-btn\"] , button[qid='add-material-save-7']",
         "finish_btn": "button[qid=\"create-class-finish-button\"] , button[qid='create-class-4']",
-        "dev_test_ebook_bundle_104_bundle_dropdown" : "a[qid=\"add-material-product-0\"]"
+        "dev_test_ebook_bundle_104_bundle_dropdown": "a[qid=\"add-material-product-0\"]"
       },
       "activeClass": {
         "actionButton": "a[qid=\"cView-70\"]",
@@ -176,66 +176,70 @@
         "cqaTestEbookOnlyAssetsText": "div.eboook-selected.ng-tns-c606183087-2",
         "notes": "div:nth-child(4) div:nth-child(2) button:nth-child(1)",
         "timer": "button[qid=\"94\"]",
-        "showAndHideSelection":"button[qid=\"91\"]",
-        "drawingTool" :"button[qid=\"84\"]",
+        "showAndHideSelection": "button[qid=\"91\"]",
+        "drawingTool": "button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]",
-        "toggleLayoutBtn" : "button[qid=\"77\"]",
-        "doublePage" : "#readerpagedivB",
-        "singlePage" : ".reader-display-none",
-        "fitToScreenBtn" : "button[qid=\"97\"]",
-        "fitToWidthBtn" : "button[qid=\"98\"]",
-        "readerContainerWrapper" : "#reader-container-wrapper",
-        "zoomInBtn" : "button[qid=\"96\"]",
-        "zoomOutBtn" : "button[qid=\"95\"]",
-        "nextPage" : "button[qid=\"76\"]",
+        "toggleLayoutBtn": "button[qid=\"77\"]",
+        "doublePage": "#readerpagedivB",
+        "singlePage": ".reader-display-none",
+        "fitToScreenBtn": "button[qid=\"97\"]",
+        "fitToWidthBtn": "button[qid=\"98\"]",
+        "readerContainerWrapper": "#reader-container-wrapper",
+        "zoomInBtn": "button[qid=\"96\"]",
+        "zoomOutBtn": "button[qid=\"95\"]",
+        "nextPage": "button[qid=\"76\"]",
         "previousPage": "button[qid=\"75\"]"
-
       },
 
       "showHideSelection": {
-          "hideSelection" : "button[qid=\"93\"]",
-          "showSelection" : "button[qid=\"92\"]",
-          "closeSelection" : "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]"
+        "hideSelection": "button[qid=\"93\"]",
+        "showSelection": "button[qid=\"92\"]",
+        "closeSelection": "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]"
       },
 
       "drawingTool": {
-        "drawingToolScribble" : "button[qid=\"85\"] img[alt=\"Scribble\"]",
-        "drawingToolPenColour" : "button[id=\"penColorDropdown\"]",
-        "drawingToolPenWidth" : "button[id=\"penStrokeDropdown\"]",
-        "drawingToolHighlighter" : "button[qid=\"86\"] img[alt=\"Highlighter\"]",
-        "drawingToolEraser" : "div.delete-menu[qid=\"87\"][title=\"Eraser\"] > button.left-side > img[alt=\"Eraser\"]",
-        "drawingToolUndo" : "button.undo-button[qid=\"88\"]",
-        "drawingToolRedo" :"button.redo-button[qid=\"89\"]",
+        "drawingToolScribble": "button[qid=\"85\"] img[alt=\"Scribble\"]",
+        "drawingToolPenColour": "button[id=\"penColorDropdown\"]",
+        "drawingToolPenWidth": "button[id=\"penStrokeDropdown\"]",
+        "drawingToolHighlighter": "button[qid=\"86\"] img[alt=\"Highlighter\"]",
+        "drawingToolEraser": "div.delete-menu[qid=\"87\"][title=\"Eraser\"] > button.left-side > img[alt=\"Eraser\"]",
+        "drawingToolUndo": "button.undo-button[qid=\"88\"]",
+        "drawingToolRedo": "button.redo-button[qid=\"89\"]",
 
-        "drawingToolPresentation" : "div[id=\"drawing-tools-container-B\"] canvas",
-        "penColourGreen" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(0, 179, 46);\"]",
-        "penColourBlue" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=\"background-color: rgb(0, 2, 255);\"]",
-        "penColourRed" : ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(185, 0, 0);\"]",
-        "penColourBlack" : "div[class=\"pen-color-dropdown ng-tns-c606183087-2 dropright ng-star-inserted show\"] div:nth-child(4) button:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1)",
-        "penStroke4" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-4",
-        "penStroke3" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-3",
-        "penStroke2" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-2",
-        "penStroke1" : "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-1"
-        
+        "drawingToolPresentation": "div[id=\"drawing-tools-container-B\"] canvas",
+        "penColourGreen": ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(0, 179, 46);\"]",
+        "penColourBlue": ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=style=\"background-color: rgb(0, 2, 255);\"]",
+        "penColourRed": ".pen-color-circle-container .pen-color-outer-circle .pen-color-inner-circle[style=\"background-color: rgb(185, 0, 0);\"]",
+        "penColourBlack": "div[class=\"pen-color-dropdown ng-tns-c606183087-2 dropright ng-star-inserted show\"] div:nth-child(4) button:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1)",
+        "penStroke4": "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-4",
+        "penStroke3": "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-3",
+        "penStroke2": "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-2",
+        "penStroke1": "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-1"
       },
-      
-
-
 
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer": "div[id=\"ee-overlays11-7\"] img",
         "hyperLinkVideo": "div[id=\"ee-overlays11-0\"] img",
-        "hyperlinkAudio": "div[id=\"ee-overlays11-3\"] img"
+        "hyperlinkAudio": "div[id=\"ee-overlays11-3\"] img",
+        "hyperlinkAudioNoTranscript": "div[id=\"ee-overlays11-1\"] img",
+        "hyperlinkNewTab": "div[id=\"ee-overlays11-6\"] img",
+        "hyperlinkActivity": "div[id=\"ee-overlays11-4\"] img",
+        "hyperLinkGame": "div[id='ee-overlays12-0'] img",
+        "hyperlinkGoToPage": "div[id='ee-overlays12-2'] img",
+        "hyperZoomHotspot": "div[id=\"ee-overlays11-9\"] div[title=\"Double tap to zoom\"] div"
       },
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
         "hyperAnswerClose": "button[class=\"close-button\"]",
         "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
-        "hyperAnswerExitFullScreen":"img[title=\"Exit fullscreen\"]",
+        "hyperAnswerExitFullScreen": "img[title=\"Exit fullscreen\"]",
         "hyperAnswerQuestion": "div[id=\"rubric-0\"] p",
         "hyperVideoPlay": "span[title=\"Play\"]",
-        "hyperVideoClose": "button[qid=\"vid-0\"]"
-
+        "hyperVideoClose": "button[qid=\"vid-0\"]",
+        "hyperActivityNext": "a[title=\"Next\"]",
+        "hyperAudioClose": "div[class=\"title-section dragger\"] i[class=\"nemo-font nemo-cross\"]",
+        "HyperShowHideTranscript": "button[qid=\"aud-21\"]",
+        "hyperZoomHotspotClose": "[id^=\"zoomHotspot-close-button-\"]"
       },
       "hyperlinkAudio": {
         "hyperAudioPlay_pause": "div[class=\"ctrls\"] div[class=\"icon--not-pressed\"] span[class=\"glyph\"]",
@@ -250,22 +254,21 @@
       },
 
       "timer": {
-      "timerCountUp" : "button[qid=\"toc-64\"]",
-      "timerCountDownClear" : "button[title=\"Clear\"]",
-      "timerCountDownMute" : "button[title=\"Mute\"]",
-      "timerCountDownClose" : "button[qid=\"toc-63\"]",
-      "timerCountDownPlay" : "button[qid=\"toc-78\"]",
-      "timerBtnOne" : "a[qid=\"toc-67\"]",
-      "timerBtnTwo" : "a[qid=\"toc-68\"]",
-      "timerBtnthree" : "a[qid=\"toc-69\"]",
-      "timerCountDown" : "button[qid=\"toc-65\"]",
-      "timerCountUpClose" : "button[qid=\"toc-63\"]",
-      "timerCountUpPause" : "button[qid=\"toc-83\"]",
-      "timerCountUpPlay" : ".fa.fa-play.play-button",
-      "timerReset" : "button[title=\"Reset\"]",
-      "timerCountDownUnmute" : "button[title=\"Unmute\"]",
-      "timerCountDownPause" : ".fa.fa-pause.pause-button"
-
+        "timerCountUp": "button[qid=\"toc-64\"]",
+        "timerCountDownClear": "button[title=\"Clear\"]",
+        "timerCountDownMute": "button[title=\"Mute\"]",
+        "timerCountDownClose": "button[qid=\"toc-63\"]",
+        "timerCountDownPlay": "button[qid=\"toc-78\"]",
+        "timerBtnOne": "a[qid=\"toc-67\"]",
+        "timerBtnTwo": "a[qid=\"toc-68\"]",
+        "timerBtnthree": "a[qid=\"toc-69\"]",
+        "timerCountDown": "button[qid=\"toc-65\"]",
+        "timerCountUpClose": "button[qid=\"toc-63\"]",
+        "timerCountUpPause": "button[qid=\"toc-83\"]",
+        "timerCountUpPlay": ".fa.fa-play.play-button",
+        "timerReset": "button[title=\"Reset\"]",
+        "timerCountDownUnmute": "button[title=\"Unmute\"]",
+        "timerCountDownPause": ".fa.fa-pause.pause-button"
       },
 
       "eBookContents": {
