@@ -84,7 +84,6 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": []
       },
-
       {
         "id": "TST_EBOO_TC_9",
         "description": "",
@@ -124,6 +123,51 @@
       },
       {
         "id": "TST_EBOOK_TC_2",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_EBOO_TC_55",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_EBOO_TC_57",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_56",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_60",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_61",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_58",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_EBOO_TC_59",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": []
