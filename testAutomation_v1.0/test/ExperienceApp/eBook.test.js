@@ -205,6 +205,18 @@ module.exports = {
     sts = await hyperlinkAudio.click_hyperlinkGoToPage();
     await assertion.assertEqual(sts, true, "hyperlinkGoToPage are not Clicked");
   },
+  TST_EBOO_TC_60: async function (testdata) {
+    sts = await hyperlinkAudio.click_hyperZoomHotspot();
+    await assertion.assertEqual(sts, true, "hyperZoomHotspot are not Clicked");
+  },
+  TST_EBOO_TC_61: async function (testdata) {
+    sts = await hyperlinkAudio.click_hyperZoomHotspotClose();
+    await assertion.assertEqual(
+      sts,
+      true,
+      "hyperZoomHotspotClose are not Clicked"
+    );
+  },
 
   TST_EBOO_TC_23: async function (testdata) {
     sts = await eBook.click_showAndHideSelection();

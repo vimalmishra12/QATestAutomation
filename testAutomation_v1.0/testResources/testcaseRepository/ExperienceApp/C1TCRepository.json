@@ -687,7 +687,18 @@
         {
           "id": "TST_EBOO_TC_59",
           "description": "Validate that the hyper link Go To Page is launched",
-
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_60",
+          "description": "Validate that the hyper Zoom Hotspot is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_61",
+          "description": "Validate that the hyper Zoom Hotspot Close is launched",
           "tags": "P3",
           "visualTest": true
         },

@@ -148,11 +148,24 @@
         "testData": []
       },
       {
+        "id": "TST_EBOO_TC_60",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_EBOO_TC_61",
+        "description": "",
+        "testFile": "./test/ExperienceApp/eBook.test.js",
+        "testData": []
+      },
+      {
         "id": "TST_EBOO_TC_58",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": []
       },
+
       {
         "id": "TST_EBOO_TC_59",
         "description": "",

@@ -46,6 +46,8 @@ module.exports = {
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperlinkGoToPage,
   hyperLinkGame:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkGame,
+  hyperZoomHotspot:
+    selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperZoomHotspot,
 
   hyperAnswerReveal:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerReveal,
@@ -63,6 +65,8 @@ module.exports = {
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerExitFullScreen,
   hyperActivityNext:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperActivityNext,
+  hyperZoomHotspotClose:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperZoomHotspotClose,
 
   hyperAnswerQuestion:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
@@ -546,9 +550,9 @@ module.exports = {
 
       await browser.pause(3000);
 
-      await $(this.hyperActivityNext).waitForDisplayed();
-      await $(this.hyperActivityNext).click();
-      await browser.pause(3000);
+      // await $(this.hyperActivityNext).waitForDisplayed();
+      // await $(this.hyperActivityNext).click();
+      // await browser.pause(3000);
 
       await $(this.hyperAnswerClose).waitForDisplayed();
       await $(this.hyperAnswerClose).click();
@@ -582,6 +586,56 @@ module.exports = {
     }
     return res;
   },
+  click_hyperZoomHotspot: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.doubleClick(this.hyperZoomHotspot);
+    console.log("val of res is hyperZoomHotspot: ", res);
+    if (true == res) {
+      await browser.pause(1000);
+      await logger.logInto(
+        await stackTrace.get(),
+        " hyperZoomHotspot is clicked"
+      );
+      res = true;
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "hyperZoomHotspot is NOT clicked",
+        "error"
+      );
+      res = false;
+    }
+    return res;
+  },
+
+  click_hyperZoomHotspotClose: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    console.log(
+      "Selector for hyperZoomHotspotClose 1011: ",
+      this.hyperZoomHotspotClose
+    );
+
+    res = await action.click(this.hyperZoomHotspotClose);
+    console.log("val of res is hyperZoomHotspotClose1012: ", res);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        " hyperZoomHotspotClose is clicked"
+      );
+      //res= true;
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + "hyperZoomHotspotClose is NOT clicked",
+        "error"
+      );
+      //res=false;
+    }
+    return res;
+  },
+
   click_hyperLinkGame: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
