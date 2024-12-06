@@ -124,11 +124,11 @@
       },
       "dashboard": {
         "help_btn": "a[qid='cHeader-hlp-1'], button[qid='cHeader-hlp-2'], a[qid='cHeader-hlp-2']",
-        "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress']",
+        "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress'], a.progress-link",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": ".tile-section-1",
-        "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
-        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"]",
+        "homework_btn": "button[qid=\"homework-btn-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"], button[qid='l-db-cc-btn-1']",
+        "myProgress_btn": "a[qid=\"agg-progress-link-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff\"], #agg-button-974120e4-5b7d-45f1-b653-887a75d284c3",
         "createNewClass": ".btn.btn-main-color-1-bordered.add-button.d-flex.align-items-center.justify-content-center",
         "activeClassCard": "div.heading-container:nth-of-type(1) a.class-title.mx-2"
       },
@@ -186,10 +186,7 @@
         "fitToWidthBtn" : "button[qid=\"98\"]",
         "readerContainerWrapper" : "#reader-container-wrapper",
         "zoomInBtn" : "button[qid=\"96\"]",
-        "zoomOutBtn" : "button[qid=\"95\"]",
-        "nextPage" : "button[qid=\"76\"]",
-        "previousPage": "button[qid=\"75\"]"
-
+        "zoomOutBtn" : "button[qid=\"95\"]"
       },
 
       "showHideSelection": {

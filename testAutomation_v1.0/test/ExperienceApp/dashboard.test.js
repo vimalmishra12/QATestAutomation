@@ -53,6 +53,7 @@ module.exports = {
   },
 
   TST_DASH_TC_9: async function (testdata) {
+    console.log("testdata 31" ,testdata[0]);
     sts = await dashboard.getData_activeClasses(testdata);
     await assertion.assertEqual(
       sts.progress_btn,

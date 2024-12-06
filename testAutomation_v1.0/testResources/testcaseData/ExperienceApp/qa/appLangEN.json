@@ -222,9 +222,14 @@
           "help_btn": "Help",
           "progress_btn": "Progress\nSee Progress",
           "praticeExtra_btn": "Practice Extra\nContinue learning",
-          "ebook_btn": "cqa-ebook-evolve\nContinue learning",
+          "ebook_btn": "cqaebookwithoutpe DT\nContinue learning",
           "homework_btn": "My homework",
-          "myProgress_btn": "My progress"
+          "myProgress_btn": "My progress",
+          "progress_btn_idx": 1,
+          "practiceExtra_btn_idx": 13,
+          "eBook_btn_idx": 1,
+          "homework_btn_idx": 1,
+          "myProgress_btn_idx": 1
         }
       },
       "eBook": {

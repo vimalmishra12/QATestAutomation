@@ -36,35 +36,128 @@ module.exports = {
     return obj;
   },
 
-  getData_activeClasses: async function (testdata) {
+  // getData_activeClasses: async function (testdata) {
+  //   await logger.logInto(await stackTrace.get());
+  //   const ebook = await action.getKthElement(this.ebook_btn,  testdata[1].launchEbook);
+  //   const res = await action.getText(ebook) ; 
+  //   var obj;
+  //   obj = {
+  //     progress_btn:
+  //       (await action.getElementCount(this.progress_btn)) > 0
+  //         ? await action.getText(this.progress_btn)
+  //         : null,
+  //     praticeExtra_btn:
+  //       (await action.getElementCount(this.praticeExtra_btn)) > 0
+  //         ? await action.getText(this.praticeExtra_btn)
+  //         : null,
+  //     ebook_btn:
+  //       ( await action.getElementCount(this.ebook_btn)) > 0
+  //         ? await action.getText(ebook)
+  //         : null,
+  //     homework_btn:
+  //       (await action.getElementCount(this.homework_btn)) > 0
+  //         ? await action.getText(this.homework_btn)
+  //         : null,
+  //     myProgress_btn:
+  //       (await action.getElementCount(this.myProgress_btn)) > 0
+  //         ? await action.getText(this.myProgress_btn)
+  //         : null,
+  //   };
+  //   return obj;
+  // },
+
+  // getData_activeClasses: async function (value) {
+  //   await logger.logInto(await stackTrace.get());
+  //   const ebook = await action.getKthElement(this.ebook_btn, value[0].eBook_btn_idx);
+  //   const progress = await action.getKthElement(this.progress_btn, value[0].progress_btn_idx);
+  //   const practiceExtra = await action.getKthElement(this.ebook_btn, value[0].practiceExtra_btn_idx);
+  //   const homework = await action.getKthElement(this.homework_btn, value[0].homework_btn_idx);
+  //   const res = await action.getText(ebook) ;
+  //   console.log("PROGRESS--->", await action.getText(progress));
+  //   var obj;
+  //   obj = {
+  //     progress_btn:
+  //       (await action.getElementCount(this.progress_btn)) > 0
+  //         ? await action.getText(progress)
+  //         : null,
+  //     praticeExtra_btn:
+  //       (await action.getElementCount(this.ebook_btn)) > 0
+  //         ? await action.getText(practiceExtra)
+  //         : null,
+  //     ebook_btn:
+  //       ( await action.getElementCount(this.ebook_btn)) > 0
+  //         ? await action.getText(ebook)
+  //         : null,
+  //     homework_btn:
+  //       (await action.getElementCount(this.homework_btn)) > 0
+  //         ? await action.getText(homework)
+  //         : null,
+  //     myProgress_btn:
+  //       (await action.getElementCount(this.myProgress_btn)) > 0
+  //         ? await action.getText(this.myProgress_btn)
+  //         : null,
+  //   };
+  //   return obj;
+  // },
+
+
+  // Async function to get data for active classes with generalized handling for multiple types of buttons
+  // getData_activeClasses: async function (value) {
+  //   // Log the stack trace for debugging
+  //   await logger.logInto(await stackTrace.get());
+    
+  //   // Define the list of element types and their corresponding property names in 'value'
+  //   const elementTypes = [
+  //       { type: 'ebook_btn', idxProp: 'eBook_btn_idx' },
+  //       { type: 'practiceExtra_btn', idxProp: 'practiceExtra_btn_idx' },
+  //       { type: 'homework_btn', idxProp: 'homework_btn_idx' }
+  //   ];
+    
+    
+  //   // Initialize the result object
+  //   var results = {};
+    
+  //   // Iterate over each element type
+  //   for (const elementType of elementTypes) {
+  //       const element = await action.getKthElement(this[elementType.type], value[elementType.idxProp]);
+  //       const count = await action.getElementCount(this[elementType.type]);
+        
+  //       // Conditionally set the text or null based on the element count
+  //       results[elementType.type] = count > 0 ? await action.getText(element) : null;
+        
+  //       // Debugging log for each element processed
+  //       console.log(`Processed ${elementType.type}, Index:`, value[elementType.idxProp]);
+  //   }
+    
+  //   return results;
+  // },
+
+  processElementTypes:async function(elementTypes, value, commonSelector) {
+    let results = {};
+    
+    for (const element of elementTypes) {
+        const elementIndex = value[0][element.idxKey];
+        const elementHandle = await action.getKthElement(commonSelector, elementIndex);
+        const elementCount = await action.getElementCount(commonSelector);
+        results[element.type] = elementCount > 0 ? await action.getText(elementHandle) : null;
+        
+        console.log(`Procelssed ${element.type} - Index: ${elementIndex}, Exists: ${elementCount > 0}`);
+        console.log('ELEM-->', elementHandle);
+    }
+
+    return results;
+},
+
+  getData_activeClasses: async function (value) {
     await logger.logInto(await stackTrace.get());
-    const ebook = await action.getKthElement(this.ebook_btn,  testdata[1].launchEbook);
-    const res = await action.getText(ebook) ; 
-    var obj;
-    obj = {
-      progress_btn:
-        (await action.getElementCount(this.progress_btn)) > 0
-          ? await action.getText(this.progress_btn)
-          : null,
-      praticeExtra_btn:
-        (await action.getElementCount(this.praticeExtra_btn)) > 0
-          ? await action.getText(this.praticeExtra_btn)
-          : null,
-      ebook_btn:
-        ( await action.getElementCount(this.ebook_btn)) > 0
-          ? await action.getText(ebook)
-          : null,
-      homework_btn:
-        (await action.getElementCount(this.homework_btn)) > 0
-          ? await action.getText(this.homework_btn)
-          : null,
-      myProgress_btn:
-        (await action.getElementCount(this.myProgress_btn)) > 0
-          ? await action.getText(this.myProgress_btn)
-          : null,
-    };
-    return obj;
-  },
+    const commonSelector = this.ebook_btn;
+    const elementTypes = [
+        { type: 'ebook_btn', idxKey: 'eBook_btn_idx' },
+        { type: 'practiceExtra_btn', idxKey: 'practiceExtra_btn_idx' },
+    ];  
+    const results = await this.processElementTypes(elementTypes, value, commonSelector);
+    return results;
+},
 
   click_help_btn: async function () {
     await logger.logInto(await stackTrace.get());
@@ -106,6 +199,7 @@ module.exports = {
       pageStatus: await action.waitForDisplayed(this.praticeExtra_btn),
     };
     res = await action.click(this.praticeExtra_btn);
+    console.log("RESSS----->", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
