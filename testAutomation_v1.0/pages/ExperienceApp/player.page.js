@@ -1,12 +1,10 @@
-
 "use strict";
 var action = require("../../core/actionLibrary/baseActionLibrary.js");
 var selectorFile = jsonParserUtil.jsonParser(selectorDir);
 var appShellPage = require("./appShell.page.js");
 
 module.exports = {
- 
-    hyperLinkAnswer:
+  hyperLinkAnswer:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkAnswer,
   hyperLinkVideo:
     selectorFile.css.ComproC1.eBookLearningPageHyperlink.hyperLinkVideo,
@@ -49,24 +47,57 @@ module.exports = {
 
   hyperAnswerQuestion:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
+    exitActivity:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.exitActivity,
   HyperShowHideTranscript:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.HyperShowHideTranscript,
   hyperAudioPlay_pause:
     selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioPlay_pause,
   hyperAudioClose: selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioClose,
 
-click_hyperlinkActivity: async function () {
+  click_hyperlinkActivity: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.hyperlinkActivity);
-    console.log("val of res is hyperLinkActivity: ", res);
+    // console.log("val of res is hyperLinkActivity: ", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " hyperLinkActivity is clicked"
       );
+        await browser.pause(5000);
+      console.log("1010 ");
 
-      await browser.pause(3000);
+
+
+      const pageText = await $(this.exitActivity).getText();
+      res = pageText;
+      console.log(pageText,"1011+checking" );
+
+      // await browser.pause(3000)
+      // //var button = await action.waitForDisplayed('.draggable button[aria-labelledby^="content-"]',{ timeout: 5000 });
+      // const  button = await $('button[aria-labelledby^="content-"]'); 
+     
+      
+      // if (await button.isDisplayed()) {
+      //     console.log("Button is visible 101");
+      //     await button.click(); // Perform click if visible
+      // } else {
+      //     console.log("Button is not visible 102");
+      // }
+      
+
+      // for (let i = 1; i <= 12; i++) {
+      //   const selector = `li:nth-child(${i})`;
+      //   await action.click(selector);
+      //   // const element = document.querySelector(selector);
+      //   // if (element) {
+      //   //   console.log(`Element ${i}:`, element.textContent);
+      //   // } else {
+      //   //   console.log(`Element ${i} not found.`);
+      //   // }
+      // }
+      // await browser.pause(300);
 
       // await $(this.hyperActivityNext).waitForDisplayed();
       // await $(this.hyperActivityNext).click();
@@ -386,7 +417,4 @@ click_hyperlinkActivity: async function () {
     }
     return res;
   },
-
-
-
-}
+};

@@ -79,7 +79,8 @@
         "hyperAnswerClose" : "Close",
         "hyperAnswerExitFullScreen" : "Exit fullscreen",
         "hyperAnswerFullScreen" : "Enter fullscreen",
-        "hyperAnswerQuestion" : "Watch or listen to Part 1 and"
+        "hyperAnswerQuestion" : "Watch or listen to Part 1 and",
+        "exitActivity" : "Exit activity"
       },
 
       "hyperlinkAudio": {

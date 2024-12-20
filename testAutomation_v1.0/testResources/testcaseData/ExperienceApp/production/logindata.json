@@ -22,7 +22,7 @@
             }
           ],
           "notes": "Test Note1",
-          "launchEbook": "3",
+          "launchEbook": "4",
           "info": {}
         },
         "validStudent2": {
@@ -49,6 +49,29 @@
           "class": [],
           "country": "",
           "info": "Automation User.Do Not Touch."
+        },
+        "validStudent5": {
+          "email": "prod_vc@mailsac.com",
+          "password": "Compro11",
+          "role": "student",
+          "name": "hutudibrulli-3717 auto",
+          "class": [
+            {
+              "key": "AEYP-p9hk",
+              "name": "future Class"
+            },
+            {
+              "key": "9q6x-QzFe",
+              "name": "course1"
+            },
+            {
+              "key": "Cw32-FLZ7",
+              "name": "Archive Class"
+            }
+          ],
+          "notes": "Test Note1",
+          "launchEbook": "4",
+          "info": {}
         },
         "acceptanceteacher": {
           "email": "acceptanceTeacher@yopmail.com",
@@ -92,7 +115,7 @@
           "class": [],
           "info": {}
         },
-        "validStudent5": {
+        "validStudent51": {
           "email": "difusionqa.stud44@yopmail.com",
           "password": "Compro@1234",
           "role": "student",
