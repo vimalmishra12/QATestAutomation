@@ -47,8 +47,8 @@ module.exports = {
 
   hyperAnswerQuestion:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
-    exitActivity:
-    selectorFile.css.ComproC1.hyperLinkAnswerWindow.exitActivity,
+    activityGoodEffort:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.activityGoodEffort,
   HyperShowHideTranscript:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.HyperShowHideTranscript,
   hyperAudioPlay_pause:
@@ -70,7 +70,8 @@ module.exports = {
 
 
 
-      const pageText = await $(this.exitActivity).getText();
+     // const pageText = await $(this.activityGoodEffort).getText();
+      const pageText = await action.getText(this.activityGoodEffort) ;
       res = pageText;
       console.log(pageText,"1011+checking" );
 

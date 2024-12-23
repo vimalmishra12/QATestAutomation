@@ -7,7 +7,8 @@
         "pageNumber12":"12-13 / 104",
 
         "player": {
-           "exitActivity" : "Exit activity"
+           "exitActivity" : "Exit activity",
+           "activityGoodEffort" : "Good effort!"
         }
         ,
         

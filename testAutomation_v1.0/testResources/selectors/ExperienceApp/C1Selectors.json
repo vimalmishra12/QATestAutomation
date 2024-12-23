@@ -240,7 +240,8 @@
         "hyperAudioClose": "div[class=\"title-section dragger\"] i[class=\"nemo-font nemo-cross\"]",
         "HyperShowHideTranscript": "button[qid=\"aud-21\"]",
         "hyperZoomHotspotClose": "[id^=\"zoomHotspot-close-button-\"]",
-        "exitActivity" : "a[qid=\"resultScreen-1\"]"
+        "exitActivity" : "a[qid=\"resultScreen-1\"]",
+        "activityGoodEffort" : "div[class=\"feedback-msg\"] h2"
 
       },
       "hyperlinkAudio": {

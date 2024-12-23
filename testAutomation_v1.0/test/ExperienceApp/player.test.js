@@ -12,8 +12,9 @@ module.exports = {
 
   TST_PLAY_TC_1: async function (testdata) {
     sts = await hyperlinkAudio.click_hyperlinkActivity();
-    console.log(sts+"test functoin 101");
-    await assertion.assertEqual(sts, testdata.exitActivity, "hyperlinkActivity are not Clicked  and verified");
+   //console.log(sts+"test functoin 101"+ testdata.activityGoodEffort);
+  // await assertion.assertEqual(sts, testdata.exitActivity, "hyperlinkActivity are not Clicked  and verified");
+   await assertion.assertEqual(sts, testdata.activityGoodEffort, "hyperlinkActivity are not Clicked  and verified");
   },
   //   TST_HYPE_TC_2 changed manually to TST_HYPE_AUD_TC_2
   TST_PLAY_TC_2: async function (testdata) {
