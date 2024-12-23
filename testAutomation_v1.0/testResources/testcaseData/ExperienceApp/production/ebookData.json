@@ -5,6 +5,12 @@
 
         "pageNumber14":"14-15 / 104",
         "pageNumber12":"12-13 / 104",
+
+        "player": {
+           "exitActivity" : "Exit activity",
+           "activityGoodEffort" : "Good effort!"
+        }
+        ,
         
         
         "validStudent1": {
