@@ -1,42 +1,45 @@
 {
   "C1": {
-
-
-    
-
-    "footer":   {
-      "footerTermsOfUse" : "Terms of use",
-      "footerPrivacyNotice" : "Privacy notice",
-      "footerAccesibility" : "Accessibility",
-      "footerOurApproaches" : "Our approach",
-      "footerSiteFeedback" : "Site feedback",
-      "footerFAQs" : "FAQs",
-      "footerCambridgeOneSchool" : "Cambridge One for schools",
-      "footerHelp" : "Help",
-      "footerCambridgeUniversity" : "© Cambridge University Press &"
-      },
-
-      "footerCambridgeOneForSchool": {
-      "footerCambridgeOneForSchools" : "Do I need a school account?",
-      "footerBack" : "Back"
-
+    "commonActivity": {
+      "activityAnsCheck": "Check",
+      "activityNext": "Next",
+      "activityClose": "Close",
+      "activityStartAgain": "Start again !",
+      "activityExit": "Exit "
     },
-    "timer":{
-      "timerCountUp" : "Count up",
-      "timerCountDownClear" : "Clear",
-      "timerCountDownMute" : "Mute",
-      "timerCountDownClose" : "Close",
-      "timerCountDownPlay" : "Play",
-      "timerBtnOne" : "BtnOne",
-      "timerBtnTwo" : "btnTwo",
-      "timerBtnthree" : "btnThree",
-      "timerCountDown" : "Count Down",
-      "timerCountUpClose" : "Close",
-      "timerCountUpPause" : "Pause",
-      "timerCountUpPlay" : "Play",
-      "timerReset" : "Reset",
-      "timerCountDownUnmute" : "Unmute",
-      "timerCountDownPause" : "Pause"
+
+    "footer": {
+      "footerTermsOfUse": "Terms of use",
+      "footerPrivacyNotice": "Privacy notice",
+      "footerAccesibility": "Accessibility",
+      "footerOurApproaches": "Our approach",
+      "footerSiteFeedback": "Site feedback",
+      "footerFAQs": "FAQs",
+      "footerCambridgeOneSchool": "Cambridge One for schools",
+      "footerHelp": "Help",
+      "footerCambridgeUniversity": "© Cambridge University Press &"
+    },
+
+    "footerCambridgeOneForSchool": {
+      "footerCambridgeOneForSchools": "Do I need a school account?",
+      "footerBack": "Back"
+    },
+    "timer": {
+      "timerCountUp": "Count up",
+      "timerCountDownClear": "Clear",
+      "timerCountDownMute": "Mute",
+      "timerCountDownClose": "Close",
+      "timerCountDownPlay": "Play",
+      "timerBtnOne": "BtnOne",
+      "timerBtnTwo": "btnTwo",
+      "timerBtnthree": "btnThree",
+      "timerCountDown": "Count Down",
+      "timerCountUpClose": "Close",
+      "timerCountUpPause": "Pause",
+      "timerCountUpPlay": "Play",
+      "timerReset": "Reset",
+      "timerCountDownUnmute": "Unmute",
+      "timerCountDownPause": "Pause"
     },
 
     "appContent": {
@@ -49,43 +52,42 @@
         "languageSelector_dropdown": "En"
       },
       "eBookLearningPageHyperlink": {
-        "hyperLinkAnswer" : "Answers",
-        "hyperLinkAnswer2" : "Answers",
-        "hyperlinkAudio" : "Audio"
+        "hyperLinkAnswer": "Answers",
+        "hyperLinkAnswer2": "Answers",
+        "hyperlinkAudio": "Audio"
       },
 
-      "drawingTool":  {
-         "drawingToolScribble" : "Scribble",
-          "drawingToolPenColour" : "Pen colour",
-          "drawingToolPenWidth" : "Pen width",
-          "drawingToolHighlighter" : "Highlighter",
-          "drawingToolEraser" : "Eraser",
-          "drawingToolUndo" : "Undo",
-          "drawingToolRedo" : "Redo",
-          "drawingToolPresentation" : "presentation",
-          "penColourGreen" : "Page - 64-65 / 106 1 2 3 4",
-          "penColourBlue" : "Page - 64-65 / 106 1 2 3 4",
-          "penColourRed" : "Page - 64-65 / 106 1 2 3 4",
-          "penColourBlack" : "Page - 64-65 / 106 1 2 3 4",
-          "penStroke4" : "Page - 64-65 / 106 1 2 3 4",
-          "penStroke3" : "Page - 64-65 / 106 1 2 3 4",
-          "penStroke2" : "Page - 64-65 / 106 1 2 3 4",
-          "penStroke1" : "Page - 64-65 / 106 1 2 3 4"
-
+      "drawingTool": {
+        "drawingToolScribble": "Scribble",
+        "drawingToolPenColour": "Pen colour",
+        "drawingToolPenWidth": "Pen width",
+        "drawingToolHighlighter": "Highlighter",
+        "drawingToolEraser": "Eraser",
+        "drawingToolUndo": "Undo",
+        "drawingToolRedo": "Redo",
+        "drawingToolPresentation": "presentation",
+        "penColourGreen": "Page - 64-65 / 106 1 2 3 4",
+        "penColourBlue": "Page - 64-65 / 106 1 2 3 4",
+        "penColourRed": "Page - 64-65 / 106 1 2 3 4",
+        "penColourBlack": "Page - 64-65 / 106 1 2 3 4",
+        "penStroke4": "Page - 64-65 / 106 1 2 3 4",
+        "penStroke3": "Page - 64-65 / 106 1 2 3 4",
+        "penStroke2": "Page - 64-65 / 106 1 2 3 4",
+        "penStroke1": "Page - 64-65 / 106 1 2 3 4"
       },
 
       "hyperLinkAnswerWindow": {
-        "hyperAnswerReveal" : "Reveal",
-        "hyperAnswerClose" : "Close",
-        "hyperAnswerExitFullScreen" : "Exit fullscreen",
-        "hyperAnswerFullScreen" : "Enter fullscreen",
-        "hyperAnswerQuestion" : "Watch or listen to Part 1 and",
-        "exitActivity" : "Exit activity"
+        "hyperAnswerReveal": "Reveal",
+        "hyperAnswerClose": "Close",
+        "hyperAnswerExitFullScreen": "Exit fullscreen",
+        "hyperAnswerFullScreen": "Enter fullscreen",
+        "hyperAnswerQuestion": "Watch or listen to Part 1 and",
+        "exitActivity": "Exit activity"
       },
 
       "hyperlinkAudio": {
-        "hyperAudioPlay_pause" : "Play",
-        "hyperAudioClose" : "Close"
+        "hyperAudioPlay_pause": "Play",
+        "hyperAudioClose": "Close"
       },
 
       "login": {
@@ -231,15 +233,15 @@
       "eBook": {
         "cqa_ebook_evolve": "cqa-ebook-evolve",
         "myNotes": "My notes",
-        "showAndHideSelection":"Show/Hide selection",
+        "showAndHideSelection": "Show/Hide selection",
 
         "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
 
       "showHideSelection": {
-          "hideSelection" : "Hide Selection",
-          "showSelection" : "Show Selection",
-          "closeSelection" : "close"
+        "hideSelection": "Hide Selection",
+        "showSelection": "Show Selection",
+        "closeSelection": "close"
       },
 
       "eBookContents": {
@@ -710,11 +712,11 @@
       },
 
       "pageNoDialogBox": {
-        "pageNoOneBtn" : "1",
-        "pageNoTwoBtn" : "2",
-        "pageNoClearBtn" : "Clear",
-        "pageNoGoToPageBtn" : "Go to page",
-        "pageNOShow" : "12-13"
+        "pageNoOneBtn": "1",
+        "pageNoTwoBtn": "2",
+        "pageNoClearBtn": "Clear",
+        "pageNoGoToPageBtn": "Go to page",
+        "pageNOShow": "12-13"
       },
 
       "flipbook": {
