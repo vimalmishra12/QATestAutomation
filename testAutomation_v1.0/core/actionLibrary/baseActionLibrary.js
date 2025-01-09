@@ -315,6 +315,18 @@ module.exports = {
             return err;
         }
     },
+    
+    findElement: async function (selector) {
+        message = "element:" + selector;
+        try {
+            await logger.logInto(await stackTrace.get(), message);
+            res = await $(selector);
+            return res;
+        } catch (err) {
+            await logger.logInto(await stackTrace.get(), err.message, "error");
+            return err;
+        }
+    },
 
     getKthElement: async function (selector, k) {
         const elements = await this.findElements(selector);
