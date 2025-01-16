@@ -51,7 +51,7 @@
           "info": "Automation User.Do Not Touch."
         },
         "hotlinkAccesStudent1": {
-          "email": "prod_vc@mailsac.com",
+          "email": "prod_stu_auto@mailsac.com",
           "password": "Compro11",
           "role": "student",
           "name": "hutudibrulli-3717 auto",

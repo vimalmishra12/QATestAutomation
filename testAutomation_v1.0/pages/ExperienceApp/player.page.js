@@ -47,66 +47,127 @@ module.exports = {
 
   hyperAnswerQuestion:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.hyperAnswerQuestion,
-    activityGoodEffort:
+  activityGoodEffort:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.activityGoodEffort,
+  startAgainActivity:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.startAgainActivity,
+  exitActivity: selectorFile.css.ComproC1.hyperLinkAnswerWindow.exitActivity,
+  activityIFrame:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.activityIFrame,
+  activityScoreCheck:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.activityScoreCheck,
+  activityAnsElement:
+    selectorFile.css.ComproC1.hyperLinkAnswerWindow.activityAnsElement,
+
   HyperShowHideTranscript:
     selectorFile.css.ComproC1.hyperLinkAnswerWindow.HyperShowHideTranscript,
   hyperAudioPlay_pause:
     selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioPlay_pause,
   hyperAudioClose: selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioClose,
 
+  //   click_hyperlinkActivity: async function () {
+  //     await logger.logInto(await stackTrace.get());
+  //     let res;
+
+  //     // Click on the hyperlink activity button
+  //     res = await action.click(this.hyperlinkActivity);
+  //     if (res === true) {
+  //         await logger.logInto(await stackTrace.get(), "hyperLinkActivity is clicked");
+  //         await browser.pause(2000); // Small delay for UI stability
+  //         console.log("hyperLinkActivity clicked successfully.");
+
+  //         const draggableItems = $$('ul.elements.pool .draggable.drag_item');
+
+  //         // Selector for drop areas (assuming they're empty initially and indexed)
+  //         const dropAreas = $$('ul.elements.pool .drop_item_zone.ui-droppable');
+
+  //         // Loop through each draggable item and drag it to its respective drop area
+  //         for (let i = 0; i < draggableItems.length; i++) {
+  //             const item = draggableItems[i];
+  //             const targetDropArea = dropAreas[i];
+
+  //             // Perform drag-and-drop
+  //             await item.dragAndDrop(targetDropArea);
+
+  //             // Optional: Add a slight pause for visual confirmation during execution
+  //             await browser.pause(500);
+  //         }
+
+  //         await browser.pause(10000);
+
+  //         // Close the activity answer modal
+  //         try {
+  //             await $(this.hyperAnswerClose).waitForDisplayed({ timeout: 3000 });
+  //             await $(this.hyperAnswerClose).click();
+  //             console.log("Closed activity answer modal.");
+  //         } catch (error) {
+  //             console.error("Error closing the activity answer modal:", error);
+  //             await logger.logInto(await stackTrace.get(), error.message, "error");
+  //         }
+
+  //     } else {
+  //         // Log the failure if the hyperlink activity is not clicked
+  //         await logger.logInto(
+  //             await stackTrace.get(),
+  //             `${res} - hyperLinkActivity is NOT clicked`,
+  //             "error"
+  //         );
+  //     }
+  //     return res;
+  // },
+
   click_hyperlinkActivity: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.hyperlinkActivity);
-    // console.log("val of res is hyperLinkActivity: ", res);
+
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         " hyperLinkActivity is clicked"
       );
-        await browser.pause(5000);
-      console.log("1010 ");
+      await browser.pause(4000);
 
+      const frameElement = await action.findElement(this.activityIFrame);
+      const boole = await action.switchToFrame(frameElement);
+      //console.log(boole + "1008");
 
+      for (let i = 1; i <= 12; i++) {
+        // const selector = `li:nth-child(${i})`;
+        await browser.pause(2000);
+        //const selector =".draggable button[aria-labelledby^=\"content-\"]"
+        await action.click(this.activityAnsElement);
+        await browser.pause(2000);
+      }
+      //console.log("1008 ");
 
-     // const pageText = await $(this.activityGoodEffort).getText();
-      const pageText = await action.getText(this.activityGoodEffort) ;
-      res = pageText;
-      console.log(pageText,"1011+checking" );
+      await action.switchToParentFrame();
 
-      // await browser.pause(3000)
-      // //var button = await action.waitForDisplayed('.draggable button[aria-labelledby^="content-"]',{ timeout: 5000 });
-      // const  button = await $('button[aria-labelledby^="content-"]'); 
-     
+      await browser.pause(2000);
+
+      // await action.waitForDisplayed(this.activityScoreCheck);
+      // await action.click(this.activityScoreCheck);
       
-      // if (await button.isDisplayed()) {
-      //     console.log("Button is visible 101");
-      //     await button.click(); // Perform click if visible
-      // } else {
-      //     console.log("Button is not visible 102");
-      // }
-      
 
-      // for (let i = 1; i <= 12; i++) {
-      //   const selector = `li:nth-child(${i})`;
-      //   await action.click(selector);
-      //   // const element = document.querySelector(selector);
-      //   // if (element) {
-      //   //   console.log(`Element ${i}:`, element.textContent);
-      //   // } else {
-      //   //   console.log(`Element ${i} not found.`);
-      //   // }
-      // }
+      //await action.switchToParentFrame();
+
       // await browser.pause(300);
 
-      // await $(this.hyperActivityNext).waitForDisplayed();
-      // await $(this.hyperActivityNext).click();
-      // await browser.pause(3000);
+      // await action.waitForDisplayed(this.hyperActivityNext);
+      // await action.click(this.hyperActivityNext);
+      // await browser.pause(2000);
 
-      await $(this.hyperAnswerClose).waitForDisplayed();
-      await $(this.hyperAnswerClose).click();
-      await browser.pause(3000);
+      //const pageText = await $(this.activityGoodEffort).getText();
+      // const pageText = await action.getText(this.activityGoodEffort);
+      // res = pageText;
+
+      // await action.waitForDisplayed(this.startAgainActivity);
+      // await action.click(this.startAgainActivity);
+      // await browser.pause(2000);
+
+      // await action.waitForDisplayed(this.hyperAnswerClose);
+      // await action.click(this.hyperAnswerClose);
+      // await browser.pause(2000);
     } else {
       await logger.logInto(
         await stackTrace.get(),

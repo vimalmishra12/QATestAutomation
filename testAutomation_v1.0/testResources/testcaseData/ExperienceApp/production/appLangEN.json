@@ -53,7 +53,9 @@
         "hyperVideoClose" : "video Close ",
         "hyperActivityNext" :"Next",
         "hyperAudioClose" : "Close",
-        "HyperShowHideTranscript": "Show transcripts"
+        "HyperShowHideTranscript": "Show transcripts",
+        "exitActivity" : "Exit activity",
+        "startAgainActivity" : "Start again"
 
       },
 

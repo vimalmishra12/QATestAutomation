@@ -66,6 +66,52 @@
     },
 
     {
+      "modulename": "commonActivity",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/commonActivity.test.js",
+      "testcase": [
+        {
+          "id": "TST_COMM_TC_1",
+          "description": "Validate that the activityAnsCheck button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_2",
+          "description": "Validate that the activityNext button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_3",
+          "description": "Validate that the activityClose button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_4",
+          "description": "Validate that the activityStartAgain button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_5",
+          "description": "Validate that the activityExit button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_6",
+          "description": "Validate the data for commonActivity buttons",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    }
+    
+    ,
+
+    {
       "modulename": "Landing",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/landing.test.js",

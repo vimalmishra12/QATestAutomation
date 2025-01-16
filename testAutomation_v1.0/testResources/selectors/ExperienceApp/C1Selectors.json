@@ -8,7 +8,7 @@
         "footerOurApproaches": "a[qid=\"cFooter-5\"]",
         "footerSiteFeedback": "a[qid=\"cFooter-4\"]",
         "footerFAQs": "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
-        "footerCambridgeOneSchool": "a[qid=\"cFooter-9\"][aria-label=\"Cambridge One for schools\"]",
+        "footerCambridgeOneSchool": ".insti-btn",
         "footerHelp": "a[qid=\"cFooter-6\"]",
         "footerCambridgeUniversity": ".copyright.mb-0"
       },
@@ -42,8 +42,8 @@
       },
 
       "landing": {
-        "headingText": ".heading1.mb-3",
-        "subheadingText": "div[class=\"main-content\"] h2",
+        "headingText": ".heading1.mt-2.mt-sm-4.mt-md-0",
+        "subheadingText": "div[class=\"main-content text-center text-md-start\"] h2",
         "signupBtn": "a[qid=\"home-1\"]",
         "loginBtn": "a[qid=\"home-2\"]",
         "brandLogo_img": "img[alt=\"Cambridge Logo\"]",
@@ -230,19 +230,32 @@
       },
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
+
         "hyperAnswerClose": "button[class=\"close-button\"]",
         "hyperAnswerFullScreen": "i[title=\"Enter fullscreen\"]",
         "hyperAnswerExitFullScreen": "img[title=\"Exit fullscreen\"]",
         "hyperAnswerQuestion": "div[id=\"rubric-0\"] p",
         "hyperVideoPlay": "span[title=\"Play\"]",
         "hyperVideoClose": "button[qid=\"vid-0\"]",
+
         "hyperActivityNext": "a[title=\"Next\"]",
         "hyperAudioClose": "div[class=\"title-section dragger\"] i[class=\"nemo-font nemo-cross\"]",
         "HyperShowHideTranscript": "button[qid=\"aud-21\"]",
         "hyperZoomHotspotClose": "[id^=\"zoomHotspot-close-button-\"]",
-        "exitActivity" : "a[qid=\"resultScreen-1\"]",
-        "activityGoodEffort" : "div[class=\"feedback-msg\"] h2"
+        "exitActivity": "a[qid=\"resultScreen-1\"]",
+        "activityGoodEffort": "div[class=\"feedback-msg\"] h2",
+        "startAgainActivity": "a[qid=\"resultScreen-2\"]",
+        "activityIFrame": "iframe#iframe_1669693911922-1669727257943-1669850648285",
+        "activityScoreCheck": "a[title=\"Check\"]",
+        "activityAnsElement": ".draggable button[aria-labelledby^=\"content-\"]"
+      },
 
+      "commonActivity": {
+        "activityAnsCheck": "a[title=\"Check\"]",
+        "activityNext": "a[title=\"Next\"]",
+        "activityClose": "button[class=\"close-button\"]",
+        "activityStartAgain": "a[qid=\"resultScreen-2\"]",
+        "activityExit": "a[qid=\"resultScreen-1\"]"
       },
       "hyperlinkAudio": {
         "hyperAudioPlay_pause": "div[class=\"ctrls\"] div[class=\"icon--not-pressed\"] span[class=\"glyph\"]",
