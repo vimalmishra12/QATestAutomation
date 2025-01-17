@@ -8,7 +8,7 @@
         "footerOurApproaches": "a[qid=\"cFooter-5\"]",
         "footerSiteFeedback": "a[qid=\"cFooter-4\"]",
         "footerFAQs": "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
-        "footerCambridgeOneSchool": ".insti-btn",
+        "footerCambridgeOneSchool": "a[qid=\"cFooter-9\"][aria-label=\"Cambridge One for schools\"]",
         "footerHelp": "a[qid=\"cFooter-6\"]",
         "footerCambridgeUniversity": ".copyright.mb-0"
       },
