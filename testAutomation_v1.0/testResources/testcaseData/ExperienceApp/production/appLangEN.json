@@ -209,6 +209,22 @@
         "myNotes": "My notes",
         "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
+      "createAssignment": {
+        "teacher": {
+          "automationClass": "Automation Class",
+          "materials": "Materials",
+          "cqaEbook": "CQA Base Book for testing",
+          "createAssignment": "Create assignment",
+          "takeMeToAssignment": "Take me to assignments",
+          "comprotestPE": "Comprotest PE for LO Launch",
+          "unit1": "Unit 01",
+          "nextBtn": "Next",
+          "setBtn": "Set",
+          "assignBtn": "Assign",
+          "returnToeBookBtn": "Return to eBook"
+        },
+        "student": {}
+      },
       "eBookContents": {
         "teacher": {
           "cqaTestProd": "cqa-test-prod-desktopfoc"
@@ -950,42 +966,6 @@
           "collapsibleScoreLbl": "Score",
           "collapsibleAttemptsLbl": "Attempts",
           "tabList": ["Due", "Upcoming", "Completed"]
-        }
-      },
-      "createAssignment": {
-        "teacher": {
-          "assignment_title": "Create Assignment -",
-          "activity_lbl": "Activity List",
-          "activityCount_lbl": "Activity",
-          "addActivity_lbl": "Add Activities",
-          "activity_number": "#",
-          "activitylist_lbl": "Activity",
-          "activityUnit_lbl": "Unit",
-          "assignment_lbl": "Assignment Name",
-          "assignment_txtbox": "input-assignmentName",
-          "startDatelbl": "Start Date",
-          "endDatelbl": "Due Date",
-          "showAdvanceOption": "Show Advanced Options",
-          "advancedOption": "Advanced Options",
-          "allowLateSubmission_lbl": "Allow Late Submission",
-          "preventfromSkipping_lbl": "Prevent from Skipping",
-          "disableShowAnswers_lbl": "Disable Show Answers",
-          "includeProgressBar_lbl": "Include Progress Bar",
-          "futureEditNotSupportedHeading": "Future Edits are not Supported",
-          "futureEditNotSupportedSubHeading": "Note that once you post the assignment to your class, the \"Advanced Options\" cannot be edited.",
-          "hideAdvancedOption": "Hide Advanced Options",
-          "cancel_btn": "Cancel",
-          "assign_btn": "Assign",
-          "close_btn": "close",
-          "deleteActivity_header": "Delete Activity?",
-          "deleteActivity_subheader": "This will delete the activity �Native LO C-T S-T� from this assignment.",
-          "deleteActivity_btn": "delete",
-          "cancelActivityDialogue_btn": "Cancel",
-          "assignmentSubmitDialogueSubHeader": "Posting this assignment will notify students. Once you confirm, the Activity List and Advanced Options cannot be edited.",
-          "activitylbl": "Activity List",
-          "classToAssignlbl": "Class to Assign",
-          "confirmAssign": "Confirm & Assign",
-          "current": " Current"
         }
       },
       "assignmentDetails": {
