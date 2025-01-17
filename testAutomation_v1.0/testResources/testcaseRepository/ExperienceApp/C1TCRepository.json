@@ -240,6 +240,91 @@
       ]
     },
     {
+      "modulename": "CreateAssignment",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/createAssignment.test.js",
+      "testcase": [
+        {
+          "id": "TST_CREA_TC_1",
+          "description": "Automation Class Card Clicked opr not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_2",
+          "description": "Material Tab clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_3",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_4",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_5",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_6",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_7",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_8",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_9",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_10",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_11",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_12",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_13",
+          "description": "CQA Base Book for testing clicked or not",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
       "modulename": "dashboard",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/dashboard.test.js",

@@ -161,6 +161,21 @@
         "deleteClass": "a[qid='cView-13']",
         "yesDelete_Btn": "button[qid=\"cView-48\"]"
       },
+      "createAssignment": {
+        "automationClass": "div[id=\"class-card-containerorg_mqa-sierra-prod1vz96-U6gP\"] a[class=\"class-title mx-2 pl-4\"]",
+        "materials": "a[href=\"/class/teacher/org_mqa-sierra-prod1/class/d350f0da-cb9c-4082-9b2d-2669a673b7cf/view/materials\"]",
+        "cqaEbook": "div[class=\"products-container\"] a:nth-child(1)",
+        "createAssignment": "button[title=\"Create assignment\"]",
+        "takeMeToAssignment": ".action-btn",
+        "comprotestPE": "div[class=\"sidebar bg-white d-none d-flex\"] a:nth-child(2)",
+        "unit1": "div[class=\"toc-data-wrapper create-assignment-included\"] div:nth-child(2)",
+        "lesson1Checkbox": "label[for=\"checkbox-1651658176506/1651659843411\"]",
+        "nextBtn": "button[aria-label=\"Next\"]",
+        "dueDateInput": "#assignmentDetailDueDate",
+        "setBtn": "div[class=\"owl-dt-container-buttons owl-dt-container-row ng-tns-c1338857926-3 ng-star-inserted\"] button:nth-child(2) span:nth-child(1)",
+        "assignBtn": "button[aria-label=\"Assign\"]",
+        "returnToeBookBtn": ".btn.btn-confirm-modal.return-btn"
+      },
       "progress": {
         "progress": "h1[qid='clView-6']"
       },
