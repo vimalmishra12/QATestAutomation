@@ -3,11 +3,11 @@
         "appContent": {
             "language": "Español",
             "landing": {
-                "headingText": "Un espacio para todo su aprendizaje.",
-                "subheadingText": "Aprenda desde cualquier lugar y en cualquier momento. Acceso instantáneo a todos los cursos y actividades.",
-                "signup_btnText": "Regístrese y comience a aprender hoy mismo",
-                "login_btnText": "Iniciar sesión",
-                "login_lblText": "¿Tiene una cuenta?",
+                "headingText": "Cambridge One",
+                "subheadingText": "La sede de tu aprendizaje digital",
+                "signupBtn": "Registrarse",
+                "loginBtn": "Iniciar sesión",
+                "login_lblText": "¿Todaví­a no tienes una cuenta?",
                 "footerLabel": "Desarrollada por"
             },
             "login": {
