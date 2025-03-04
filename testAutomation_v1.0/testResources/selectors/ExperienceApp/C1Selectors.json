@@ -164,6 +164,7 @@
       "progress": {
         "progress": "h1[qid='clView-6']"
       },
+      
       "eBook": {
         "cqa_ebook_evolve": ".eboook-selected.ng-tns-c606183087-2",
         "contentButton": "button[qid=\"72\"]",
@@ -179,7 +180,7 @@
         "showAndHideSelection": "button[qid=\"91\"]",
         "drawingTool": "button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]",
-        "toggleLayoutBtn": "button[qid=\"77\"]",
+        "toggleLayoutBtn": "p.ng-tns-c2434379185-2",
         "doublePage": "#readerpagedivB",
         "singlePage": ".reader-display-none",
         "fitToScreenBtn": "button[qid=\"97\"]",
