@@ -160,7 +160,7 @@ module.exports = {
   },
   TST_EBOO_TC_53: async function (testdata) {
     sts = await eBook.click_nextPage();
-    //console.log("2001  "+sts+"   "+testdata.pageNumber);
+    console.log("2001  "+sts+"   "+"test data -"+testdata.pageNumber14);
     await assertion.assertEqual(
       sts,
       testdata.pageNumber14,
@@ -169,6 +169,7 @@ module.exports = {
   },
   TST_EBOO_TC_54: async function (testdata) {
     sts = await eBook.click_previousPage();
+    console.log("2003  "+sts+"   "+"test data -"+testdata.pageNumber12);
     await assertion.assertEqual(
       sts,
       testdata.pageNumber12,
@@ -404,6 +405,16 @@ module.exports = {
     );
     await browser.pause(2000);
   },
+  // TST_EBOO_TC_17: async function (testdata) {
+  //   sts = await eBook.click_toggleLayoutBtn();
+  //   console.log("STSD data is",sts)
+  //   await assertion.assertEqual(
+  //     sts,
+  //     testdata.singlePage,
+  //     "toggleLayoutBtn are not Clicked"
+  //   );
+  //   await browser.pause(2000);
+  // },
 
   TST_EBOO_TC_22: async function (testdata) {
     sts = await eBook.click_toggleLayoutBtn();

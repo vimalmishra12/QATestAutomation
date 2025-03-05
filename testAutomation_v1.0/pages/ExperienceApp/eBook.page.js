@@ -77,6 +77,7 @@ module.exports = {
   hyperAudioClose: selectorFile.css.ComproC1.hyperlinkAudio.hyperAudioClose,
 
   toggleLayoutBtn: selectorFile.css.ComproC1.eBook.toggleLayoutBtn,
+  pagelayoutcontainer: selectorFile.css.ComproC1.eBook.pagelayoutcontainer,
   doublePage: selectorFile.css.ComproC1.eBook.doublePage,
   singlePage: selectorFile.css.ComproC1.eBook.singlePage,
   fitToScreenBtn: selectorFile.css.ComproC1.eBook.fitToScreenBtn,
@@ -971,9 +972,9 @@ module.exports = {
         await stackTrace.get(),
         " toggleLayoutBtn is clicked"
       );
-      let classList = await action.getAttribute("#readerpagedivB", "class");
+      let pagelayout = await action.getAttribute(this.pagelayoutcontainer, "class");
 
-      if (classList.includes("reader-display-none")) {
+      if (pagelayout.includes("reader-display-none")) {
         await logger.logInto(
           await stackTrace.get(),
           "Single page layout is active"
@@ -1115,7 +1116,8 @@ module.exports = {
       );
       await action.waitForDisplayed(this.pageNOShow);
       await browser.pause(9000);
-      const pageText = await $(this.pageNOShow).getText(); // or getProperty('innerText') if getText() doesn't work as expected
+      // const pageText = await $(this.pageNOShow).getText(); // or getProperty('innerText') if getText() doesn't work as expected
+      const pageText = await $(this.pageNOShow).getProperty('innerText');
 
       res = pageText;
     } else {

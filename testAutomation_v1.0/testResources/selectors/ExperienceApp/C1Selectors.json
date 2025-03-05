@@ -181,6 +181,7 @@
         "drawingTool": "button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]",
         "toggleLayoutBtn": "p.ng-tns-c2434379185-2",
+        "pagelayoutcontainer": "#readerpagedivB",
         "doublePage": "#readerpagedivB",
         "singlePage": ".reader-display-none",
         "fitToScreenBtn": "button[qid=\"97\"]",
