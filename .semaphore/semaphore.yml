@@ -10,7 +10,6 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - 'version: v1.0'
             - 'name: CI with Chrome and WebdriverIO'
             - 'agent:'
             - '  machine:'
