@@ -14,15 +14,23 @@ blocks:
             - checkout
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
-            - sudo apt-get install -y wget unzip curl
-            - '# Install latest Chrome'
+            - sudo apt-get install -y wget unzip curl jq
+            - '# Install latest Google Chrome'
             - echo "Downloading and installing Google Chrome"
             - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
             - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
             - google-chrome --version
-            - '# Install ChromeDriver (fixed version for Chrome 134)'
-            - echo "Downloading and setting up ChromeDriver"
-            - 'CHROMEDRIVER_VERSION="134.0.0"  # Adjust this if needed'
+            - '# Get Chrome version and derive matching ChromeDriver version'
+            - 'CHROME_VERSION=$(google-chrome --version | grep -oP ''([0-9]+)\.([0-9]+)\.([0-9]+)'')'
+            - 'echo "Installed Chrome version: $CHROME_VERSION"'
+            - 'CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")'
+            - 'if [ -z "$CHROMEDRIVER_VERSION" ]; then'
+            - '  echo "Failed to fetch ChromeDriver version for Chrome $CHROME_VERSION"'
+            - '  exit 1'
+            - fi
+            - 'echo "Matching ChromeDriver version: $CHROMEDRIVER_VERSION"'
+            - '# Download and set up ChromeDriver'
+            - echo "Downloading ChromeDriver $CHROMEDRIVER_VERSION"
             - 'wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O chromedriver.zip'
             - unzip chromedriver.zip
             - sudo mv chromedriver /usr/local/bin/chromedriver
