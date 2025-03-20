@@ -15,19 +15,28 @@ blocks:
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
             - sudo apt-get install -y wget unzip
-            - echo "Downloading and installing the Google Chrome"
+            - '# Install the latest Google Chrome'
+            - echo "Downloading and installing Google Chrome"
             - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
             - sudo dpkg -i google-chrome-stable_current_amd64.deb
             - sudo apt-get install -f -y
-            - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+            - '# Get Chrome version and dynamically install matching ChromeDriver'
+            - 'CHROME_VERSION=$(google-chrome --version | grep -o ''[0-9.]\+'' | head -1 | cut -d ''.'' -f 1)'
+            - 'echo "Detected Chrome version: $CHROME_VERSION"'
+            - 'CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION"'
+            - echo "Fetching ChromeDriver version from $CHROMEDRIVER_URL"
+            - CHROMEDRIVER_VERSION=$(wget -qO- $CHROMEDRIVER_URL)
+            - 'echo "Detected ChromeDriver version: $CHROMEDRIVER_VERSION"'
+            - 'wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip'
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/chromedriver
             - chromedriver --version
             - google-chrome --version
+            - '# Install Node.js and npm'
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
             - echo "Prologue commands completed"
+            - '# Run the tests'
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Setting Node.js version"
@@ -48,6 +57,7 @@ blocks:
             - else
             - '  STATUS="failed"'
             - fi
+            - '# Verify report generation'
             - echo "Verifying directory structure"
             - echo "Listing files in the root directory"
             - ls -la || echo "No files found in root directory"
@@ -77,6 +87,7 @@ blocks:
             - fi
             - echo "Waiting for log file to be completely written"
             - sleep 10
+            - '# Send email'
             - echo "Setting environment variables for mailer.js"
             - export appType="ExperienceApp"
             - export testEnv="qa"
