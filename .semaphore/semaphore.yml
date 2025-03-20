@@ -13,7 +13,7 @@ blocks:
             - echo "Starting prologue commands"
             - checkout
             - sudo apt-get update
-            - sudo apt-get remove -y google-chrome-stable
+            - sudo apt-get remove -y google-chrome-sxxtable
             - sudo apt-get install -y wget unzip
             - echo "Adding Google's official repository and installing Chrome & ChromeDriver"
             - 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -'
