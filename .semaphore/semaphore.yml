@@ -3,34 +3,20 @@ checkout
 sudo apt-get update
 sudo apt-get remove -y google-chrome-stable
 sudo apt-get install -y wget unzip
-
-# Fetching Google Chrome version and installing Chrome
-echo "Fetching Google Chrome version"
-CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.' | head -1 | sed 's/.$//')
-echo "Detected Chrome version: $CHROME_VERSION"
-echo "Downloading and installing Google Chrome"
+echo "Downloading and installing the Google Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get install -f -y
-
 echo "Downloading and setting up ChromeDriver"
-CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION"
-echo "CHROMEDRIVER_URL: $CHROMEDRIVER_URL"
-CHROMEDRIVER_VERSION=$(wget -qO- "$CHROMEDRIVER_URL") || { echo "Failed to fetch ChromeDriver version"; exit 1; }
-echo "Fetched ChromeDriver version: $CHROMEDRIVER_VERSION"
-wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/local/bin/chromedriver
 chromedriver --version
 google-chrome --version
-
-# Installing Node.js and npm
 echo "Installing Node.js and npm"
 sudo apt-get install -y nodejs npm
-
 echo "Prologue commands completed"
 echo "Starting C1LoginTest job"
-
 cd /home/semaphore/QATestAutomation/testAutomation_v1.0
 echo "Setting Node.js version"
 sem-version node 14.21.3
@@ -50,8 +36,6 @@ if [ $RESULT -eq 0 ]; then
 else
   STATUS="failed"
 fi
-
-# Verifying directory structure
 echo "Verifying directory structure"
 echo "Listing files in the root directory"
 ls -la || echo "No files found in root directory"
@@ -81,8 +65,6 @@ else
 fi
 echo "Waiting for log file to be completely written"
 sleep 10
-
-# Setting environment variables for mailer.js
 echo "Setting environment variables for mailer.js"
 export appType="ExperienceApp"
 export testEnv="qa"
@@ -92,7 +74,6 @@ echo "$SEMAPHORE_JOB_ID"
 export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
 echo "$SEMAPHORE_WORKFLOW_NUMBER"
 export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"
-
 echo "Running mailer.js with parameters and logging additional details"
 cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }
 node mailer.js --appType="$appType" \
@@ -108,5 +89,5 @@ node mailer.js --appType="$appType" \
                --triggerSource="Semaphore" \
                > /home/semaphore/mailer.log 2>&1
 echo "mailer.js script execution completed with exit code $?"
-echo "Mailer.js log1:"
+echo "Mailer.js log:"
 cat /home/semaphore/mailer.log
