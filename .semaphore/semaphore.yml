@@ -15,6 +15,8 @@ blocks:
             - sudo apt-get update
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
+            - echo "Installing ChromeDriver compatible with Chrome version 131"
+            - npm install chromedriver@131
             - echo "Prologue commands completed"
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
@@ -78,16 +80,16 @@ blocks:
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - node mailer.js --appType="$appType" \
-            - '               --testEnv="$testEnv" \'
-            - '               --projectName="$SEMAPHORE_PROJECT_NAME" \'
-            - '               --branchName="$SEMAPHORE_GIT_BRANCH" \'
-            - '               --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \'
-            - '               --jobID="$SEMAPHORE_JOB_ID" \'
-            - '               --mailingList="$mailingList" \'
-            - '               --jobResult="$STATUS" \'
-            - '               --emailId="$emailId" \'
-            - '               --emailPwd="$emailPwd" \'
-            - '               --triggerSource="Semaphore" \'
+            - '               --testEnv="$testEnv" \
+            - '               --projectName="$SEMAPHORE_PROJECT_NAME" \
+            - '               --branchName="$SEMAPHORE_GIT_BRANCH" \
+            - '               --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
+            - '               --jobID="$SEMAPHORE_JOB_ID" \
+            - '               --mailingList="$mailingList" \
+            - '               --jobResult="$STATUS" \
+            - '               --emailId="$emailId" \
+            - '               --emailPwd="$emailPwd" \
+            - '               --triggerSource="Semaphore" \
             - '               > /home/semaphore/mailer.log 2>&1'
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
