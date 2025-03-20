@@ -50,7 +50,7 @@ blocks:
             - '  - name: Run Tests'
             - '    task:'
             - '      jobs:'
-            - '        - name: Execute Test Automation'
+            - '        - name: Execute Test1 Automation'
             - '          commands:'
             - '            - echo "Running Tests..."'
             - '            - # Add your test execution command here'
