@@ -15,13 +15,14 @@ blocks:
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
             - sudo apt-get install -y wget unzip
-            - echo "Adding Google's official repository and installing Chrome & ChromeDriver"
+            - echo "Adding Google's repository and installing Chrome"
             - 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -'
             - 'sudo sh -c ''echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'''
             - sudo apt-get update
-            - sudo apt-get install -y google-chrome-stable
-            - echo "Downloading latest ChromeDriver"
-            - CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+            - 'wget https://dl.google.com/linux/direct/google-chrome-stable_134.0.6998.117-1_amd64.deb'
+            - sudo dpkg -i google-chrome-stable_134.0.6998.117-1_amd64.deb || sudo apt-get install -f -y
+            - echo "Downloading and setting up ChromeDriver"
+            - CHROME_DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_134.0.6998)
             - 'wget -N https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip'
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/
@@ -30,6 +31,8 @@ blocks:
             - chromedriver --version
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
+            - rm -rf ~/.cache/google-chrome
+            - rm -rf ~/.config/google-chrome
             - echo "Prologue commands completed"
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
@@ -51,17 +54,11 @@ blocks:
               else
                 STATUS="failed"
               fi
-            - echo "Verifying directory structure"
-            - echo "Listing files in the root directory"
-            - ls -la || echo "No files found in root directory"
-            - echo "Changing directory to /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Directory not found"; exit 1; }'
-            - echo "Listing files in output/reports directory"
+            - echo "Verifying test report files"
+            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Reports directory not found"; exit 1; }'
             - 'ls -la || { echo "No reports directory found"; exit 1; }'
-            - echo "Changing directory to TestReports"
             - 'cd TestReports || { echo "No TestReports directory found"; exit 1; }'
-            - echo "Listing files in TestReports directory"
-            - 'ls -la || { echo "No files found in TestReports directory"; exit 1; }'
+            - 'ls -la || { echo "No files in TestReports directory"; exit 1; }'
             - echo "Verifying Timeline report files"
             - |
               TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
@@ -71,27 +68,23 @@ blocks:
               else
                 echo "Timeline report found: $TIMELINE_REPORT"
               fi
-            - echo "Verifying log file location"
+            - echo "Verifying log file"
             - |
               LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
               if [ ! -f "$LOG_FILE" ]; then
-                echo "Timeline log file not found at expected location: $LOG_FILE"
+                echo "Timeline log file not found"
                 exit 1
               else
                 echo "Timeline log file found: $LOG_FILE"
               fi
-            - echo "Waiting for log file to be completely written"
-            - sleep 10
             - echo "Setting environment variables for mailer.js"
             - export appType="ExperienceApp"
             - export testEnv="qa"
             - export emailId="randomdump1702@gmail.com"
             - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
-            - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
-            - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - 'export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"'
-            - echo "Running mailer.js with parameters and logging additional details"
+            - echo "Running mailer.js with parameters"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="$appType" \
@@ -107,7 +100,6 @@ blocks:
                              --triggerSource="Semaphore" \
                              > /home/semaphore/mailer.log 2>&1
             - echo "mailer.js script execution completed with exit code $?"
-            - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
       secrets:
         - name: Cred
