@@ -14,24 +14,25 @@ blocks:
             - checkout
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
-            - sudo apt-get install -y wget unzip
-            - echo "Downloading and installing the Google Chrome"
+            - sudo apt-get install -y wget unzip curl
+            - '# Install latest Chrome and matching ChromeDriver'
+            - echo "Downloading and installing Google Chrome"
             - 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-            - sudo dpkg -i google-chrome-stable_current_amd64.deb
-            - sudo apt-get install -f -y
+            - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+            - google-chrome --version
             - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+            - 'CHROME_VERSION=$(google-chrome --version | grep -oP ''[0-9.]+'' | head -1)'
+            - 'CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")'
+            - 'wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"'
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/chromedriver
             - chromedriver --version
-            - google-chrome --version
+            - '# Install Node.js and npm'
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
-            - echo "Prologue commands completed"
-            - echo "Starting C1LoginTest job"
-            - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
-            - echo "Setting Node.js version"
             - sem-version node 14.21.3
+            - '# Install dependencies and run tests'
+            - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Restoring npm cache"
             - cache restore
             - echo "Installing npm dependencies"
@@ -39,70 +40,54 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run loginFeatureTest
-            - |
-              RESULT=$?
-              echo "Test result: $RESULT"
-              if [ $RESULT -eq 0 ]; then
-                STATUS="passed"
-              else
-                STATUS="failed"
-              fi
-            - echo "Verifying directory structure"
-            - echo "Listing files in the root directory"
-            - ls -la || echo "No files found in root directory"
-            - echo "Changing directory to /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Directory not found"; exit 1; }'
-            - echo "Listing files in output/reports directory"
-            - 'ls -la || { echo "No reports directory found"; exit 1; }'
-            - echo "Changing directory to TestReports"
-            - 'cd TestReports || { echo "No TestReports directory found"; exit 1; }'
-            - echo "Listing files in TestReports directory"
-            - 'ls -la || { echo "No files found in TestReports directory"; exit 1; }'
-            - echo "Verifying Timeline report files"
-            - |
-              TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
-              if [ -z "$TIMELINE_REPORT" ]; then
-                echo "No HTML report files found"
-                exit 1
-              else
-                echo "Timeline report found: $TIMELINE_REPORT"
-              fi
-            - echo "Verifying log file location"
-            - |
-              LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
-              if [ ! -f "$LOG_FILE" ]; then
-                echo "Timeline log file not found at expected location: $LOG_FILE"
-                exit 1
-              else
-                echo "Timeline log file found: $LOG_FILE"
-              fi
+            - npm run loginFeatureTest -- --appType=ExperienceApp --testEnv=qa
+            - RESULT=$?
+            - 'echo "Test result: $RESULT"'
+            - 'if [ $RESULT -eq 0 ]; then'
+            - '  STATUS="passed"'
+            - else
+            - '  STATUS="failed"'
+            - fi
+            - '# Verify reports and logs'
+            - echo "Verifying reports and log files"
+            - REPORTS_PATH="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports"
+            - TIMELINE_REPORT=$(find "$REPORTS_PATH" -type f -name "*.html")
+            - LOG_FILE="$REPORTS_PATH/wdio-0-0-timeline-reporter.log"
+            - 'if [ -z "$TIMELINE_REPORT" ]; then'
+            - '  echo "No HTML report files found"'
+            - '  exit 1'
+            - else
+            - '  echo "Timeline report found: $TIMELINE_REPORT"'
+            - fi
+            - 'if [ ! -f "$LOG_FILE" ]; then'
+            - '  echo "Timeline log file not found at expected location: $LOG_FILE"'
+            - '  exit 1'
+            - else
+            - '  echo "Timeline log file found: $LOG_FILE"'
+            - fi
             - echo "Waiting for log file to be completely written"
             - sleep 10
-            - echo "Setting environment variables for mailer.js"
+            - '# Set environment variables for mailer.js'
             - export appType="ExperienceApp"
             - export testEnv="qa"
             - export emailId="randomdump1702@gmail.com"
             - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
-            - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
-            - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - 'export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"'
-            - echo "Running mailer.js with parameters and logging additional details"
+            - '# Run mailer.js'
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
-            - |
-              node mailer.js --appType="$appType" \
-                             --testEnv="$testEnv" \
-                             --projectName="$SEMAPHORE_PROJECT_NAME" \
-                             --branchName="$SEMAPHORE_GIT_BRANCH" \
-                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
-                             --jobID="$SEMAPHORE_JOB_ID" \
-                             --mailingList="$mailingList" \
-                             --jobResult="$STATUS" \
-                             --emailId="$emailId" \
-                             --emailPwd="$emailPwd" \
-                             --triggerSource="Semaphore" \
-                             > /home/semaphore/mailer.log 2>&1
+            - node mailer.js --appType="$appType" \
+            - '               --testEnv="$testEnv" \'
+            - '               --projectName="$SEMAPHORE_PROJECT_NAME" \'
+            - '               --branchName="$SEMAPHORE_GIT_BRANCH" \'
+            - '               --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \'
+            - '               --jobID="$SEMAPHORE_JOB_ID" \'
+            - '               --mailingList="$mailingList" \'
+            - '               --jobResult="$STATUS" \'
+            - '               --emailId="$emailId" \'
+            - '               --emailPwd="$emailPwd" \'
+            - '               --triggerSource="Semaphore" \'
+            - '               > /home/semaphore/mailer.log 2>&1'
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
