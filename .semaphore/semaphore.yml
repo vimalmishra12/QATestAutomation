@@ -42,7 +42,7 @@ blocks:
             - npm run loginFeatureTest
             - |
               RESULT=$?
-              echo "Test result: $RESULT"
+              echo "Test Result: $RESULT"
               if [ $RESULT -eq 0 ]; then
                 STATUS="passed"
               else
@@ -80,18 +80,23 @@ blocks:
             - echo "Waiting for log file to be completely written"
             - sleep 10
             - echo "Setting environment variables for mailer.js"
+            - export appType="ExperienceApp"
+            - export testEnv="qa"
             - export emailId="randomdump1702@gmail.com"
-            - 'export emailPwd="${SECRETS_EmailCredentials_emailPwd}"'
-            - echo "Email password for debugging: $emailPwd"
-            - export mailingList="vimal.mishra@comprotechnologies.com"
+            - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
+            - echo "$SEMAPHORE_JOB_ID"
+            - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
+            - echo "$SEMAPHORE_WORKFLOW_NUMBER"
+            - 'export mailingList="vimal.mishra@comprotechnologies.com, vikrant.chaudhary@comprotechnologies.com"'
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
-              node mailer.js --appType="ExperienceApp" \
-                             --testEnv="qa" \
+              node mailer.js --appType="$appType" \
+                             --testEnv="$testEnv" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
-                             --buildNumber="124" \
+                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
+                             --jobID="$SEMAPHORE_JOB_ID" \
                              --mailingList="$mailingList" \
                              --jobResult="$STATUS" \
                              --emailId="$emailId" \
@@ -101,3 +106,5 @@ blocks:
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
+      secrets:
+        - name: Cred
