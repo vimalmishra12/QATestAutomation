@@ -42,7 +42,7 @@ blocks:
             - npm run loginFeatureTest
             - |
               RESULT=$?
-              echo "Test result: $RESULT"
+              echo "Test Result: $RESULT"
               if [ $RESULT -eq 0 ]; then
                 STATUS="passed"
               else
