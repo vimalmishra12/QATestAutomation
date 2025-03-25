@@ -20,9 +20,10 @@ blocks:
             - sudo dpkg -i google-chrome-stable_132.0.6834.83-1_amd64.deb
             - sudo apt-get install -f -y
             - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/132.0.6829.0/chromedriver_linux64.zip'
-            - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/chromedriver
+            - 'wget https://github.com/dreamshao/chromedriver/raw/main/132.0.6834.83/chromedriver-linux64.zip'
+            - unzip chromedriver-linux64.zip
+            - sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+            - sudo chmod +x /usr/local/bin/chromedriver
             - chromedriver --version
             - google-chrome --version
             - echo "Installing Node.js and npm"
