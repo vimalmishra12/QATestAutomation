@@ -17,13 +17,16 @@ blocks:
             - 'if command -v google-chrome; then echo "Pre-installed Chrome version:"; google-chrome --version; echo "Removing pre-installed Chrome..."; sudo apt-get remove -y google-chrome-stable; else echo "No pre-installed Chrome found."; fi'
             - echo "Checking if Semaphore provides its own ChromeDriver version"
             - 'if command -v chromedriver; then echo "Pre-installed ChromeDriver version:"; chromedriver --version; else echo "No pre-installed ChromeDriver found."; fi'
-            - sudo apt-get install -y wget unzip
+            - sudo apt-get install -y wget unzip curl
             - echo "Downloading and installing Google Chrome"
             - 'wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_132.0.6834.83-1_amd64.deb'
             - sudo dpkg -i google-chrome-stable_132.0.6834.83-1_amd64.deb
             - sudo apt-get install -f -y
+            - echo "Fetching latest compatible ChromeDriver version"
+            - 'LATEST_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)'
+            - echo "Latest ChromeDriver version: $LATEST_VERSION"
             - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/132.0.6834.83/chromedriver_linux64.zip'
+            - 'wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip'
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/chromedriver
             - sudo chmod +x /usr/local/bin/chromedriver
