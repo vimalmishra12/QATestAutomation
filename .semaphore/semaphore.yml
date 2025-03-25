@@ -13,6 +13,10 @@ blocks:
             - echo "Starting prologue commands"
             - checkout
             - sudo apt-get update
+            - echo "Checking if Semaphore provides its own Chrome version"
+            - 'if command -v google-chrome; then echo "Pre-installed Chrome version:"; google-chrome --version; else echo "No pre-installed Chrome found."; fi'
+            - echo "Checking if Semaphore provides its own ChromeDriver version"
+            - 'if command -v chromedriver; then echo "Pre-installed ChromeDriver version:"; chromedriver --version; else echo "No pre-installed ChromeDriver found."; fi'
             - sudo apt-get remove -y google-chrome-stable
             - sudo apt-get install -y wget unzip
             - echo "Downloading and installing Google Chrome"
@@ -24,8 +28,9 @@ blocks:
             - unzip chromedriver-linux64.zip
             - sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
             - sudo chmod +x /usr/local/bin/chromedriver
-            - chromedriver --version
+            - echo "Verifying installed Chrome and ChromeDriver versions"
             - google-chrome --version
+            - chromedriver --version
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
             - echo "Prologue commands completed"
