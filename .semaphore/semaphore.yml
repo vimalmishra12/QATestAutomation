@@ -1,50 +1,53 @@
 version: v1.0
-name: Update Semaphore configuration
+name: WebdriverIO Login Test
 agent:
   machine:
-    type: e2-standard-2
+    type: e1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: C1LoginTest
+  - name: Setup Environment
     task:
       jobs:
-        - name: C1LoginTest
+        - name: Install Dependencies
           commands:
-            - echo "Starting prologue commands"
-            - checkout
-            - sudo apt-get update
-            - sudo apt-get remove -y google-chrome-stable
+            - echo "Updating system packages"
+            - sudo apt-get update -y
+            - sudo apt-get remove -y google-chrome-stable || true
             - sudo apt-get install -y wget unzip curl
-            - echo "Downloading and installing Google Chrome version 114.0.5735.90"
-            - 'wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_114.0.5735.90-1_amd64.deb'
-            - sudo dpkg -i google-chrome-stable_114.0.5735.90-1_amd64.deb || sudo apt-get install -f -y
-            - sudo rm -rf /usr/local/bin/chromedriver
-            - echo "Downloading and setting up ChromeDriver version 114.0.5735.90"
-            - 'wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip'
+            - echo "Downloading and installing Google Chrome"
+            - 'wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+            - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+            - echo "Downloading and setting up ChromeDriver"
+            - 'CHROME_VERSION=$(google-chrome --version | awk ''{print $3}'')'
+            - 'CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")'
+            - 'wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"'
             - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/chromedriver
-            - sudo chmod +x /usr/local/bin/chromedriver
-            - google-chrome --version
+            - sudo mv chromedriver /usr/local/bin/
             - chromedriver --version
+            - google-chrome --version
             - echo "Installing Node.js and npm"
-            - sudo apt-get install -y nodejs npm
-            - echo "Setting Node.js version"
-            - sem-version node 14.21.3
-            - echo "Restoring npm cache"
-            - cache restore
-            - echo "Installing npm dependencies"
-            - npm install
-            - echo "Storing npm cache"
-            - cache store
-            - echo "Running test script"
-            - npm run loginFeatureTest
-            - |
-              RESULT=$?
-              echo "Test Result: $RESULT"
-              if [ $RESULT -eq 0 ]; then
-                STATUS="passed"
-              else
-                STATUS="failed"
-                echo "Test failed! Collecting logs..."
-                ls -la /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports
-              fi
+            - 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -'
+            - sudo apt-get install -y nodejs
+            - node -v
+            - npm -v
+  - name: Run Login Feature Tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 14.21.3
+          - cache restore
+          - npm install
+          - cache store
+      jobs:
+        - name: Run WebdriverIO Tests
+          commands:
+            - echo "Running WebdriverIO login tests"
+            - npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900 || exit 1
+      epilogue:
+        always:
+          commands:
+            - echo "Collecting test reports"
+            - mkdir -p test-results
+            - cp -r output/reports/TestReports/* test-results/
+            - store_artifact test-results
