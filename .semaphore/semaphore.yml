@@ -1,53 +1,57 @@
 version: v1.0
-name: WebdriverIO Login Test
+name: Test Automation CI
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu2204
+    type: ubuntu20
+    os_image: ''
 blocks:
-  - name: Setup Environment
-    task:
-      jobs:
-        - name: Install Dependencies
-          commands:
-            - echo "Updating system packages"
-            - sudo apt-get update -y
-            - sudo apt-get remove -y google-chrome-stable || true
-            - sudo apt-get install -y wget unzip curl
-            - echo "Downloading and installing Google Chrome"
-            - 'wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-            - sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
-            - echo "Downloading and setting up ChromeDriver"
-            - 'CHROME_VERSION=$(google-chrome --version | awk ''{print $3}'')'
-            - 'CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")'
-            - 'wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"'
-            - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/
-            - chromedriver --version
-            - google-chrome --version
-            - echo "Installing Node.js and npm"
-            - 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -'
-            - sudo apt-get install -y nodejs
-            - node -v
-            - npm -v
-  - name: Run Login Feature Tests
+  - name: Install Dependencies
     task:
       prologue:
         commands:
-          - checkout
-          - sem-version node 14.21.3
-          - cache restore
-          - npm install
-          - cache store
-      jobs:
-        - name: Run WebdriverIO Tests
-          commands:
-            - echo "Running WebdriverIO login tests"
-            - npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900 || exit 1
+          - echo "Updating package lists"
+          - sudo apt-get update
+          - echo "Removing existing Chrome"
+          - sudo apt-get remove -y google-chrome-stable
+          - echo "Installing dependencies"
+          - sudo apt-get install -y wget unzip
+          - echo "Downloading and installing the required Chrome version"
+          - 'CHROME_VERSION=$(jq -r ''.dependencies.chromedriver'' package.json | sed ''s/[^0-9.]*//g'')'
+          - 'wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb -O google-chrome.deb'
+          - sudo dpkg -i google-chrome.deb || sudo apt-get install -f -y
+          - echo "Checking Chrome version"
+          - google-chrome --version
+          - echo "Downloading and setting up ChromeDriver"
+          - 'wget https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip'
+          - unzip chromedriver_linux64.zip
+          - sudo mv chromedriver /usr/local/bin/chromedriver
+          - chromedriver --version
       epilogue:
         always:
           commands:
-            - echo "Collecting test reports"
-            - mkdir -p test-results
-            - cp -r output/reports/TestReports/* test-results/
-            - store_artifact test-results
+            - echo "Installation completed"
+      jobs: []
+  - name: Install Node.js Dependencies
+    task:
+      prologue:
+        commands:
+          - echo "Installing Node.js dependencies"
+          - npm install
+      jobs: []
+  - name: Run WebDriverIO Tests
+    task:
+      prologue:
+        commands:
+          - echo "Running WebDriverIO tests"
+          - npm run test
+      jobs: []
+  - name: Upload Test Artifacts
+    task:
+      prologue:
+        commands:
+          - echo "Uploading test artifacts"
+          - tar -cvf test-results.tar test-results/
+      artifacts:
+        files:
+          - test-results.tar
+      jobs: []
