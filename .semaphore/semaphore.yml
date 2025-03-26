@@ -10,109 +10,36 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - echo "Starting prologue commands"
+            - echo "Starting setup..."
             - checkout
-            - sudo apt-get update
-            - echo "Checking if Semaphore provides its own Chrome version"
-            - 'if command -v google-chrome; then echo "Pre-installed Chrome version:"; google-chrome --version; echo "Removing pre-installed Chrome..."; sudo apt-get remove -y google-chrome-stable; else echo "No pre-installed Chrome found."; fi'
-            - echo "Checking if Semaphore provides its own ChromeDriver version"
-            - 'if command -v chromedriver; then echo "Pre-installed ChromeDriver version:"; chromedriver --version; else echo "No pre-installed ChromeDriver found."; fi'
-            - sudo apt-get install -y wget unzip curl
-            - echo "Downloading and installing Google Chrome"
-            - 'wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_132.0.6834.83-1_amd64.deb'
-            - sudo dpkg -i google-chrome-stable_132.0.6834.83-1_amd64.deb
-            - sudo apt-get install -f -y
-            - echo "Fetching latest compatible ChromeDriver version"
-            - 'LATEST_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_132)'
-            - echo "Latest ChromeDriver version: $LATEST_VERSION"
-            - echo "Downloading and setting up ChromeDriver"
-            - 'wget https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip'
-            - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/chromedriver
-            - sudo chmod +x /usr/local/bin/chromedriver
-            - echo "Verifying installed Chrome and ChromeDriver versions"
+            - sudo apt-get update && sudo apt-get install -y wget unzip
+            - if command -v google-chrome; then echo "Pre-installed Chrome found. Removing..."; sudo apt-get remove -y google-chrome-stable; else echo "No pre-installed Chrome found."; fi
+            - echo "Installing latest Google Chrome..."
+            - 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -'
+            - 'echo ''deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'' | sudo tee /etc/apt/sources.list.d/google-chrome.list'
+            - sudo apt-get update && sudo apt-get install -y google-chrome-stable
             - google-chrome --version
+            - CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+            - echo "Detected Chrome version: $CHROME_VERSION"
+            - echo "Downloading matching ChromeDriver..."
+            - 'CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)'
+            - 'wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip'
+            - unzip chromedriver_linux64.zip
+            - sudo mv chromedriver /usr/local/bin/
+            - sudo chmod +x /usr/local/bin/chromedriver
             - chromedriver --version
-            - echo "Installing Node.js and npm"
-            - sudo apt-get install -y nodejs npm
-            - echo "Prologue commands completed"
-            - echo "Starting C1LoginTest job"
-            - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
-            - echo "Setting Node.js version"
+            - echo "Installing Node.js..."
             - sem-version node 14.21.3
-            - echo "Restoring npm cache"
+            - npm install -g npm
+            - node -v
+            - npm -v
             - cache restore
-            - echo "Installing npm dependencies"
             - npm install
-            - echo "Storing npm cache"
             - cache store
-            - echo "Running test script"
+  - name: Run Tests
+    task:
+      jobs:
+        - name: Run Login Test
+          commands:
+            - echo "Running test script..."
             - npm run loginFeatureTest
-            - |
-              RESULT=$?
-              echo "Test result: $RESULT"
-              if [ $RESULT -eq 0 ]; then
-                STATUS="passed"
-              else
-                STATUS="failed"
-              fi
-            - echo "Verifying directory structure"
-            - echo "Listing files in the root directory"
-            - ls -la || echo "No files found in root directory"
-            - echo "Changing directory to /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Directory not found"; exit 1; }'
-            - echo "Listing files in output/reports directory"
-            - 'ls -la || { echo "No reports directory found"; exit 1; }'
-            - echo "Changing directory to TestReports"
-            - 'cd TestReports || { echo "No TestReports directory found"; exit 1; }'
-            - echo "Listing files in TestReports directory"
-            - 'ls -la || { echo "No files found in TestReports directory"; exit 1; }'
-            - echo "Verifying Timeline report files"
-            - |
-              TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
-              if [ -z "$TIMELINE_REPORT" ]; then
-                echo "No HTML report files found"
-                exit 1
-              else
-                echo "Timeline report found: $TIMELINE_REPORT"
-              fi
-            - echo "Verifying log file location"
-            - |
-              LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
-              if [ ! -f "$LOG_FILE" ]; then
-                echo "Timeline log file not found at expected location: $LOG_FILE"
-                exit 1
-              else
-                echo "Timeline log file found: $LOG_FILE"
-              fi
-            - echo "Waiting for log file to be completely written"
-            - sleep 10
-            - echo "Setting environment variables for mailer.js"
-            - export appType="ExperienceApp"
-            - export testEnv="qa"
-            - export emailId="randomdump1702@gmail.com"
-            - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
-            - echo "$SEMAPHORE_JOB_ID"
-            - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
-            - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - 'export mailingList="vimal.mishra@comprotechnologies.com, vikrant.chaudhary@comprotechnologies.com"'
-            - echo "Running mailer.js with parameters and logging additional details"
-            - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
-            - |
-              node mailer.js --appType="$appType" \
-                             --testEnv="$testEnv" \
-                             --projectName="$SEMAPHORE_PROJECT_NAME" \
-                             --branchName="$SEMAPHORE_GIT_BRANCH" \
-                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
-                             --jobID="$SEMAPHORE_JOB_ID" \
-                             --mailingList="$mailingList" \
-                             --jobResult="$STATUS" \
-                             --emailId="$emailId" \
-                             --emailPwd="$emailPwd" \
-                             --triggerSource="Semaphore" \
-                             > /home/semaphore/mailer.log 2>&1
-            - echo "mailer.js script execution completed with exit code $?"
-            - 'echo "Mailer.js log:"'
-            - cat /home/semaphore/mailer.log
-      secrets:
-        - name: Cred
