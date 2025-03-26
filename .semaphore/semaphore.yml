@@ -9,25 +9,39 @@ blocks:
     task:
       jobs:
         - name: C1LoginTest
+          commands: []
+          blocks: null
+  - name: Setup Environment
+    task:
+      jobs:
+        - name: Install Dependencies
           commands:
-            - echo "Starting prologue commands"
+            - echo "Starting setup..."
             - checkout
-            - sudo apt-get update
-            - sudo apt-get remove -y google-chrome-stable
-            - sudo apt-get install -y wget unzip
-            - echo "Downloading and installing Google Chrome"
-            - "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-            - sudo dpkg -i google-chrome-stable_current_amd64.deb
-            - sudo apt-get install -f -y
-            - echo "Downloading and setting up ChromeDriver"
-            - "wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip"
-            - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/chromedriver
-            - chromedriver --version
+            - sudo apt-get update && sudo apt-get install -y wget unzip
+            - if command -v google-chrome; then echo "Pre-installed Chrome found. Removing..."; sudo apt-get remove -y google-chrome-stable; else echo "No pre-installed Chrome found."; fi
+            - echo "Installing latest Google Chrome..."
+            - 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -'
+            - 'echo ''deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'' | sudo tee /etc/apt/sources.list.d/google-chrome.list'
+            - sudo apt-get update && sudo apt-get install -y google-chrome-stable
             - google-chrome --version
-            - echo "Installing Node.js and npm"
-            - sudo apt-get install -y nodejs npm
-            - echo "Prologue commands completed"
+            - CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+            - echo "Detected Chrome version: $CHROME_VERSION"
+            - echo "Downloading matching ChromeDriver..."
+            - 'CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)'
+            - 'wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip'
+            - unzip chromedriver_linux64.zip
+            - sudo mv chromedriver /usr/local/bin/
+            - sudo chmod +x /usr/local/bin/chromedriver
+            - chromedriver --version
+            - echo "Installing Node.js..."
+            - sem-version node 14.21.3
+            - npm install -g npm
+            - node -v
+            - npm -v
+            - cache restore
+            - npm install
+            - cache store
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Setting Node.js version"
@@ -87,7 +101,7 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - 'export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"'
+            - 'export mailingList="vimal.mishra@comprotechnologies.com, vikrant.chaudhary@comprotechnologies.com"'
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
