@@ -1,86 +1,104 @@
 version: v1.0
-name: C1LoginTest
+name: "Automation Test Pipeline"
 agent:
   machine:
     type: e1-standard-2
 
 blocks:
-  - name: "Prologue"
-    task:
-      prologue:
-        commands:
-          - echo "Starting prologue commands"
-          - checkout
-          - sudo apt-get update
-          - sudo apt-get remove -y google-chrome-stable
-          - sudo rm -rf /usr/local/bin/chromedriver
-          - sudo rm -rf ~/.cache/google-chrome
-          - sudo rm -rf ~/.config/google-chrome
-          - sudo apt-get update
-          - sudo apt-get install -y wget unzip
-          - echo "Installing Google Chrome"
-          - wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          - sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
-          - rm google-chrome.deb
-          - echo "Installing ChromeDriver using npm"
-          - npm install -g chromedriver@latest
-          - chromedriver --version
-          - google-chrome --version
-          - echo "Installing Node.js using nvm"
-          - export NVM_DIR="$HOME/.nvm"
-          - "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\""
-          - "[ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\""
-          - nvm install 21.6.2
-          - nvm use 21.6.2
-          - node -v
-          - echo "Prologue commands completed"
-
-  - name: "C1LoginTest"
+  - name: "Run Automation Tests"
     task:
       jobs:
-        - name: "Run Tests"
+        - name: "Execute Tests"
           commands:
+            - echo "Starting prologue commands"
+            - checkout
+
+            # Update system and remove any existing Chrome installation
+            - sudo apt-get update
+            - sudo apt-get remove -y google-chrome-stable
+            - sudo rm -rf /usr/local/bin/chromedriver
+            - sudo rm -rf ~/.cache/google-chrome
+            - sudo rm -rf ~/.config/google-chrome
+
+            # Install Chrome and ChromeDriver
+            - sudo apt-get update
+            - sudo apt-get install -y wget unzip
+            - echo "Installing Google Chrome"
+            - wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            - sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
+            - rm google-chrome.deb
+            - echo "Installing ChromeDriver using npm"
+            - npm install -g chromedriver@latest
+            - chromedriver --version
+            - google-chrome --version
+
+            # Install Node.js using NVM
+            - echo "Installing Node.js using nvm"
+            - export NVM_DIR="$HOME/.nvm"
+            - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            - [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            - nvm install 21.6.2
+            - nvm use 21.6.2
+            - node -v
+            - echo "Prologue commands completed"
+
+            # Change directory to project root
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
+
+            # Restore and install npm dependencies
             - echo "Restoring npm cache"
             - cache restore
             - echo "Installing npm dependencies"
             - npm install --legacy-peer-deps
             - echo "Storing npm cache"
             - cache store
+
+            # Run tests
             - echo "Running test script with debug logging"
             - DEBUG=webdriver* npm run loginFeatureTest
+            - RESULT=$?
+            - echo "Test result: $RESULT"
+
+            # Determine status based on test results
             - |
-              RESULT=$?
-              echo "Test result: $RESULT"
               if [ $RESULT -eq 0 ]; then
                 STATUS="passed"
               else
                 STATUS="failed"
               fi
+              echo "Test Status: $STATUS"
+
+            # Verify test report files
             - echo "Verifying test report files"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Reports directory not found"; exit 1; }
             - ls -la || { echo "No reports directory found"; exit 1; }
             - cd TestReports || { echo "No TestReports directory found"; exit 1; }
             - ls -la || { echo "No files in TestReports directory"; exit 1; }
+
+            # Verify Timeline report
             - echo "Verifying Timeline report files"
+            - TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
             - |
-              TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
               if [ -z "$TIMELINE_REPORT" ]; then
                 echo "No HTML report files found"
                 exit 1
               else
                 echo "Timeline report found: $TIMELINE_REPORT"
               fi
+
+            # Verify log file
             - echo "Verifying log file"
+            - LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
             - |
-              LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
               if [ ! -f "$LOG_FILE" ]; then
                 echo "Timeline log file not found"
                 exit 1
               else
                 echo "Timeline log file found: $LOG_FILE"
               fi
+
+            # Set environment variables for mailer.js
             - echo "Setting environment variables for mailer.js"
             - export appType="ExperienceApp"
             - export testEnv="qa"
@@ -88,20 +106,23 @@ blocks:
             - export SEMAPHORE_JOB_ID="$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - export mailingList="vimal.mishra@comprotechnologies.com, mishra.vimal1402@gmail.com"
+
+            # Run mailer.js script
             - echo "Running mailer.js with parameters"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }
             - |
               node mailer.js --appType="$appType" \
-                             --testEnv="$testEnv" \
-                             --projectName="$SEMAPHORE_PROJECT_NAME" \
-                             --branchName="$SEMAPHORE_GIT_BRANCH" \
-                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
-                             --jobID="$SEMAPHORE_JOB_ID" \
-                             --mailingList="$mailingList" \
-                             --jobResult="$STATUS" \
-                             --emailId="$emailId" \
-                             --emailPwd="$emailPwd" \
-                             --triggerSource="Semaphore" \
-                             > /home/semaphore/mailer.log 2>&1
+                --testEnv="$testEnv" \
+                --projectName="$SEMAPHORE_PROJECT_NAME" \
+                --branchName="$SEMAPHORE_GIT_BRANCH" \
+                --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
+                --jobID="$SEMAPHORE_JOB_ID" \
+                --mailingList="$mailingList" \
+                --jobResult="$STATUS" \
+                --emailId="$emailId" \
+                --emailPwd="$emailPwd" \
+                --triggerSource="Semaphore" \
+                > /home/semaphore/mailer.log 2>&1
+
             - echo "mailer.js script execution completed with exit code $?"
             - cat /home/semaphore/mailer.log
