@@ -45,7 +45,7 @@ blocks:
             - npm install --legacy-peer-deps
             - echo "Storing npm cache"
             - cache store
-            - echo "Running test script with debug logging"
+            - echo "Running the test script with debug logging"
             - DEBUG=webdriver* npm run loginFeatureTest
             - RESULT=$?
             - echo "Test result: $RESULT"
