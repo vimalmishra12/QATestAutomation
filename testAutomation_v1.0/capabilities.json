@@ -10,7 +10,7 @@
             }
         ],
         "resolution": "1920x1080",
-        "maximizeWindow": true,
+        "maximizeWindow": false,
         "hostname": "localhost",
         "portNumber": 4444,
         "webServicePath": "/",
