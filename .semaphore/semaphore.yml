@@ -19,17 +19,14 @@ blocks:
             - sudo rm -rf ~/.config/google-chrome
             - sudo apt-get update
             - sudo apt-get install -y wget unzip
-            - echo "Installing Google Chrome 134.0.6998.165"
+            - echo "Installing Google Chrome"
             - 'wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
             - sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
             - rm google-chrome.deb
-            - echo "Installing ChromeDriver 134.0.6998.165"
-            - 'wget -N https://chromedriver.storage.googleapis.com/134.0.6998.165/chromedriver_linux64.zip'
-            - unzip chromedriver_linux64.zip
-            - sudo mv chromedriver /usr/local/bin/
-            - sudo chmod +x /usr/local/bin/chromedriver
-            - google-chrome --version
+            - echo "Installing ChromeDriver using npm"
+            - npm install -g chromedriver@latest
             - chromedriver --version
+            - google-chrome --version
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
             - echo "Prologue commands completed"
