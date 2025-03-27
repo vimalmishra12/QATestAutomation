@@ -20,17 +20,21 @@ blocks:
             - sudo rm -rf ~/.cache/google-chrome
             - sudo rm -rf ~/.config/google-chrome
 
-            # Install Chrome and ChromeDriver
-            - sudo apt-get update
-            - sudo apt-get install -y wget unzip
-            - echo "Installing Google Chrome"
-            - wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            # Install Chrome 132
+            - echo "Installing Google Chrome 132"
+            - wget -q -O google-chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_132.0.6261.128-1_amd64.deb
             - sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
             - rm google-chrome.deb
-            - echo "Installing ChromeDriver using npm"
-            - npm install -g chromedriver@latest
-            - chromedriver --version
             - google-chrome --version
+
+            # Install ChromeDriver for Chrome 132
+            - echo "Installing ChromeDriver for Chrome 132"
+            - wget -q https://chromedriver.storage.googleapis.com/132.0.6261.0/chromedriver_linux64.zip
+            - unzip chromedriver_linux64.zip
+            - sudo mv chromedriver /usr/local/bin/
+            - sudo chmod +x /usr/local/bin/chromedriver
+            - rm chromedriver_linux64.zip
+            - chromedriver --version
 
             # Install Node.js using NVM
             - echo "Installing Node.js using nvm"
