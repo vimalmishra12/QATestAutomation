@@ -49,13 +49,13 @@ blocks:
             - DEBUG=webdriver* npm run loginFeatureTest
             - RESULT=$?
             - echo "Test result: $RESULT"
-            - echo "Test Status: '$( [ $RESULT -eq 0 ] && echo ''passed'' || echo ''failed'' )"'
+            - '[ $RESULT -eq 0 ] && echo ''Test Status: passed'' || echo ''Test Status: failed'''
             - echo "Verifying test report files"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || (echo 'Reports directory not found' && exit 1)
             - ls -la || (echo 'No reports directory found' && exit 1)
             - cd TestReports || (echo 'No TestReports directory found' && exit 1)
             - ls -la || (echo 'No files in TestReports directory' && exit 1)
             - echo "Verifying Timeline report files"
-            - 'TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name ''*.html'') && [ -z "$TIMELINE_REPORT" ] && echo ''No HTML report files found'' && exit 1 || echo ''Timeline report found: $TIMELINE_REPORT'''
+            - 'TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name ''*.html''); [ -z "$TIMELINE_REPORT" ] && echo ''No HTML report files found'' && exit 1 || echo ''Timeline report found: $TIMELINE_REPORT'''
             - echo "Verifying log file"
-            - 'LOG_FILE=''/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log'' && [ ! -f "$LOG_FILE" ] && echo ''Timeline log file not found'' && exit 1 || echo ''Timeline log file found: $LOG_FILE'''
+            - 'LOG_FILE=''/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log''; [ ! -f "$LOG_FILE" ] && echo ''Timeline log file not found'' && exit 1 || echo ''Timeline log file found: $LOG_FILE'''
