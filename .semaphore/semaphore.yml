@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - echo "Starting setup."
+            - echo "Starting setup..."
             - checkout
             - sudo apt-get update && sudo apt-get install -y wget unzip
             - if command -v google-chrome; then echo "Pre-installed Chrome found. Removing..."; sudo apt-get remove -y google-chrome-stable; else echo "No pre-installed Chrome found."; fi
