@@ -31,8 +31,8 @@ blocks:
             - chromedriver --version
             - echo "Installing Node.js using nvm"
             - export NVM_DIR="$HOME/.nvm"
-            - '[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"'
-            - '[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"'
+            - source "$NVM_DIR/nvm.sh"
+            - source "$NVM_DIR/bash_completion"
             - nvm install 21.6.2
             - nvm use 21.6.2
             - node -v
@@ -49,13 +49,8 @@ blocks:
             - DEBUG=webdriver* npm run loginFeatureTest
             - RESULT=$?
             - echo "Test result: $RESULT"
-            - |
-              if [ $RESULT -eq 0 ]; then
-                STATUS="passed"
-              else
-                STATUS="failed"
-              fi
-              echo "Test Status: $STATUS"
+            - 'if [ $RESULT -eq 0 ]; then STATUS="passed"; else STATUS="failed"; fi'
+            - echo "Test Status: $STATUS"
             - echo "Verifying test report files"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Reports directory not found"; exit 1; }'
             - 'ls -la || { echo "No reports directory found"; exit 1; }'
@@ -63,19 +58,7 @@ blocks:
             - 'ls -la || { echo "No files in TestReports directory"; exit 1; }'
             - echo "Verifying Timeline report files"
             - TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
-            - |
-              if [ -z "$TIMELINE_REPORT" ]; then
-                echo "No HTML report files found"
-                exit 1
-              else
-                echo "Timeline report found: $TIMELINE_REPORT"
-              fi
+            - 'if [ -z "$TIMELINE_REPORT" ]; then echo "No HTML report files found"; exit 1; else echo "Timeline report found': $TIMELINE_REPORT"; fi
             - echo "Verifying log file"
             - LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
-            - |
-              if [ ! -f "$LOG_FILE" ]; then
-                echo "Timeline log file not found"
-                exit 1
-              else
-                echo "Timeline log file found: $LOG_FILE"
-              fi
+            - 'if [ ! -f "$LOG_FILE" ]; then echo "Timeline log file not found"; exit 1; else echo "Timeline log file found': $LOG_FILE"; fi
