@@ -14,15 +14,17 @@ blocks:
             - checkout
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
-            - sudo apt-get install -y wget unzip
-            - echo "Adding Google's repository and installing Chrome"
-            - 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -'
-            - 'sudo sh -c ''echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'''
+            - sudo rm -rf /usr/local/bin/chromedriver
+            - sudo rm -rf ~/.cache/google-chrome
+            - sudo rm -rf ~/.config/google-chrome
             - sudo apt-get update
-            - sudo apt-get install -y google-chrome-stable
-            - echo "Installing latest stable ChromeDriver version"
-            - 'LATEST_CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)'
-            - 'wget -N https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip'
+            - sudo apt-get install -y wget unzip
+            - echo "Installing Google Chrome 134.0.6998.165"
+            - 'wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+            - sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
+            - rm google-chrome.deb
+            - echo "Installing ChromeDriver 134.0.6998.165"
+            - 'wget -N https://chromedriver.storage.googleapis.com/134.0.6998.165/chromedriver_linux64.zip'
             - unzip chromedriver_linux64.zip
             - sudo mv chromedriver /usr/local/bin/
             - sudo chmod +x /usr/local/bin/chromedriver
@@ -30,8 +32,6 @@ blocks:
             - chromedriver --version
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
-            - rm -rf ~/.cache/google-chrome
-            - rm -rf ~/.config/google-chrome
             - echo "Prologue commands completed"
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
@@ -40,11 +40,11 @@ blocks:
             - echo "Restoring npm cache"
             - cache restore
             - echo "Installing npm dependencies"
-            - npm install
+            - npm install --legacy-peer-deps
             - echo "Storing npm cache"
             - cache store
-            - echo "Running test script"
-            - npm run loginFeatureTest
+            - echo "Running test script with debug logging"
+            - DEBUG=webdriver* npm run loginFeatureTest
             - |
               RESULT=$?
               echo "Test result: $RESULT"
