@@ -1,0 +1,96 @@
+{
+  "Suite1": {
+    "Name": "VHL Notes Execution",
+    "TestCaseRepo": [
+      "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+    ],
+    "Before": [
+      {
+        "id": "launchUrl",
+        "description": "",
+        "testFile": "./core/runner/launchUrl.js",
+        "testData": []
+      }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      {
+        "id": "TST_SAMP_TC_1",
+        "description": "Check Sample File Page is Initialized",
+        "testFile": "./test/ExperienceApp/sampleFile.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SAMP_TC_2",
+        "description": "Enter Username",
+        "testFile": "./test/ExperienceApp/sampleFile.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/sampleLoginData.json",
+            "jsonPath": "C1.login.user.validStudent1"
+          }
+        ]
+      },
+      {
+        "id": "TST_SAMP_TC_3",
+        "description": "Enter Password",
+        "testFile": "./test/ExperienceApp/sampleFile.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/sampleLoginData.json",
+            "jsonPath": "C1.login.user.validStudent1"
+          }
+        ]
+      },
+      {
+        "id": "TST_SAMP_TC_4",
+        "description": "Click on Login Button",
+        "testFile": "./test/ExperienceApp/sampleFile.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_1",
+        "description": "Click Add Note Button",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_2",
+        "description": "Click Dock Button",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_3",
+        "description": "Click Page Cover Tab",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_4",
+        "description": "Click All Pages Tab",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_5",
+        "description": "Click Close Button",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NOTE_TC_6",
+        "description": "Verify Notes Data",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "jsonPath": "C1.vhlNotes.teacher"
+          }
+        ]
+      }
+    ],
+    "AfterEach": [],
+    "After": []
+  }
+}
