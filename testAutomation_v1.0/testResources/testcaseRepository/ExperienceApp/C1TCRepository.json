@@ -42,6 +42,38 @@
       ]
     },
     {
+      "modulename": "Validation of VHL Highlighter",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/highlighter.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "TST_VHL__TC_1",
+          "description": "Click on all highlighter related icons (set 1)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_2",
+          "description": "Click on all highlighter related icons (set 2)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_3",
+          "description": "Click on all highlighter related icons (set 3)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_4",
+          "description": "Validate highlighter data",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Footer",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/footer.test.js",
