@@ -44,7 +44,7 @@
     {
       "modulename": "Validation of VHL Highlighter",
       "moduleId": "",
-      "testFile": "./test/ExperienceApp/highlighter.test.js",
+      "testFile": "./test/ExperienceApp/VHL_Highlighter_Test.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
         {

@@ -917,5 +917,12 @@
     "closeNoteBox": "button[data-tid=\"notebox-button-cancel\"]",
     "tableOfContentsPage1": "button[data-tid=\"button-toolbar-item-3-1\"]",
     "closeTOC": "button[data-tid=\"TOC-button-close\"]"
+  },
+  "VHL_Highlighter_Test": {
+    "editIcon": ".MuiBox-root.css-k008qs svg",
+    "highlighterButton": "div[aria-describedby=\"annotation-tool\"] svg",
+    "colorPickerButton": "#color-picker-button",
+    "eraserButton": "button[data-tid=\"annotation-toolbar-item-1\"]",
+    "clearAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]"
   }
 }
