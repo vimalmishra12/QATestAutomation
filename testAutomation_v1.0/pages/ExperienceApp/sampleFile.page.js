@@ -41,7 +41,7 @@ var res;
 res =await action.click(this.commit);
 if (true == res) {
  await logger.logInto(await stackTrace.get(), " commit is clicked");
-res = await require('./vhlnotes_test.page').isInitialized();
+res = await require('./vhl_landingtest.page').isInitialized();
 // res = await require('./vhlReader.page').isInitialized() &&   (await browser.getUrl()).startsWith('https://reader3-qa.vhlcentral.com');
 // }
 // res = (await browser.getUrl()).startsWith('https://reader3-qa.vhlcentral.com');
