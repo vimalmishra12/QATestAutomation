@@ -4,6 +4,76 @@
   "selectorFile": "./testResources/selectors/ExperienceApp/C1Selectors.json",
   "modules": [
     {
+      "modulename": "Validation of Sample File Page",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/sampleFile.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "TST_SAMP_TC_1",
+          "description": "Check Sample File Page is Initialized",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SAMP_TC_2",
+          "description": "Enter Username",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SAMP_TC_3",
+          "description": "Enter Password",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SAMP_TC_4",
+          "description": "Click on Login Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SAMP_TC_5",
+          "description": "Validate Data fetched from Login Page",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Validation of VHL Highlighter",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/highlighter.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "TST_VHL__TC_1",
+          "description": "Click on all highlighter related icons (set 1)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_2",
+          "description": "Click on all highlighter related icons (set 2)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_3",
+          "description": "Click on all highlighter related icons (set 3)",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHL__TC_4",
+          "description": "Validate highlighter data",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Footer",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/footer.test.js",
@@ -64,7 +134,6 @@
         }
       ]
     },
-
     {
       "modulename": "commonActivity",
       "moduleId": "",
@@ -107,10 +176,7 @@
           "visualTest": false
         }
       ]
-    }
-    
-    ,
-
+    },
     {
       "modulename": "Landing",
       "moduleId": "",
@@ -476,7 +542,6 @@
         }
       ]
     },
-
     {
       "modulename": "timer",
       "moduleId": "",
@@ -580,7 +645,6 @@
         }
       ]
     },
-
     {
       "modulename": "player",
       "moduleId": "",
@@ -648,7 +712,6 @@
         }
       ]
     },
-
     {
       "modulename": "eBook",
       "moduleId": "",
@@ -810,7 +873,6 @@
           "tags": "P3",
           "visualTest": true
         },
-       
         {
           "id": "TST_EBOO_TC_23",
           "description": "Validate that the show-Hide Selection tool  launched correctly",
@@ -849,9 +911,6 @@
         }
       ]
     },
-    
-
-   
     {
       "modulename": "notes",
       "moduleId": "",
@@ -913,7 +972,6 @@
         }
       ]
     },
-
     {
       "modulename": "showHideSelection",
       "moduleId": "",
@@ -945,7 +1003,6 @@
         }
       ]
     },
-
     {
       "modulename": "drawingTool",
       "moduleId": "",
@@ -1055,7 +1112,6 @@
         }
       ]
     },
-
     {
       "modulename": "appShell",
       "moduleId": "",

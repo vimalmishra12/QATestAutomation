@@ -1,0 +1,16 @@
+{
+  "C1": {
+    "login": {
+      "user": {
+        "validStudent1": {
+          "Username": "mtaparia_instructor",
+          "Password": "@Compro2018"
+        }
+      }
+    },
+    "appContent": {
+      "login": {},
+      "language": {}
+    }
+  }
+}
