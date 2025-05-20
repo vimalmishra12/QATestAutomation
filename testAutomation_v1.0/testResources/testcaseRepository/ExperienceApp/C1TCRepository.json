@@ -4,6 +4,50 @@
   "selectorFile": "./testResources/selectors/ExperienceApp/C1Selectors.json",
   "modules": [
     {
+      "modulename": "Validation of Notes VHL Functionality",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "TST_NOTE_TC_1",
+          "description": "Click Add Note Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_2",
+          "description": "Click Dock Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_3",
+          "description": "Click Page Cover Tab",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_4",
+          "description": "Click All Pages Tab",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_5",
+          "description": "Click Close Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NOTE_TC_6",
+          "description": "Validate Notes UI Elements via getData",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Validation of Sample File Page",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/sampleFile.test.js",

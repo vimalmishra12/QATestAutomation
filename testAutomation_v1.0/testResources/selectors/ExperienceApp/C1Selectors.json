@@ -924,5 +924,12 @@
     "colorPickerButton": "#color-picker-button",
     "eraserButton": "button[data-tid=\"annotation-toolbar-item-1\"]",
     "clearAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]"
+  },
+  "notesVhlTest": {
+    "addNoteButton": "button[aria-label=\"Notes\"][data-tid=\"button-toolbar-item-1-3\"]",
+    "dockButton": "button[data-tid=\"notebox-button-dock\"]",
+    "pageCoverTab": "button[data-tid=\"button-product-0\"]",
+    "allPagesTab": "button[data-tid=\"button-product-1\"]",
+    "closeButton": "button[data-tid=\"notebox-button-cancel\"]"
   }
 }

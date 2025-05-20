@@ -8,6 +8,7 @@
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "SampleLoginTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='sampleFile.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "vhlhighlighterTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='vhl_highlighter_execution.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "vhlNotesTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='vhlNotes.json' --windowWidth=1600 --windowHeight=900",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
