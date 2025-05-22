@@ -86,37 +86,37 @@
       ]
     },
     {
-      "modulename": "Validation of VHL Highlighter",
-      "moduleId": "",
-      "testFile": "./test/ExperienceApp/VHL_Highlighter_Test.test.js",
-      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
-      "testcase": [
-        {
-          "id": "TST_VHL__TC_1",
-          "description": "Click on all highlighter related icons (set 1)",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_VHL__TC_2",
-          "description": "Click on all highlighter related icons (set 2)",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_VHL__TC_3",
-          "description": "Click on all highlighter related icons (set 3)",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_VHL__TC_4",
-          "description": "Validate highlighter data",
-          "tags": "P1",
-          "visualTest": false
-        }
-      ]
+  "modulename": "Validation of Highlighter Functionality",
+  "moduleId": "",
+  "testFile": "./test/ExperienceApp/Highlighter_Test.test.js",
+  "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+  "testcase": [
+    {
+      "id": "TST_HIGH_TC_1",
+      "description": "Click on Eraser Button",
+      "tags": "P1",
+      "visualTest": false
     },
+    {
+      "id": "TST_HIGH_TC_2",
+      "description": "Click on Clear All Button",
+      "tags": "P1",
+      "visualTest": false
+    },
+    {
+      "id": "TST_HIGH_TC_3",
+      "description": "Verify Annotation Toolbar Data",
+      "tags": "P1",
+      "visualTest": false
+    },
+    {
+      "id": "TST_HIGH_TC_4",
+      "description": "Verify Close Button Data",
+      "tags": "P1",
+      "visualTest": false
+    }
+  ]
+},
     {
       "modulename": "Footer",
       "moduleId": "",

@@ -4,11 +4,11 @@ var selectorFile = jsonParserUtil.jsonParser(selectorDir)
 var appShellPage = require('./appShell.page.js')
 
 module.exports = {
-Pen Icon: selectorFile.css.ComproC1.highlighterTest.Pen Icon,
-Color Picker: selectorFile.css.ComproC1.highlighterTest.Color Picker,
-Eraser Button: selectorFile.css.ComproC1.highlighterTest.Eraser Button,
-Clear All: selectorFile.css.ComproC1.highlighterTest.Clear All,
-Close Button: selectorFile.css.ComproC1.highlighterTest.Close Button,
+Pen Icon: selectorFile.VHL_Highlighter_Test.Pen Icon,
+Color Picker: selectorFile.VHL_Highlighter_Test.Color Picker,
+Eraser Button: selectorFile.VHL_Highlighter_Test.Eraser Button,
+Clear All: selectorFile.VHL_Highlighter_Test.Clear All,
+Close Button: selectorFile.VHL_Highlighter_Test.Close Button,
 
 
 isInitialized: async function ()
