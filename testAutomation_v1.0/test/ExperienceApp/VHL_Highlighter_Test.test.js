@@ -1,30 +1,30 @@
 "use strict";
-var VHL_Highlighter_Test= require('../../pages/ExperienceApp/VHL_Highlighter_Test.page.js');
+var highlighterTest = require('../../pages/ExperienceApp/highlighterTest.page.js');
 var sts;
 
 module.exports = {
-TST_VHL__TC_1 :   async function (testdata) { 
-sts = await VHL_Highlighter_Test.click_highlighterButton();
-await assertion.assertEqual(sts, true,"highlighterButton are not Clicked");
-},
+  TST_HIGH_TC_1: async function (testdata) {
+    sts = await highlighterTest.click_Eraser_Button(); // fixed method name
+    await assertion.assertEqual(sts, true, "Eraser Button is not clicked");
+  },
 
-TST_VHL__TC_2 :   async function (testdata) { 
-sts = await VHL_Highlighter_Test.click_eraserButton();
-await assertion.assertEqual(sts, true,"eraserButton are not Clicked");
-},
+  TST_HIGH_TC_2: async function (testdata) {
+    sts = await highlighterTest.click_Clear_All(); // fixed method name
+    await assertion.assertEqual(sts, true, "Clear All is not clicked");
+  },
 
-TST_VHL__TC_3 :   async function (testdata) { 
-sts = await VHL_Highlighter_Test.click_clearAllButton();
-await assertion.assertEqual(sts, true,"clearAllButton are not Clicked");
-},
+  TST_HIGH_TC_3: async function (testdata) {
+    sts = await highlighterTest.getData_Annotation_Toolbar(testdata); // fixed method name
 
-TST_VHL__TC_4 :   async function (testdata) { 
-sts = await VHL_Highlighter_Test.getData_vhl_highlighter_test(testdata);
-await assertion.assertEqual(sts.editIcon, true ,"editIcon Values is not as expected.");
-await assertion.assertEqual(sts.highlighterButton, testdata.highlighterButton,"highlighterButton Values is not as expected.");
-await assertion.assertEqual(sts.colorPickerButton, testdata.colorPickerButton,"colorPickerButton Values is not as expected.");
-await assertion.assertEqual(sts.eraserButton, testdata.eraserButton,"eraserButton Values is not as expected.");
-await assertion.assertEqual(sts.clearAllButton, testdata.clearAllButton,"clearAllButton Values is not as expected.");
-},
+    await assertion.assertEqual(sts["Pen Icon"], true, "Pen Icon value is not as expected.");
+    await assertion.assertEqual(sts["Color Picker"], testdata["Color Picker"], "Color Picker value is not as expected.");
+    await assertion.assertEqual(sts["Eraser Button"], testdata["Eraser Button"], "Eraser Button value is not as expected.");
+    await assertion.assertEqual(sts["Clear All"], testdata["Clear All"], "Clear All value is not as expected.");
+  },
 
-}
+  TST_HIGH_TC_4: async function (testdata) {
+    sts = await highlighterTest.getData_button(testdata); // assuming method name is correct
+
+    await assertion.assertEqual(sts["Close Button"], testdata["Close Button"], "Close Button value is not as expected.");
+  },
+};

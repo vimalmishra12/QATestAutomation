@@ -920,12 +920,11 @@
     "closeTOC": "button[data-tid=\"TOC-button-close\"]"
   },
   "VHL_Highlighter_Test": {
-    "editIcon": ".MuiBox-root.css-k008qs svg",
-    "highlighterButton": "div[aria-describedby=\"annotation-tool\"] svg",
-    "colorPickerButton": "#color-picker-button",
-    "eraserButton": "button[data-tid=\"annotation-toolbar-item-1\"]",
-    "clearAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]",
-    "highlighter_inside_Button": "button[data-tid=\"annotation-toolbar-item-0\"]"
+    "Pen Icon": "div.MuiBox-root.css-k008qs > svg",
+    "Color Picker": "#color-picker-button",
+    "Eraser Button": "button[data-tid=\"annotation-toolbar-item-1\"]",
+    "Clear All": "button[data-tid=\"annotation-toolbar-item-2\"]",
+    "Close Button": "div[data-tid=\"button-annotation-toolbar-close\"]"
   },
   "notesVhlTest": {
     "notesButton" : "button[data-tid=\"button-toolbar-item-1-3\"]",
