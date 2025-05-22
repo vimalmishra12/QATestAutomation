@@ -6,9 +6,11 @@ var appShellPage = require('./appShell.page.js')
 module.exports = {
 editIcon: selectorFile.VHL_Highlighter_Test.editIcon,
 highlighterButton: selectorFile.VHL_Highlighter_Test.highlighterButton,
+highlighter_inside_Button: selectorFile.VHL_Highlighter_Test.highlighter_inside_Button,
 colorPickerButton: selectorFile.VHL_Highlighter_Test.colorPickerButton,
 eraserButton: selectorFile.VHL_Highlighter_Test.eraserButton,
 clearAllButton: selectorFile.VHL_Highlighter_Test.clearAllButton,
+
 
 
 isInitialized: async function ()
@@ -28,10 +30,12 @@ await logger.logInto(await stackTrace.get());
 var obj;
 obj = {
 editIcon:(( await action.getElementCount(this.editIcon)) > 0) ? await action.waitForDisplayed(this.editIcon) : false,
-highlighterButton:(( await action.getElementCount(this.highlighterButton)) > 0) ? await action.getText(this.highlighterButton) : null,
-colorPickerButton:(( await action.getElementCount(this.colorPickerButton)) > 0) ? await action.getText(this.colorPickerButton) : null,
+// highlighterButton:(( await action.getElementCount(this.highlighterButton)) > 0) ? await action.getText(this.highlighterButton) : null,
+// highlighter_inside_Button:(( await action.getElementCount(this.highlighter_inside_Button)) > 0) ? await action.getText(this.highlighter_inside_Button) : null,
+// colorPickerButton:(( await action.getElementCount(this.colorPickerButton)) > 0) ? await action.getText(this.colorPickerButton) : null,
 eraserButton:(( await action.getElementCount(this.eraserButton)) > 0) ? await action.getText(this.eraserButton) : null,
 clearAllButton:(( await action.getElementCount(this.clearAllButton)) > 0) ? await action.getText(this.clearAllButton) : null,
+
 }
  return obj; 
 },
