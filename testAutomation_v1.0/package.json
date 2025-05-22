@@ -6,6 +6,9 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "SampleLoginTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='sampleFile.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "vhlhighlighterTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='vhl_highlighter_execution.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "vhlNotesTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='vhlNotes.json' --windowWidth=1600 --windowHeight=900",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
@@ -24,7 +27,8 @@
     "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900"
   },
   "keywords": [],
-  "author": "","capabilities": {},
+  "author": "",
+  "capabilities": {},
   "license": "ISC",
   "dependencies": {
     "@applitools/eyes-webdriverio": "^5.35.7",
@@ -39,9 +43,8 @@
     "appium": "^1.16.0",
     "browserstack-local": "^1.4.8",
     "chai": "^4.3.6",
-    "chrome": "^0.1.0",
-    "chromedriver": "latest",
     "combine-image": "1.0.3",
+    "create-wdio": "^7.1.1",
     "css-selector-parser": "^1.4.1",
     "css-selector-tools": "^1.0.9",
     "csv-parse": "^4.16.2",
@@ -62,7 +65,6 @@
     "rimraf": "^3.0.2",
     "selenium-webdriver": "^4.0.0",
     "tesults": "^1.1.1",
-    "create-wdio": "^7.1.1",
     "wdio-chromedriver-service": "8.0.1",
     "wdio-novus-visual-regression-service": "^1.2.5",
     "wdio-timeline-reporter": "^5.1.4",
@@ -70,5 +72,8 @@
     "winston-loggly-bulk": "^3.1.0",
     "xmlhttprequest": "^1.8.0",
     "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "chromedriver": "^136.0.2"
   }
 }
