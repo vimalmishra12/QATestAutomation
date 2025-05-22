@@ -73,7 +73,7 @@
           "testData": [
             {
               "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
-              "jsonPath": "C1.vhlHighlighter.expectedData"
+              "jsonPath": "VHL.vhlHighlighter"
             }
           ]
         }

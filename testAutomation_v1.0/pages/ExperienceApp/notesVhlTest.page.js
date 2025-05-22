@@ -4,7 +4,7 @@ var selectorFile = jsonParserUtil.jsonParser(selectorDir)
 var appShellPage = require('./appShell.page.js')
 
 module.exports = {
-addNoteButton: selectorFile.notesVhlTest.addNoteButton,
+notesButton: selectorFile.notesVhlTest.notesButton,
 dockButton: selectorFile.notesVhlTest.dockButton,
 pageCoverTab: selectorFile.notesVhlTest.pageCoverTab,
 allPagesTab: selectorFile.notesVhlTest.allPagesTab,
@@ -17,7 +17,7 @@ var res;
 await logger.logInto(await stackTrace.get());
 await action.waitForDocumentLoad();
 res = {
-pageStatus: await action.waitForDisplayed(this.addNoteButton),
+pageStatus: await action.waitForDisplayed(this.notesButton),
 };
 return res; 
 },
@@ -27,7 +27,7 @@ getData_vhlNotes: async function ()
 await logger.logInto(await stackTrace.get());
 var obj;
 obj = {
-// addNoteButton:(( await action.getElementCount(this.addNoteButton)) > 0) ? await action.getText(this.addNoteButton) : null,
+// notesButton:(( await action.getElementCount(this.notesButton)) > 0) ? await action.getText(this.notesButton) : null,
 dockButton:(( await action.getElementCount(this.dockButton)) > 0) ? await action.getText(this.dockButton) : null,
 pageCoverTab:(( await action.getElementCount(this.pageCoverTab)) > 0) ? await action.getText(this.pageCoverTab) : null,
 allPagesTab:(( await action.getElementCount(this.allPagesTab)) > 0) ? await action.getText(this.allPagesTab) : null,
@@ -37,15 +37,15 @@ closeButton:(( await action.getElementCount(this.closeButton)) > 0) ? await acti
 },
 
 
-click_addNoteButton: async function () {
+click_notesButton: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
-res =await action.click(this.addNoteButton);
+res =await action.click(this.notesButton);
 if (true == res) {
- await logger.logInto(await stackTrace.get(), " addNoteButton is clicked");
+ await logger.logInto(await stackTrace.get(), " notesButton is clicked");
 }
 else {
-await logger.logInto(await stackTrace.get(), res +"addNoteButton is NOT clicked", 'error');
+await logger.logInto(await stackTrace.get(), res +"notesButton is NOT clicked", 'error');
 }
 return res;
 },

@@ -4,8 +4,8 @@ var sts;
 
 module.exports = {
 TST_NOTE_TC_1 :   async function (testdata) { 
-sts = await notesVhlTest.click_addNoteButton();
-await assertion.assertEqual(sts, true,"addNoteButton are not Clicked");
+sts = await notesVhlTest.click_notesButton();
+await assertion.assertEqual(sts, true,"notesButton are not Clicked");
 },
 
 TST_NOTE_TC_2 :   async function (testdata) { 
@@ -30,7 +30,7 @@ await assertion.assertEqual(sts, true,"closeButton are not Clicked");
 
 TST_NOTE_TC_6 :   async function (testdata) { 
 sts = await notesVhlTest.getData_vhlNotes(testdata);
-// await assertion.assertEqual(sts.addNoteButton, testdata.addNoteButton,"addNoteButton Values is not as expected.");
+// await assertion.assertEqual(sts.notesButton, testdata.notesButton,"notesButton Values is not as expected.");
 await assertion.assertEqual(sts.dockButton, testdata.dockButton,"dockButton Values is not as expected.");
 await assertion.assertEqual(sts.pageCoverTab, testdata.pageCoverTab,"pageCoverTab Values is not as expected.");
 await assertion.assertEqual(sts.allPagesTab, testdata.allPagesTab,"allPagesTab Values is not as expected.");

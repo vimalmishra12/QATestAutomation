@@ -21,8 +21,8 @@ await assertion.assertEqual(sts, true,"clearAllButton are not Clicked");
 TST_VHL__TC_4 :   async function (testdata) { 
 sts = await VHL_Highlighter_Test.getData_vhl_highlighter_test(testdata);
 await assertion.assertEqual(sts.editIcon, true ,"editIcon Values is not as expected.");
-// await assertion.assertEqual(sts.highlighter_inside_Button, testdata.highlighter_inside_Button,"highlighterButton Values is not as expected.");
-// await assertion.assertEqual(sts.colorPickerButton, testdata.colorPickerButton,"colorPickerButton Values is not as expected.");
+await assertion.assertEqual(sts.highlighterButton, testdata.highlighterButton,"highlighterButton Values is not as expected.");
+await assertion.assertEqual(sts.colorPickerButton, testdata.colorPickerButton,"colorPickerButton Values is not as expected.");
 await assertion.assertEqual(sts.eraserButton, testdata.eraserButton,"eraserButton Values is not as expected.");
 await assertion.assertEqual(sts.clearAllButton, testdata.clearAllButton,"clearAllButton Values is not as expected.");
 },

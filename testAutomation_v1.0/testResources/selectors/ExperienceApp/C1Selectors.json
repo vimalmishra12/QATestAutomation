@@ -904,6 +904,7 @@
     "commit": "input[value='Login']"
   },
   "vhlnotes_test": {
+    "notesButton" : "button[data-tid=\"button-toolbar-item-1-3\"]",
     "notes": "button[data-tid='button-toolbar-item-1-3']",
     "addNote": "button[data-tid='button-add-note']",
     "presentation": "div[id='drawing-area-A'] canvas",
@@ -923,9 +924,11 @@
     "highlighterButton": "div[aria-describedby=\"annotation-tool\"] svg",
     "colorPickerButton": "#color-picker-button",
     "eraserButton": "button[data-tid=\"annotation-toolbar-item-1\"]",
-    "clearAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]"
+    "clearAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]",
+    "highlighter_inside_Button": "button[data-tid=\"annotation-toolbar-item-0\"]"
   },
   "notesVhlTest": {
+    "notesButton" : "button[data-tid=\"button-toolbar-item-1-3\"]",
     "addNoteButton": "button[aria-label=\"Notes\"][data-tid=\"button-toolbar-item-1-3\"]",
     "dockButton": "button[data-tid=\"notebox-button-dock\"]",
     "pageCoverTab": "button[data-tid=\"button-product-0\"]",

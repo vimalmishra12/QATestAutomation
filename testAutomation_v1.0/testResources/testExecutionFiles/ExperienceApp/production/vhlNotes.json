@@ -85,7 +85,7 @@
         "testData": [
           {
             "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
-            "jsonPath": "C1.vhlNotes.teacher"
+            "jsonPath": "VHL.notesVhlTest"
           }
         ]
       }

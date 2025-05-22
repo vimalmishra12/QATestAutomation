@@ -1,14 +1,20 @@
 {
-  "C1": {
+  "VHL": {
     "notesVhlTest": {
-      "teacher": {
+      "notesButton" : "Notes",
         "addNoteButton": "Notes",
         "dockButton": "Dock",
         "pageCoverTab": "View Notes for Page Cover",
         "allPagesTab": "View Notes for All Pages",
         "closeButton": "Close"
-      }
-    }
+    },
+      "VHL_Highlighter_Test": {
+          "editIcon": "Edit Icon",
+          "highlighterButton": "Highlighter",
+          "colorPickerButton": "Color Picker",
+          "eraserButton": "Eraser",
+          "clearAllButton": "Clear All"
+        }
   },
   "footer": {
     "footerTermsOfUse": "Terms of use",
