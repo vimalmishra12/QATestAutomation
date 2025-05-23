@@ -1,20 +1,19 @@
 {
   "VHL": {
     "notesVhlTest": {
-      "notesButton" : "Notes",
-        "addNoteButton": "Notes",
-        "dockButton": "Dock",
-        "pageCoverTab": "View Notes for Page Cover",
-        "allPagesTab": "View Notes for All Pages",
-        "closeButton": "Close"
+      "notesButton": "Notes",
+      "addNoteButton": "Notes",
+      "dockButton": "Dock",
+      "pageCoverTab": "View Notes for Page Cover",
+      "allPagesTab": "View Notes for All Pages",
+      "closeButton": "Close"
     },
-      "VHL_Highlighter_Test": {
-          "editIcon": "Edit Icon",
-          "highlighterButton": "Highlighter",
-          "colorPickerButton": "Color Picker",
-          "eraserButton": "Eraser",
-          "clearAllButton": "Clear All"
-        }
+    "vhlhighlighter": {
+      "eraserButton": "Eraser",
+      "highlighterBtn": "Highlighter",
+      "colorPicker": "Color Picker",
+      "closeIcon": "Close Icon"
+    }
   },
   "footer": {
     "footerTermsOfUse": "Terms of use",

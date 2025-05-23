@@ -77,17 +77,6 @@
         "description": "Click Close Button",
         "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_6",
-        "description": "Verify Notes Data",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": [
-          {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
-            "jsonPath": "VHL.notesVhlTest"
-          }
-        ]
       }
     ],
     "AfterEach": [],

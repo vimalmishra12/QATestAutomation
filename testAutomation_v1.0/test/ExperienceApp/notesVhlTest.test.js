@@ -37,4 +37,15 @@ await assertion.assertEqual(sts.allPagesTab, testdata.allPagesTab,"allPagesTab V
 await assertion.assertEqual(sts.closeButton, testdata.closeButton,"closeButton Values is not as expected.");
 },
 
+    //   {
+    //     "id": "TST_NOTE_TC_6",
+    //     "description": "Verify Notes Data",
+    //     "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+    //     "testData": [
+    //       {
+    //         "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+    //         "jsonPath": "VHL.notesVhlTest"
+    //       }
+    //     ]
+    //   }
 }

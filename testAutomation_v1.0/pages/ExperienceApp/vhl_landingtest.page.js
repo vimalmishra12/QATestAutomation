@@ -19,6 +19,7 @@ await action.waitForDocumentLoad();
 res = {
 pageStatus:await action.waitForDisplayed(this.usernameLabel),
 };
+await browser.pause(10000);
 return res; 
 },
 

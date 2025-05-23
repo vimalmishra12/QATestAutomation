@@ -86,32 +86,32 @@
       ]
     },
     {
-      "modulename": "Validation of VHL Highlighter",
+      "modulename": "Validation of VHL Highlighter Functionality",
       "moduleId": "",
-      "testFile": "./test/ExperienceApp/VHL_Highlighter_Test.test.js",
+      "testFile": "./test/ExperienceApp/vhlhighlighter.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
         {
-          "id": "TST_VHL__TC_1",
-          "description": "Click on all highlighter related icons (set 1)",
+          "id": "TST_VHLH_TC_1",
+          "description": "Click iconSvg1",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_VHL__TC_2",
-          "description": "Click on all highlighter related icons (set 2)",
+          "id": "TST_VHLH_TC_2",
+          "description": "Click eraserButton",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_VHL__TC_3",
-          "description": "Click on all highlighter related icons (set 3)",
+          "id": "TST_VHLH_TC_3",
+          "description": "Click highlighterBtn",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_VHL__TC_4",
-          "description": "Validate highlighter data",
+          "id": "TST_VHLH_TC_4",
+          "description": "Click closeIcon",
           "tags": "P1",
           "visualTest": false
         }
