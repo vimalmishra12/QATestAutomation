@@ -68,6 +68,18 @@
         },
         {
           "id": "TST_VHLH_TC_2",
+          "description": "Execute highlighter click test 2",
+          "testFile": "./test/ExperienceApp/vhlhighlighter.test.js",
+          "testData": []
+        },
+         {
+          "id": "TST_VHLH_TC_5",
+          "description": "Verify removeAll close button",
+          "testFile": "./test/ExperienceApp/vhlhighlighter.test.js",
+          "testData": []        
+        },
+        {
+          "id": "TST_VHLH_TC_4",
           "description": "Verify highlighter close button",
           "testFile": "./test/ExperienceApp/vhlhighlighter.test.js",
           "testData": []        

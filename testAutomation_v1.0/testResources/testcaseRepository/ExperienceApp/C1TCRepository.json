@@ -114,6 +114,12 @@
           "description": "Click closeIcon",
           "tags": "P1",
           "visualTest": false
+        },
+        {
+          "id": "TST_VHLH_TC_5",
+          "description": "Click RemoveAllBtn",
+          "tags": "P1",
+          "visualTest": false
         }
       ]
     },
