@@ -66,6 +66,52 @@
     },
 
     {
+      "modulename": "commonActivity",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/commonActivity.test.js",
+      "testcase": [
+        {
+          "id": "TST_COMM_TC_1",
+          "description": "Validate that the activityAnsCheck button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_2",
+          "description": "Validate that the activityNext button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_3",
+          "description": "Validate that the activityClose button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_4",
+          "description": "Validate that the activityStartAgain button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_5",
+          "description": "Validate that the activityExit button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_COMM_TC_6",
+          "description": "Validate the data for commonActivity buttons",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    }
+    
+    ,
+
+    {
       "modulename": "Landing",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/landing.test.js",
@@ -224,7 +270,7 @@
         },
         {
           "id": "TST_DASH_TC_5",
-          "description": "Validate that the eBook button is clickable and navigates correctly",
+          "description": "Validate that the selected eBook is launched",
           "tags": "P3",
           "visualTest": false
         },
@@ -251,9 +297,358 @@
           "description": "Validate that active class buttons (Progress, Practice Extra, eBook, Homework, My Progress) are retrieved correctly",
           "tags": "P2",
           "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_10",
+          "description": "Validate that the Create New Class page is launched correctly",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DASH_TC_11",
+          "description": "Validate if Active class page is launched correctly",
+          "tags": "P2",
+          "visualTest": true
         }
       ]
     },
+    {
+      "modulename": "Create New  Class",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/createNewClass.test.js",
+      "testcase": [
+        {
+          "id": "TST_ENTE_TC_1",
+          "description": "Validate that the Create new class page is launched and initialized correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_2",
+          "description": "Validate that the back button is clickable and the page is launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_3",
+          "description": "Validate that the class name is entered correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_4",
+          "description": "Validate that the start date is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_5",
+          "description": "Validate that the end date is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_6",
+          "description": "Validate that the school name is entered correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_7",
+          "description": "Validate that the cancel button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_8",
+          "description": "Validate that the class details are fetched and match the expected data",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_9",
+          "description": "Validate that the next button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_10",
+          "description": "Validate that the cancel button in class materials is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_11",
+          "description": "Validate that the add later button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_12",
+          "description": "Validate that the dashboard button is clickable and navigates correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_13",
+          "description": "Validate that the no keep button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_17",
+          "description": "Validate that the yes cancel button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_18",
+          "description": "Validate that the finish button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_19",
+          "description": "Validate that the add to class button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_20",
+          "description": "Validate that the eBook bundle button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_21",
+          "description": "Validate that the add material input field is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_22",
+          "description": "Validate that the add material button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ENTE_TC_23",
+          "description": "Validate that the eBook bundle dropdown is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "Delete Class",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/activeClass.test.js",
+      "testcase": [
+        {
+          "id": "TST_ACTI_TC_1",
+          "description": "Validate that the action button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_2",
+          "description": "Validate that the delete class button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_3",
+          "description": "Validate that the yes delete button is clickable and the page status is updated correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_4",
+          "description": "Validate that the dropdown data matches the expected action button and delete class values",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_ACTI_TC_5",
+          "description": "Validate that the delete modal data matches the expected yes delete button values",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+
+    {
+      "modulename": "timer",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/timer.test.js",
+      "testcase": [
+        {
+          "id": "TST_TIME_TC_1",
+          "description": "Validate that user is able to select timer Count up button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_2",
+          "description": "Validate Under the Count down, user is able to clear the previously entered time",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_3",
+          "description": "Validate Under the Count down, user is able to select Mute button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_4",
+          "description": "Click the timer count down Close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_5",
+          "description": "Validate Under the Count down, user is able to Start count down",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_6",
+          "description": "Validate Under the Count down, user is able to slecte timer button One",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_7",
+          "description": "Validate Under the Count down, user is able to select timer button Two",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_8",
+          "description": "Validate Under the Count down, user is able to select timer button Three",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_9",
+          "description": "Validate that user is able to select timer Count down option",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_10",
+          "description": "Click the timer count up close button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_11",
+          "description": "Click the timer count up play button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_12",
+          "description": "Validate that user is able to reset button the timer",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_13",
+          "description": "Validate Under the Count down, user is able to select Unmute button",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_14",
+          "description": "Validate that user is able to pause timer count down ",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_15",
+          "description": "Get and validate timer count down data",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_TIME_TC_16",
+          "description": "Get and validate timer count up data",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
+
+    {
+      "modulename": "player",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/player.test.js",
+      "testcase": [
+        {
+          "id": "TST_PLAY_TC_1",
+          "description": "Validate that the hyper link activity hotlink is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_2",
+          "description": "Validate that the hyperlinkNewTab hotlink is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_3",
+          "description": "Validate that the  hyper linkAudio without Transcript hotlink is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_4",
+          "description": "Validate that the  hyperLinkGame  hotlink is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_5",
+          "description": "Validate that the hyper link Go To Page is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_6",
+          "description": "Validate that the hyper Zoom Hotspot is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_7",
+          "description": "Validate that the hyper Zoom Hotspot Close is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_8",
+          "description": "Validate that HyperLinkAnswer is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_9",
+          "description": "Validate that HyperLink Audio is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PLAY_TC_10",
+          "description": "Validate that HyperLinkVideo is clickable",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+
     {
       "modulename": "eBook",
       "moduleId": "",
@@ -273,7 +668,7 @@
         },
         {
           "id": "TST_EBOO_TC_3",
-          "description": "Validate that the Tools button opens correctly",
+          "description": "Validate that the Tools button is launched",
           "tags": "P3",
           "visualTest": true
         },
@@ -309,7 +704,7 @@
         },
         {
           "id": "TST_EBOO_TC_9",
-          "description": "Validate that the Page Number button is clickable",
+          "description": "Validate that the user is able to launch 'Go to page option'",
           "tags": "P3",
           "visualTest": true
         },
@@ -356,98 +751,6 @@
           "visualTest": true
         },
         {
-          "id": "TST_PAGE_TC_1",
-          "description": "Validate that pageNoOneBtn  is  Clicked ",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_PAGE_TC_2",
-          "description": "Validate that pageNoTwoBtn  is  Clicked ",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_PAGE_TC_3",
-          "description": "page No Clear Btn is  Clicked",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_PAGE_TC_4",
-          "description": "page No go to Btn is  Clicked",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_PAGE_TC_5",
-          "description": "page NO Show  btn is clicked ",
-          "tags": "P2",
-          "visualTest": true
-        },
-        {
-          "id": "TST_EBOOK_TC_1",
-          "description": "Validate that HyperLinkAnswer is clickable",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_EBOOK_TC_2",
-          "description": "Validate that HyperLink Audio is clickable",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_EBOOK_TC_4",
-          "description": "Validate that HyperLinkAnswer  2 is clickable",
-          "tags": "P3",
-          "visualTest": true
-        },
-
-        {
-          "id": "TST_HYPE_TC_1",
-          "description": "Successfully clicks the hyper answer reveal button",
-          "testFile": "./test/ExperienceApp/eBook.test.js",
-          "testData": []
-        },
-        {
-          "id": "TST_HYPE_TC_2",
-          "description": "Successfully clicks the hyper answer close button",
-          "testFile": "./test/ExperienceApp/eBook.test.js",
-          "testData": []
-        },
-        {
-          "id": "TST_HYPE_TC_3",
-          "description": "Successfully clicks the hyper answer full screen button",
-          "testFile": "./test/ExperienceApp/eBook.test.js",
-          "testData": []
-        },
-        {
-          "id": "TST_HYPE_TC_4",
-          "description": "Successfully retrieves the data associated with the hyper answer",
-          "testFile": "./test/ExperienceApp/eBook.test.js",
-          "testData": []
-        },
-        {
-          "id": "TST_HYPE_AUD_TC_1",
-          "description": "Validate that HyperLink Audio Play/Pause button is clickable",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_HYPE_AUD_TC_2",
-          "description": "Validate that HyperLink Audio Close button is clickable",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_HYPE_AUD_TC_3",
-          "description": "Validate that HyperLink Audio Play/Pause and Close button data matches expected values",
-          "tags": "P2",
-          "visualTest": false
-        }, 
-
-        {
           "id": "TST_EBOO_TC_17",
           "description": "Validate that the eBook Toggle Layout button is clickable & returns single page",
           "tags": "P3",
@@ -482,10 +785,73 @@
           "description": "Validate that the eBook Zoom Out button is clickable",
           "tags": "P3",
           "visualTest": false
+        },
+        {
+          "id": "TST_EBOO_TC_52",
+          "description": "Validate that the Timer panel opens correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_51",
+          "description": "Validate that the drawing tool is launched",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_53",
+          "description": "Validate that next page button  is clicked and next  page launched  correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_EBOO_TC_54",
+          "description": "Validate that previous page button  is clicked and  previous page launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+       
+        {
+          "id": "TST_EBOO_TC_23",
+          "description": "Validate that the show-Hide Selection tool  launched correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_1",
+          "description": "Validate that user is able click Page No One button",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_2",
+          "description": "Validate that pageNoTwoBtn  is  Clicked ",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_3",
+          "description": "page No Clear Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_4",
+          "description": "page No go to Btn is  Clicked",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_PAGE_TC_5",
+          "description": "page No verify btn click ",
+          "tags": "P2",
+          "visualTest": true
         }
-
       ]
     },
+    
+
+   
     {
       "modulename": "notes",
       "moduleId": "",
@@ -547,6 +913,149 @@
         }
       ]
     },
+
+    {
+      "modulename": "showHideSelection",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/showHideSelection.test.js",
+      "testcase": [
+        {
+          "id": "TST_SHOW_TC_1",
+          "description": "Validate that the hide Selection tool is clicked and hide the selected area .",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_2",
+          "description": "Validate that the show Selection tool is clicked and show only the selected area",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_3",
+          "description": "Validate that the show or hode Selected area is closed (click on croxx button for remove trhe selected area .)",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SHOW_TC_4",
+          "description": "Validate that show and hide selection values match the expected values",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+
+    {
+      "modulename": "drawingTool",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/drawingTool.test.js",
+      "testcase": [
+        {
+          "id": "TST_DRAW_TC_1",
+          "description": "Validate that drawing tool (pen) draw line based on selected pen color & width",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_2",
+          "description": "Validate clicking on the Pen color opens pen color options",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_3",
+          "description": "Validate that clicking on the Pen width opens the pen width options",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_4",
+          "description": "Validate that Eraser tool clicked and erased expected line ",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_5",
+          "description": "Validate that Undo function works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_6",
+          "description": "Validate that Redo function works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_7",
+          "description": "Validate that Presentation mode is clickable and active",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_8",
+          "description": "Validate that all drawing tool data matches expected values",
+          "tags": "P2",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_9",
+          "description": "Validate that the highlighter tool clicked and highlight the expected area ",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_10",
+          "description": "Validate that the user is able to select Green color from available pen colors",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_11",
+          "description": "Validate that blue pen color is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_12",
+          "description": "Validate that red pen color is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_13",
+          "description": "Validate that black pen color is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_14",
+          "description": "Validate that the user is able to select pen stroke width 4 from available width options",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_DRAW_TC_15",
+          "description": "Validate that pen stroke width 3 is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_16",
+          "description": "Validate that pen stroke width 2 is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_17",
+          "description": "Validate that pen stroke width 1 is clickable and selected",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+
     {
       "modulename": "appShell",
       "moduleId": "",

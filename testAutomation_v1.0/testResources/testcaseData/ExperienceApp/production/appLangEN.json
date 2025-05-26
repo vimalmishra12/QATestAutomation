@@ -35,14 +35,28 @@
       },
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer" : "Answers",
-        "hyperLinkAnswer2" : "Answers",
-        "hyperlinkAudio" : "Audio"
+        "hyperLinkVideo" : "Video",
+        "hyperlinkAudio" : "Audio",
+        "hyperlinkActivity": "Activity",
+        "hyperlinkNewTab" : "Open New Tab",
+        "hyperlinkAudioNoTranscript" :"Audio",
+        "hyperlinkGoToPage" :"Go To Page",
+        "hyperLinkGame" : "Game"
       },
-      "hyperLinkAnswerWindow": {
+
+     "hyperLinkAnswerWindow": {
         "hyperAnswerReveal" : "Reveal",
         "hyperAnswerClose" : "Close",
         "hyperAnswerFullScreen" : "Enter fullscreen",
-        "hyperAnswerQuestion" : "Watch or listen to Part 1 and"
+        "hyperAnswerQuestion" : "Watch or listen to Part 1 and",  
+        "hyperVideoPlay" : "Play Video",
+        "hyperVideoClose" : "video Close ",
+        "hyperActivityNext" :"Next",
+        "hyperAudioClose" : "Close",
+        "HyperShowHideTranscript": "Show transcripts",
+        "exitActivity" : "Exit activity",
+        "startAgainActivity" : "Start again"
+
       },
 
       "hyperlinkAudio": {
@@ -185,7 +199,7 @@
           "help_btn": "Help",
           "progress_btn": "Progress\nSee Progress",
           "praticeExtra_btn": "Practice Extra\nContinue learning",
-          "ebook_btn": "cqa-test-largelo-ebook\nContinue learning",
+          "ebook_btn": "cqa-ebook-evolve\nContinue learning",
           "homework_btn": "My homework (1)",
           "myProgress_btn": "My progress"
         }
@@ -208,7 +222,9 @@
       },
       "eBookViewerControls" : {
         "singlePage" : "single-page", 
-        "doublePage" : "double-page"
+        "doublePage" : "double-page",
+        "nextPage" : "Next page",
+        "previousPage" : "Previous page"
       },
       "createClassPage": {
         "pageTitle": "Create a new class",

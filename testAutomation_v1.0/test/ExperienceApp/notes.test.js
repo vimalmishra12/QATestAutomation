@@ -34,7 +34,7 @@ module.exports = {
   // Click on the Save Notes Button and verify the saved notes
   TST_NOTE_TC_4: async function (testdata) {
     sts = await notes.click_eBookSaveNotesBtn();
-    await assertion.assertEqual(sts, testdata.eBookSaveNotesBtn, "status mismatch");
+    await assertion.assertEqual(sts, testdata.notes, "status mismatch");
   },
 
   // Click on the Delete Notes Button

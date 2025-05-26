@@ -1,9 +1,9 @@
 Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
-eBookNotesHeadingTxt,div.notes-title,div,notesContent,,,,My notes
-eBookAddNotesBtn,button.add-note-button,button,notesContent,,,eBookViewMoreDeleteNotestBtn,
-eBookAddNotesTextarea,"textarea[qid=""notes-9IgNfocur4WZF5gB-10""]",textarea,notesContent,,,,
-eBookSaveNotesBtn,"button[qid=""notes-9IgNfocur4WZF5gB-4""]",button,notesContent,,,eBookAddNotesTextarea,Test Note1
-eBookDeleteNotesBtn,"button[qid=""notes-9IgNfocur4WZF5gB-3""]",button,notesContent,,,,
-eBookNotesViewMoreBtn,"button[qid=""notes-9IgNfocur4WZF5gB-17""]",button,notesContent,,,eBookViewMoreDeleteNotestBtn,
-eBookViewMoreDeleteNotestBtn,"a[qid=""notes-9IgNfocur4WZF5gB-20""]",a,notesContent,,,,
-eBookNoteModalDeleteButton,"button[qid=""notes-9IgNfocur4WZF5gB-9""]",button,notesContent,,,eBookNotesHeadingTxt,
+eBookNotesHeadingTxt,div.notes-title,div,notesContent,,isInitialization,,My notes
+eBookAddNotesBtn,button.add-note-button,button,notesContent,,,"waitForDisplayed,eBookDeleteNotesBtn",
+eBookAddNotesTextarea,"textarea[maxlength=""1000""][placeholder=""Type here...""]",textarea,notesContent,,,,
+eBookSaveNotesBtn,"button[class=""save-note""]",button,notesContent,,,eBookAddNotesTextarea,Test Note1
+eBookDeleteNotesBtn,"button[class=\""cancel-note-button ng-star-inserted\""]",button,notesContent,,,,
+eBookNotesViewMoreBtn,#dropdownMenuButton.cancel-note-button,button,notesContent,,,eBookViewMoreDeleteNotestBtn,
+eBookViewMoreDeleteNotestBtn,"a.dropdown-item[data-target^=""#deleteSingleNoteModal""]",a,notesContent,,,,
+eBookNoteModalDeleteButton,button#deleteSingleNoteModalDeleteButton,button,notesContent,,,eBookNotesHeadingTxt,

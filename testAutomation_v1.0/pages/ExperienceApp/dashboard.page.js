@@ -10,6 +10,8 @@ module.exports = {
   ebook_btn: selectorFile.css.ComproC1.dashboard.ebook_btn,
   homework_btn: selectorFile.css.ComproC1.dashboard.homework_btn,
   myProgress_btn: selectorFile.css.ComproC1.dashboard.myProgress_btn,
+  createNewClass: selectorFile.css.ComproC1.dashboard.createNewClass,
+  activeClassCard: selectorFile.css.ComproC1.dashboard.activeClassCard,
 
   isInitialized: async function () {
     var res;
@@ -34,8 +36,10 @@ module.exports = {
     return obj;
   },
 
-  getData_activeClasses: async function () {
+  getData_activeClasses: async function (testdata) {
     await logger.logInto(await stackTrace.get());
+    const ebook = await action.getKthElement(this.ebook_btn,  testdata[1].launchEbook);
+    const res = await action.getText(ebook) ; 
     var obj;
     obj = {
       progress_btn:
@@ -47,8 +51,8 @@ module.exports = {
           ? await action.getText(this.praticeExtra_btn)
           : null,
       ebook_btn:
-        (await action.getElementCount(this.ebook_btn)) > 0
-          ? await action.getText(this.ebook_btn)
+        ( await action.getElementCount(this.ebook_btn)) > 0
+          ? await action.getText(ebook)
           : null,
       homework_btn:
         (await action.getElementCount(this.homework_btn)) > 0
@@ -121,10 +125,11 @@ module.exports = {
   },
 
   
-  click_ebook_btn: async function () {
+  click_ebook_btn: async function (testdata) {
     await logger.logInto(await stackTrace.get());
     var res;
-    const kthElement = await action.getKthElement(this.ebook_btn, 3);
+    console.log("this is testdata 131" , testdata)
+    const kthElement = await action.getKthElement(this.ebook_btn, testdata.launchEbook);
     if (kthElement) {
       res = await action.click(kthElement);
 
@@ -189,4 +194,48 @@ module.exports = {
     }
     return res;
   },
+
+  click_createNewClass: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.createNewClass);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' createNewClass is clicked'
+      );
+      browser.pause(10000);
+      res = await require('./createNewClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'createNewClass is NOT clicked',
+        'error'
+      );
+    }
+    return res;
+  },
+
+  click_activeClassCard: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.activeClassCard);
+    console.log('RES VAL', res);
+    if (true == res) {
+      await logger.logInto(
+        await stackTrace.get(),
+        ' activeClassCard is clicked'
+      );
+      res = await require('./activeClass.page').isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + 'activeClassCard is NOT clicked',
+        'error'
+      );
+    }
+    console.log('RES VAL BEFORE RETURN', res);
+    return res;
+  },
+
 };

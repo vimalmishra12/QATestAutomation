@@ -28,7 +28,8 @@ module.exports = {
   },
 
   TST_DASH_TC_5: async function (testdata) {
-    sts = await dashboard.click_ebook_btn();
+    console.log("testdata 31" ,testdata); 
+    sts = await dashboard.click_ebook_btn(testdata);
     await assertion.assertEqual(sts.pageStatus, true, "Page is not launched. ");
   },
 
@@ -55,28 +56,40 @@ module.exports = {
     sts = await dashboard.getData_activeClasses(testdata);
     await assertion.assertEqual(
       sts.progress_btn,
-      testdata.progress_btn,
+      testdata[0].progress_btn,
       "progress_btn Values is not as expected."
     );
     await assertion.assertEqual(
       sts.praticeExtra_btn,
-      testdata.praticeExtra_btn,
+      testdata[0].praticeExtra_btn,
       "praticeExtra_btn Values is not as expected."
     );
     await assertion.assertEqual(
       sts.ebook_btn,
-      testdata.ebook_btn,
+      testdata[0].ebook_btn,
       "ebook_btn Values is not as expected."
     );
     await assertion.assertEqual(
       sts.homework_btn,
-      testdata.homework_btn,
+      testdata[0].homework_btn,
       "homework_btn Values is not as expected."
     );
     await assertion.assertEqual(
       sts.myProgress_btn,
-      testdata.myProgress_btn,
+      testdata[0].myProgress_btn,
       "myProgress_btn Values is not as expected."
     );
   },
+
+  TST_DASH_TC_10: async function (testdata) {
+    sts = await dashboard.click_createNewClass();
+    await browser.pause(1000);
+    await assertion.assertEqual(sts.pageStatus, true, 'Page is not launched. ');
+  },
+
+  TST_DASH_TC_11: async function (testdata) {
+    sts = await dashboard.click_activeClassCard();
+    await assertion.assertEqual(sts.pageStatus, true, 'Page is not launched. ');
+  },
+
 };
