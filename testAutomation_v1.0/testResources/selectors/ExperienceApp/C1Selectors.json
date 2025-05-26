@@ -903,15 +903,6 @@
     "Password": "input[id='user_session_password']",
     "commit": "input[value='Login']"
   },
-  "vhlnotes_test": {
-    "notesButton": "button[data-tid=\"button-toolbar-item-1-3\"]",
-    "notes": "button[data-tid='button-toolbar-item-1-3']",
-    "addNote": "button[data-tid='button-add-note']",
-    "presentation": "div[id='drawing-area-A'] canvas",
-    "typeYourNotesHere": "#input-add-note",
-    "save": "button[type='submit']",
-    "close": "button[data-tid='notebox-button-cancel']"
-  },
   "vhl_landingtest": {
     "usernameLabel": "div.MuiBox-root.css-mv4q7",
     "notes": "button[data-tid=\"button-toolbar-item-1-3\"]",
