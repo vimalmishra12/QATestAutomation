@@ -27,6 +27,25 @@ var updateJob = global.capabilitiesFile[argv.browserCapability].updateJob;
 var enableEyesLogs =
   global.capabilitiesFile[argv.browserCapability].enableEyesLogs;
 var eyes = global.capabilitiesFile[argv.browserCapability].eyes;
+// wdio.conf.js
+
+const chromedriverPath = require('chromedriver').path;
+
+exports.config = {
+  //
+  // ===== Services =====
+  services: [
+    [
+      'chromedriver',
+      {
+        // 👉 force WDIO to use the NPM‑installed binary
+        chromedriverCustomPath: chromedriverPath
+      }
+    ]
+  ],
+
+  // … the rest of your config
+};
 
 // setting parameters for novus service
 var NovusService = [

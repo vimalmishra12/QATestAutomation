@@ -1,0 +1,6 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN
+notesButton,"button[data-tid=""button-toolbar-item-1-3""]",button,vhlNotes,,,,Add Note
+dockButton,"button[data-tid=""notebox-button-dock""]",button,vhlNotes,,,,Dock
+pageCoverTab,"button[data-tid=""button-product-0""]",button,vhlNotes,,,,View Notes for Page Cover
+allPagesTab,"button[data-tid=""button-product-1""]",button,vhlNotes,,,,View Notes for All Pages
+closeButton,"button[data-tid=""notebox-button-cancel""]",button,vhlNotes,,,,Close

@@ -1,14 +1,12 @@
-{"login": 
 {
-"page_header" : "h2[class=\"gigya-composite-control gigya-composite-control-header login-heading\"]
-",
-"brandLogo" : "img[alt=\"Cambridge Logo\"]",
-"userName_tbox" : "#gigya-loginID-56269462240752180",
-"password_tbox" : "#gigya-password-56383998600152700",
-"loginPassword_eye" : "a[aria-label=\"Show\"]",
-"forgotPassword" : "a[title=\"Forgotten your password?\"]",
-"login_btn" : "input[value=\"Log in\"]",
-"signup_btn" : "a[title=\"Don\"t have an account yet?\"]",
-
-}
+    "login": {
+        "page_header": "h2[class=\"gigya-composite-control gigya-composite-control-header login-heading\"]",
+        "brandLogo": "img[alt=\"Cambridge Logo\"]",
+        "userName_tbox": "#gigya-loginID-56269462240752180",
+        "password_tbox": "#gigya-password-56383998600152700",
+        "loginPassword_eye": "a[aria-label=\"Show\"]",
+        "forgotPassword": "a[title=\"Forgotten your password?\"]",
+        "login_btn": "input[value=\"Log in\"]",
+        "signup_btn": "a[title=\"Don\"t have an account yet?\"]"
+    }
 }
