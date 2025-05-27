@@ -50,12 +50,12 @@
     {
       "modulename": "Validation of Sample File Page",
       "moduleId": "",
-      "testFile": "./test/ExperienceApp/sampleFile.test.js",
+      "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
         {
           "id": "TST_SAMP_TC_1",
-          "description": "Check Sample File Page is Initialized",
+          "description": "Check vhl Login Test is Initialized",
           "tags": "P1",
           "visualTest": false
         },

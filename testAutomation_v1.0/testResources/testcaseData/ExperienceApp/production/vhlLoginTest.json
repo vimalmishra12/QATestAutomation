@@ -1,10 +1,10 @@
 {
-  "C1": {
+  "vhl": {
     "login": {
       "user": {
         "validStudent1": {
-          "Username": "mtaparia_instructor",
-          "Password": "@Compro2018"
+          "userName": "mtaparia_instructor",
+          "password": "@Compro2018"
         }
       }
     },

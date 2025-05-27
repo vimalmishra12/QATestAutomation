@@ -898,9 +898,9 @@
     }
   },
   "vhlLoginTest": {
-    "Welcome": "h1[class='u-txt-ctr']",
-    "Username": "input[id='user_session_username']",
-    "Password": "input[id='user_session_password']",
+    "welcome": "h1[class='u-txt-ctr']",
+    "userName": "input[id='user_session_username']",
+    "password": "input[id='user_session_password']",
     "commit": "input[value='Login']"
   },
   "vhl_landingtest": {
