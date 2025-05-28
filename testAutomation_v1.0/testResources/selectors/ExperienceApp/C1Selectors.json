@@ -915,7 +915,7 @@
     "eraserButton": "button[data-tid=\"annotation-toolbar-item-1\"]",
     "highlighterBtn": "button[data-tid=\"annotation-toolbar-item-0\"]",
     "colorPicker": "div#color-picker-button[data-tid=\"annotation-toolbar-color-picker\"]",
-    "closeIcon": "div.IconBox-sc-17vm12b.iqIkjM",
+    "closeIcon": "svg.StyledCloseIcon-sc-1wz11ot",
     "drawingToolPresentation": "div.konvajs-content canvas",
     "removeAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]"
   },
