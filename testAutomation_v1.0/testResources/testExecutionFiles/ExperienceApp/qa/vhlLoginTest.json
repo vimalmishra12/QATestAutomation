@@ -1,6 +1,6 @@
 {
   "Suite1": {
-    "Name": "VHL Notes Execution",
+    "Name": "Validation of vhl login Page",
     "TestCaseRepo": [
       "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
     ],
@@ -46,36 +46,6 @@
         "id": "TST_SAMP_TC_4",
         "description": "Click on Login Button",
         "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_1",
-        "description": "Click Add Note Button",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_2",
-        "description": "Click Dock Button",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_3",
-        "description": "Click Page Cover Tab",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_4",
-        "description": "Click All Pages Tab",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_5",
-        "description": "Click Close Button",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
       }
     ],

@@ -10,11 +10,8 @@
           "description": "",
           "testFile": "./core/runner/launchUrl.js",
           "testData": []
-        }
-      ],
-      "BeforeEach": [],
-      "Test": [
-        {
+        },
+         {
           "id": "TST_SAMP_TC_1",
           "description": "Check vhl login Page is Initialized",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
@@ -47,7 +44,10 @@
           "description": "Click on Login Button",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
           "testData": []
-        },
+        }
+      ],
+      "BeforeEach": [],
+      "Test": [
         {
           "id": "TST_VHLH_TC_1",
           "description": "Execute highlighter click test 1",

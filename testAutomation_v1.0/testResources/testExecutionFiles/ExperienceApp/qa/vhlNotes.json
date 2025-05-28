@@ -10,10 +10,7 @@
         "description": "",
         "testFile": "./core/runner/launchUrl.js",
         "testData": []
-      }
-    ],
-    "BeforeEach": [],
-    "Test": [
+      },
       {
         "id": "TST_SAMP_TC_1",
         "description": "Check vhl login Page is Initialized",
@@ -47,33 +44,73 @@
         "description": "Click on Login Button",
         "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
         "testData": []
-      },
+      }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      
       {
-        "id": "TST_NOTE_TC_1",
-        "description": "Click Add Note Button",
+        "id": "TST_VHLN_TC_1",
+        "description": "Click Note Button",
         "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
       },
       {
-        "id": "TST_NOTE_TC_2",
+        "id": "TST_VHLN_TC_2",
         "description": "Click Dock Button",
         "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
       },
       {
-        "id": "TST_NOTE_TC_3",
-        "description": "Click Page Cover Tab",
-        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
-        "testData": []
-      },
-      {
-        "id": "TST_NOTE_TC_4",
+        "id": "TST_VHLN_TC_3",
         "description": "Click All Pages Tab",
         "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
       },
       {
-        "id": "TST_NOTE_TC_5",
+        "id": "TST_VHLN_TC_4",
+        "description": "Click Page Cover Tab",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_VHLN_TC_5",
+        "description": "Click on Add Button",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+       {
+        "id": "TST_VHLN_TC_6",
+        "description": "Set Notes Text",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/vhlNotesTest.json",
+            "jsonPath": "vhl.vhlNotes"
+          }
+        ]
+      },
+      {
+        "id": "TST_VHLN_TC_7",
+        "description": "Click on Save Notes",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+
+         {
+        "id": "TST_VHLN_TC_9",
+        "description": "Click on Delete Notes Btn",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+         {
+        "id": "TST_VHLN_TC_10",
+        "description": "Click on Delete Notes Btn Confirmation",
+        "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_VHLN_TC_11",
         "description": "Click Close Button",
         "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
         "testData": []
