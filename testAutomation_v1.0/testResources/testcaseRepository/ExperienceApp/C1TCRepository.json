@@ -9,43 +9,72 @@
       "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
-        {
-          "id": "TST_NOTE_TC_1",
-          "description": "Click Add Note Button",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_NOTE_TC_2",
-          "description": "Click Dock Button",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_NOTE_TC_3",
-          "description": "Click Page Cover Tab",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_NOTE_TC_4",
-          "description": "Click All Pages Tab",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_NOTE_TC_5",
-          "description": "Click Close Button",
-          "tags": "P1",
-          "visualTest": false
-        },
-        {
-          "id": "TST_NOTE_TC_6",
-          "description": "Validate Notes UI Elements via getData",
-          "tags": "P1",
-          "visualTest": false
-        }
-      ]
+  {
+    "id": "TST_VHLN_TC_1",
+    "description": "Click Note Button",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_2",
+    "description": "Click Dock Button",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_3",
+    "description": "Click All Pages Tab",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_4",
+    "description": "Click Page Cover Tab",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_5",
+    "description": "Click on Add Button",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_6",
+    "description": "Set Notes Text",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_7",
+    "description": "Click on Save Notes",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_8",
+    "description": "Check Notes text",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_9",
+    "description": "Click on Delete Notes Btn",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_10",
+    "description": "Click on Delete Notes Btn Confirmation",
+    "tags": "P1",
+    "visualTest": false
+  },
+  {
+    "id": "TST_VHLN_TC_11",
+    "description": "Click Close Button",
+    "tags": "P1",
+    "visualTest": false
+  }]
     },
     {
       "modulename": "Validation of Sample File Page",

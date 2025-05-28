@@ -918,14 +918,19 @@
     "closeIcon": "div.IconBox-sc-17vm12b.iqIkjM",
     "drawingToolPresentation": "div.konvajs-content canvas",
     "removeAllButton": "button[data-tid=\"annotation-toolbar-item-2\"]"
-
   },
-"notesVhlTest": {
-  "notesButton": "button[data-tid=\"button-toolbar-item-1-3\"]",
-  "addNoteButton": "button[aria-label=\"Notes\"][data-tid=\"button-toolbar-item-1-3\"]",
-  "dockButton": "button[data-tid=\"notebox-button-dock\"]",
-  "pageCoverTab": "button[data-tid=\"button-product-0\"]",
-  "allPagesTab": "button[data-tid=\"button-product-1\"]",
-  "closeButton": "button[data-tid=\"notebox-button-cancel\"]"
-}
+  "vhlNotes": {
+    "notesButton": "button[data-tid=\"button-toolbar-item-1-3\"]",
+    "dockButton": "button[data-tid=\"notebox-button-dock\"]",
+    "allPagesTab": "button[data-tid=\"button-product-1\"]",
+    "pageCoverTab": "button[data-tid=\"button-product-0\"]",
+    "addNoteBtn": "[data-tid=\"button-add-note\"]",
+    "addNotesTextarea": "#input-add-note",
+    "saveNoteBtn": "[data-tid=\"button-save\"]",
+    "notePreviewText": "span:contains(\"Sample VHL Automation Note#1\")",
+    "deleteNoteSvg": "[data-tid=\"btn-delete-2\"]",
+    "deleteNoteBtn": "[data-tid=\"button-primary-deleteNote\"]",
+    "closeButton": "button[data-tid=\"notebox-button-cancel\"]",
+    "addNotesCanvas": "div.konvajs-content canvas"
+  }
 }
