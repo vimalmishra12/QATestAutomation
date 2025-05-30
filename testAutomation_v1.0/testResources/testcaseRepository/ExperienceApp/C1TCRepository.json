@@ -77,37 +77,37 @@
   }]
     },
     {
-      "modulename": "Validation of Sample File Page",
+      "modulename": "Validation of VLOGle File Page",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
         {
-          "id": "TST_SAMP_TC_1",
+          "id": "TST_VLOG_TC_1",
           "description": "Check vhl Login Test is Initialized",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_SAMP_TC_2",
+          "id": "TST_VLOG_TC_2",
           "description": "Enter Username",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_SAMP_TC_3",
+          "id": "TST_VLOG_TC_3",
           "description": "Enter Password",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_SAMP_TC_4",
+          "id": "TST_VLOG_TC_4",
           "description": "Click on Login Button",
           "tags": "P1",
           "visualTest": false
         },
         {
-          "id": "TST_SAMP_TC_5",
+          "id": "TST_VLOG_TC_5",
           "description": "Validate Data fetched from Login Page",
           "tags": "P1",
           "visualTest": false
