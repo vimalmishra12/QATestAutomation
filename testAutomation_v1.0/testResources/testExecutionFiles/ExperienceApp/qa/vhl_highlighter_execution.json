@@ -12,13 +12,13 @@
           "testData": []
         },
          {
-          "id": "TST_SAMP_TC_1",
+          "id": "TST_VLOG_TC_1",
           "description": "Check vhl login Page is Initialized",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
           "testData": []
         },
         {
-          "id": "TST_SAMP_TC_2",
+          "id": "TST_VLOG_TC_2",
           "description": "Enter Username",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
           "testData": [
@@ -29,7 +29,7 @@
           ]
         },
         {
-          "id": "TST_SAMP_TC_3",
+          "id": "TST_VLOG_TC_3",
           "description": "Enter Password",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
           "testData": [
@@ -40,7 +40,7 @@
           ]
         },
         {
-          "id": "TST_SAMP_TC_4",
+          "id": "TST_VLOG_TC_4",
           "description": "Click on Login Button",
           "testFile": "./test/ExperienceApp/vhlLoginTest.test.js",
           "testData": []
