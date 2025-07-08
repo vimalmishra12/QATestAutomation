@@ -74,6 +74,6 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^136.0.2"
+    "chromedriver": "^138.0.0"
   }
 }
