@@ -1,4 +1,5 @@
 {
+    "C1": {
   "VHL": {
     "vhlLogin": {
       "welcome": "Welcome",
@@ -43,7 +44,7 @@
       "subheadingText": "Your home for digital learning",
       "signupBtn": "Sign up",
       "loginBtn": "Log in",
-      "languageSelector_dropdown": "En"
+      "languageSelector_dropdown": "English"
     },
     "eBookLearningPageHyperlink": {
       "hyperLinkAnswer": "Answers",
@@ -1761,4 +1762,5 @@
       }
     }
   }
+}
 }
