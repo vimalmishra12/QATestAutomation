@@ -212,7 +212,7 @@
     },
     "eBook": {
       "cqa_ebook_evolve": "cqa-ebook-evolve",
-      "myNotes": "My notes",
+      "myNotes": "My notes & links",
       "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
     },
     "eBookContents": {
@@ -222,7 +222,7 @@
     },
     "notes": {
       "teacher": {
-        "eBookNotesHeadingTxt": "My notes",
+        "eBookNotesHeadingTxt": "My notes & links",
         "eBookSaveNotesBtn": "Test Note1"
       }
     },

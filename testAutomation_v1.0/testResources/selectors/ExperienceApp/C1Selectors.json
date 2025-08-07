@@ -289,14 +289,14 @@
         "back_btn": "a[qid='aView-4']"
       },
       "notes": {
-        "eBookNotesHeadingTxt": "div.notes-title",
+          "eBookNotesHeadingTxt": "div.notes-title",
         "eBookAddNotesBtn": "button.add-note-button",
-        "eBookAddNotesTextarea": "textarea[maxlength=\"1000\"][placeholder=\"Type here...\"]",
+        "eBookAddNotesTextarea": "textarea[placeholder='Type here...']",
         "eBookSaveNotesBtn": "button[class=\"save-note\"]",
         "eBookDeleteNotesBtn": "button[class=\"cancel-note-button ng-star-inserted\"]",
-        "eBookNotesViewMoreBtn": "#dropdownMenuButton.cancel-note-button",
-        "eBookViewMoreDeleteNotestBtn": "a.dropdown-item[data-target^=\"#deleteSingleNoteModal\"]",
-        "eBookNoteModalDeleteButton": "button#deleteSingleNoteModalDeleteButton"
+        "eBookNotesViewMoreBtn": ".nemo-font.menu-btn",
+        "eBookViewMoreDeleteNotestBtn": ".dropdown-menu a.dropdown-item:last-of-type",
+        "eBookNoteModalDeleteButton": "button.deleteSingleNoteModalDeleteButton"
       },
       "classDrawer": {
         "classDrawerHeader": "[data-tid=text-drawerHeaderTitle]",
