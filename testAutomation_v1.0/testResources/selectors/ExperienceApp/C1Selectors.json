@@ -17,7 +17,7 @@
         "footerBack": ".back-text"
       },
       "term": {
-        "termsHealding": "h1.heading1.align-self-center[data-v-7a24da20]",
+        "termsHealding": ".heading1.align-self-center",
         "termBack": "qid\".back-text\"undefined"
       },
       "privacy": {
@@ -41,7 +41,7 @@
         "subheadingText": "div[class=\"main-content text-center text-md-start\"] h2",
         "signupBtn": "a[qid=\"home-1\"]",
         "loginBtn": "a[qid=\"home-2\"]",
-        "brandLogo_img": "img[alt=\"Cambridge Logo\"]",
+        "brandLogo_img": "img[class=\"bg-image\"]",
         "languageSelector_dropdown": "[qid=\"header-10\"]",
         "languageSelector_dropdown_list": "[class*=\"lang-dropdown-item\"]"
       },
