@@ -466,71 +466,86 @@ module.exports = {
         }
     },
 
+    isExisting: async function (selector) {
+        message = "Checking if element exists" + selector;
+    try {
+        const element = await $(selector);
+        const result = await element.isExisting();
+        await logger.logInto(await stackTrace.get(), `${message}: ${result}`);
+        return result;
+    } catch (err) {
+        await logger.logInto(await stackTrace.get(), `Error in isExisting: ${err.message}`, "error");
+        return false; // Return false on error to indicate element not found
+    }
+},
+
    
 
-    dragAndDropWithPath: async function (
-        canvasElementSelector,
-        startPoint_x1, startPoint_y1,       // Starting coordinates
-        endPoint_x2, endPoint_y2,       // Ending coordinates
-       // intermediatePoints = [{ x: startPoint_x1, y: startPoint_y1 }] // Default intermediate points
-        intermediatePoints = [] 
-      ) {
-        const canvasElement = await $(canvasElementSelector); // Ensure the canvas selector is correct
-      
-        // Scroll the canvas into view, if necessary
-        await canvasElement.scrollIntoView();
+dragAndDropWithPath: async function (
+    canvasElementSelector,
+    startPoint_x1, startPoint_y1,
+    endPoint_x2, endPoint_y2,
+    intermediatePoints = []
+) {
+
+    const canvasElement = await $(canvasElementSelector);
+    await canvasElement.scrollIntoView();
+
+    const canvasRect = await canvasElement.getLocation();
+    const canvasSize = await canvasElement.getSize();
+
+    const canvasTop = canvasRect.y;
+    const canvasLeft = canvasRect.x;
 
 
-        // Get canvas dimensions for boundary validation
-        const { width: canvasWidth, height: canvasHeight } = await canvasElement.getSize();
+    // Calculate absolute screen coordinates
+    const absStartX = canvasLeft + startPoint_x1;
+    const absStartY = canvasTop + startPoint_y1;
+    const absEndX = canvasLeft + endPoint_x2;
+    const absEndY = canvasTop + endPoint_y2;
 
-        // Helper function to check if coordinates are within canvas bounds
-        function isWithinCanvas(x, y) {
-            return x >= 0 && x <= canvasWidth && y >= 0 && y <= canvasHeight;
-        }
 
-        // Validate starting and ending points
-        if (!isWithinCanvas(startPoint_x1, startPoint_y1) || !isWithinCanvas(endPoint_x2, endPoint_y2)) {
-            throw new Error(`Starting or ending coordinates are out of canvas bounds.`);
-        }
-        // Validate intermediate points
-        for (const point of intermediatePoints) {
-            if (!isWithinCanvas(point.x, point.y)) {
-            throw new Error("  Intermediate point (${point.x}, ${point.y}) is out of canvas bounds.");
-            }
-        }
-      
-        // Generate the intermediate actions
-        const intermediateActions = intermediatePoints.map(point => ({
-          type: "pointerMove",
-          origin: canvasElement,
-          x: point.x,
-          y: point.y
-        }));
-      
-        // Define the full actions array
-        const actions = [
-          { type: "pointerMove", origin: canvasElement, x: startPoint_x1, y: startPoint_y1 }, // Starting point
-          { type: "pointerDown", button: 0 },
-          ...intermediateActions, 
-         // ...(intermediateActions && {intermediateActions}),// Insert intermediate points here
-          { type: "pointerMove", origin: canvasElement, x: endPoint_x2, y: endPoint_y2 }, // Ending point
-          { type: "pointerUp", button: 0 } // Release mouse button
-        ];
-      
-        // Perform the actions
-        await browser.performActions([
-          {
+    function isWithinCanvas(x, y) {
+        return x >= 0 && x <= canvasSize.width && y >= 0 && y <= canvasSize.height;
+    }
+
+    if (
+        !isWithinCanvas(startPoint_x1, startPoint_y1) ||
+        !isWithinCanvas(endPoint_x2, endPoint_y2)
+    ) {
+        throw new Error(`❌ Starting or ending coordinates are out of canvas bounds.`);
+    }
+
+    const intermediateActions = intermediatePoints.map(point => ({
+        type: "pointerMove",
+        duration: 100,
+        origin: "viewport",
+        x: canvasLeft + point.x,
+        y: canvasTop + point.y,
+    }));
+
+    const actions = [
+        { type: "pointerMove", duration: 0, origin: "viewport", x: absStartX, y: absStartY },
+        { type: "pointerDown", button: 0 },
+        ...intermediateActions,
+        { type: "pointerMove", duration: 500, origin: "viewport", x: absEndX, y: absEndY },
+        { type: "pointerUp", button: 0 },
+    ];
+
+
+    await browser.performActions([
+        {
             type: "pointer",
             id: "mouse1",
             parameters: { pointerType: "mouse" },
             actions,
-          },
-        ]);
-      
-        // Release all actions
-        await browser.releaseActions();
-      },
+        },
+    ]);
+
+    await browser.pause(500); // Let UI catch up
+    await browser.releaseActions();
+
+},
       
       
 
