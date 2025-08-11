@@ -7,8 +7,11 @@ module.exports = {
   hideSelection: selectorFile.css.ComproC1.showHideSelection.hideSelection,
   showSelection: selectorFile.css.ComproC1.showHideSelection.showSelection,
   closeSelection: selectorFile.css.ComproC1.showHideSelection.closeSelection,
+  showSelectionBoxSelector: selectorFile.css.ComproC1.showHideSelection.showSelectionBoxSelector,
+  hideSelectionBoxSelector: selectorFile.css.ComproC1.showHideSelection.hideSelectionBoxSelector,
   drawingToolPresentation:
     selectorFile.css.ComproC1.drawingTool.drawingToolPresentation,
+
 
   isInitialized: async function () {
     var res;
@@ -61,11 +64,7 @@ module.exports = {
             300,
             300
         );
-        // Verification for the Hide Selection box
-        // Matches dynamic IDs like mask-layer-X
-        const hideSelectionBoxSelector = "[id^='mask-div-']"; 
-        const isHideBoxPresent = await $(hideSelectionBoxSelector).isExisting();
-        console.log("10111",hideSelectionBoxSelector," ",isHideBoxPresent)
+        const isHideBoxPresent = action.isExisting(this.hideSelectionBoxSelector)
         await browser.pause(5000); // Wait for the effect to appear
 
         
@@ -131,59 +130,35 @@ module.exports = {
   //   return res;
   // },
 
-  click_showSelection: async function () {
+click_showSelection: async function () {
     await logger.logInto(await stackTrace.get());
     let res = true;
-
-    // Perform the click action on the "Show Selection" button
-    // Uncomment the below line if the button click is needed
-    // res = await action.click(this.showSelection);
-
-    if (res === true) {
-        await logger.logInto(await stackTrace.get(), "showSelection is clicked");
-
-        // Perform drag-and-drop action
-        await action.dragAndDropWithPath(
-            this.drawingToolPresentation,
-            100,
-            100,
-            300,
-            300
+    try {
+        if (res !== true) throw new Error("Failed to click on Show Selection");
+        await logger.logInto(await stackTrace.get(), "ShowSelection is clicked");
+        const canvasElement = await $(this.drawingToolPresentation);
+        await canvasElement.waitForDisplayed({ timeout: 5000 });
+        await action.dragAndDropWithPath(this.drawingToolPresentation, 100, 100, 300, 300); // Adjust coords if needed
+        const isShowBoxPresent = await browser.waitUntil(
+            async () => await action.isExisting(this.showSelectionBoxSelector),
+            {
+                timeout: 10000,
+                timeoutMsg: "Selection box never appeared after drag.",
+            }
         );
-
-        const showSelectionBoxSelector = "[id^='spotlight-div-']";
-        const isShowBoxPresent = await $(showSelectionBoxSelector).isExisting();
-        
-       // console.log("1010",isShowBoxPresent) 
-        await browser.pause(5000); // Wait for the effect to appear
-
-        //Verification for the Show Selection box
-       
-
         if (isShowBoxPresent) {
-            await logger.logInto(
-                await stackTrace.get(),
-                "Show selection box is displayed correctly."
-            );
+           
+            await logger.logInto(await stackTrace.get(), "Show selection box is displayed correctly.");
         } else {
-            await logger.logInto(
-                await stackTrace.get(),
-                "Show selection box is NOT displayed.",
-                "error"
-            );
-            res = false; // Update the result to indicate failure
+            
+            await logger.logInto(await stackTrace.get(), "Show selection box is NOT displayed.", "error");
+            res = false;
         }
-        
-    } else {
-        await logger.logInto(
-            await stackTrace.get(),
-            res + " showSelection is NOT clicked",
-            "error"
-        );
-        //console.log("1012")
+    } catch (err) {
+        await logger.logInto(await stackTrace.get(), err.message, "error");
+        res = false;
     }
-   // console.log("1013")
-    return res; // Return the result
+    return res;
 },
 
   // click_showSelection: async function () {
