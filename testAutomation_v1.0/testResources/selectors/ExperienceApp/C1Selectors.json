@@ -172,7 +172,7 @@
         "showAndHideSelection": "button[qid=\"91\"]",
         "drawingTool": "button[qid=\"84\"]",
         "pageNumber": "button[qid=\"toc-6\"]",
-        "toggleLayoutBtn": "p.ng-tns-c2434379185-2",
+        "toggleLayoutBtn": "button[qid=\"83\"]",
         "pagelayoutcontainer": "#readerpagedivB",
         "doublePage": "#readerpagedivB",
         "singlePage": ".reader-display-none",
@@ -187,14 +187,16 @@
       "showHideSelection": {
         "hideSelection": "button[qid=\"93\"]",
         "showSelection": "button[qid=\"92\"]",
-        "closeSelection": "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]"
+        "closeSelection": "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]",
+        "showSelectionBoxSelector":  "[id^='spotlight-div-']",
+        "hideSelectionBoxSelector": "[id^='mask-div-']"
       },
       "drawingTool": {
         "drawingToolScribble": "button[qid=\"85\"] img[alt=\"Scribble\"]",
         "drawingToolPenColour": "button[id=\"penColorDropdown\"]",
         "drawingToolPenWidth": "button[id=\"penStrokeDropdown\"]",
         "drawingToolHighlighter": "button[qid=\"86\"] img[alt=\"Highlighter\"]",
-        "drawingToolEraser": "div.delete-menu[qid=\"87\"][title=\"Eraser\"] > button.left-side > img[alt=\"Eraser\"]",
+        "drawingToolEraser": "#deleteBtn",
         "drawingToolUndo": "button.undo-button[qid=\"88\"]",
         "drawingToolRedo": "button.redo-button[qid=\"89\"]",
         "drawingToolPresentation": "div[id=\"drawing-tools-container-B\"] canvas",

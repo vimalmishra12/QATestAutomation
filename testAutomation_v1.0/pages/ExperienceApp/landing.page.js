@@ -19,7 +19,7 @@ module.exports = {
         await logger.logInto(await stackTrace.get());
         await action.waitForDocumentLoad();
         res = {
-            pageStatus: await action.waitForDisplayed(this.brandLogo_img),
+            pageStatus: await action.waitForDisplayed(this.brandLogo_img, 10000),
         };
         return res;
     },

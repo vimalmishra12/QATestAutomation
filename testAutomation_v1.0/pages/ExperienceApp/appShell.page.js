@@ -34,14 +34,21 @@ logout_btn:((await action.getElementCount(this.logout_btn)) > 0) ? await action.
 click_userDrop_down: async function () {
 await logger.logInto(await stackTrace.get());
 var res;
-res =await action.click(this.userDrop_down);
+res = await action.click(this.userDrop_down);
 if (true == res) {
+
+var isDisplayed = await action.waitForDisplayed(this.logout_btn, 5000);
+if (!isDisplayed) {
+    await logger.logInto(await stackTrace.get(), "logout_btn is NOT displayed after clicking userDrop_down", 'error');
+}
  await logger.logInto(await stackTrace.get(), " userDrop_down is clicked");
 }
 else {
 await logger.logInto(await stackTrace.get(), res +"userDrop_down is NOT clicked", 'error');
 }
-return res;
+const result = res;
+console.log("result", result)
+return result;
 },
 
 click_logout_btn: async function () {
@@ -55,7 +62,9 @@ res =await require ('./landing.page').isInitialized();
 else {
 await logger.logInto(await stackTrace.get(), res +"logout_btn is NOT clicked", 'error');
 }
-return res;
+const result = res;
+console.log("result", result)
+return result ;
 },
 
 }
