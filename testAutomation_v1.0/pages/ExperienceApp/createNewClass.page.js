@@ -463,11 +463,13 @@ module.exports = {
     var res;
     await logger.logInto(await stackTrace.get());
     res = await action.setValue(this.addMaterial_input, value);
+    
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         'Value is entered in addMaterial_input'
       );
+      
     } else {
       await logger.logInto(
         await stackTrace.get(),

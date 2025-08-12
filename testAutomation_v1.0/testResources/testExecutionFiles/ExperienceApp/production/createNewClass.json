@@ -154,6 +154,23 @@
         "testData": []
       },
       {
+        "id": "TST_ENTE_TC_21",
+        "description": "",
+        "testFile": "./test/ExperienceApp/createNewClass.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/createNewClassData.json",
+            "jsonPath": ["C1.class2.material"]
+          }
+        ]
+      },
+      {
+        "id": "TST_ENTE_TC_23",
+        "description": "",
+        "testFile": "./test/ExperienceApp/createNewClass.test.js",
+        "testData": []
+      },
+      {
         "id": "TST_ENTE_TC_20",
         "description": "",
         "testFile": "./test/ExperienceApp/createNewClass.test.js",

@@ -116,7 +116,7 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a[qid='cHeader-hlp-1'], button[qid='cHeader-hlp-2'], a[qid='cHeader-hlp-2']",
+        "help_btn": "button[qid='cHeader-hlp-2']",
         "progress_btn": "div[id='bundleCollapse-2cb9a32e-2d1f-49ea-bfec-e9aa88058fff-cqa-test-prod-desktopfoc'] material-container div div div div a[aria-label='See Progress']",
         "praticeExtra_btn": "div[class=\"d-flex\"] div:nth-child(2) material-tile:nth-child(1) div:nth-child(1) a:nth-child(1)",
         "ebook_btn": ".tile-section-1",
@@ -144,10 +144,10 @@
         "noKeep_btn": "button[data-bs-dismiss=\"modal\"], button[qid='cancel-modal-2']",
         "addMaterial_btn": "button[qid='add-class-materials-button-3']",
         "addMaterial_input": "input[qid=\"material-modal-filter-input\"]",
-        "dev_test_ebook_bundle_104_bundle": "label[for='material6'] div , label[for='product1'] div[class='check']",
+        "dev_test_ebook_bundle_104_bundle": "div[class=\"check\"]",
         "addToClass_Btn": "button[qid=\"material-modal-add-to-class-btn\"] , button[qid='add-material-save-7']",
         "finish_btn": "button[qid=\"create-class-finish-button\"] , button[qid='create-class-4']",
-        "dev_test_ebook_bundle_104_bundle_dropdown": "a[qid=\"add-material-product-0\"]"
+        "dev_test_ebook_bundle_104_bundle_dropdown": "a[qid=\"material-modal-component-0\"]"
       },
       "activeClass": {
         "actionButton": "a[qid=\"cView-70\"]",
