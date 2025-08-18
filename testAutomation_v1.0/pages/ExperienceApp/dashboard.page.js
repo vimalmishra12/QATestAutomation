@@ -18,7 +18,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     await action.waitForDocumentLoad();
     res = {
-      pageStatus: await action.waitForDisplayed(this.help_btn,undefined),
+      pageStatus: await action.waitForDisplayed(this.help_btn),
     };
     return res;
   },
@@ -198,9 +198,7 @@ module.exports = {
   click_createNewClass: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
-    console.log("Before clicking createNewClass, Inside page.js *******************************" );
     res = await action.click(this.createNewClass);
-    console.log("After clicking createNewClass, Inside page.js *******************************" );
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
