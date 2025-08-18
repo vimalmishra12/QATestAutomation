@@ -116,7 +116,7 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "button[qid='cHeader-hlp-2']",
+        "help_btn": "a.help-click-btn",
         "progress_btn": "a.progress-link.d-flex.align-items-center",
         "praticeExtra_btn": "a.no-decoration.tile-section-1.tile-section-link",
         "ebook_btn": "a.no-decoration.tile-section-1.tile-section-link",
