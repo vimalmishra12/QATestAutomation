@@ -585,6 +585,37 @@
       ]
     },
     {
+      "modulename": "C1 Assignment Page",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/c1assignment.test.js",
+      "testcase": [
+        {
+          "id": "TST_C1AS_TC_1",
+          "description": "Click Class Heading",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_2",
+          "description": "Click Assignments",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_3",
+          "description": "Click Create Assignment",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_4",
+          "description": "Validate Assignment Page Texts",
+          "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
       "modulename": "Delete Class",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/activeClass.test.js",

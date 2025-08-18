@@ -1,0 +1,13 @@
+{
+  "C1": {
+    "login": {
+      "user": {
+        "validTeacher": {
+          "email": "compro+teacher5@mailsac.com",
+          "password": "Compro11",
+          "role": "teacher"
+        }
+      }
+    }
+  }
+}
