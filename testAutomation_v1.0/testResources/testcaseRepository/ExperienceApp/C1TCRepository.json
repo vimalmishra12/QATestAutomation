@@ -9,72 +9,73 @@
       "testFile": "./test/ExperienceApp/notesVhlTest.test.js",
       "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
       "testcase": [
-  {
-    "id": "TST_VHLN_TC_1",
-    "description": "Click Note Button",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_2",
-    "description": "Click Dock Button",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_3",
-    "description": "Click All Pages Tab",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_4",
-    "description": "Click Page Cover Tab",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_5",
-    "description": "Click on Add Button",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_6",
-    "description": "Set Notes Text",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_7",
-    "description": "Click on Save Notes",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_8",
-    "description": "Check Notes text",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_9",
-    "description": "Click on Delete Notes Btn",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_10",
-    "description": "Click on Delete Notes Btn Confirmation",
-    "tags": "P1",
-    "visualTest": false
-  },
-  {
-    "id": "TST_VHLN_TC_11",
-    "description": "Click Close Button",
-    "tags": "P1",
-    "visualTest": false
-  }]
+        {
+          "id": "TST_VHLN_TC_1",
+          "description": "Click Note Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_2",
+          "description": "Click Dock Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_3",
+          "description": "Click All Pages Tab",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_4",
+          "description": "Click Page Cover Tab",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_5",
+          "description": "Click on Add Button",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_6",
+          "description": "Set Notes Text",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_7",
+          "description": "Click on Save Notes",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_8",
+          "description": "Check Notes text",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_9",
+          "description": "Click on Delete Notes Btn",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_10",
+          "description": "Click on Delete Notes Btn Confirmation",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_VHLN_TC_11",
+          "description": "Click Close Button",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
     },
     {
       "modulename": "Validation of VLOGle File Page",
@@ -580,6 +581,85 @@
           "id": "TST_ENTE_TC_23",
           "description": "Validate that the eBook bundle dropdown is clickable and works correctly",
           "tags": "P3",
+          "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "C1 Assignment Page",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/c1assignment.test.js",
+      "testcase": [
+        {
+          "id": "TST_C1AS_TC_1",
+          "description": "Click Class Heading",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_2",
+          "description": "Click Assignments",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_3",
+          "description": "Click Create Assignment",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_4",
+          "description": "Click Practice Extra CQA",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_5",
+          "description": "Click Unit 1",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_6",
+          "description": "Click Lesson A",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_7",
+          "description": "Click Next Button",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_8",
+          "description": "Click Set Date",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_9",
+          "description": "Click Select Student",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_10",
+          "description": "Click View Summary",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_11",
+          "description": "Click Assign",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_12",
+          "description": "Validate Assignment Page Texts",
+          "tags": "P1",
           "visualTest": true
         }
       ]

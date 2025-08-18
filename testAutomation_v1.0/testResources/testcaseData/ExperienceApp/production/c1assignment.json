@@ -1,0 +1,25 @@
+{
+  "modulename": "Assignment Feature",
+  "moduleId": "ASSIGNMENT_FEATURE",
+  "testFile": "./test/ExperienceApp/c1assignment.test.js",
+  "testcase": [
+    {
+      "id": "TST_ASSIGN_TC_1",
+      "description": "Validate that the Assignment page launches and displays correctly",
+      "tags": "P1",
+      "visualTest": false
+    },
+    {
+      "id": "TST_ASSIGN_TC_2",
+      "description": "Verify user can create a new assignment successfully",
+      "tags": "P1",
+      "visualTest": false
+    },
+    {
+      "id": "TST_ASSIGN_TC_3",
+      "description": "Ensure error message is shown when submitting without required fields",
+      "tags": "P2",
+      "visualTest": false
+    }
+  ]
+}

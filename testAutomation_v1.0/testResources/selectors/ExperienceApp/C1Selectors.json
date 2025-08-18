@@ -1,6 +1,19 @@
 {
   "css": {
     "ComproC1": {
+      "c1assignment": {
+        "classheading": ".class-title.mx-2",
+        "Assignments": "a[qid=\"cView-44\"]",
+        "Createassignment": "a[qid=\"rView-5\"]",
+        "PracticeExtracqa": "a[qid=\"a-path-2-0\"]",
+        "Unit1": "i[class='ml-auto fa fa-angle-right']",
+        "LessonA": "div[class=\"custom-control-input-wrapper\"]",
+        "Next": "button[qid=\"pAssignment-6\"]",
+        "setDate": "owl-dt-control-content",
+        "selectStudent": "qid=\"assignment-detail-6\"",
+        "ViewSummary": "qid=\"assignment-detail-6\"",
+        "Assign": "qid=\"assignment-detail-6\""
+      },
       "footer": {
         "footerTermsOfUse": "a[qid=\"cFooter-1\"]",
         "footerPrivacyNotice": "a[qid=\"cFooter-2\"]",
@@ -188,7 +201,7 @@
         "hideSelection": "button[qid=\"93\"]",
         "showSelection": "button[qid=\"92\"]",
         "closeSelection": "i.nemo-close-new.nemo-font[aria-hidden=\"true\"]",
-        "showSelectionBoxSelector":  "[id^='spotlight-div-']",
+        "showSelectionBoxSelector": "[id^='spotlight-div-']",
         "hideSelectionBoxSelector": "[id^='mask-div-']"
       },
       "drawingTool": {
@@ -291,7 +304,7 @@
         "back_btn": "a[qid='aView-4']"
       },
       "notes": {
-          "eBookNotesHeadingTxt": "div.notes-title",
+        "eBookNotesHeadingTxt": "div.notes-title",
         "eBookAddNotesBtn": "button.add-note-button",
         "eBookAddNotesTextarea": "textarea[placeholder='Type here...']",
         "eBookSaveNotesBtn": "button[class=\"save-note\"]",
