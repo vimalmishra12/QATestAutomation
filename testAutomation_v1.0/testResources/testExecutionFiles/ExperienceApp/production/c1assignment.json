@@ -41,19 +41,24 @@
       },
       {
         "id": "TST_LOGI_TC_5",
-        "description": "",
+        "description": "Verify Instructor Login Successful",
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": []
+      },
+      {
+        "id": "TST_DASH_TC_11",
+        "description": "",
+        "testFile": "./test/ExperienceApp/dashboard.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/assignTestData.json",
+            "jsonPath": "C1.class2.name"
+          }
+        ]
       }
     ],
     "BeforeEach": [],
     "Test": [
-      {
-        "id": "TST_C1AS_TC_1",
-        "description": "Click Class Heading",
-        "testFile": "./test/ExperienceApp/c1assignment.test.js",
-        "testData": []
-      },
       {
         "id": "TST_C1AS_TC_2",
         "description": "Click Assignments",
@@ -68,12 +73,60 @@
       },
       {
         "id": "TST_C1AS_TC_4",
-        "description": "Validate Assignment Page Texts",
+        "description": "Click Practice Extra CQA",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_5",
+        "description": "Click Unit 1",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_6",
+        "description": "Click Lesson A",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_7",
+        "description": "Click Next Button",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_8",
+        "description": "Click Set Date",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_9",
+        "description": "Click Select Student",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_10",
+        "description": "Click View Summary",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_11",
+        "description": "Click Assign",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_12",
+        "description": "Validate All Assignment Page Data",
         "testFile": "./test/ExperienceApp/c1assignment.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/c1assignment.json",
-            "jsonPath": "C1.assignment.pageTexts"
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/aditya.json",
+            "jsonPath": "C1.assignment.pageValidation"
           }
         ]
       }
