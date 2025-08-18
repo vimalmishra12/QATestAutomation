@@ -88,7 +88,7 @@ module.exports = {
   },
 
   TST_DASH_TC_11: async function (testdata) {
-    sts = await dashboard.click_activeClassCard();
+    sts = await dashboard.click_activeClassCard(testdata);
     await assertion.assertEqual(sts.pageStatus, true, 'Page is not launched. ');
   },
 

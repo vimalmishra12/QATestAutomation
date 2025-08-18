@@ -67,7 +67,7 @@ module.exports = {
         await logger.logInto(await stackTrace.get(), ' emailWarningText is NOT displayed', 'error');
       }
       console.log(emailWarningText);
-      return (emailWarningText);
+      return {clickStatus: res, emailWarningText: emailWarningText};
     } else {
       await logger.logInto(await stackTrace.get(), res + ' resetPassword_Btn is NOT clicked', 'error');
       return { clickStatus: res, emailWarningText: null };
