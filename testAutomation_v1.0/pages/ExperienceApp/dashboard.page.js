@@ -18,7 +18,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     await action.waitForDocumentLoad();
     res = {
-      pageStatus: await action.waitForDisplayed(this.help_btn),
+      pageStatus: await action.waitForDisplayed(this.help_btn,undefined),
     };
     return res;
   },
@@ -198,7 +198,9 @@ module.exports = {
   click_createNewClass: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    console.log("Before clicking createNewClass, Inside page.js *******************************" );
     res = await action.click(this.createNewClass);
+    console.log("After clicking createNewClass, Inside page.js *******************************" );
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
@@ -216,10 +218,11 @@ module.exports = {
     return res;
   },
 
-  click_activeClassCard: async function () {
+  click_activeClassCard: async function (value) {
     await logger.logInto(await stackTrace.get());
     var res;
-    res = await action.click(this.activeClassCard);
+    var classSelector = this.activeClassCard.replace('{CLASS_NAME}',value);
+    res = await action.click(classSelector);
     console.log('RES VAL', res);
     if (true == res) {
       await logger.logInto(

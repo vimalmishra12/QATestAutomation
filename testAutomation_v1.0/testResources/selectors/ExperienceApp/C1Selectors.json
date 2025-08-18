@@ -116,14 +116,14 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a.help-click-btn",
+        "help_btn": "a.help-click-btn,button[qid=\"cHeader-hlp-2\"]",
         "progress_btn": "a.progress-link.d-flex.align-items-center",
         "praticeExtra_btn": "a.no-decoration.tile-section-1.tile-section-link",
         "ebook_btn": "a.no-decoration.tile-section-1.tile-section-link",
         "homework_btn": "button.btn.btn-lg.btn-main-1.homework-button",
         "myProgress_btn": "a.agg-progress-btn.btn-main-color-1-bordered",
-        "createNewClass": "a#join-class.add-button",
-        "activeClassCard": "div.heading-container:nth-of-type(1) a.class-title.mx-2"
+        "createNewClass": ".btn.btn-main-color-1-bordered.add-button.d-flex.align-items-center.justify-content-center",
+        "activeClassCard": "//h4[@class='class-title-heading' and normalize-space()='{CLASS_NAME}']"
       },
       "createNewClass": {
         "enterClassDetails": ".form-heading, .add-class-details-heading",
