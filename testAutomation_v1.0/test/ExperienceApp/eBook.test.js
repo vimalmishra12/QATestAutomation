@@ -38,7 +38,8 @@ module.exports = {
   },
 
   TST_EBOO_TC_6: async function (testdata) {
-    sts = await eBook.click_cqaEbookEvolveDropdown();
+    console.log("testdata", testdata)
+    sts = await eBook.click_cqaEbookEvolveDropdown(testdata);
     console.log("Color is",sts);
     await assertion.assertEqual(
       sts.value,
@@ -48,7 +49,7 @@ module.exports = {
   },
 
   TST_EBOO_TC_7: async function (testdata) {
-    sts = await eBook.click_cqaTestEbookOnlyAssets();
+    sts = await eBook.click_cqaTestEbookOnlyAssets(testdata);
     await assertion.assertEqual(
       sts,
       true,
@@ -160,7 +161,7 @@ module.exports = {
   },
   TST_EBOO_TC_53: async function (testdata) {
     sts = await eBook.click_nextPage();
-    //console.log("2001  "+sts+"   "+testdata.pageNumber);
+    console.log("2001  "+sts+"   "+testdata.pageNumber);
     await assertion.assertEqual(
       sts,
       testdata.pageNumber14,

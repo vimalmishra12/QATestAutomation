@@ -23,7 +23,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -34,7 +34,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -51,7 +51,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -77,7 +77,7 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/ebookData.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/ebookData.json",
             "jsonPath": "C1.ebook.dropdownBook.ebookOneName"
           }
         ]
@@ -88,7 +88,7 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/ebookData.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/ebookData.json",
             "jsonPath": "C1.ebook.dropdownBook.ebookTwoName"
           }
         ]
@@ -97,7 +97,9 @@
         "id": "TST_EBOO_TC_4",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
-        "testData": []
+        "testData": [
+          
+        ]
       }
     ],
     "AfterEach": [],
@@ -128,7 +130,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -139,7 +141,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -156,7 +158,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -188,7 +190,7 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.eBook"
           }
         ]
@@ -205,7 +207,7 @@
         "testFile": "./test/ExperienceApp/notes.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.notes.teacher"
           }
         ]
@@ -216,7 +218,7 @@
         "testFile": "./test/ExperienceApp/notes.test.js",
         "testData": [
           {
-             "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+             "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -227,7 +229,7 @@
         "testFile": "./test/ExperienceApp/notes.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.notes.teacher"
           }
         ]
@@ -244,7 +246,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -273,7 +275,7 @@
         "testFile": "./test/ExperienceApp/notes.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.notes.teacher"
           }
         ]
@@ -333,7 +335,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -344,7 +346,7 @@
         "testFile": "./test/ExperienceApp/login.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -361,7 +363,7 @@
         "testFile": "./test/ExperienceApp/dashboard.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/logindata.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/logindata.json",
             "jsonPath": "C1.login.user.validStudent1"
           }
         ]
@@ -381,7 +383,7 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.eBookViewerControls"
           }
         ]
@@ -393,7 +395,7 @@
         "testFile": "./test/ExperienceApp/eBook.test.js",
         "testData": [
           {
-            "dataFile": "./testResources/testcaseData/ExperienceApp/production/appLangEN.json",
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/appLangEN.json",
             "jsonPath": "C1.appContent.eBookViewerControls"
           }
         ]

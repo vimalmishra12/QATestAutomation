@@ -5,6 +5,7 @@ var appShellPage = require('./appShell.page.js')
 
 module.exports = {
 cqaTestProd: selectorFile.css.ComproC1.eBookContents.cqaTestProd,
+homeButton: selectorFile.css.ComproC1.eBookContents.homeButton,
 
 
 isInitialized: async function ()
@@ -13,7 +14,7 @@ var res;
 await logger.logInto(await stackTrace.get());
 await action.waitForDocumentLoad();
 res = {
-pageStatus:await action.waitForDisplayed(this.cqaTestProd),
+pageStatus:await action.waitForDisplayed(this.homeButton),
 };
 return res; 
 },

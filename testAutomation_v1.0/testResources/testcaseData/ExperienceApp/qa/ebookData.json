@@ -3,14 +3,14 @@
     "ebook": {
       "user": {
 
-        "pageNumber14":"14-15 / 104",
-        "pageNumber12":"12-13 / 104",
+        "pageNumber14":"14-15 / 160",
+        "pageNumber12":"12-13 / 160",
 
         "player": {
            "exitActivity" : "Exit activity",
            "activityGoodEffort" : "Good effort!"
-        },
-        
+        }
+        ,
         
         
         "validStudent1": {
@@ -281,12 +281,10 @@
         }
       },
       "dropdownBook": {
-        "ebookOneName": "cqa-ebook-evolve",
-        "ebookTwoName": "cqa-test-ebookonlyassets"
-
+        "ebookOneName": "vm_ebook_automation",
+        "ebookTwoName": "vm_ebook_automation_02"
       }
     },
-    
     "codesAndKeys": {
       "schoolName": "Mount Allison School",
       "invalid_OTP": ["12046", "000000"],
