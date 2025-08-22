@@ -12,6 +12,7 @@ module.exports = {
   myNotes: selectorFile.css.ComproC1.eBook.myNotes,
   cqaEbookEvolveDropdown:
     selectorFile.css.ComproC1.eBook.cqaEbookEvolveDropdown,
+    dropDownListTitle: selectorFile.css.ComproC1.eBook.dropDownListTitle,
   cqaTestEbookOnlyAssets:
     selectorFile.css.ComproC1.eBook.cqaTestEbookOnlyAssets,
   notes: selectorFile.css.ComproC1.eBook.notes,
@@ -263,37 +264,143 @@ module.exports = {
     return res;
   },
 
-  click_cqaEbookEvolveDropdown: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    res = await action.click(this.cqaEbookEvolveDropdown);
-    if (true == res) {
-      await logger.logInto(
-        await stackTrace.get(),
-        " cqaEbookEvolveDropdown is clicked"
-      );
 
-      await browser.pause(2000);
-      res = await action.getCSSProperty(
-        "a[qid='ebook-list-item-5']",
-        "background-color"
-      );
-    } else {
-      await logger.logInto(
-        await stackTrace.get(),
-        res + "cqaEbookEvolveDropdown is NOT clicked",
-        "error"
-      );
-    }
+// click_playlistTitle: async function (playlistTitleName) {
+//   console.log("[DEBUG] click_playlistTitle called with locator:", this.dropDownListTitle);
+
+//   await logger.logInto(await stackTrace.get());
+
+//   let list, foundElement;
+//   try {
+//     list = await action.findElements(this.dropDownListTitle);
+//     console.log("[DEBUG] Found playlist items count:", list.length);
+
+//     for (let i = 0; i < list.length; i++) {
+//       // log the locator with index
+      
+//       // log the element object itself
+//       console.log(`[DEBUG] Raw element at index ${i}:`, list[i]);
+
+//       // get the text of this element
+//       let text = await action.getText(list[i]);
+//       console.log(`[DEBUG] Checking index ${i}, text: "${text}"`);
+
+//       if (text === playlistTitleName) {
+//         console.log(`[DEBUG] ✅ Match found at index ${i}, returning element (not clicking)...`);
+//         foundElement = list[i];
+//         break;
+//       }
+//     }
+
+//     if (!foundElement) {
+//       console.warn("[WARN] No match found for:", playlistTitleName);
+//     }
+//   } catch (err) {
+//     console.error("[ERROR] click_playlistTitle failed:", err);
+//   }
+
+//   return foundElement; // return element instead of clicking
+// },
+
+
+click_playlistTitle: async function (playlistTitleName) {
+  
+    await logger.logInto(await stackTrace.get());
+    var i, list, res;
+    list = await action.findElements(this.dropDownListTitle);
     
-    return res;
+
+    for (i = 0; i < list.length; i++) {
+      
+      if (((await action.getText(this.dropDownListTitle + i  +"\"]"))) == playlistTitleName) {
+        // res = await action.click(list[i]);
+        res = list[i];
+        break;
+      }
+    }
+    return res
   },
 
-  click_cqaTestEbookOnlyAssets: async function () {
+
+
+click_cqaEbookEvolveDropdown: async function (testdata) {
+  
+  var res;
+  try {
+    res = await action.click(this.cqaEbookEvolveDropdown);
+    if (res === true) {
+      let cardElement = await this.click_playlistTitle(testdata);
+      if (cardElement) {
+        // Example: get CSS property of matched element
+        let cssRes = await action.getCSSProperty(cardElement, "background-color");
+        res = cssRes;
+      }
+    } else {
+      console.warn("cqaEbookEvolveDropdown click failed, res =", res);
+    }
+  } catch (err) {
+    
+    res = false;
+  }
+  return res;
+},
+
+  
+// click_cqaEbookEvolveDropdown: async function (testdata) {
+//   console.log("[DEBUG] click_cqaEbookEvolveDropdown called with:", testdata);
+//   await logger.logInto(await stackTrace.get());
+
+//   var res;
+//   try {
+//     console.log("[DEBUG] Attempting to click cqaEbookEvolveDropdown...");
+//     res = await action.click(this.cqaEbookEvolveDropdown);
+
+//     if (res === true) {
+//       await logger.logInto(
+//         await stackTrace.get(),
+//         "cqaEbookEvolveDropdown is clicked"
+//       );
+//       console.log("[DEBUG] cqaEbookEvolveDropdown click SUCCESS");
+
+//       console.log("[DEBUG] Pausing for 2s before fetching CSS...");
+//       await browser.pause(2000);
+
+//       const selector = "a[qid='ebook-list-item-5']";
+//       console.log("[DEBUG] Fetching CSS property 'background-color' for selector:", selector);
+
+//       res = await action.getCSSProperty(selector, "background-color");
+//       console.log("[DEBUG] CSS 'background-color' value returned:", res);
+
+//       await logger.logInto(
+//         await stackTrace.get(),
+//         "CSS Property fetched: background-color = " + JSON.stringify(res)
+//       );
+//     } else {
+//       await logger.logInto(
+//         await stackTrace.get(),
+//         res + " cqaEbookEvolveDropdown is NOT clicked",
+//         "error"
+//       );
+//       console.warn("[WARN] cqaEbookEvolveDropdown click FAILED, res =", res);
+//     }
+//   } catch (err) {
+//     console.error("[ERROR] click_cqaEbookEvolveDropdown failed:", err);
+//     await logger.logInto(await stackTrace.get(), "Error: " + err.message, "error");
+//     res = false;
+//   }
+
+//   return res;
+// },
+
+  click_cqaTestEbookOnlyAssets: async function (testdata) {
     await logger.logInto(await stackTrace.get());
     var res;
 
-    res = await action.click(this.cqaTestEbookOnlyAssets);
+    let cardElement = await this.click_playlistTitle(testdata);
+    
+
+    res = await action.click(cardElement);
+
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
@@ -962,39 +1069,44 @@ module.exports = {
     return res;
   },
 
-  click_toggleLayoutBtn: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    res = await action.click(this.toggleLayoutBtn);
-    if (true == res) {
-      await logger.logInto(
-        await stackTrace.get(),
-        " toggleLayoutBtn is clicked"
-      );
-      let classList = await action.getAttribute("#readerpagedivB", "class");
+click_toggleLayoutBtn: async function () {
+  await logger.logInto(await stackTrace.get());
+  
 
-      if (classList.includes("reader-display-none")) {
-        await logger.logInto(
-          await stackTrace.get(),
-          "Single page layout is active"
-        );
+  var res;
+  try {
+    
+    res = await action.click(this.toggleLayoutBtn);
+    
+
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), "toggleLayoutBtn is clicked");
+      
+
+      let classList = await action.getAttribute("#readerpagedivB", "class");
+      
+
+      if (classList && classList.includes("reader-display-none")) {
+        await logger.logInto(await stackTrace.get(), "Single page layout is active");
+        
         res = "single-page";
       } else {
-        await logger.logInto(
-          await stackTrace.get(),
-          "Double page layout is active"
-        );
+        
         res = "double-page";
       }
     } else {
-      await logger.logInto(
-        await stackTrace.get(),
-        res + "toggleLayoutBtn is NOT clicked",
-        "error"
-      );
+      await logger.logInto(await stackTrace.get(), res + " toggleLayoutBtn is NOT clicked", "error");
+      
     }
-    return res;
-  },
+  } catch (error) {
+    
+    res = false;
+  }
+
+  
+  return res;
+},
+
 
   click_fitToScreenBtn: async function () {
     await logger.logInto(await stackTrace.get());

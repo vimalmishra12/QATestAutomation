@@ -3,7 +3,7 @@
       "login": {
         "user": {
           "validStudent1": {
-            "email": "thorstudent1da@mailsac.com",
+            "email": "CQA_AUTO_STU_101@mailsac.com",
             "password": "Compro11",
             "role": "student",
             "name": "hutudibrulli-3717 auto",
@@ -21,6 +21,8 @@
                 "name": "Archive Class"
               }
             ],
+            "notes": "Test Note1",
+            "launchEbook": "2",
             "info": {}
           },
           "validStudent2": {

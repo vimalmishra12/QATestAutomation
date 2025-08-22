@@ -49,7 +49,7 @@
         "subheadingText": "Your home for digital learning",
         "signupBtn": "Sign up",
         "loginBtn": "Log in",
-        "languageSelector_dropdown": "En"
+        "languageSelector_dropdown": "English"
       },
       "eBookLearningPageHyperlink": {
         "hyperLinkAnswer": "Answers",
@@ -224,17 +224,16 @@
         "student": {
           "help_btn": "Help",
           "progress_btn": "Progress\nSee Progress",
-          "praticeExtra_btn": "Practice Extra\nContinue learning",
-          "ebook_btn": "cqa-ebook-evolve\nContinue learning",
+          "praticeExtra_btn": "vm_pe_automation\nContinue learning",
+          "ebook_btn": "vm_ebook_automation\nContinue learning",
           "homework_btn": "My homework",
           "myProgress_btn": "My progress"
         }
       },
       "eBook": {
-        "cqa_ebook_evolve": "cqa-ebook-evolve",
-        "myNotes": "My notes",
+        "cqa_ebook_evolve": "vm_ebook_automation",
+        "myNotes": "My notes & links",
         "showAndHideSelection": "Show/Hide selection",
-
         "cqaTestEbookOnlyAssetsButton": "cqa-test-ebookonlyassets"
       },
 
@@ -251,10 +250,16 @@
       },
       "notes": {
         "teacher": {
-          "eBookNotesHeadingTxt": "My notes",
+          "eBookNotesHeadingTxt": "My notes & links",
           "eBookSaveNotesBtn": "Test Note1"
         }
       },
+      "eBookViewerControls": {
+      "singlePage": "single-page",
+      "doublePage": "double-page",
+      "nextPage": "Next page",
+      "previousPage": "Previous page"
+    },
       "createClassPage": {
         "pageTitle": "Create a new class",
         "pageSubTitle": "Add your class details and start inviting students, creating assignments, and viewing progress.",
