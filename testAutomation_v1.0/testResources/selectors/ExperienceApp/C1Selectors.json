@@ -9,10 +9,14 @@
         "Unit1": "i[class='ml-auto fa fa-angle-right']",
         "LessonA": "div[class=\"custom-control-input-wrapper\"]",
         "Next": "button[qid=\"pAssignment-6\"]",
-        "setDate": "owl-dt-control-content",
-        "selectStudent": "qid=\"assignment-detail-6\"",
-        "ViewSummary": "qid=\"assignment-detail-6\"",
-        "Assign": "qid=\"assignment-detail-6\""
+        "inputTag": "[qid=\"assignment-detail-4\"]",
+        "setDate": "//button[contains(@class,'owl-dt-control-button')]//span[text()=' Set ']",
+        "selectStudent": "[qid=\"assignment-detail-6\"]",
+        "ViewSummary": "[qid=\"assignment-detail-6\"]",
+        "Assign": "[qid=\"assignment-detail-6\"]",
+        "kebabIcon":"a[qid=\"rView-1-0\"]",
+        "deleteAssignment":"a[qid=\"rView-2-0\"]",
+        "yesDelete":"button[qid=\"rView-4\"]"
       },
       "footer": {
         "footerTermsOfUse": "a[qid=\"cFooter-1\"]",

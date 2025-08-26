@@ -634,36 +634,55 @@
         },
         {
           "id": "TST_C1AS_TC_8",
-          "description": "Click Set Date",
+          "description": "Click Input Tag",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_C1AS_TC_9",
-          "description": "Click Select Student",
+          "description": "Click Set Date",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_C1AS_TC_10",
-          "description": "Click View Summary",
+          "description": "Click Select Student",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_C1AS_TC_11",
-          "description": "Click Assign",
+          "description": "Click View Summary",
           "tags": "P3",
           "visualTest": true
         },
         {
           "id": "TST_C1AS_TC_12",
-          "description": "Validate Assignment Page Texts",
-          "tags": "P1",
+          "description": "Click Assign",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_13",
+          "description": "Click Kebab Icon",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_14",
+          "description": "Click Delete Assignment",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1AS_TC_15",
+          "description": "Click Yes on Delete Confirmation",
+          "tags": "P3",
           "visualTest": true
         }
       ]
     },
+
     {
       "modulename": "Delete Class",
       "moduleId": "",
