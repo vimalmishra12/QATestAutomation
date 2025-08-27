@@ -1,13 +1,13 @@
 {
     "C1": {
         "appContent": {
-            "language": "ES - Español",
+            "language": "Español",
             "landing": {
-                "headingText": "Un espacio para todo su aprendizaje.",
+                "headingText": "Cambridge One",
                 "subheadingText": "La sede de tu aprendizaje digital",
-                "signup_btnText": "Registrarse",
+                "signupBtn": "Registrarse",
                 "loginBtn": "Iniciar sesión",
-                "login_lblText": "¿Tiene una cuenta?",
+                "login_lblText": "¿Todaví­a no tienes una cuenta?",
                 "footerLabel": "Desarrollada por"
             },
             "login": {
