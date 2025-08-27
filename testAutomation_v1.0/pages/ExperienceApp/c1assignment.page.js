@@ -16,11 +16,9 @@ module.exports = {
     selectStudent: selectorFile.css.ComproC1.c1assignment.selectStudent,
     ViewSummary: selectorFile.css.ComproC1.c1assignment.ViewSummary,
     Assign: selectorFile.css.ComproC1.c1assignment.Assign,
-
-    // 🔹 New selectors for delete flow
-    kebabIcon: "a[qid=\"rView-1-0\"]",
-    deleteAssignment: "a[qid=\"rView-2-0\"]",
-    yesDelete: "button[qid=\"rView-4\"]",
+    kebabIcon: selectorFile.css.ComproC1.c1assignment.kebabIcon,
+    deleteAssignment: selectorFile.css.ComproC1.c1assignment.deleteAssignment,
+    yesDelete: selectorFile.css.ComproC1.c1assignment.yesDelete,
 
     isInitialized: async function () {
         var res;
@@ -199,7 +197,6 @@ module.exports = {
         return res;
     },
 
-    // 🔹 New methods for Delete Assignment flow
     click_kebabIcon: async function () {
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.kebabIcon);

@@ -63,19 +63,18 @@ module.exports = {
         await assertion.assertEqual(sts, true, "Assign are not Clicked");
     },
 
-    // 🔹 New Test Case for deleting assignment using kebab menu
     TST_C1AS_TC_13: async function (testdata) {
-        sts = await c1assignment.click_kebabIcon(testdata.kebabIcon);
+        sts = await c1assignment.click_kebabIcon();
         await assertion.assertEqual(sts, true, "Kebab icon not clicked");
     },
 
     TST_C1AS_TC_14: async function (testdata) {
-        sts = await c1assignment.click_deleteAssignment(testdata.deleteAssignment);
+        sts = await c1assignment.click_deleteAssignment();
         await assertion.assertEqual(sts, true, "Delete assignment not clicked");
     },
 
     TST_C1AS_TC_15: async function (testdata) {
-        sts = await c1assignment.click_yesDelete(testdata.yesDelete);
+        sts = await c1assignment.click_yesDelete();
         await assertion.assertEqual(sts, true, "Yes delete not clicked");
     }
 
