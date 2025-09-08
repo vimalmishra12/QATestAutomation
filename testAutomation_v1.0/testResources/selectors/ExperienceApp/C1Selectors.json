@@ -14,9 +14,11 @@
         "selectStudent": "[qid=\"assignment-detail-6\"]",
         "ViewSummary": "[qid=\"assignment-detail-6\"]",
         "Assign": "[qid=\"assignment-detail-6\"]",
-        "kebabIcon":"a[qid=\"rView-1-0\"]",
+        "kebabIcon":"[qid=\"rView-1-",
+        "assignmentDiv":"[qid^=\"rView-20-",
         "deleteAssignment":"a[qid=\"rView-2-0\"]",
-        "yesDelete":"button[qid=\"rView-4\"]"
+        "yesDelete":"button[qid=\"rView-4\"]",
+        "assignNameInput" : "[qid=\"assignment-detail-2\"]"
       },
       "footer": {
         "footerTermsOfUse": "a[qid=\"cFooter-1\"]",
