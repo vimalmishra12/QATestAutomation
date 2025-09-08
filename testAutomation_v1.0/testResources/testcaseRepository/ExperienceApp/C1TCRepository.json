@@ -585,103 +585,109 @@
         }
       ]
     },
+   {
+  "modulename": "C1 Assignment Page",
+  "moduleId": "",
+  "testFile": "./test/ExperienceApp/c1assignment.test.js",
+  "testcase": [
     {
-      "modulename": "C1 Assignment Page",
-      "moduleId": "",
-      "testFile": "./test/ExperienceApp/c1assignment.test.js",
-      "testcase": [
-        {
-          "id": "TST_C1AS_TC_1",
-          "description": "Click Class Heading",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_2",
-          "description": "Click Assignments",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_3",
-          "description": "Click Create Assignment",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_4",
-          "description": "Click Practice Extra CQA",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_5",
-          "description": "Click Unit 1",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_6",
-          "description": "Click Lesson A",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_7",
-          "description": "Click Next Button",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_8",
-          "description": "Click Input Tag",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_9",
-          "description": "Click Set Date",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_10",
-          "description": "Click Select Student",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_11",
-          "description": "Click View Summary",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_12",
-          "description": "Click Assign",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_13",
-          "description": "Click Kebab Icon",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_14",
-          "description": "Click Delete Assignment",
-          "tags": "P3",
-          "visualTest": true
-        },
-        {
-          "id": "TST_C1AS_TC_15",
-          "description": "Click Yes on Delete Confirmation",
-          "tags": "P3",
-          "visualTest": true
-        }
-      ]
+      "id": "TST_C1AS_TC_1",
+      "description": "Click Class Heading",
+      "tags": "P3",
+      "visualTest": true
     },
+    {
+      "id": "TST_C1AS_TC_2",
+      "description": "Click Assignments",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_3",
+      "description": "Click Create Assignment",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_4",
+      "description": "Click Practice Extra CQA",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_5",
+      "description": "Click Unit 1",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_6",
+      "description": "Click Lesson A",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_7",
+      "description": "Click Next Button",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_8",
+      "description": "Enter Assignment Name",
+      "tags": "P2",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_9",
+      "description": "Click Input Tag",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_10",
+      "description": "Click Set Date",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_11",
+      "description": "Click Select Student",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_12",
+      "description": "Click View Summary",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_13",
+      "description": "Click Assign",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_14",
+      "description": "Click Kebab Icon",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_15",
+      "description": "Click Delete Assignment",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_16",
+      "description": "Click Yes on Delete Confirmation",
+      "tags": "P3",
+      "visualTest": true
+    }
+  ]
+},
 
     {
       "modulename": "Delete Class",

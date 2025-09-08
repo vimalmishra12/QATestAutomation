@@ -38,42 +38,49 @@ module.exports = {
         await assertion.assertEqual(sts, true, "Next are not Clicked");
     },
 
+    //add here for the enterassign name and then make the nimerb ecrret
     TST_C1AS_TC_8: async function (testdata) {
+        sts = await c1assignment.enter_AssignNameInput(testdata);
+        await assertion.assertEqual(sts, true, "Assignment Name is not entered");
+    },
+
+
+    TST_C1AS_TC_9: async function (testdata) {
         sts = await c1assignment.click_inputTag();
         await assertion.assertEqual(sts, true, "inputTag is not Clicked");
     },
 
-    TST_C1AS_TC_9: async function (testdata) {
+    TST_C1AS_TC_10: async function (testdata) {
         sts = await c1assignment.click_setDate();
         await assertion.assertEqual(sts, true, "setDate is not Clicked");
     },
 
-    TST_C1AS_TC_10: async function (testdata) {
+    TST_C1AS_TC_11: async function (testdata) {
         sts = await c1assignment.click_selectStudent();
         await assertion.assertEqual(sts, true, "selectStudent are not Clicked");
     },
 
-    TST_C1AS_TC_11: async function (testdata) {
+    TST_C1AS_TC_12: async function (testdata) {
         sts = await c1assignment.click_ViewSummary();
         await assertion.assertEqual(sts, true, "ViewSummary are not Clicked");
     },
 
-    TST_C1AS_TC_12: async function (testdata) {
+    TST_C1AS_TC_13: async function (testdata) {
         sts = await c1assignment.click_Assign();
         await assertion.assertEqual(sts, true, "Assign are not Clicked");
     },
 
-    TST_C1AS_TC_13: async function (testdata) {
-        sts = await c1assignment.click_kebabIcon();
+    TST_C1AS_TC_14: async function (testdata) {
+        sts = await c1assignment.click_kebabIcon(testdata);
         await assertion.assertEqual(sts, true, "Kebab icon not clicked");
     },
 
-    TST_C1AS_TC_14: async function (testdata) {
+    TST_C1AS_TC_15: async function (testdata) {
         sts = await c1assignment.click_deleteAssignment();
         await assertion.assertEqual(sts, true, "Delete assignment not clicked");
     },
 
-    TST_C1AS_TC_15: async function (testdata) {
+    TST_C1AS_TC_16: async function (testdata) {
         sts = await c1assignment.click_yesDelete();
         await assertion.assertEqual(sts, true, "Yes delete not clicked");
     }
