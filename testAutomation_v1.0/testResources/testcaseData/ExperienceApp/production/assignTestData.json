@@ -1,9 +1,8 @@
 {
 	"C1": {
-			
 			"class2": {
-				"name": "VM Class"
-				
+				"name": "VM Class" ,
+				"assignmentName" : "Aditya Assignment"
 			}
 	}
 }

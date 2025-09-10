@@ -11,11 +11,13 @@ module.exports = {
     Unit1: selectorFile.css.ComproC1.c1assignment.Unit1,
     LessonA: selectorFile.css.ComproC1.c1assignment.LessonA,
     Next: selectorFile.css.ComproC1.c1assignment.Next,
+    assignNameInput: selectorFile.css.ComproC1.c1assignment.assignNameInput,
     inputTag: selectorFile.css.ComproC1.c1assignment.inputTag,
     setDate: selectorFile.css.ComproC1.c1assignment.setDate,
     selectStudent: selectorFile.css.ComproC1.c1assignment.selectStudent,
     ViewSummary: selectorFile.css.ComproC1.c1assignment.ViewSummary,
     Assign: selectorFile.css.ComproC1.c1assignment.Assign,
+    assignmentDiv: selectorFile.css.ComproC1.c1assignment.assignmentDiv,
     kebabIcon: selectorFile.css.ComproC1.c1assignment.kebabIcon,
     deleteAssignment: selectorFile.css.ComproC1.c1assignment.deleteAssignment,
     yesDelete: selectorFile.css.ComproC1.c1assignment.yesDelete,
@@ -65,6 +67,8 @@ module.exports = {
     click_Assignments: async function () {
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.Assignments);
+        await browser.pause(3000);
+
         if (true == res) {
             await logger.logInto(await stackTrace.get(), " Assignments is clicked");
         }
@@ -134,6 +138,23 @@ module.exports = {
         return res;
     },
 
+    enter_AssignNameInput: async function (text) {
+        await logger.logInto(await stackTrace.get());
+
+
+        await action.clearValue(this.assignNameInput);
+
+        var setRes = await action.setValue(this.assignNameInput, text);
+        if (setRes === true) {
+            await logger.logInto(await stackTrace.get(), "Assign Name Input is set with: " + text);
+        } else {
+            await logger.logInto(await stackTrace.get(), setRes + " - Failed to set Assign Name Input", 'error');
+        }
+
+        return setRes;
+    },
+
+
     click_inputTag: async function () {
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.inputTag);
@@ -161,7 +182,7 @@ module.exports = {
     },
 
     click_selectStudent: async function () {
-        await browser.pause(5000);
+        await browser.pause(3000);
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.selectStudent);
         if (true == res) {
@@ -197,9 +218,41 @@ module.exports = {
         return res;
     },
 
-    click_kebabIcon: async function () {
+    check_StringMatch: function (text) {
+        const match = text.match(/^(.*?)Ended/);
+        if (match && match[1]) {
+            return match[1].trim();
+        }
+        return null; 
+    },
+
+    click_playlistTitle: async function (playlistName) {
+        await browser.pause(3000);
         await logger.logInto(await stackTrace.get());
-        var res = await action.click(this.kebabIcon);
+        let list = await action.findElements(this.assignmentDiv);
+
+        let matchedIndex = -1;
+        for (let i = 0; i < list.length; i++) {
+            let text = await action.getText(list[i]);  // FIXED
+            if (this.check_StringMatch(text) == playlistName) {
+                matchedIndex = i;
+                break;
+            }
+        }
+        if (matchedIndex === -1) {
+            console.error(`Playlist "${playlistName}" not found`);
+            return false;
+        }
+        let kab_icon = `${this.kebabIcon}${matchedIndex}"]`;
+        let res = await action.click(kab_icon);
+        return res;
+    },
+
+
+    click_kebabIcon: async function (text) {
+        await browser.pause(3000);
+        await logger.logInto(await stackTrace.get());
+        var res = await this.click_playlistTitle(text)
         if (true == res) {
             await logger.logInto(await stackTrace.get(), " kebabIcon is clicked");
         } else {
@@ -209,6 +262,7 @@ module.exports = {
     },
 
     click_deleteAssignment: async function () {
+        await browser.pause(3000);
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.deleteAssignment);
         if (true == res) {
