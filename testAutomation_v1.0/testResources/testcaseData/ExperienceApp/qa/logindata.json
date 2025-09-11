@@ -93,10 +93,18 @@
             "info": {}
           },
           "automationTeacher": {
-            "email": "automationteacher@mailsac.com",
+            "email": "CQA_AUTO_TEA_101@mailsac.com",
             "password": "Compro11",
             "role": "teacher",
-            "name": "automationTeacher ln",
+            "name": "CQA_AUTO_TEA_101 AUTO",
+            "class": [],
+            "info": {}
+          },
+          "automationStudent": {
+            "email": "CQA_AUTO_STU_101@mailsac.com",
+            "password": "Compro11",
+            "role": "student",
+            "name": "CQA_AUTO_STU_101 AUTO",
             "class": [],
             "info": {}
           },

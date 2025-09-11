@@ -17,8 +17,8 @@
 				"info": "Existing Active Course"
 			},
 			"class2": {
-				"name": "Active Class with material",
-				"material": "dev_test_ebook_bundle_104_bundle",
+				"name": "Active Class with material 7",
+				"material": "CQA Umbrella for LO test",
 				"key": "vQ9n-qhQ8",
 				"classDuration": "May 26, 2021 - May 26, 2022",
 				"instructor": {
@@ -31,7 +31,7 @@
 				"status": "Active",
 				"studentCount": 0,
 				"info": "Existing Active Course",
-				"studentEmail": "CQA_AUTO_STU_101@mailsac.com"
+				"studentEmail": "comprotestuser+prodvmstd1@gmail.com"
 			}
 	}
 }
