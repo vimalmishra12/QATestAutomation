@@ -35,6 +35,13 @@ module.exports = {
   dev_test_ebook_bundle_104_bundle_dropdown:
     selectorFile.css.ComproC1.createNewClass
       .dev_test_ebook_bundle_104_bundle_dropdown,
+  classData: selectorFile.css.ComproC1.createNewClass.classData,
+  addStudents: selectorFile.css.ComproC1.createNewClass.addStudents,
+  adultsRadio: selectorFile.css.ComproC1.createNewClass.adultsRadio,
+  confirmationNextBtn: selectorFile.css.ComproC1.createNewClass.confirmationNextBtn,
+  studentEmail_input: selectorFile.css.ComproC1.createNewClass.studentEmail_input,
+  inviteStudentBtn: selectorFile.css.ComproC1.createNewClass.inviteStudentBtn,
+  pendingTitle: selectorFile.css.ComproC1.createNewClass.pendingTitle,    
 
   isInitialized: async function () {
     var res;
@@ -388,17 +395,20 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.addMaterial_btn);
+    await action.waitForDisplayed(this.addMaterial_input, undefined);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
         ' addMaterial_btn is clicked'
       );
+      
     } else {
       await logger.logInto(
         await stackTrace.get(),
         res + 'addMaterial_btn is NOT clicked',
         'error'
       );
+      
     }
     return res;
   },
@@ -463,7 +473,7 @@ module.exports = {
     var res;
     await logger.logInto(await stackTrace.get());
     res = await action.setValue(this.addMaterial_input, value);
-    
+
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
@@ -497,6 +507,87 @@ module.exports = {
       );
     }
     return res;
+  },
+
+  click_classData: async function () {
+  await logger.logInto(await stackTrace.get());
+  var res;
+  res =await action.click(this.classData);
+  if (true == res) {
+   await logger.logInto(await stackTrace.get(), " classData is clicked");
+  }
+  else {
+  await logger.logInto(await stackTrace.get(), res +"classData is NOT clicked", 'error');
+  }
+  return res;
+  },
+  
+  click_addStudents: async function () {
+  await logger.logInto(await stackTrace.get());
+  var res;
+  res =await action.click(this.addStudents);
+  if (true == res) {
+   await logger.logInto(await stackTrace.get(), " addStudents is clicked");
+  }
+  else {
+  await logger.logInto(await stackTrace.get(), res +"addStudents is NOT clicked", 'error');
+  }
+  return res;
+  },
+  
+  click_adultsRadio: async function () {
+  await logger.logInto(await stackTrace.get());
+  var res;
+  res =await action.click(this.adultsRadio);
+  if (true == res) {
+   await logger.logInto(await stackTrace.get(), " adultsRadio is clicked");
+  }
+  else {
+  await logger.logInto(await stackTrace.get(), res +"adultsRadio is NOT clicked", 'error');
+  }
+  return res;
+  },
+  
+  click_confirmationNextBtn: async function () {
+  await logger.logInto(await stackTrace.get());
+  var res;
+  res =await action.click(this.confirmationNextBtn);
+  if (true == res) {
+   await logger.logInto(await stackTrace.get(), " confirmationNextBtn is clicked");
+  }
+  else {
+  await logger.logInto(await stackTrace.get(), res +"confirmationNextBtn is NOT clicked", 'error');
+  }
+  return res;
+  },
+  
+  click_inviteStudentBtn: async function () {
+  await logger.logInto(await stackTrace.get());
+  var res;
+  res =await action.click(this.inviteStudentBtn);
+  await browser.pause(5000);
+
+  if (true == res) {
+   await logger.logInto(await stackTrace.get(), " inviteStudentBtn is clicked");
+  res = await action.waitForDisplayed(this.pendingTitle, undefined, false);
+  }
+  else {
+  await logger.logInto(await stackTrace.get(), res +"inviteStudentBtn is NOT clicked", 'error');
+  }
+  return res;
+  },
+
+  set_studentEmail_input:async  function (value){
+  var res;
+  await logger.logInto(await stackTrace.get());
+  res =await action.setValue(this.studentEmail_input,value);
+  await browser.pause(5000);
+  if (true == res) {
+  await logger.logInto(await stackTrace.get(), "Value is entered in studentEmail_input");
+  }else {
+  await logger.logInto(await stackTrace.get(), res + "Value is NOT entered in studentEmail_input", 'error');
+  }
+  return res;
   },
 
 };

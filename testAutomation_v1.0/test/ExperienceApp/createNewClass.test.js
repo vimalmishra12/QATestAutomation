@@ -235,4 +235,46 @@ module.exports = {
       'dev_test_ebook_bundle_104_bundle_dropdown are not Clicked'
     );
   },
+
+  TST_CREA_TC_19 :   async function (testdata) { 
+  sts = await createNewClass.click_classData();
+  await assertion.assertEqual(sts, true,"classData are not Clicked");
+  },
+  
+  TST_CREA_TC_20 :   async function (testdata) { 
+  sts = await createNewClass.click_addStudents();
+  await assertion.assertEqual(sts, true,"addStudents are not Clicked");
+  },
+  
+  TST_CREA_TC_21 :   async function (testdata) { 
+  sts = await createNewClass.click_adultsRadio();
+  await assertion.assertEqual(sts, true,"adultsRadio are not Clicked");
+  },
+  
+  TST_CREA_TC_22 :   async function (testdata) { 
+  sts = await createNewClass.click_confirmationNextBtn();
+  await assertion.assertEqual(sts, true,"confirmationNextBtn are not Clicked");
+  },
+  
+  TST_CREA_TC_23 :   async function (testdata) { 
+  sts = await createNewClass.set_studentEmail_input(testdata);
+  await assertion.assertEqual(sts, true ,"studentEmail_input values are not set");
+  
+  },
+  
+  TST_CREA_TC_24 :   async function (testdata) { 
+  sts = await createNewClass.click_inviteStudentBtn();
+  await assertion.assertEqual(sts, true,"inviteStudentBtn are not Clicked");
+  },
+
+  TST_CREA_TC_29 :   async function (testdata) { 
+  sts = await createNewClass.getData_inviteStudent(testdata);
+  await assertion.assertEqual(sts.classData, testdata.classData,"classData Values is not as expected.");
+  await assertion.assertEqual(sts.addStudents, testdata.addStudents,"addStudents Values is not as expected.");
+  await assertion.assertEqual(sts.adultsRadio, testdata.adultsRadio,"adultsRadio Values is not as expected.");
+  await assertion.assertEqual(sts.confirmationNextBtn, testdata.confirmationNextBtn,"confirmationNextBtn Values is not as expected.");
+  await assertion.assertEqual(sts.studentEmail_input, testdata.studentEmail_input,"studentEmail_input Values is not as expected.");
+  await assertion.assertEqual(sts.inviteStudentBtn, testdata.inviteStudentBtn,"inviteStudentBtn Values is not as expected.");
+  await assertion.assertEqual(sts.pendingTitle, testdata.pendingTitle,"pendingTitle Values is not as expected.");
+  },
 };

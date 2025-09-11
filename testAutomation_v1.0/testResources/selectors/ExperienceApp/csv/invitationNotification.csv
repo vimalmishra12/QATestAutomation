@@ -1,0 +1,6 @@
+Label,cssSelector,tagName,group,relation,extraInfo,returnValue,teacherAppLangEN,studentAppLangEN
+notificationBtn,#tippyDropdownMenuButton,button,invitationAccept,,isInitialized,,,
+invitationNotify,"h3[class=""title d-flex mb-1""]",button,invitationAccept,,,,,
+selectCheckbox,#idsh-2-0,button,invitationAccept,,,,,
+acceptBtn,"button[qid=""idsh-3""]",button,invitationAccept,,,,,
+goToDashboard,"a[qid=""iscs-3""]",a,invitationAccept,,,,,
