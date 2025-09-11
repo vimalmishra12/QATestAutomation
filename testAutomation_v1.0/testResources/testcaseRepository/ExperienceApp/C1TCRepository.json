@@ -686,6 +686,36 @@
       "tags": "P3",
       "visualTest": true
     }
+    ,{
+      "id": "TST_C1AS_TC_17",
+      "description": "Click view assignment",
+      "tags": "P3",
+      "visualTest": true
+    }
+    ,{
+      "id": "TST_C1AS_TC_18",
+      "description": "Click hamburger icon assignment",
+      "tags": "P3",
+      "visualTest": true
+    }
+     ,{
+      "id": "TST_C1AS_TC_19",
+      "description": "Click cross icon assignment",
+      "tags": "P3",
+      "visualTest": true
+    }
+     ,{
+      "id": "TST_C1AS_TC_20",
+      "description": "Click back icon assignment",
+      "tags": "P3",
+      "visualTest": true
+    },
+    {
+      "id": "TST_C1AS_TC_14",
+      "description": "Click Kebab Icon",
+      "tags": "P3",
+      "visualTest": true
+    }
   ]
 },
 
