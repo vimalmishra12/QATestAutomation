@@ -20,7 +20,7 @@
     "nextPreviousPageTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='nextPreviousPageButtonTest.json' --windowWidth=1600 --windowHeight=900",
     "toolsFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='toolsFeatureTest.json' --windowWidth=1600 --windowHeight=900",
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
-    "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClassWithStudent.json' --windowWidth=1600 --windowHeight=900",
+    "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --windowWidth=1600 --windowHeight=900",
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900",
     "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900"
   },
