@@ -134,7 +134,6 @@ module.exports = {
     res = await action.click(this.login_btn);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " login_btn is clicked");
-      console.log("haha");
       res = await require("./dashboard.page").isInitialized();
     } else {
       await logger.logInto(
