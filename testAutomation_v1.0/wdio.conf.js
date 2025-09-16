@@ -7,6 +7,7 @@ const specGenerator = require(process.cwd() + "/core/runner/specGenerator.js");
 const visualTimelineReportService =
   require("./core/utils/visual-report-utility/report-service").TimelineService;
 var visualReportService = new visualTimelineReportService();
+
 var retryTimes = 0;
 if (argv.retry) retryTimes = 1;
 
@@ -27,25 +28,44 @@ var updateJob = global.capabilitiesFile[argv.browserCapability].updateJob;
 var enableEyesLogs =
   global.capabilitiesFile[argv.browserCapability].enableEyesLogs;
 var eyes = global.capabilitiesFile[argv.browserCapability].eyes;
+
+
+
+
+
 // wdio.conf.js
 
 const chromedriverPath = require('chromedriver').path;
 
-exports.config = {
-  //
-  // ===== Services =====
-  services: [
-    [
-      'chromedriver',
-      {
-        // 👉 force WDIO to use the NPM‑installed binary
-        chromedriverCustomPath: chromedriverPath
-      }
-    ]
-  ],
+// exports.config = {
+//   //
+//   // ===== Services =====
+//   services: [
+//     [
+//       'chromedriver',
+//       {
+//         // 👉 force WDIO to use the NPM‑installed binary
+//         chromedriverCustomPath: chromedriverPath
+//       }
+//     ],
+//   ],
+//   automationProtocol: 'devtools',
+//   // … the rest of your config
+// };
 
-  // … the rest of your config
-};
+
+
+// export const config = {
+//   runner: 'local',
+//   framework: 'mocha',
+//   automationProtocol: 'devtools',   // 👈 important
+//   capabilities: [{
+//     browserName: 'chrome'
+//   }],
+//   // other configs...
+// }
+
+
 
 // setting parameters for novus service
 var NovusService = [
@@ -114,6 +134,49 @@ exports.config = {
   // from your user and key information). However, if you are using a private Selenium
   // backend, you should define the `hostname`, `port`, and `path` here.
   //
+    runner: 'local',
+
+    specs: [
+        './test/specs/**/*.js'
+    ],
+
+    // 👇 ADD THIS LINE
+    automationProtocol: 'devtools',
+
+    maxInstances: 10,
+
+    capabilities: [{
+        browserName: 'chrome'
+    }],
+
+    logLevel: 'info',
+    bail: 0,
+    baseUrl: 'http://localhost',
+    waitforTimeout: 10000,
+    connectionRetryTimeout: 120000,
+    connectionRetryCount: 3,
+
+    services: [
+        [
+            'chromedriver',
+            {
+                // 👉 force WDIO to use the NPM-installed binary
+                chromedriverCustomPath: chromedriverPath
+            }
+        ]
+    ],
+
+    framework: 'mocha',
+    reporters: ['spec'],
+
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    },
+
+
+
+  automationProtocol: 'devtools',
   hostname: hostname,
   port: portNumber,
   path: webServicePath,
@@ -226,10 +289,10 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: argv.browserCapability
-    ? [[TimelineService], webDriverService, NovusService]
+    ? [['devtools', TimelineService], webDriverService, NovusService]
     : argv.deviceName
-    ? [[TimelineService], webDriverService, NovusService]
-    : [[TimelineService], "chromedriver", NovusService, webDriverService],
+    ? [['devtools', TimelineService], webDriverService, NovusService]
+    : [['devtools', TimelineService], "chromedriver", NovusService, webDriverService],
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks
@@ -331,8 +394,60 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+beforeSession: async (capabilities, specs) => {
+  // console.log("🔹 [beforeSession] Hook started...");
+  // console.log("🔹 Capabilities:", JSON.stringify(capabilities, null, 2));
+  // console.log("🔹 Specs:", specs);
+
+  // if (global.headers) {
+  //   console.log("➡️ [Headers Found] Preparing to inject headers:");
+  //   console.log(JSON.stringify(global.headers, null, 2));
+
+  //   try {
+  //     console.log("🌍 [Network] Enabling CDP Network domain...");
+  //     await browser.cdp('Network', 'enable');
+  //     console.log("✅ [Network] Domain enabled successfully.");
+
+  //     console.log("🌍 [Network] Setting extra HTTP headers...");
+  //     await browser.cdp('Network', 'setExtraHTTPHeaders', {
+  //       headers: global.headers
+  //     });
+  //     console.log("✅ [Network] Extra HTTP headers injected successfully.");
+  //   } catch (err) {
+  //     console.error("❌ Error while injecting Cloudflare headers:", err);
+  //   }
+  // } else {
+  //   console.warn("⚠️ No global.headers found. Skipping header injection.");
+  // }
+
+  // console.log("🔹 [beforeSession] Hook finished.");
+  // if (global.headers) {
+  //   await browser.url('about:blank'); // ensure session started
+  //   await browser.execute(() => {
+  //     window.__extraHeaders = arguments[0];
+  //   }, global.headers);
+
+  //   console.log("✅ Headers saved for later injection in before session:", global.headers);
+  // }
+},
+
+
+before: async function (capabilities, specs) {
+    if (global.headers && Object.keys(global.headers).length > 0) {
+        console.log("🌍 [Network] Enabling CDP Network domain...");
+        await browser.cdp('Network', 'enable');
+
+        console.log("🌍 [Network] Setting extra HTTP headers...");
+        await browser.cdp('Network', 'setExtraHTTPHeaders', {
+            headers: global.headers
+        });
+        console.log("✅ [Network] Extra HTTP headers injected successfully:", global.headers);
+    } else {
+        console.warn("⚠️ No global.headers found. Skipping header injection.");
+    }
+},
+
+  
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name

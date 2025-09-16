@@ -54,6 +54,7 @@ else {
     // global.selectorDir = envData[argv.appType].selectorDir;
     global.appUrl = envData[argv.appType].environments[argv.testEnv].url;
     global.moduleOff = envData[argv.appType].environments[argv.testEnv].moduleOff;
+    global.headers = envData[argv.appType].environments[argv.testEnv].headers;
 
     if (!global.appUrl || !global.testExecDir) {
         console.log("!!!!! ERROR: One or more environment parameters are missing in the env.json !!!!!");
@@ -82,6 +83,10 @@ else {
     }
     global.capabilities = capabilitiesFile[argv.browserCapability].capabilities;
     global.maximizeWindow = capabilitiesFile[argv.browserCapability].maximizeWindow;
+    // Extract headers from capabilities if present
+    if (global.capabilities && global.capabilities.length > 0 && global.capabilities[0].headers) {
+        global.capabilitiesHeaders = global.capabilities[0].headers;
+    }
     global.resScreenshotDir = argv.browserCapability;
     if (capabilitiesFile[argv.browserCapability].resolution != undefined) {
         global.resolution.width = capabilitiesFile[argv.browserCapability].resolution.split("x")[0].trim();
