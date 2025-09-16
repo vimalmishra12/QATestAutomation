@@ -10,6 +10,7 @@
         "LessonA": "div[class=\"custom-control-input-wrapper\"]",
         "Next": "button[qid=\"pAssignment-6\"]",
         "inputTag": "[qid=\"assignment-detail-4\"]",
+        "timeIncrease": "button[class=\"owl-dt-control-button owl-dt-control-arrow-button\"]",
         "setDate": "//button[contains(@class,'owl-dt-control-button')]//span[text()=' Set ']",
         "selectStudent": "[qid=\"assignment-detail-6\"]",
         "ViewSummary": "[qid=\"assignment-detail-6\"]",

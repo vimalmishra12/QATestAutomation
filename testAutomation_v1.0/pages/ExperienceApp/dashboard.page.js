@@ -112,7 +112,6 @@ module.exports = {
         " praticeExtra_btn is clicked"
       );
       res = await require("./practiceExtra.page.js").isInitialized();
-      console.log("haha", res);
     } else {
       await logger.logInto(
         await stackTrace.get(),

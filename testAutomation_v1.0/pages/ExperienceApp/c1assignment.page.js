@@ -25,6 +25,8 @@ module.exports = {
     clickHamBurgerIcon: selectorFile.css.ComproC1.c1assignment.clickHamBurgerIcon,
     assignmentBackBtn: selectorFile.css.ComproC1.c1assignment.assignmentBackBtn,
     crossIcon: selectorFile.css.ComproC1.c1assignment.crossIcon,
+    timeIncrease: selectorFile.css.ComproC1.c1assignment.timeIncrease,
+
     isInitialized: async function () {
         var res;
         await logger.logInto(await stackTrace.get());
@@ -173,6 +175,8 @@ module.exports = {
 
     click_setDate: async function () {
         await browser.pause(5000);
+        await action.click(this.timeIncrease);
+        await browser.pause(5000);
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.setDate);
         if (true == res) {
@@ -222,7 +226,8 @@ module.exports = {
     },
 
     check_StringMatch: function (text) {
-        const match = text.match(/^(.*?)Ended/);
+        const match = text.match(/^(.*?)(Ended|Active)/);
+
         if (match && match[1]) {
             return match[1].trim();
         }
