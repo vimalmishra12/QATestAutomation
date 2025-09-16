@@ -36,7 +36,6 @@ module.exports = {
 
   TST_LOGI_TC_5: async function (testdata) {
     const res = await login.acceptCookies() ; 
-    console.log("this is 40" , res) ; 
     sts = await login.click_login_btn();
     await assertion.assertEqual(
       sts.pageStatus,
