@@ -14,11 +14,20 @@
         "selectStudent": "[qid=\"assignment-detail-6\"]",
         "ViewSummary": "[qid=\"assignment-detail-6\"]",
         "Assign": "[qid=\"assignment-detail-6\"]",
-        "kebabIcon":"[qid=\"rView-1-",
-        "assignmentDiv":"[qid^=\"rView-20-",
-        "deleteAssignment":"a[qid=\"rView-2-0\"]",
-        "yesDelete":"button[qid=\"rView-4\"]",
-        "assignNameInput" : "[qid=\"assignment-detail-2\"]"
+        "kebabIcon": "[qid=\"rView-1-",
+        "assignmentDiv": "[qid^=\"rView-20-",
+        "deleteAssignment": "a[qid=\"rView-2-0\"]",
+        "yesDelete": "button[qid=\"rView-4\"]",
+        "assignNameInput": "[qid=\"assignment-detail-2\"]"
+      },
+      "c1student": {
+        "bellIcon": "#tippyDropdownMenuButton",
+        "assignmentNotification": "button[qid=\"ntf-30\"]",
+        "routeToAssignment": "a[qid=\"aView-1-0\"]",
+        "openHamburgerIcon": "#selectedActivitySidebarBtn",
+        "assignmentBack": "#lessonViewBackBtn",
+        "closeSideBar": "a[qid=\"learningPath-1\"]",
+        "goBack": "a[qid=\"lo-renderer-bck-btn\"]"
       },
       "footer": {
         "footerTermsOfUse": "a[qid=\"cFooter-1\"]",
@@ -167,13 +176,13 @@
         "addToClass_Btn": "button[qid=\"material-modal-add-to-class-btn\"] , button[qid='add-material-save-7'],button[qid=\"t-cc-mm-btn-2\"]",
         "finish_btn": "button[qid=\"create-class-finish-button\"] , button[qid='create-class-4'],button[qid=\"t-cc-cm-btn-4\"]",
         "dev_test_ebook_bundle_104_bundle_dropdown": "a[qid=\"material-modal-component-0\"]",
-        "classData" : "a[qid=\"cView-43\"]",
-        "addStudents" : "a[qid=\"cView-73\"]",
-        "adultsRadio" : "label[for=\"adult-radio\"]",
-        "confirmationNextBtn" : "button[qid=\"typeSelect-4\"]",
-        "studentEmail_input" : "input[name=\"teacherEmail-0\"],input[qid=\"CBulkEnrollment-learner-0-1\"]",
-        "inviteStudentBtn" : "button[qid=\"CBulkEnrollment-4\"]",
-        "pendingTitle" : "#pending-students-container > h3"
+        "classData": "a[qid=\"cView-43\"]",
+        "addStudents": "a[qid=\"cView-73\"]",
+        "adultsRadio": "label[for=\"adult-radio\"]",
+        "confirmationNextBtn": "button[qid=\"typeSelect-4\"]",
+        "studentEmail_input": "input[name=\"teacherEmail-0\"],input[qid=\"CBulkEnrollment-learner-0-1\"]",
+        "inviteStudentBtn": "button[qid=\"CBulkEnrollment-4\"]",
+        "pendingTitle": "#pending-students-container > h3"
       },
       "activeClass": {
         "actionButton": "a[qid=\"cView-70\"]",
@@ -181,11 +190,11 @@
         "yesDelete_Btn": "button[qid=\"cView-48\"]"
       },
       "invitationNotification": {
-      "notificationBtn" : "#tippyDropdownMenuButton",
-      "invitationNotify" : "h3[class=\"title d-flex mb-1\"]",
-      "selectCheckbox" : "#select-all-checkbox",
-      "acceptBtn" : "button[qid=\"idsh-3\"]",
-      "goToDashboard" : "a[qid=\"iscs-3\"]"
+        "notificationBtn": "#tippyDropdownMenuButton",
+        "invitationNotify": "h3[class=\"title d-flex mb-1\"]",
+        "selectCheckbox": "#select-all-checkbox",
+        "acceptBtn": "button[qid=\"idsh-3\"]",
+        "goToDashboard": "a[qid=\"iscs-3\"]"
       },
 
       "progress": {
