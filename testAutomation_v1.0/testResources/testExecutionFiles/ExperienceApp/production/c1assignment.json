@@ -217,6 +217,41 @@
           }
         ]
       },
+       {
+        "id": "TST_C1AS_TC_17",
+        "description": "Click View Assignment",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+       {
+        "id": "TST_C1AS_TC_18",
+        "description": "Click hanburger icon Assignment",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_19",
+        "description": "Click cross icon Assignment",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_C1AS_TC_20",
+        "description": "Click back assig icon Assignment",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": []
+      },
+       {
+        "id": "TST_C1AS_TC_14",
+        "description": "Click Kebab Icon",
+        "testFile": "./test/ExperienceApp/c1assignment.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/assignTestData.json",
+            "jsonPath": "C1.class2.assignmentName"
+          }
+        ]
+      },
       {
         "id": "TST_C1AS_TC_15",
         "description": "Click Delete Assignment",

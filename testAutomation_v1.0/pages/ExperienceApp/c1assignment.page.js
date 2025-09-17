@@ -20,7 +20,12 @@ module.exports = {
     assignmentDiv: selectorFile.css.ComproC1.c1assignment.assignmentDiv,
     kebabIcon: selectorFile.css.ComproC1.c1assignment.kebabIcon,
     deleteAssignment: selectorFile.css.ComproC1.c1assignment.deleteAssignment,
+    viewAssignment: selectorFile.css.ComproC1.c1assignment.viewAssignment,
     yesDelete: selectorFile.css.ComproC1.c1assignment.yesDelete,
+    clickHamBurgerIcon: selectorFile.css.ComproC1.c1assignment.clickHamBurgerIcon,
+    assignmentBackBtn: selectorFile.css.ComproC1.c1assignment.assignmentBackBtn,
+    crossIcon: selectorFile.css.ComproC1.c1assignment.crossIcon,
+    timeIncrease: selectorFile.css.ComproC1.c1assignment.timeIncrease,
 
     isInitialized: async function () {
         var res;
@@ -170,6 +175,8 @@ module.exports = {
 
     click_setDate: async function () {
         await browser.pause(5000);
+        await action.click(this.timeIncrease);
+        await browser.pause(5000);
         await logger.logInto(await stackTrace.get());
         var res = await action.click(this.setDate);
         if (true == res) {
@@ -219,11 +226,12 @@ module.exports = {
     },
 
     check_StringMatch: function (text) {
-        const match = text.match(/^(.*?)Ended/);
+        const match = text.match(/^(.*?)(Ended|Active)/);
+
         if (match && match[1]) {
             return match[1].trim();
         }
-        return null; 
+        return null;
     },
 
     click_playlistTitle: async function (playlistName) {
@@ -250,7 +258,8 @@ module.exports = {
 
 
     click_kebabIcon: async function (text) {
-        await browser.pause(3000);
+        await browser.pause(10000);
+        console.log("code is pausong")
         await logger.logInto(await stackTrace.get());
         var res = await this.click_playlistTitle(text)
         if (true == res) {
@@ -272,6 +281,58 @@ module.exports = {
         }
         return res;
     },
+
+    click_viewAssignment: async function () {
+        await browser.pause(3000);
+        await logger.logInto(await stackTrace.get());
+        var res = await action.click(this.viewAssignment);
+        if (true == res) {
+            await logger.logInto(await stackTrace.get(), " deleteAssignment is clicked");
+        } else {
+            await logger.logInto(await stackTrace.get(), res + " deleteAssignment is NOT clicked", 'error');
+        }
+        return res;
+    },
+
+    click_hamBurgerIcon: async function () {
+        await browser.pause(3000);
+        await logger.logInto(await stackTrace.get());
+        var res = await action.click(this.clickHamBurgerIcon);
+        if (true == res) {
+            await logger.logInto(await stackTrace.get(), " deleteAssignment is clicked");
+        } else {
+            await logger.logInto(await stackTrace.get(), res + " deleteAssignment is NOT clicked", 'error');
+        }
+        return res;
+    },
+    click_crossIcon: async function () {
+        await browser.pause(3000);
+        await logger.logInto(await stackTrace.get());
+        var res = await action.click(this.crossIcon);
+        if (true == res) {
+            await logger.logInto(await stackTrace.get(), " deleteAssignment is clicked");
+        } else {
+            await logger.logInto(await stackTrace.get(), res + " deleteAssignment is NOT clicked", 'error');
+        }
+        return res;
+    },
+
+    click_assignmentBackBtn: async function () {
+        await browser.pause(3000);
+        await logger.logInto(await stackTrace.get());
+        var res = await action.click(this.assignmentBackBtn);
+        if (true == res) {
+            await logger.logInto(await stackTrace.get(), " deleteAssignment is clicked");
+        } else {
+            await logger.logInto(await stackTrace.get(), res + " deleteAssignment is NOT clicked", 'error');
+        }
+        return res;
+    },
+
+
+
+
+
 
     click_yesDelete: async function () {
         await logger.logInto(await stackTrace.get());

@@ -10,6 +10,7 @@
         "LessonA": "div[class=\"custom-control-input-wrapper\"]",
         "Next": "button[qid=\"pAssignment-6\"]",
         "inputTag": "[qid=\"assignment-detail-4\"]",
+        "timeIncrease": "button[class=\"owl-dt-control-button owl-dt-control-arrow-button\"]",
         "setDate": "//button[contains(@class,'owl-dt-control-button')]//span[text()=' Set ']",
         "selectStudent": "[qid=\"assignment-detail-6\"]",
         "ViewSummary": "[qid=\"assignment-detail-6\"]",
@@ -17,6 +18,10 @@
         "kebabIcon":"[qid=\"rView-1-",
         "assignmentDiv":"[qid^=\"rView-20-",
         "deleteAssignment":"a[qid=\"rView-2-0\"]",
+        "viewAssignment" : "[qid=\"rView-8-0\"]",
+        "clickHamBurgerIcon" : "a[qid=\"lo-renderer-toggle-btn-9\"]" ,
+        "crossIcon" : "a[qid=\"learningPath-1\"]" , 
+        "assignmentBackBtn" : "a[qid=\"lo-renderer-bck-btn\"]" ,
         "yesDelete":"button[qid=\"rView-4\"]",
         "assignNameInput" : "[qid=\"assignment-detail-2\"]"
       },

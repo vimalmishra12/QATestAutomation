@@ -44,7 +44,6 @@ module.exports = {
         await assertion.assertEqual(sts, true, "Assignment Name is not entered");
     },
 
-
     TST_C1AS_TC_9: async function (testdata) {
         sts = await c1assignment.click_inputTag();
         await assertion.assertEqual(sts, true, "inputTag is not Clicked");
@@ -77,6 +76,24 @@ module.exports = {
 
     TST_C1AS_TC_15: async function (testdata) {
         sts = await c1assignment.click_deleteAssignment();
+        await assertion.assertEqual(sts, true, "Delete assignment not clicked");
+    },
+
+    TST_C1AS_TC_17: async function (testdata) {
+        sts = await c1assignment.click_viewAssignment();
+        await assertion.assertEqual(sts, true, "Delete assignment not clicked");
+    },
+
+     TST_C1AS_TC_18: async function (testdata) {
+        sts = await c1assignment.click_hamBurgerIcon();
+        await assertion.assertEqual(sts, true, "Delete assignment not clicked");
+    },
+    TST_C1AS_TC_19: async function (testdata) {
+        sts = await c1assignment.click_crossIcon();
+        await assertion.assertEqual(sts, true, "Delete assignment not clicked");
+    },
+    TST_C1AS_TC_20: async function (testdata) {
+        sts = await c1assignment.click_assignmentBackBtn();
         await assertion.assertEqual(sts, true, "Delete assignment not clicked");
     },
 
