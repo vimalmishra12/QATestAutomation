@@ -1,5 +1,5 @@
 {
-   "Suite1_C1Assignment": {
+  "Suite1_C1Assignment": {
     "Name": "Validation of C1 Assignment Page",
     "TestCaseRepo": [
       "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
@@ -93,7 +93,7 @@
         "id": "TST_C1AS_TC_8",
         "description": "Enter Assignment Name",
         "testFile": "./test/ExperienceApp/c1assignment.test.js",
-         "testData": [
+        "testData": [
           {
             "dataFile": "./testResources/testcaseData/ExperienceApp/qa/assignTestData.json",
             "jsonPath": "C1.class2.assignmentName"
@@ -263,4 +263,3 @@
     "After": []
   }
 }
-
