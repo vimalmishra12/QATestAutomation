@@ -218,6 +218,7 @@ module.exports = {
   click_activeClassCard: async function (value) {
     await logger.logInto(await stackTrace.get());
     var res;
+    await action.waitForDocumentLoad();
     var classSelector = this.activeClassCard.replace('{CLASS_NAME}',value);
     res = await action.click(classSelector);
     console.log('RES VAL', res);

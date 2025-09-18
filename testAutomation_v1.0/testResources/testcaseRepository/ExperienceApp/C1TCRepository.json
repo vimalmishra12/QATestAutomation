@@ -582,6 +582,49 @@
           "description": "Validate that the eBook bundle dropdown is clickable and works correctly",
           "tags": "P3",
           "visualTest": true
+        },
+
+        {
+          "id": "TST_CREA_TC_19",
+          "description": "Validate that class data button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_20",
+          "description": "Validate that Add students button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_21",
+          "description": "Validate that adults radio button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_22",
+          "description": "Validate that confirmation next button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_23",
+          "description": "Validate that student email input field is set correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_24",
+          "description": "Validate that invite student button is clickable and works correctly",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_CREA_TC_29",
+          "description": "Validate newly added scenario for Create module - 29",
+          "tags": "P3",
+          "visualTest": true
         }
       ]
     },
@@ -717,7 +760,63 @@
       "visualTest": true
     }
   ]
-},
+}
+,
+{
+      "modulename": "C1 Student Assignment Page",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/c1student.test.js",
+      "testcase": [
+        {
+          "id": "TST_C1ST_TC_1",
+          "description": "Click Bell Icon",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_2",
+          "description": "Click Assignment Notification",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_3",
+          "description": "Click Route To Assignment",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_4",
+          "description": "Click Open Hamburger Icon",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_5",
+          "description": "Click Assignment Back",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_6",
+          "description": "Click Close Sidebar",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_7",
+          "description": "Click Go Back",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_C1ST_TC_8",
+          "description": "Validate Assignment Student Data",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
 
     {
       "modulename": "Delete Class",
@@ -756,6 +855,51 @@
         }
       ]
     },
+
+    {
+      "modulename": "invitationNotification",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/invitationNotification.test.js",
+      "testcase": [
+        {
+          "id": "TST_INVI_TC_1",
+          "description": "Validate that the Notification button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_INVI_TC_2",
+          "description": "Validate that the Invitation Notification is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_INVI_TC_3",
+          "description": "Validate that the Select Checkbox is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_INVI_TC_4",
+          "description": "Validate that the Accept button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_INVI_TC_5",
+          "description": "Validate that the Go To Dashboard button is clickable",
+          "tags": "P3",
+          "visualTest": true
+        },
+        {
+          "id": "TST_INVI_TC_6",
+          "description": "Validate that invitation notification data (Notification, Invitation, Checkbox, Accept, Go To Dashboard) is retrieved correctly",
+          "tags": "P2",
+          "visualTest": true
+        }
+      ]
+    },
+
     {
       "modulename": "timer",
       "moduleId": "",

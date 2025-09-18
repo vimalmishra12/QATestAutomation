@@ -1,4 +1,5 @@
 'use strict';
+const { log } = require('winston');
 var action = require('../../core/actionLibrary/baseActionLibrary.js');
 var selectorFile = jsonParserUtil.jsonParser(selectorDir);
 var appShellPage = require('./appShell.page.js');
@@ -82,10 +83,11 @@ module.exports = {
   click_yesDelete_Btn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    
     res = await action.click(this.yesDelete_Btn);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), ' yesDelete_Btn is clicked');
-      res = await require('./dashboard.page').isInitialized();
+      res = await require('./dashboard.page').isInitialized(); 
     } else {
       await logger.logInto(
         await stackTrace.get(),

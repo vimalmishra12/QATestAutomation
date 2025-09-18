@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
@@ -12,6 +11,7 @@
     "completeAssignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='c1completeAssignment.json' --windowWidth=1600 --windowHeight=900",
     "createAssignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='c1createAssignment.json' --windowWidth=1600 --windowHeight=900",
     "deleteAssignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='c1deleteAssignment.json' --windowWidth=1600 --windowHeight=900",
+    "studentAssignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='c1student.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTestTeacher": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest_Teacher.json' --windowWidth=1600 --windowHeight=900",
     "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
@@ -23,8 +23,8 @@
     "nextPreviousPageTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='nextPreviousPageButtonTest.json' --windowWidth=1600 --windowHeight=900",
     "toolsFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='toolsFeatureTest.json' --windowWidth=1600 --windowHeight=900",
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
-    "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClass.json' --windowWidth=1600 --windowHeight=900",
-    "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900",
+    "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --windowWidth=1600 --windowHeight=900",
+    "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900",
     "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900"
   },
   "keywords": [],
@@ -32,7 +32,7 @@
   "capabilities": {},
   "license": "ISC",
   "dependencies": {
-    "@applitools/eyes-webdriverio": "^5.35.7", 
+    "@applitools/eyes-webdriverio": "^5.35.7",
     "@wdio/allure-reporter": "^7.26.0",
     "@wdio/appium-service": "^7.26.0",
     "@wdio/cli": "^7.26.0",
@@ -75,6 +75,6 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^138.0.0"
+    "chromedriver": "^140.0.0"
   }
 }
