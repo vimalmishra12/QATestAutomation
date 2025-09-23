@@ -211,5 +211,75 @@
             "stitchMode" : "CSS"
 
         }
+    },
+
+    
+    "lambdatest-chrome-1920": {
+    "capabilities": [
+        {
+        "browserName": "Chrome",
+        "browserVersion": "latest",
+        "LT:Options": {
+            "platformName": "Windows 10",
+            "build": "MyProject - CI Build",
+            "project": "MyProject",
+            "name": "Smoke Suite - chrome",
+            "tunnel": false,
+            "network": true,
+            "console": "info",
+            "visual": true,
+            "terminal": true
+        }
+        }
+    ],
+    "resolution": "1920x1080",
+    "maximizeWindow": true,
+    "hostname": "hub.lambdatest.com",
+    "portNumber": 443,
+    "webServicePath": "/wd/hub",
+    "protocol": "https",
+    "webDriverService": "lambdatest"
+    },
+
+    "lambdatest-android-samsungS24": {
+  "capabilities": [
+    {
+      "browserName": "chrome",
+      "platformName": "Android",
+      "LT:Options": {
+        "deviceName": "Galaxy S24 Ultra",
+        "platformVersion": "14",
+        "build": "MyProject - Android Run",
+        "project": "MyProject",
+        "name": "Smoke Suite - Samsung S24",
+        "tunnel": true,
+        "network": true,
+        "console": true,
+        "visual": true,
+        "w3c": true
+      }
     }
+  ],
+  "hostname": "mobile-hub.lambdatest.com",
+  "portNumber": 443,
+  "protocol": "https",
+  "webServicePath": "/wd/hub",
+  "webDriverService": "lambdatest"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 }

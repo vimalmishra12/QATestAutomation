@@ -21,6 +21,14 @@ var webDriverService =
   global.capabilitiesFile[argv.browserCapability].webDriverService;
 var user = global.capabilitiesFile[argv.browserCapability].user;
 var key = global.capabilitiesFile[argv.browserCapability].key;
+var protocol = global.capabilitiesFile[argv.browserCapability].protocol;
+
+
+
+// allow secure override from environment variables (CI)
+user = process.env.LT_USERNAME || user;
+key  = process.env.LT_ACCESS_KEY || key;
+
 var browserstackLocal =
   global.capabilitiesFile[argv.browserCapability].browserstackLocal;
 var updateJob = global.capabilitiesFile[argv.browserCapability].updateJob;
@@ -43,6 +51,9 @@ exports.config = {
       }
     ]
   ],
+
+
+  
 
   // … the rest of your config
 };
@@ -94,6 +105,15 @@ function getScreenshotName(basePath) {
     );
   };
 }
+
+let serviceEntry;
+if (webDriverService === 'lambdatest') {
+  // pass options to wdio-lambdatest-service
+  serviceEntry = ['lambdatest', { tunnel: true, setSessionStatus: true }];
+} else {
+  // existing behavior (webDriverService is string like 'chromedriver' or 'appium')
+  serviceEntry = webDriverService;
+}
 exports.config = {
   //
   // ====================
@@ -117,7 +137,9 @@ exports.config = {
   hostname: hostname,
   port: portNumber,
   path: webServicePath,
-  // Protocol: http | https
+
+  protocol: protocol,   // <-- add this, from your JSON
+
   // protocol: 'http',
   //
   user: user,
@@ -225,11 +247,24 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
+
+
+  // services: argv.browserCapability
+  //   ? [[TimelineService], webDriverService, NovusService]
+  //   : argv.deviceName
+  //   ? [[TimelineService], webDriverService, NovusService]
+  //   : [[TimelineService], "chromedriver", NovusService, webDriverService],
+
+  
+  
+
   services: argv.browserCapability
-    ? [[TimelineService], webDriverService, NovusService]
+    ? [[TimelineService], serviceEntry, NovusService]
     : argv.deviceName
-    ? [[TimelineService], webDriverService, NovusService]
-    : [[TimelineService], "chromedriver", NovusService, webDriverService],
+    ? [[TimelineService], serviceEntry, NovusService]
+    : [[TimelineService], "chromedriver", NovusService, webDriverService],  
+
+    
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks
@@ -316,6 +351,35 @@ exports.config = {
       await visualReportService.onPrepare(); //initiating visualReportService
     }
   },
+
+
+  /**
+   * LambdaTest hook: mark test as passed/failed/skipped etc.
+   */
+  afterTest: async function (test, context, { error, result, duration, passed, retries }) {
+    if (webDriverService === "lambdatest") {
+      let status = "unknown";
+      if (passed) {
+        status = "passed";
+      } else if (error) {
+        status = "failed";
+      } else if (test.pending) {
+        status = "skipped";
+      }
+
+      await browser.execute(
+        `lambda-status=${status}`
+      );
+    }
+  },
+
+  afterSuite: async function (suite) {
+    if (webDriverService === "lambdatest" && suite.error) {
+      await browser.execute("lambda-status=failed");
+    }
+  },
+
+
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
@@ -402,6 +466,8 @@ exports.config = {
   afterSession: async function (config, capabilities, specs) {
     require("./core/utils/reportUpdater.js").updateFunctionalObj();
   },
+
+  
   /**
    * Gets executed after all workers got shut down and the process is about to exit. An error
    * thrown in the onComplete hook will result in the test run failing.
