@@ -8,7 +8,7 @@
     "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
-    "assignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='c1assignment.json' --windowWidth=1600 --windowHeight=900",
+    "assignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='c1assignment.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --windowWidth=1600 --windowHeight=900",
     "dashboardFeatureTestTeacher": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest_Teacher.json' --windowWidth=1600 --windowHeight=900",
     "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
@@ -22,7 +22,15 @@
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
     "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --windowWidth=1600 --windowHeight=900",
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900",
-    "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900"
+    "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900",
+
+    "loginFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920",
+    "dashboardFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-chrome-1920",
+    "createNewClassTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --browserCapability=lambdatest-chrome-1920",
+    "eBookFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --browserCapability=lambdatest-chrome-1920",
+
+    "dashboardFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-android-samsungS24"
+
   },
   "keywords": [],
   "author": "",
@@ -72,6 +80,7 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^140.0.0"
+    "chromedriver": "^140.0.0",
+    "wdio-lambdatest-service": "^4.0.0"
   }
 }
