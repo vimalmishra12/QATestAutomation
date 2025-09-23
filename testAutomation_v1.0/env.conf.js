@@ -29,8 +29,52 @@ global.testScreenshotDir = undefined;
 global.diffScreenshotDir = undefined;
 global.resScreenshotDir = undefined;
 global.capabilities = undefined;
-global.maximizeWindow - undefined;
+global.maximizeWindow = undefined;
 global.capabilitiesFile = global.jsonParserUtil.jsonParser(path.join(process.cwd() + '/capabilities.json'));
+
+
+// after loading env.json
+let envData = global.jsonParserUtil.jsonParser(process.cwd() + '/env.json');
+
+// set LT creds globally (fallback if not provided in real env vars)
+if (envData.lambdaTestCredentials) {
+    process.env.LT_USERNAME = process.env.LT_USERNAME || envData.lambdaTestCredentials.LT_USERNAME;
+    process.env.LT_ACCESS_KEY = process.env.LT_ACCESS_KEY || envData.lambdaTestCredentials.LT_ACCESS_KEY;
+}
+
+global.envData = envData;
+
+
+if (
+    argv.browserCapability &&
+    global.capabilitiesFile[argv.browserCapability] &&
+    global.capabilitiesFile[argv.browserCapability].webDriverService ===
+        "lambdatest"
+) {
+    const cap = global.capabilitiesFile[argv.browserCapability];
+    cap.hostname = cap.hostname || "hub.lambdatest.com";
+    cap.portNumber = cap.portNumber || 443;
+    cap.webServicePath = cap.webServicePath || "/wd/hub";
+
+    // prefer env vars for credentials (safer for CI)
+    cap.user = process.env.LT_USERNAME || cap.user;
+    cap.key = process.env.LT_ACCESS_KEY || cap.key;
+}
+
+
+
+// // Ensure LambdaTest defaults & pick up LT credentials from env if present
+// if (argv.browserCapability && global.capabilitiesFile[argv.browserCapability] && global.capabilitiesFile[argv.browserCapability].webDriverService === 'lambdatest') {
+//     const cap = global.capabilitiesFile[argv.browserCapability];
+//     cap.hostname = cap.hostname || 'hub.lambdatest.com';
+//     cap.portNumber = cap.portNumber || 443;
+//     cap.webServicePath = cap.webServicePath || '/wd/hub';
+
+//     // prefer env vars for credentials (safer for CI)
+//     cap.user = process.env.LT_USERNAME || cap.user;
+//     cap.key  = process.env.LT_ACCESS_KEY || cap.key;
+// }
+
 global.appVersion = undefined;
 global.moduleOff = undefined;
 
