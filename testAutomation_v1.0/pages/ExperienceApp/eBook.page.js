@@ -13,6 +13,7 @@ module.exports = {
   cqaEbookEvolveDropdown:
     selectorFile.css.ComproC1.eBook.cqaEbookEvolveDropdown,
     dropDownListTitle: selectorFile.css.ComproC1.eBook.dropDownListTitle,
+    dropDownElementTitle: selectorFile.css.ComproC1.eBook.dropDownElementTitle,
   cqaTestEbookOnlyAssets:
     selectorFile.css.ComproC1.eBook.cqaTestEbookOnlyAssets,
   notes: selectorFile.css.ComproC1.eBook.notes,
@@ -303,23 +304,24 @@ module.exports = {
 // },
 
 
+
 click_playlistTitle: async function (playlistTitleName) {
-  
     await logger.logInto(await stackTrace.get());
-    var i, list, res;
+    let i, list, res;
     list = await action.findElements(this.dropDownListTitle);
-    
 
     for (i = 0; i < list.length; i++) {
-      
-      if (((await action.getText(this.dropDownListTitle + i  +"\"]"))) == playlistTitleName) {
-        // res = await action.click(list[i]);
-        res = list[i];
-        break;
-      }
+        const selector = `${this.dropDownListTitle}${i}"]`;
+
+        const text = await action.getText(selector);
+        if (text === playlistTitleName) {
+            res = selector;          
+            break;
+        }
     }
-    return res
-  },
+    return res; 
+},
+
 
 
 
@@ -344,6 +346,8 @@ click_cqaEbookEvolveDropdown: async function (testdata) {
   }
   return res;
 },
+
+
 
   
 // click_cqaEbookEvolveDropdown: async function (testdata) {
@@ -391,6 +395,8 @@ click_cqaEbookEvolveDropdown: async function (testdata) {
 
 //   return res;
 // },
+
+
 
   click_cqaTestEbookOnlyAssets: async function (testdata) {
     await logger.logInto(await stackTrace.get());
