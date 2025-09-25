@@ -83,7 +83,7 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - export mailingList="vimal.mishra@comprotechnologies.com ashish.kushwaha@comprotechnologies.com dhruv.karnwal@comprotechnologies.com"
+            - 'export mailingList="vimal.mishra@comprotechnologies.com ashish.kushwaha@comprotechnologies.com dhruv.karnwal@comprotechnologies.com,ashish.kushwaha@comprotechnologies.com,dhruv.karnwal@comprotechnologies.com"'
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - node mailer.js --appType="ExperienceApp" \

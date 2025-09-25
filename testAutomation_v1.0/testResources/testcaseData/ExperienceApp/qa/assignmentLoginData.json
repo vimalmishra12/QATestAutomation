@@ -8,6 +8,10 @@
           "role": "teacher"
         }
       }
+    },
+    "student": {
+      "email": "CQA_AUTO_STU_101@mailsac.com",
+      "password": "Compro11"
     }
   }
 }
