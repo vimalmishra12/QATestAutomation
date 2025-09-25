@@ -25,7 +25,15 @@
     "drawingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --windowWidth=1600 --windowHeight=900",
     "createNewClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --windowWidth=1600 --windowHeight=900",
     "deleteClassTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='activeClass.json' --windowWidth=1600 --windowHeight=900",
-    "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900"
+    "eBookHotLinkTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --windowWidth=1600 --windowHeight=900",
+
+    "loginFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920",
+    "dashboardFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-chrome-1920",
+    "createNewClassTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --browserCapability=lambdatest-chrome-1920",
+    "eBookFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --browserCapability=lambdatest-chrome-1920",
+
+    "dashboardFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-android-samsungS24"
+
   },
   "keywords": [],
   "author": "",
@@ -75,6 +83,7 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^140.0.0"
+    "chromedriver": "^140.0.0",
+    "wdio-lambdatest-service": "^4.0.0"
   }
 }
