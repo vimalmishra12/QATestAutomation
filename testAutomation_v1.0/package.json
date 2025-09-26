@@ -16,7 +16,7 @@
     "dashboardFeatureTestTeacher": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest_Teacher.json' --windowWidth=1600 --windowHeight=900",
     "resetPasswordTest": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='resetPassword.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
     "visualAcceptance": " npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
-    "eBookFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --windowWidth=1600 --windowHeight=900",
+    "eBookFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='eBookTestMaster_v.0.json' --windowWidth=1600 --windowHeight=900",
     "notesFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='notesTest.json' --windowWidth=1600 --windowHeight=900",
     "highlighterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='highlighterTest.json' --windowWidth=1600 --windowHeight=900",
     "timerFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='timerTest_VC.json' --windowWidth=1600 --windowHeight=900",

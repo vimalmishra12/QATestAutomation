@@ -76,13 +76,23 @@
         "id": "TST_EBOO_TC_6",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
-        "testData": []
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/ebookData.json",
+            "jsonPath": "C1.ebook.dropdownBook.ebookOneName"
+          }
+        ]
       },
       {
         "id": "TST_EBOO_TC_7",
         "description": "",
         "testFile": "./test/ExperienceApp/eBook.test.js",
-        "testData": []
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/ebookData.json",
+            "jsonPath": "C1.ebook.dropdownBook.ebookTwoName"
+          }
+        ]
       },
       {
         "id": "TST_EBOO_TC_9",
