@@ -310,9 +310,8 @@ click_playlistTitle: async function (playlistTitleName) {
     let i, list, res;
     list = await action.findElements(this.dropDownListTitle);
 
-    for (i = 0; i < list.length; i++) {
+    for (i = 1; i <= list.length; i++) {
         const selector = `${this.dropDownListTitle}${i}"]`;
-
         const text = await action.getText(selector);
         if (text === playlistTitleName) {
             res = selector;          

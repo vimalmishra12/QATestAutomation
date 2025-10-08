@@ -22,6 +22,8 @@ module.exports = {
   // Set the value in the Add Notes Text Area and verify it
   TST_NOTE_TC_3: async function (testdata) {
 
+    await browser.pause(2000); // pause added to avoid element not interactable issue, we will see it later
+
     sts = await notes.set_eBookAddNotesTextarea(testdata.eBookSaveNotesBtn);
 
     await assertion.assertEqual(
