@@ -38,7 +38,6 @@ module.exports = {
   },
 
   TST_EBOO_TC_6: async function (testdata) {
-    console.log("testdata", testdata)
     sts = await eBook.click_cqaEbookEvolveDropdown(testdata);
     console.log("Color is",sts);
     await assertion.assertEqual(
