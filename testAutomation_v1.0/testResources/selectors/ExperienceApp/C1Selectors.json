@@ -18,10 +18,10 @@
         "kebabIcon": "[qid=\"rView-1-",
         "assignmentDiv": "[qid^=\"rView-20-",
         "deleteAssignment": "a[qid=\"rView-2-0\"]",
-        "viewAssignment" : "[qid=\"rView-8-0\"]",
-        "clickHamBurgerIcon" : "a[qid=\"lo-renderer-toggle-btn-9\"]" ,
-        "crossIcon" : "a[qid=\"learningPath-1\"]" , 
-        "assignmentBackBtn" : "a[qid=\"lo-renderer-bck-btn\"]" ,
+        "viewAssignment": "[qid=\"rView-8-0\"]",
+        "clickHamBurgerIcon": "a[qid=\"lo-renderer-toggle-btn-9\"]",
+        "crossIcon": "a[qid=\"learningPath-1\"]",
+        "assignmentBackBtn": "a[qid=\"lo-renderer-bck-btn\"]",
         "yesDelete": "button[qid=\"rView-4\"]",
         "assignNameInput": "[qid=\"assignment-detail-2\"]"
       },
@@ -32,7 +32,9 @@
         "openHamburgerIcon": "#selectedActivitySidebarBtn",
         "assignmentBack": "#lessonViewBackBtn",
         "closeSideBar": "a[qid=\"learningPath-1\"]",
-        "goBack": "a[qid=\"lo-renderer-bck-btn\"]"
+        "goBack": "a[qid=\"lo-renderer-bck-btn\"]",
+        "greenBtn": "a[class='btn green-btn']",
+        "nextBtn": "a[title='Next']"
       },
       "footer": {
         "footerTermsOfUse": "a[qid=\"cFooter-1\"]",
@@ -284,7 +286,7 @@
         "exitActivity": "a[qid=\"resultScreen-1\"]",
         "activityGoodEffort": "div[class=\"feedback-msg\"] h2",
         "startAgainActivity": "a[qid=\"resultScreen-2\"]",
-        "activityIFrame": "iframe#iframe_1669693911922-1669727257943-1669850648285",
+        "activityIFrame": "iframe#iframe_1669693911922-1669727257943-1669850648285,iframe#iframe_1756892185750-1756892187201-1756892198221",
         "activityScoreCheck": "a[title=\"Check\"]",
         "activityAnsElement": ".draggable button[aria-labelledby^=\"content-\"]"
       },
