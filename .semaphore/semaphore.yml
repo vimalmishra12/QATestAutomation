@@ -5,7 +5,7 @@ agent:
     type: e2-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: C1LoginTest
+  - name: C1eBookTest
     task:
       jobs:
         - name: C1LoginTest
@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run highlighterFeatureTest
+            - npm run eBookFeatureTest_LT
             - RESULT=$?
             - 'echo "Test result: $RESULT"'
             - 'if [ $RESULT -eq 0 ]; then'
@@ -83,7 +83,7 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - 'export mailingList="vimal.mishra@comprotechnologies.com ashish.kushwaha@comprotechnologies.com dhruv.karnwal@comprotechnologies.com,ashish.kushwaha@comprotechnologies.com,dhruv.karnwal@comprotechnologies.com"'
+            - export mailingList="vimal.mishra@comprotechnologies.com"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - node mailer.js --appType="ExperienceApp" \
