@@ -261,15 +261,15 @@
         "penStroke1": "button.custom-stroke-container > div.pen-stroke-circle-container > div.pen-stroke-outer-circle.line-weight-4 > div.pen-stroke-inner-circle.line-weight-1"
       },
       "eBookLearningPageHyperlink": {
-        "hyperLinkAnswer": "div[id=\"ee-overlays11-6\"] div[title=\"Answers\"] div img",
-        "hyperLinkVideo": "div[id=\"ee-overlays11-0\"] img",
-        "hyperlinkAudio": "div[id=\"ee-overlays11-3\"] img",
-        "hyperlinkAudioNoTranscript": "div[id=\"ee-overlays11-1\"] img",
-        "hyperlinkNewTab": "div[id=\"ee-overlays11-5\"] img",
-        "hyperlinkActivity": "div[id=\"ee-overlays11-9\"] div[title=\"Activity\"] div img",
-        "hyperLinkGame": "div[id='ee-overlays12-0'] img",
-        "hyperlinkGoToPage": "div[id='ee-overlays12-2'] img",
-        "hyperZoomHotspot": "div[id=\"ee-overlays11-8\"] div[title=\"Double tap to zoom\"] div"
+        "hyperLinkAnswer": "div[id=\"ee-overlays11-6\"] div[title=\"Answers\"] div img, div[id=\"ee-overlays27-6\"] div[title=\"Answers\"] div img",
+        "hyperLinkVideo": "div[id=\"ee-overlays11-0\"] img, div[id=\"ee-overlays27-0\"] img",
+        "hyperlinkAudio": "div[id=\"ee-overlays11-3\"] img, div[id=\"ee-overlays27-3\"] img",
+        "hyperlinkAudioNoTranscript": "div[id=\"ee-overlays11-1\"] img, div[id=\"ee-overlays27-1\"] img",
+        "hyperlinkNewTab": "div[id=\"ee-overlays11-5\"] img, div[id=\"ee-overlays27-5\"] img",
+        "hyperlinkActivity": "div[id=\"ee-overlays11-9\"] div[title=\"Activity\"] div img, div[id=\"ee-overlays27-9\"] div[title=\"Activity\"] div img",
+        "hyperLinkGame": "div[id='ee-overlays12-0'] img, div[id='ee-overlays28-0'] img",
+        "hyperlinkGoToPage": "div[id='ee-overlays12-2'] img, div[id='ee-overlays28-1'] img",
+        "hyperZoomHotspot": "div[id=\"ee-overlays11-8\"] div[title=\"Double tap to zoom\"] div, div[id=\"ee-overlays27-8\"] div[title=\"Double tap to zoom\"] div"
       },
       "hyperLinkAnswerWindow": {
         "hyperAnswerReveal": "a[title=\"Reveal\"]",
