@@ -30,7 +30,7 @@
     "loginFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920",
     "dashboardFeatureTest_LT": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-chrome-1920",
     "createNewClassTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='createNewClassWithStudent.json' --browserCapability=lambdatest-chrome-1920",
-    "eBookFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --browserCapability=lambdatest-chrome-1920",
+    "eBookFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='eBookTestMaster_v.0.json' --browserCapability=lambdatest-chrome-1920",
 
     "dashboardFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=lambdatest-android-samsungS24"
 

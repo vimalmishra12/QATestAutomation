@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - echo "Starting prologue commands"
+            - echo "Starting prologue commands 1"
             - checkout
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
