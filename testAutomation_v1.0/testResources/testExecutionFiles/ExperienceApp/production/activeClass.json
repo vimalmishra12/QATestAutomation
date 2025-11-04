@@ -70,12 +70,6 @@
         "description": "Clicked on Delete Class Button.",
         "testFile": "./test/ExperienceApp/activeClass.test.js",
         "testData": []
-      },
-      {
-        "id": "TST_ACTI_TC_3",
-        "description": "Clicked on 'Yes, Delete'  Button.",
-        "testFile": "./test/ExperienceApp/activeClass.test.js",
-        "testData": []
       }
     ],
     "AfterEach": [],
