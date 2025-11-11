@@ -102,9 +102,9 @@ else {
     // Load Cloudflare headers for bypass if they exist
     if (envData[argv.appType].environments[argv.testEnv].headers) {
         global.headers = envData[argv.appType].environments[argv.testEnv].headers;
-        console.log("🔐 [ENV] Cloudflare headers loaded for bypass:", Object.keys(global.headers));
+        console.log("[ENV] Cloudflare headers loaded for bypass:", Object.keys(global.headers));
     } else {
-        console.log("⚠️ [ENV] No Cloudflare headers found in environment configuration");
+        console.log("[ENV] No Cloudflare headers found in environment configuration");
     }
 
     if (!global.appUrl || !global.testExecDir) {
