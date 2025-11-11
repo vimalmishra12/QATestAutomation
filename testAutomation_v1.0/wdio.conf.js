@@ -387,23 +387,30 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // beforeSession: function (config, capabilities, specs) {
-  // },
+  before: async function (capabilities, specs) {
+    await setupCDPHeaders();
+  },
   /**
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function (capabilities, specs) {
-  // },
+  beforeSession: async function (config, capabilities, specs) {
+    // console.log("🌐 [CDP] beforeSession hook triggered!");
+    // console.log("🌐 [CDP] Headers will be injected using Chrome DevTools Protocol");
+    // console.log("🌐 [CDP] global.headers:", global.headers);
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
    * @param {Array} args arguments that command would receive
    */
-  // beforeCommand: function (commandName, args) {
-  // },
+  beforeCommand: async function (commandName, args) {
+    if (commandName === 'url') {
+      await setupCDPHeaders();
+    }
+  },
   /**
    * Hook that gets executed before the suite starts
    * @param {Object} suite suite details
