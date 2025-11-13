@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
+    "landingFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "FooterFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage",
     "loginFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900",
     "completeAssignmentFeatureTest": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='c1completeAssignment.json' --windowWidth=1600 --windowHeight=900",
@@ -83,7 +83,7 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^140.0.0",
+    "chromedriver": "^142.0.0",
     "wdio-lambdatest-service": "^4.0.0"
   }
 }
