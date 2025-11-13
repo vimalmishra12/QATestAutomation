@@ -161,11 +161,11 @@ global.setupCDPHeaders = async () => {
   // Get the first page from the browser
   const pages = await puppeteerBrowser.pages();
   const page = pages[0];
-  // console.log("🔧 [CDP] Page obtained:", page ? page.url() : 'undefined');
+  console.log("🔧 [CDP] Page obtained:", page ? page.url() : 'undefined');
 
   // Create CDP session from the page's target
   const client = await page.target().createCDPSession();
-  // console.log("🔧 [CDP] CDP session created:", typeof client, client ? Object.keys(client) : 'undefined');
+  console.log("🔧 [CDP] CDP session created:", typeof client, client ? Object.keys(client) : 'undefined');
 
   // Enable network domain using CDP commands
   await client.send('Network.enable');
@@ -175,24 +175,24 @@ global.setupCDPHeaders = async () => {
     patterns: [{ urlPattern: `*${new URL(global.appUrl).hostname}*` }]
   });
 
-  // console.log("🔧 [CDP] Request interception enabled via CDP");
+  console.log("🔧 [CDP] Request interception enabled via CDP");
 
   // Listen for requests and inject headers
   client.on('Network.requestIntercepted', async (event) => {
     const { interceptionId, request } = event;
 
-    // console.log(`📡 [CDP] Intercepted request: ${request.method} ${request.url}`);
+    console.log(`📡 [CDP] Intercepted request: ${request.method} ${request.url}`);
 
     // Check if this request should have headers
     const shouldAddHeaders = global.appUrl && request.url.includes(new URL(global.appUrl).hostname);
 
     if (shouldAddHeaders) {
-      // console.log(`🔐 [CDP] Adding headers to: ${request.url}`);
+      console.log(`🔐 [CDP] Adding headers to: ${request.url}`);
 
       // Add headers to the request
       const headers = { ...request.headers, ...global.headers };
 
-      // console.log(`🔐 [CDP] Headers injected:`, Object.keys(global.headers));
+      console.log(`🔐 [CDP] Headers injected:`, Object.keys(global.headers));
 
       // Continue the request with modified headers
       await client.send('Network.continueInterceptedRequest', {
