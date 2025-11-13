@@ -99,6 +99,14 @@ else {
     global.appUrl = envData[argv.appType].environments[argv.testEnv].url;
     global.moduleOff = envData[argv.appType].environments[argv.testEnv].moduleOff;
 
+    // Load Cloudflare headers for bypass if they exist
+    if (envData[argv.appType].environments[argv.testEnv].headers) {
+        global.headers = envData[argv.appType].environments[argv.testEnv].headers;
+        console.log("[ENV] Cloudflare headers loaded for bypass:", Object.keys(global.headers));
+    } else {
+        console.log("[ENV] No Cloudflare headers found in environment configuration");
+    }
+
     if (!global.appUrl || !global.testExecDir) {
         console.log("!!!!! ERROR: One or more environment parameters are missing in the env.json !!!!!");
         console.log("appUrl = " + global.appUrl);
@@ -147,3 +155,59 @@ global.diffScreenshotDir = path.join('screenshots/diff/' + argv.appType, argv.te
 if (argv.visual) {
     fs.mkdirSync(global.reportOutputDir + '/visual/', { recursive: true });
 }
+
+global.setupCDPHeaders = async () => {
+  const puppeteerBrowser = await browser.getPuppeteer();
+  // Get the first page from the browser
+  const pages = await puppeteerBrowser.pages();
+  const page = pages[0];
+  console.log("🔧 [CDP] Page obtained:", page ? page.url() : 'undefined');
+
+  // Create CDP session from the page's target
+  const client = await page.target().createCDPSession();
+  console.log("🔧 [CDP] CDP session created:", typeof client, client ? Object.keys(client) : 'undefined');
+
+  // Enable network domain using CDP commands
+  await client.send('Network.enable');
+
+  // Set up request interception
+  await client.send('Network.setRequestInterception', {
+    patterns: [{ urlPattern: `*${new URL(global.appUrl).hostname}*` }]
+  });
+
+  console.log("🔧 [CDP] Request interception enabled via CDP");
+
+  // Listen for requests and inject headers
+  client.on('Network.requestIntercepted', async (event) => {
+    const { interceptionId, request } = event;
+
+    console.log(`📡 [CDP] Intercepted request: ${request.method} ${request.url}`);
+
+    // Check if this request should have headers
+    const shouldAddHeaders = global.appUrl && request.url.includes(new URL(global.appUrl).hostname);
+
+    if (shouldAddHeaders) {
+      console.log(`🔐 [CDP] Adding headers to: ${request.url}`);
+
+      // Add headers to the request
+      const headers = { ...request.headers, ...global.headers };
+
+      console.log(`🔐 [CDP] Headers injected:`, Object.keys(global.headers));
+
+      // Continue the request with modified headers
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId,
+        headers
+      });
+    } else {
+      // Continue the request without modification
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId
+      });
+    }
+  });
+
+  // console.log("🔧 [CDP] CDP header injection setup complete");
+};
+
+
