@@ -236,50 +236,43 @@ global.setupCDPHeaders = async () => {
 
     // Enable Network (best-effort) and Fetch domain for request modification
     try { await client.send('Network.enable'); } catch (_) { /* non-fatal */ }
-    await client.send('Fetch.enable', {
-      handleAuthRequests: false,
+    await client.send('Network.setRequestInterception', {
       patterns: [{ urlPattern: hostnamePattern }]
     });
 
     // Handler: on request paused, merge headers and continue the request
-    client.on('Fetch.requestPaused', async (event) => {
-      const { requestId, request } = event;
-      try {
-        const originalHeaders = request.headers || {};
-        // normalize original headers (lowercase keys) then merge with global.headers (global headers win)
-        const normalizedOriginal = Object.fromEntries(
-          Object.entries(originalHeaders).map(([k, v]) => [String(k).toLowerCase(), String(v)])
-        );
-        const merged = { ...normalizedOriginal, ...global.headers };
+      // Listen for requests and inject headers
+  client.on('Network.requestIntercepted', async (event) => {
+    const { interceptionId, request } = event;
 
-        // Convert to CDP's expected header array format
-        const headerArray = Object.entries(merged).map(([name, value]) => ({ name: String(name), value: String(value) }));
+    // console.log(`📡 [CDP] Intercepted request: ${request.method} ${request.url}`);
 
-        await client.send('Fetch.continueRequest', {
-          requestId,
-          headers: headerArray
-        });
-      } catch (err) {
-        console.warn('⚠️ [CDP] Error injecting headers for paused request, attempting to continue without modification:', err);
-        try {
-          await client.send('Fetch.continueRequest', { requestId });
-        } catch (innerErr) {
-          // Final best-effort fallback: try to use Network.continueInterceptedRequest if possible
-          try {
-            if (event.interceptionId) {
-              await client.send('Network.continueInterceptedRequest', { interceptionId: event.interceptionId });
-            }
-          } catch (_) {
-            // swallow - nothing more we can do for this request
-          }
-        }
-      }
-    });
+    // Check if this request should have headers
+    const shouldAddHeaders = global.appUrl && request.url.includes(new URL(global.appUrl).hostname);
+
+    if (shouldAddHeaders) {
+      // console.log(`🔐 [CDP] Adding headers to: ${request.url}`);
+
+      // Add headers to the request
+      const headers = { ...request.headers, ...global.headers };
+
+      // console.log(`🔐 [CDP] Headers injected:`, Object.keys(global.headers));
+
+      // Continue the request with modified headers
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId,
+        headers
+      });
+    } else {
+      // Continue the request without modification
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId
+      });
+    }
+  });
 
     console.log('🔧 [CDP] Header injection via CDP Fetch domain configured');
   } catch (err) {
     console.error('❌ [CDP] Error setting up CDP headers:', err);
   }
 };
-
-
