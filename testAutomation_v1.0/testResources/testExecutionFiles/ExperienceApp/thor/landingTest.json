@@ -1,0 +1,112 @@
+{
+    "Suite1": {
+        "Name": "Validation of Landing Page Content (English)",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "Before": [],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Test": [
+            {
+                "id": "TST_LAND_TC_5",
+                "description": "",
+                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testData": [
+                    {
+                        "dataFile": "./testResources/testcaseData/ExperienceApp/thor/appLangEN.json",
+                        "jsonPath": "C1.appContent.landing"
+                    }
+                ]
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    },
+    "Suite2": {
+        "Name": "Validation of Landing Page Sign In Feature",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "Before": [],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Test": [
+            {
+                "id": "TST_LAND_TC_3",
+                "description": "",
+                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testData": []
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    },
+    "Suite3": {
+        "Name": "Validation of Landing Page Sign Up Feature",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Before": [],
+        "Test": [
+            {
+                "id": "TST_LAND_TC_2",
+                "description": "",
+                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testData": []
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    },
+    "Suite4": {
+        "Name": "Validation of Landing Page \"Language Selector\" Feature",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "BeforeEach": [
+            {
+                "id": "launchUrl",
+                "description": "",
+                "testFile": "./core/runner/launchUrl.js",
+                "testData": []
+            }
+        ],
+        "Before": [],
+        "Test": [
+            {
+                "id": "TST_LAND_TC_4",
+                "description": "",
+                "testFile": "./test/ExperienceApp/landing.test.js",
+                "testData": [
+                    {
+                        "dataFile": "./testResources/testcaseData/ExperienceApp/thor/appLangES.json",
+                        "jsonPath": "C1.appContent.language"
+                    }
+                ]
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    }
+}

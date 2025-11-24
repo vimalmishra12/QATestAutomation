@@ -1,0 +1,17 @@
+{
+  "C1": {
+    "login": {
+      "user": {
+        "validTeacher": {
+          "email": "CQA_AUTO_TEA_101@mailsac.com",
+          "password": "Compro11",
+          "role": "teacher"
+        }
+      }
+    },
+    "student": {
+      "email": "CQA_AUTO_STU_101@mailsac.com",
+      "password": "Compro11"
+    }
+  }
+}
