@@ -99,6 +99,19 @@ else {
     global.appUrl = envData[argv.appType].environments[argv.testEnv].url;
     global.moduleOff = envData[argv.appType].environments[argv.testEnv].moduleOff;
 
+    global.headers = envData?.[argv.appType]?.environments?.[argv.testEnv]?.headers || {};
+    // Normalize header names to lowercase and ensure values are strings
+    global.headers = Object.fromEntries(
+      Object.entries(global.headers || {}).map(([k, v]) => [String(k).toLowerCase(), String(v)])
+    );
+
+    if (Object.keys(global.headers).length) {
+      console.log("🔐 [ENV] Cloudflare headers loaded for bypass:", Object.keys(global.headers));
+    } else {
+      console.log("⚠️ [ENV] No Cloudflare headers found in environment configuration");
+    }
+
+
     if (!global.appUrl || !global.testExecDir) {
         console.log("!!!!! ERROR: One or more environment parameters are missing in the env.json !!!!!");
         console.log("appUrl = " + global.appUrl);
@@ -147,3 +160,252 @@ global.diffScreenshotDir = path.join('screenshots/diff/' + argv.appType, argv.te
 if (argv.visual) {
     fs.mkdirSync(global.reportOutputDir + '/visual/', { recursive: true });
 }
+
+global.setupCDPHeaders = async () => {
+  // Prevent duplicate initialization/listeners
+  // if (global._cdpHeadersSetup) {
+  //   console.log('🔧 [CDP] setupCDPHeaders already run; skipping duplicate initialization');
+  //   return;
+  // }
+  // global._cdpHeadersSetup = true;
+
+  try {
+    if (!global.appUrl) {
+      console.warn('⚠️ [CDP] global.appUrl is not set — skipping CDP header setup');
+      return;
+    }
+
+    if (!global.headers || Object.keys(global.headers).length === 0) {
+      console.log('⚠️ [ENV] No Cloudflare headers to inject; skipping CDP header setup');
+      return;
+    }
+
+    // Ensure Puppeteer bridge exists on browser
+    if (typeof browser?.getPuppeteer !== 'function') {
+      console.warn('⚠️ [CDP] browser.getPuppeteer is not available; cannot configure CDP headers');
+      return;
+    }
+
+    const puppeteerBrowser = await browser.getPuppeteer();
+    if (!puppeteerBrowser) {
+      console.warn('⚠️ [CDP] puppeteerBrowser is undefined; aborting header setup');
+      return;
+    }
+
+    // Obtain or create a Puppeteer page
+    const pages = await puppeteerBrowser.pages();
+    let page = pages && pages.length ? pages[0] : null;
+    if (!page) {
+      try {
+        page = await puppeteerBrowser.newPage();
+      } catch (err) {
+        // ignore - will be handled below
+      }
+    }
+    if (!page) {
+      console.warn('⚠️ [CDP] Could not obtain a Puppeteer page; aborting header setup');
+      return;
+    }
+
+    // Try the high-level Puppeteer API first (cleanest)
+    // if (typeof page.setExtraHTTPHeaders === 'function') {
+    //   try {
+    //     await page.setExtraHTTPHeaders(global.headers);
+    //     console.log('🔐 [CDP] Headers applied via page.setExtraHTTPHeaders');
+    //     return;
+    //   } catch (err) {
+    //     console.warn('⚠️ [CDP] page.setExtraHTTPHeaders failed, falling back to CDP Fetch interception:', err);
+    //   }
+    // }
+
+    // Safely parse hostname to scope interception patterns
+    let hostnamePattern = '*';
+    try {
+      const parsed = new URL(global.appUrl.includes('://') ? global.appUrl : `http://${global.appUrl}`);
+      hostnamePattern = `*${parsed.hostname}*`;
+    } catch (err) {
+      console.warn('⚠️ [CDP] Could not parse global.appUrl; request interception will not be hostname-scoped');
+    }
+
+    // Create CDP session
+    const client = await page.target().createCDPSession();
+    if (!client) {
+      console.warn('⚠️ [CDP] Failed to create CDP session; aborting header setup');
+      return;
+    }
+
+    // Enable Network (best-effort) and Fetch domain for request modification
+    try { await client.send('Network.enable'); } catch (_) { /* non-fatal */ }
+    await client.send('Network.setRequestInterception', {
+      patterns: [{ urlPattern: hostnamePattern }]
+    });
+
+    // Handler: on request paused, merge headers and continue the request
+      // Listen for requests and inject headers
+  client.on('Network.requestIntercepted', async (event) => {
+    const { interceptionId, request } = event;
+
+    // console.log(`📡 [CDP] Intercepted request: ${request.method} ${request.url}`);
+
+    // Check if this request should have headers
+    const shouldAddHeaders = global.appUrl && request.url.includes(new URL(global.appUrl).hostname);
+
+    if (shouldAddHeaders) {
+      // console.log(`🔐 [CDP] Adding headers to: ${request.url}`);
+
+      // Add headers to the request
+      const headers = { ...request.headers, ...global.headers };
+
+      // console.log(`🔐 [CDP] Headers injected:`, Object.keys(global.headers));
+
+      // Continue the request with modified headers
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId,
+        headers
+      });
+    } else {
+      // Continue the request without modification
+      await client.send('Network.continueInterceptedRequest', {
+        interceptionId
+      });
+    }
+  });
+
+    console.log('🔧 [CDP] Header injection via CDP Fetch domain configured');
+  } catch (err) {
+    console.error('❌ [CDP] Error setting up CDP headers:', err);
+  }
+};
+
+
+
+
+
+
+
+
+
+
+// This is the modern approach using `fetch` to ingest headers to bypass the cloudfare authentication via headers, but we are not using it for now because it does not align with our current testing setup.
+
+
+// global.setupCDPHeaders = async () => {
+//   // Prevent duplicate initialization/listeners
+//   // if (global._cdpHeadersSetup) {
+//   //   console.log('🔧 [CDP] setupCDPHeaders already run; skipping duplicate initialization');
+//   //   return;
+//   // }
+//   // global._cdpHeadersSetup = true;
+
+//   try {
+//     if (!global.appUrl) {
+//       console.warn('⚠️ [CDP] global.appUrl is not set — skipping CDP header setup');
+//       return;
+//     }
+
+//     if (!global.headers || Object.keys(global.headers).length === 0) {
+//       console.log('⚠️ [ENV] No Cloudflare headers to inject; skipping CDP header setup');
+//       return;
+//     }
+
+//     // Ensure Puppeteer bridge exists on browser
+//     if (typeof browser?.getPuppeteer !== 'function') {
+//       console.warn('⚠️ [CDP] browser.getPuppeteer is not available; cannot configure CDP headers');
+//       return;
+//     }
+
+//     const puppeteerBrowser = await browser.getPuppeteer();
+//     if (!puppeteerBrowser) {
+//       console.warn('⚠️ [CDP] puppeteerBrowser is undefined; aborting header setup');
+//       return;
+//     }
+
+//     // Obtain or create a Puppeteer page
+//     const pages = await puppeteerBrowser.pages();
+//     let page = pages && pages.length ? pages[0] : null;
+//     if (!page) {
+//       try {
+//         page = await puppeteerBrowser.newPage();
+//       } catch (err) {
+//         // ignore - will be handled below
+//       }
+//     }
+//     if (!page) {
+//       console.warn('⚠️ [CDP] Could not obtain a Puppeteer page; aborting header setup');
+//       return;
+//     }
+
+//     // Try the high-level Puppeteer API first (cleanest)
+//     // if (typeof page.setExtraHTTPHeaders === 'function') {
+//     //   try {
+//     //     await page.setExtraHTTPHeaders(global.headers);
+//     //     console.log('🔐 [CDP] Headers applied via page.setExtraHTTPHeaders');
+//     //     return;
+//     //   } catch (err) {
+//     //     console.warn('⚠️ [CDP] page.setExtraHTTPHeaders failed, falling back to CDP Fetch interception:', err);
+//     //   }
+//     // }
+
+//     // Safely parse hostname to scope interception patterns
+//     let hostnamePattern = '*';
+//     try {
+//       const parsed = new URL(global.appUrl.includes('://') ? global.appUrl : `http://${global.appUrl}`);
+//       hostnamePattern = `*${parsed.hostname}*`;
+//     } catch (err) {
+//       console.warn('⚠️ [CDP] Could not parse global.appUrl; request interception will not be hostname-scoped');
+//     }
+
+//     // Create CDP session
+//     const client = await page.target().createCDPSession();
+//     if (!client) {
+//       console.warn('⚠️ [CDP] Failed to create CDP session; aborting header setup');
+//       return;
+//     }
+
+//     // Enable Network (best-effort) and Fetch domain for request modification
+//     try { await client.send('Network.enable'); } catch (_) { /* non-fatal */ }
+//     await client.send('Fetch.enable', {
+//       handleAuthRequests: false,
+//       patterns: [{ urlPattern: hostnamePattern }]
+//     });
+
+//     // Handler: on request paused, merge headers and continue the request
+//     client.on('Fetch.requestPaused', async (event) => {
+//       const { requestId, request } = event;
+//       try {
+//         const originalHeaders = request.headers || {};
+//         // normalize original headers (lowercase keys) then merge with global.headers (global headers win)
+//         const normalizedOriginal = Object.fromEntries(
+//           Object.entries(originalHeaders).map(([k, v]) => [String(k).toLowerCase(), String(v)])
+//         );
+//         const merged = { ...normalizedOriginal, ...global.headers };
+
+//         // Convert to CDP's expected header array format
+//         const headerArray = Object.entries(merged).map(([name, value]) => ({ name: String(name), value: String(value) }));
+
+//         await client.send('Fetch.continueRequest', {
+//           requestId,
+//           headers: headerArray
+//         });
+//       } catch (err) {
+//         console.warn('⚠️ [CDP] Error injecting headers for paused request, attempting to continue without modification:', err);
+//         try {
+//           await client.send('Fetch.continueRequest', { requestId });
+//         } catch (innerErr) {
+//           // Final best-effort fallback: try to use Network.continueInterceptedRequest if possible
+//           try {
+//             if (event.interceptionId) {
+//               await client.send('Network.continueInterceptedRequest', { interceptionId: event.interceptionId });
+//             }
+//           } catch (_) {
+//             // swallow - nothing more we can do for this request
+//           }
+//         }
+//       }
+//     });
+
+//     console.log('🔧 [CDP] Header injection via CDP Fetch domain configured');
+//   } catch (err) {
+//     console.error('❌ [CDP] Error setting up CDP headers:', err);
+//   }
+// };
