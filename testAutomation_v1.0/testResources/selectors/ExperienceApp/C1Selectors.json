@@ -7,7 +7,7 @@
         "Createassignment": "a[qid=\"rView-5\"]",
         "PracticeExtracqa": "a[qid=\"a-path-2-0\"]",
         "Unit1": "i[class='ml-auto fa fa-angle-right']",
-        "LessonA": "div[class=\"custom-control-input-wrapper\"]",
+        "LessonA": "input[id^=\"checkbox-1756892185750/1756892187201/1756892198221\"]",
         "Next": "button[qid=\"pAssignment-6\"]",
         "inputTag": "[qid=\"assignment-detail-4\"]",
         "timeIncrease": "button[class=\"owl-dt-control-button owl-dt-control-arrow-button\"]",
