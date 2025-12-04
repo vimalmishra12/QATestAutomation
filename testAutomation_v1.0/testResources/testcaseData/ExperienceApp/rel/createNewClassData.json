@@ -1,0 +1,37 @@
+{
+	"C1": {
+			"class1": {
+				"name": "Active Class",
+				"material": "MQA eBook Test DM",
+				"key": "vQ9n-qhQ8",
+				"classDuration": "May 26, 2021 - May 26, 2022",
+				"instructor": {
+					"name": "dev1 teacher",
+					"email": "vengqains5_new@yopmail.com"
+				},
+				"bookName": "PROYECTOS",
+				"bookIndex":"0",
+				"schoolName": "Mount Allison School",
+				"status": "Active",
+				"studentCount": 0,
+				"info": "Existing Active Course"
+			},
+			"class2": {
+				"name": "Active Class with material",
+				"material": "MQA eBook Test DM",
+				"key": "vQ9n-qhQ8",
+				"classDuration": "May 26, 2021 - May 26, 2022",
+				"instructor": {
+					"name": "dev1 teacher",
+					"email": "vengqains5_new@yopmail.com"
+				},
+				"bookName": "PROYECTOS",
+				"bookIndex":"0",
+				"schoolName": "Mount Allison School",
+				"status": "Active",
+				"studentCount": 0,
+				"info": "Existing Active Course",
+				"studentEmail": "CQA_AUTO_STU_101@mailsac.com"
+			}
+	}
+}
