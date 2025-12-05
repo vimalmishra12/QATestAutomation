@@ -388,7 +388,9 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
   before: async function (capabilities, specs) {
-    await setupCDPHeaders();
+    if (webDriverService !== 'lambdatest') {
+      await setupCDPHeaders();
+    }
   },
   /**
    * Gets executed before test execution begins. At this point you can access to all global
@@ -408,7 +410,9 @@ exports.config = {
    */
   beforeCommand: async function (commandName, args) {
     if (commandName === 'url') {
-      await setupCDPHeaders();
+      if (webDriverService !== 'lambdatest') {
+        await setupCDPHeaders();
+      }
     }
   },
   /**
