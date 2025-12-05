@@ -138,6 +138,13 @@ else {
         process.exit(1);
     }
     global.capabilities = capabilitiesFile[argv.browserCapability].capabilities;
+    if (capabilitiesFile[argv.browserCapability].webDriverService === 'lambdatest') {
+        global.capabilities.forEach(cap => {
+            if (cap['LT:Options']) {
+                cap['LT:Options'].customHeaders = global.headers;
+            }
+        });
+    }
     global.maximizeWindow = capabilitiesFile[argv.browserCapability].maximizeWindow;
     global.resScreenshotDir = argv.browserCapability;
     if (capabilitiesFile[argv.browserCapability].resolution != undefined) {
