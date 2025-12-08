@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: C1LoginTest
           commands:
-            - echo "Starting prologue commands 1"
+            - echo "Starting prologue commands"
             - checkout
             - sudo apt-get update
             - sudo apt-get remove -y google-chrome-stable
@@ -28,7 +28,7 @@ blocks:
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
             - echo "Prologue commands completed"
-            - echo "Starting C1LoginTest job 1"
+            - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Setting Node.js version"
             - sem-version node 14.21.3
@@ -39,14 +39,15 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run highlighterFeatureTest
-            - RESULT=$?
-            - 'echo "Test result: $RESULT"'
-            - 'if [ $RESULT -eq 0 ]; then'
-            - '  STATUS="passed"'
-            - else
-            - '  STATUS="failed"'
-            - fi
+            - npm run loginFeatureTest
+            - |
+              RESULT=$?
+              echo "Test result: $RESULT"
+              if [ $RESULT -eq 0 ]; then
+                STATUS="passed"
+              else
+                STATUS="failed"
+              fi
             - echo "Verifying directory structure"
             - echo "Listing files in the root directory"
             - ls -la || echo "No files found in root directory"
@@ -59,21 +60,23 @@ blocks:
             - echo "Listing files in TestReports directory"
             - 'ls -la || { echo "No files found in TestReports directory"; exit 1; }'
             - echo "Verifying Timeline report files"
-            - TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
-            - 'if [ -z "$TIMELINE_REPORT" ]; then'
-            - '  echo "No HTML report files found"'
-            - '  exit 1'
-            - else
-            - '  echo "Timeline report found: $TIMELINE_REPORT"'
-            - fi
+            - |
+              TIMELINE_REPORT=$(find /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports -type f -name "*.html")
+              if [ -z "$TIMELINE_REPORT" ]; then
+                echo "No HTML report files found"
+                exit 1
+              else
+                echo "Timeline report found: $TIMELINE_REPORT"
+              fi
             - echo "Verifying log file location"
-            - LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
-            - 'if [ ! -f "$LOG_FILE" ]; then'
-            - '  echo "Timeline log file not found at expected location: $LOG_FILE"'
-            - '  exit 1'
-            - else
-            - '  echo "Timeline log file found: $LOG_FILE"'
-            - fi
+            - |
+              LOG_FILE="/home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports/wdio-0-0-timeline-reporter.log"
+              if [ ! -f "$LOG_FILE" ]; then
+                echo "Timeline log file not found at expected location: $LOG_FILE"
+                exit 1
+              else
+                echo "Timeline log file found: $LOG_FILE"
+              fi
             - echo "Waiting for log file to be completely written"
             - echo "Waiting for log file to be completely written"
             - sleep 10
@@ -83,21 +86,22 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - 'export mailingList="vimal.mishra@comprotechnologies.com ashish.kushwaha@comprotechnologies.com dhruv.karnwal@comprotechnologies.com,ashish.kushwaha@comprotechnologies.com,dhruv.karnwal@comprotechnologies.com"'
+            - export mailingList="vimal.mishra@comprotechnologies.com"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
-            - node mailer.js --appType="ExperienceApp" \
-            - '               --testEnv="qa" \'
-            - '               --projectName="$SEMAPHORE_PROJECT_NAME" \'
-            - '               --branchName="$SEMAPHORE_GIT_BRANCH" \'
-            - '               --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \'
-            - '               --jobID="$SEMAPHORE_JOB_ID" \'
-            - '               --mailingList="$mailingList" \'
-            - '               --jobResult="$STATUS" \'
-            - '               --emailId="$emailId" \'
-            - '               --emailPwd="$emailPwd" \'
-            - '               --triggerSource="Semaphore" \'
-            - '               > /home/semaphore/mailer.log 2>&1'
+            - |
+              node mailer.js --appType="ExperienceApp" \
+                             --testEnv="qa" \
+                             --projectName="$SEMAPHORE_PROJECT_NAME" \
+                             --branchName="$SEMAPHORE_GIT_BRANCH" \
+                             --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
+                             --jobID="$SEMAPHORE_JOB_ID" \
+                             --mailingList="$mailingList" \
+                             --jobResult="$STATUS" \
+                             --emailId="$emailId" \
+                             --emailPwd="$emailPwd" \
+                             --triggerSource="Semaphore" \
+                             > /home/semaphore/mailer.log 2>&1
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
