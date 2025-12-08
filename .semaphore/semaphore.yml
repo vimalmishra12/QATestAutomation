@@ -28,7 +28,7 @@ blocks:
             - echo "Installing Node.js and npm"
             - sudo apt-get install -y nodejs npm
             - echo "Prologue commands completed"
-            - echo "Starting C1LoginTest job"
+            - echo "Starting C1LoginTest job 1"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Setting Node.js version"
             - sem-version node 14.21.3
