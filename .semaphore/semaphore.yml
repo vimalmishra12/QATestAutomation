@@ -31,7 +31,7 @@ blocks:
             - echo "Starting C1LoginTest job"
             - cd /home/semaphore/QATestAutomation/testAutomation_v1.0
             - echo "Setting Node.js version"
-            - sem-version node 14.21.3
+            - sem-version node 20
             - echo "Restoring npm cache"
             - cache restore
             - echo "Installing npm dependencies"
