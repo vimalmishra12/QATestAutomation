@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run landingFeatureTest
+            - npm run eBookFeatureTest
             - |
               RESULT=$?
               echo "Test result: $RESULT"
