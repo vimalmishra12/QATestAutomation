@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run eBookFeatureTest
+            - npm run loginFeatureTest_LT
             - |
               RESULT=$?
               echo "Test result: $RESULT"
@@ -91,7 +91,7 @@ blocks:
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
               node mailer.js --appType="ExperienceApp" \
-                             --testEnv="rel" \
+                             --testEnv="production" \
                              --projectName="$SEMAPHORE_PROJECT_NAME" \
                              --branchName="$SEMAPHORE_GIT_BRANCH" \
                              --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" \
