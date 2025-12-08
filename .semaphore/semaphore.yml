@@ -101,10 +101,6 @@ blocks:
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
-        - name: 'Job #2'
-          commands:
-            - echo "LT USER = $LT_USERNAME"
-            - 'echo "LT KEY  = ${#LT_ACCESS_KEY}"'
       secrets:
         - name: Cred
         - name: LambdaTest
