@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run eBookHotLinkTest_LT || true
+            - npm run loginFeatureTest_LT || true
             - |
               RESULT=$?
               echo "Test result: $RESULT"
@@ -58,9 +58,8 @@ blocks:
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports || { echo "Directory not found"; exit 1; }'
             - echo "Listing files in output/reports directory"
             - 'ls -la || { echo "No reports directory found"; exit 1; }'
-            - echo "Ensuring reports directory exists"
-            - mkdir -p /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports/TestReports
-            - cd /home/semaphore/QATestAutomation/testAutomation_v1.0/output/reports
+            - echo "Changing directory to TestReports"
+            - 'cd TestReports || { echo "No TestReports directory found"; exit 1; }'
             - echo "Listing files in TestReports directory"
             - 'ls -la || { echo "No files found in TestReports directory"; exit 1; }'
             - |
