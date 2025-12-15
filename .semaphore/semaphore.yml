@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npm run createNewClassTest_LT || true
+            - npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage || true
             - |
               RESULT=$?
               echo "Test result: $RESULT"
