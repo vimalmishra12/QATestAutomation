@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage || true
+            - npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --windowWidth=1600 --windowHeight=900 || true
             - |
               RESULT=$?
               echo "Test result: $RESULT"
@@ -97,7 +97,7 @@ blocks:
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
-              node mailer.js --appType="ExperienceApp" --testEnv="thor" --projectName="$SEMAPHORE_PROJECT_NAME" --branchName="$SEMAPHORE_GIT_BRANCH" --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" --jobID="$SEMAPHORE_JOB_ID" --mailingList="$mailingList" --jobResult="$STATUS" --emailId="$emailId" --emailPwd="$emailPwd" --triggerSource="Semaphore" > /home/semaphore/mailer.log 2>&1
+              node mailer.js --appType="ExperienceApp" --testEnv="rel" --projectName="$SEMAPHORE_PROJECT_NAME" --branchName="$SEMAPHORE_GIT_BRANCH" --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" --jobID="$SEMAPHORE_JOB_ID" --mailingList="$mailingList" --jobResult="$STATUS" --emailId="$emailId" --emailPwd="$emailPwd" --triggerSource="Semaphore" > /home/semaphore/mailer.log 2>&1
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
