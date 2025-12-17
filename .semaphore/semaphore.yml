@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-19200
+            - npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
               echo "Test result: $RESULT"
