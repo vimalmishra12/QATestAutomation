@@ -68,6 +68,7 @@ module.exports = {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.deleteClass);
+    await browser.pause(4000);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), ' deleteClass is clicked');
     } else {
