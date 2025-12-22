@@ -7,6 +7,27 @@ const specGenerator = require(process.cwd() + "/core/runner/specGenerator.js");
 const visualTimelineReportService =
   require("./core/utils/visual-report-utility/report-service").TimelineService;
 var visualReportService = new visualTimelineReportService();
+
+const path = require("path");
+
+
+
+// execution file (loginTest.json → loginTest)
+const execFileName = argv.testExecFile
+  ? path.basename(argv.testExecFile, path.extname(argv.testExecFile))
+  : "LocalRun";
+
+// test environment (production → PRODUCTION)
+const testEnvName = argv.testEnv
+  ? argv.testEnv.toUpperCase()
+  : "LOCAL";
+
+
+
+const { generateShareableLink } = require("./core/utils/lambdatest/shareableLink");
+const { getLatestBuildId } = require("./core/utils/lambdatest/getBuildId");
+
+
 var retryTimes = 0;
 if (argv.retry) retryTimes = 1;
 
@@ -22,6 +43,8 @@ var webDriverService =
 var user = global.capabilitiesFile[argv.browserCapability].user;
 var key = global.capabilitiesFile[argv.browserCapability].key;
 var protocol = global.capabilitiesFile[argv.browserCapability].protocol;
+
+
 
 
 
@@ -398,11 +421,29 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
+  // beforeSession: async function (config, capabilities, specs) {
+  //   // console.log("🌐 [CDP] beforeSession hook triggered!");
+  //   // console.log("🌐 [CDP] Headers will be injected using Chrome DevTools Protocol");
+  //   // console.log("🌐 [CDP] global.headers:", global.headers);
+
+
+
+    
+  // },
+
   beforeSession: async function (config, capabilities, specs) {
-    // console.log("🌐 [CDP] beforeSession hook triggered!");
-    // console.log("🌐 [CDP] Headers will be injected using Chrome DevTools Protocol");
-    // console.log("🌐 [CDP] global.headers:", global.headers);
+
+    if (capabilities["LT:Options"]) {
+      capabilities["LT:Options"].build = `C1- ${execFileName} | ${testEnvName}`;
+    }
+
+    // console.log(
+    //   "🏗️ [LT] Build Name:",
+    //   capabilities["LT:Options"]?.build
+    // );
   },
+
+
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
@@ -415,10 +456,13 @@ exports.config = {
       }
     }
   },
+
   /**
    * Hook that gets executed before the suite starts
    * @param {Object} suite suite details
    */
+
+
   // beforeSuite: function (suite) {
   // },
   /**
@@ -564,6 +608,37 @@ exports.config = {
         console.log(response);
       }
     }
+
+
+    if (webDriverService === "lambdatest") {
+      try {
+        const buildName =
+          capabilities?.[0]?.["LT:Options"]?.build ||
+          "C1Automation - CI Build";
+
+        //console.log("🔍 [LT] Resolving buildId for:", buildName);
+
+        const buildId = await getLatestBuildId(buildName);
+
+        if (buildId) {
+          const shareUrl = await generateShareableLink({
+            entityId: buildId,
+            expiresAt: 30
+          });
+
+          // 🔑 Make share URL available to mailer.js
+          if (shareUrl) {
+            process.env.LT_SHARE_URL = shareUrl;
+            console.log("📨 [LT] Share URL stored for mailer:", shareUrl);
+          }
+        }
+
+      } catch (err) {
+        console.error("❌ [LT] Share link generation failed:", err.message);
+      }
+    }
+
+
 
     //require('./core/utils/reportUpdater.js').indexFileUpdate();
     await specGenerator.removingTempSpecs();
