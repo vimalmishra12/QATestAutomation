@@ -61,7 +61,17 @@ async function main() {
             }
 
             if (fs.existsSync(visReportDir)) {
-                reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/visual/index.html';
+                // reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/visual/index.html';
+                
+                reportUrl = lambdaTestShareUrl
+                            ? lambdaTestShareUrl
+                            : baseurl + "/" +
+                                argv.appType + "/" +
+                                argv.testEnv + "/" +
+                                folder[0] +
+                                "/visual/index.html";
+                
+                
                 logData = updateLogDataObj(visReportDir);
                 mailObj2 = await createMail(logData, reportUrl, "Visual Regression Test Run");
             }
