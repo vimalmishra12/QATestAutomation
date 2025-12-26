@@ -64,6 +64,10 @@ const ltOptions = cap["LT:Options"] || {};
     if (shareUrl) {
       console.log("🔗 [LT] Shareable Build Link:");
       console.log(shareUrl);
+
+      // ✅ MAKE IT AVAILABLE FOR MAILER
+      process.env.LT_SHARE_URL = shareUrl;
+
     } else {
       console.warn("⚠️ [LT] Share link generated but URL missing");
     }
@@ -78,4 +82,41 @@ const ltOptions = cap["LT:Options"] || {};
   }
 }
 
+// 👇 Allow this file to run directly from CLI (Semaphore, local debug)
+if (require.main === module) {
+  (async () => {
+    try {
+      const { getLatestBuildId } = require("./getBuildId");
+
+      const buildName = process.env.LT_BUILD_NAME;
+
+      if (!buildName) {
+        console.error("❌ LT_BUILD_NAME not provided");
+        process.exit(0);
+      }
+
+      const buildId = await getLatestBuildId(buildName);
+
+      if (!buildId) {
+        console.error("❌ No LambdaTest buildId found");
+        process.exit(0);
+      }
+
+      const shareUrl = await generateShareableLink({ entityId: buildId });
+
+      if (shareUrl) {
+        // IMPORTANT: Print in exportable format for CI
+        console.log(`LT_SHARE_URL=${shareUrl}`);
+      }
+    } catch (err) {
+      console.error("❌ Error generating LambdaTest shareable link", err);
+    }
+  })();
+}
+
+
 module.exports = { generateShareableLink };
+
+
+
+
