@@ -94,6 +94,17 @@ blocks:
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - export mailingList="ashish.kushwaha@comprotechnologies.com"
+            - echo "Generating LambdaTest shareable link"
+            - |
+              cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest
+              SHARE_OUTPUT=$(node shareableLink.js | grep "^LT_SHARE_URL=")
+              echo "$SHARE_OUTPUT"
+
+              if [ -n "$SHARE_OUTPUT" ]; then
+                export "$SHARE_OUTPUT"
+              fi
+            - 'echo "LambdaTest Share URL:"'
+            - echo "$LT_SHARE_URL"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
