@@ -90,29 +90,23 @@ if (require.main === module) {
 
       const buildName = process.env.LT_BUILD_NAME;
 
-      if (!buildName) {
-        console.error("❌ LT_BUILD_NAME not provided");
-        process.exit(0);
-      }
+      if (!buildName) process.exit(0);
 
       const buildId = await getLatestBuildId(buildName);
-
-      if (!buildId) {
-        console.error("❌ No LambdaTest buildId found");
-        process.exit(0);
-      }
+      if (!buildId) process.exit(0);
 
       const shareUrl = await generateShareableLink({ entityId: buildId });
 
+      // IMPORTANT: ONLY print URL for bash export
       if (shareUrl) {
-        // IMPORTANT: Print in exportable format for CI
-        console.log(`LT_SHARE_URL=${shareUrl}`);
+        console.log(shareUrl);
       }
     } catch (err) {
-      console.error("❌ Error generating LambdaTest shareable link", err);
+      process.exit(0);
     }
   })();
 }
+
 
 
 module.exports = { generateShareableLink };

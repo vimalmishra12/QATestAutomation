@@ -13,7 +13,7 @@ var semaphoreJob = 'https://vimalmishra12.semaphoreci.com' + '/jobs/' + argv.job
 
 // console.log('Semaphore Job URL:', semaphoreJob);
 
-const lambdaTestShareUrl = process.env.LT_SHARE_URL;
+const lambdaTestShareUrl = process.env.LT_SHARE_URL || "Not available";
 console.log("🔗 [MAILER] LambdaTest Share URL:", lambdaTestShareUrl);
 
 
