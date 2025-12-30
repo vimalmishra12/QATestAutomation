@@ -88,7 +88,7 @@ if (require.main === module) {
     try {
       const { getLatestBuildId } = require("./getBuildId");
 
-      const buildName = process.env.LT_BUILD_NAME;
+      const buildName = process.env.LT_BUILD_NAME || null;
 
       if (!buildName) process.exit(0);
 

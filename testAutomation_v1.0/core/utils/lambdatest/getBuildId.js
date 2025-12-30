@@ -9,6 +9,13 @@ async function getLatestBuildId(buildName) {
   if (!LT_USERNAME || !LT_ACCESS_KEY) return null;
 
   try {
+    const params = { limit: 1 };
+
+    // ✅ Apply name filter ONLY if buildName exists
+    if (buildName) {
+      params.name = buildName;
+    }
+
     const response = await axios.get(
       "https://api.lambdatest.com/automation/api/v1/builds",
       {
@@ -16,10 +23,7 @@ async function getLatestBuildId(buildName) {
           username: LT_USERNAME,
           password: LT_ACCESS_KEY
         },
-        params: {
-          limit: 1,
-          name: buildName
-        }
+        params
       }
     );
 
