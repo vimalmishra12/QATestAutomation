@@ -62,8 +62,6 @@ const ltOptions = cap["LT:Options"] || {};
         : null);
 
     if (shareUrl) {
-      console.log("🔗 [LT] Shareable Build Link:");
-      console.log(shareUrl);
 
       // ✅ MAKE IT AVAILABLE FOR MAILER
       process.env.LT_SHARE_URL = shareUrl;
@@ -89,19 +87,20 @@ if (require.main === module) {
       const { getLatestBuildId } = require("./getBuildId");
 
       const buildId = await getLatestBuildId();
-
+      if (!buildId) process.exit(0);
 
       const shareUrl = await generateShareableLink({ entityId: buildId });
 
-      // IMPORTANT: ONLY print URL for bash export
+      // ✅ ONLY print URL for CI
       if (shareUrl) {
-        console.log(shareUrl);
+        process.stdout.write(shareUrl);
       }
     } catch (err) {
       process.exit(0);
     }
   })();
 }
+
 
 
 
