@@ -88,12 +88,8 @@ if (require.main === module) {
     try {
       const { getLatestBuildId } = require("./getBuildId");
 
-      const buildName = process.env.LT_BUILD_NAME || null;
+      const buildId = await getLatestBuildId();
 
-      if (!buildName) process.exit(0);
-
-      const buildId = await getLatestBuildId(buildName);
-      if (!buildId) process.exit(0);
 
       const shareUrl = await generateShareableLink({ entityId: buildId });
 
