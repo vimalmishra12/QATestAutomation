@@ -94,16 +94,20 @@ blocks:
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - export mailingList="ashish.kushwaha@comprotechnologies.com"
-            - echo \"\U0001F50D Searching for generateShareableLink.js in repo\"
-            - find /home/semaphore/QATestAutomation/testAutomation_v1.0 -type f -name "*share*link*.js"
             - |
-              export LT_SHARE_URL=$(node /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest/generateShareableLink.js)
-              echo "LT_SHARE_URL=$LT_SHARE_URL"
-              if [ -z "$LT_SHARE_URL" ]; then
-                echo "LT_SHARE_URL is empty"
+              echo "Generating LambdaTest shareable link"
+              cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest
+
+              export LT_SHARE_URL=$(node shareableLink.js)
+
+              if [ -n "$LT_SHARE_URL" ]; then
+                echo "LambdaTest Share URL exported: $LT_SHARE_URL"
               else
-                echo "LT_SHARE_URL generated successfully"
+                echo "LambdaTest Share URL not generated"
               fi
+            - 'echo "LambdaTest Share URL:"'
+            - echo "$LT_SHARE_URL"
+            - echo "DEBUG LT_BUILD_NAME=$LT_BUILD_NAME"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
