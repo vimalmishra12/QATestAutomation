@@ -62,7 +62,8 @@ const ltOptions = cap["LT:Options"] || {};
         : null);
 
     if (shareUrl) {
-
+      // console.log("🔗 [LT] Shareable Build Link:");
+      // console.log(shareUrl);
       // ✅ MAKE IT AVAILABLE FOR MAILER
       process.env.LT_SHARE_URL = shareUrl;
 

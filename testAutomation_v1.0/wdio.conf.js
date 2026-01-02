@@ -629,7 +629,7 @@ exports.config = {
           // 🔑 Make share URL available to mailer.js
           if (shareUrl) {
             process.env.LT_SHARE_URL = shareUrl;
-            console.log("📨 [LT] Share URL stored for mailer:", shareUrl);
+            console.log("🔗 [LT] Shareable Build Link:", shareUrl);
           }
         }
 
