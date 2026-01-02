@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npx wdio  --appType=ExperienceApp --testEnv=thor --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
+            - npx wdio  --appType=ExperienceApp --testEnv=thor --testExecFile='eBookTestMaster_v.0.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
               echo "Test result: $RESULT"
@@ -105,9 +105,6 @@ blocks:
               else
                 echo "LambdaTest Share URL not generated"
               fi
-            - 'echo "LambdaTest Share URL:"'
-            - echo "$LT_SHARE_URL"
-            - echo "DEBUG LT_BUILD_NAME=$LT_BUILD_NAME"
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
