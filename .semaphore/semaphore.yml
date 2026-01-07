@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - npx wdio  --appType=ExperienceApp --testEnv=thor --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
+            - npx wdio  --appType=ExperienceApp --testEnv=rel --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
               echo "Test result: $RESULT"
@@ -94,20 +94,21 @@ blocks:
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - export mailingList="ashish.kushwaha@comprotechnologies.com"
-            - echo \"\U0001F50D Searching for generateShareableLink.js in repo\"
-            - find /home/semaphore/QATestAutomation/testAutomation_v1.0 -type f -name "*share*link*.js"
             - |
-              export LT_SHARE_URL=$(node /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest/generateShareableLink.js)
-              echo "LT_SHARE_URL=$LT_SHARE_URL"
-              if [ -z "$LT_SHARE_URL" ]; then
-                echo "LT_SHARE_URL is empty"
+              echo "Generating LambdaTest shareable link"
+              cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest
+
+              export LT_SHARE_URL=$(node shareableLink.js)
+
+              if [ -n "$LT_SHARE_URL" ]; then
+                echo "LambdaTest Share URL exported: $LT_SHARE_URL"
               else
-                echo "LT_SHARE_URL generated successfully"
+                echo "LambdaTest Share URL not generated"
               fi
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
             - |
-              node mailer.js --appType="ExperienceApp" --testEnv="thor" --projectName="$SEMAPHORE_PROJECT_NAME" --branchName="$SEMAPHORE_GIT_BRANCH" --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" --jobID="$SEMAPHORE_JOB_ID" --mailingList="$mailingList" --jobResult="$STATUS" --emailId="$emailId" --emailPwd="$emailPwd" --triggerSource="Semaphore" > /home/semaphore/mailer.log 2>&1
+              node mailer.js --appType="ExperienceApp" --testEnv="rel" --projectName="$SEMAPHORE_PROJECT_NAME" --branchName="$SEMAPHORE_GIT_BRANCH" --buildNumber="$SEMAPHORE_WORKFLOW_NUMBER" --jobID="$SEMAPHORE_JOB_ID" --mailingList="$mailingList" --jobResult="$STATUS" --emailId="$emailId" --emailPwd="$emailPwd" --triggerSource="Semaphore" > /home/semaphore/mailer.log 2>&1
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
