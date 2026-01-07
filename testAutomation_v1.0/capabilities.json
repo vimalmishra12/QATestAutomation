@@ -221,9 +221,8 @@
         "browserVersion": "latest",
         "LT:Options": {
             "platformName": "Windows 10",
-            "build": "MyProject - CI Build",
-            "project": "MyProject",
-            "name": "Smoke Suite - chrome",
+            "build": "C1Automation - CI Build",
+            "project": "C1Automation",
             "tunnel": false,
             "network": true,
             "console": "info",
@@ -249,8 +248,8 @@
       "LT:Options": {
         "deviceName": "Galaxy S24 Ultra",
         "platformVersion": "14",
-        "build": "MyProject - Android Run",
-        "project": "MyProject",
+        "build": "C1Automation - Android Run",
+        "project": "C1Automation",
         "name": "Smoke Suite - Samsung S24",
         "tunnel": true,
         "network": true,
