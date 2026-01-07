@@ -248,9 +248,8 @@
       "LT:Options": {
         "deviceName": "Galaxy S24 Ultra",
         "platformVersion": "14",
-        "build": "C1Automation - Android Run",
+        "build": "C1Automation - CI Build",
         "project": "C1Automation",
-        "name": "Smoke Suite - Samsung S24",
         "tunnel": true,
         "network": true,
         "console": true,
