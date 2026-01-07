@@ -223,7 +223,6 @@
             "platformName": "Windows 10",
             "build": "C1Automation - CI Build",
             "project": "C1Automation",
-            "name": "Smoke Suite - chrome",
             "tunnel": false,
             "network": true,
             "console": "info",

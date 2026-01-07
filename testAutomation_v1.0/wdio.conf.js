@@ -434,7 +434,7 @@ exports.config = {
   beforeSession: async function (config, capabilities, specs) {
 
     if (capabilities["LT:Options"]) {
-      capabilities["LT:Options"].build = `C1- ${execFileName} | ${testEnvName}`;
+      capabilities["LT:Options"].name = `Suite- ${testEnvName} | ${execFileName}`;
     }
 
     // console.log(
