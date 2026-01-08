@@ -2,6 +2,11 @@
 
 const axios = require("axios");
 
+
+
+
+
+
 async function generateShareableLink({ entityId, expiresAt = 30 }) {
   if (!entityId) {
     console.warn("⚠️ [LT] entityId not provided, skipping shareable link generation");
@@ -85,6 +90,19 @@ const ltOptions = cap["LT:Options"] || {};
 if (require.main === module) {
   (async () => {
     try {
+
+      function isLambdaTestRun() {
+        const caps = global.capabilities?.[0];
+        return !!caps?.["LT:Options"];
+      }
+
+      if (!isLambdaTestRun()) {
+        console.log("[LT] Local run detected – skipping LambdaTest link generation");
+        process.stdout.write(""); // IMPORTANT
+        return;
+      }
+
+
       const { getLatestBuildId } = require("./getBuildId");
 
       const buildId = await getLatestBuildId();
