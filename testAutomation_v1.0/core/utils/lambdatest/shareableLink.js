@@ -90,32 +90,18 @@ const ltOptions = cap["LT:Options"] || {};
 if (require.main === module) {
   (async () => {
     try {
+      const { getLatestBuildId } = require("./getBuildId");
+      const buildId = await getLatestBuildId();
 
-      function isLambdaTestRun() {
-        const caps = global.capabilities?.[0];
-        return !!caps?.["LT:Options"];
-      }
-
-      if (!isLambdaTestRun()) {
-        // console.log("[LT] Local run detected – skipping LambdaTest link generation");
-        process.stdout.write(""); 
+      if (!buildId) {
+        process.stdout.write("");
         return;
       }
 
-
-      const { getLatestBuildId } = require("./getBuildId");
-
-      const buildId = await getLatestBuildId();
-      if (!buildId) process.exit(0);
-
       const shareUrl = await generateShareableLink({ entityId: buildId });
-
-      // ✅ ONLY print URL for CI
-      if (shareUrl) {
-        process.stdout.write(shareUrl);
-      }
-    } catch (err) {
-      process.exit(0);
+      process.stdout.write(shareUrl || "");
+    } catch {
+      process.stdout.write("");
     }
   })();
 }
