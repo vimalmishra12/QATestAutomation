@@ -13,6 +13,18 @@ var semaphoreJob = 'https://vimalmishra12.semaphoreci.com' + '/jobs/' + argv.job
 
 // console.log('Semaphore Job URL:', semaphoreJob);
 
+// const isLambdaTestRun =
+//   process.env.BROWSER_CAPABILITY?.startsWith("lambdatest-") &&
+//   process.env.LT_SHARE_URL;
+const isLambdaTestRun = Boolean(process.env.LT_SHARE_URL);
+
+
+
+// const lambdaTestShareUrl = process.env.LT_SHARE_URL || "Not available";
+// console.log("🔗 [MAILER] LambdaTest Share URL:", lambdaTestShareUrl);
+
+
+
 var funcReportDir = '../../output/reports/' + folder[0];
 var visReportDir = funcReportDir + '/visual';
 var mailingList, mailOutput, mailSubject, appUrl, baseurl;
@@ -40,12 +52,49 @@ async function main() {
             logData = updateLogDataObj(funcReportDir)
 
             if (logData.skipAssertion != true) {
-                reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/index.html';
+                // reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/index.html';
+                // Prefer LambdaTest execution link if available
+                // reportUrl = lambdaTestShareUrl
+                // ? lambdaTestShareUrl
+                // : baseurl + "/" +
+                //     argv.appType + "/" +
+                //     argv.testEnv + "/" +
+                //     folder[0] +
+                //     "/index.html";
+                reportUrl = isLambdaTestRun
+                            ? process.env.LT_SHARE_URL
+                            : baseurl + "/" +
+                                argv.appType + "/" +
+                                argv.testEnv + "/" +
+                                folder[0] +
+                                "/index.html";
+
+
+                console.log("🔗 [MAILER] Using Report URL:", reportUrl);    
+
                 mailObj1 = await createMail(logData, reportUrl, "Functional Automation Test Run");
             }
 
             if (fs.existsSync(visReportDir)) {
-                reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/visual/index.html';
+                // reportUrl = baseurl + "/" + argv.appType + "/" + argv.testEnv + "/" + folder[0] + '/visual/index.html';
+                
+                // reportUrl = lambdaTestShareUrl
+                //             ? lambdaTestShareUrl
+                //             : baseurl + "/" +
+                //                 argv.appType + "/" +
+                //                 argv.testEnv + "/" +
+                //                 folder[0] +
+                //                 "/visual/index.html";
+
+                reportUrl = isLambdaTestRun
+                            ? process.env.LT_SHARE_URL
+                            : baseurl + "/" +
+                                argv.appType + "/" +
+                                argv.testEnv + "/" +
+                                folder[0] +
+                                "/visual/index.html";
+                
+                
                 logData = updateLogDataObj(visReportDir);
                 mailObj2 = await createMail(logData, reportUrl, "Visual Regression Test Run");
             }
