@@ -97,8 +97,8 @@ if (require.main === module) {
       }
 
       if (!isLambdaTestRun()) {
-        console.log("[LT] Local run detected – skipping LambdaTest link generation");
-        process.stdout.write(""); // IMPORTANT
+        // console.log("[LT] Local run detected – skipping LambdaTest link generation");
+        process.stdout.write(""); 
         return;
       }
 
