@@ -39,7 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
+            - export BROWSER_CAPABILITY=""
             - npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage
             - |
               RESULT=$?
