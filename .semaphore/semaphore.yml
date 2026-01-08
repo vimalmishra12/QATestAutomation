@@ -40,7 +40,7 @@ blocks:
             - cache store
             - echo "Running test script"
             - export BROWSER_CAPABILITY=""
-            - npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --windowWidth=1600 --windowHeight=900 --noCompressImage
+            - npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
               echo "Test result: $RESULT"
