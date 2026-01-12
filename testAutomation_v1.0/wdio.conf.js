@@ -10,23 +10,18 @@ var visualReportService = new visualTimelineReportService();
 
 const path = require("path");
 
-
-
 // execution file (loginTest.json → loginTest)
 const execFileName = argv.testExecFile
   ? path.basename(argv.testExecFile, path.extname(argv.testExecFile))
   : "LocalRun";
 
 // test environment (production → PRODUCTION)
-const testEnvName = argv.testEnv
-  ? argv.testEnv.toUpperCase()
-  : "LOCAL";
+const testEnvName = argv.testEnv ? argv.testEnv.toUpperCase() : "LOCAL";
 
-
-
-const { generateShareableLink } = require("./core/utils/lambdatest/shareableLink");
+const {
+  generateShareableLink,
+} = require("./core/utils/lambdatest/shareableLink");
 const { getLatestBuildId } = require("./core/utils/lambdatest/getBuildId");
-
 
 var retryTimes = 0;
 if (argv.retry) retryTimes = 1;
@@ -44,13 +39,9 @@ var user = global.capabilitiesFile[argv.browserCapability].user;
 var key = global.capabilitiesFile[argv.browserCapability].key;
 var protocol = global.capabilitiesFile[argv.browserCapability].protocol;
 
-
-
-
-
 // allow secure override from environment variables (CI)
 user = process.env.LT_USERNAME || user;
-key  = process.env.LT_ACCESS_KEY || key;
+key = process.env.LT_ACCESS_KEY || key;
 
 var browserstackLocal =
   global.capabilitiesFile[argv.browserCapability].browserstackLocal;
@@ -60,23 +51,20 @@ var enableEyesLogs =
 var eyes = global.capabilitiesFile[argv.browserCapability].eyes;
 // wdio.conf.js
 
-const chromedriverPath = require('chromedriver').path;
+const chromedriverPath = require("chromedriver").path;
 
 exports.config = {
   //
   // ===== Services =====
   services: [
     [
-      'chromedriver',
+      "chromedriver",
       {
         // 👉 force WDIO to use the NPM‑installed binary
-        chromedriverCustomPath: chromedriverPath
-      }
-    ]
+        chromedriverCustomPath: chromedriverPath,
+      },
+    ],
   ],
-
-
-  
 
   // … the rest of your config
 };
@@ -130,9 +118,9 @@ function getScreenshotName(basePath) {
 }
 
 let serviceEntry;
-if (webDriverService === 'lambdatest') {
+if (webDriverService === "lambdatest") {
   // pass options to wdio-lambdatest-service
-  serviceEntry = ['lambdatest', { tunnel: true, setSessionStatus: true }];
+  serviceEntry = ["lambdatest", { tunnel: true, setSessionStatus: true }];
 } else {
   // existing behavior (webDriverService is string like 'chromedriver' or 'appium')
   serviceEntry = webDriverService;
@@ -161,7 +149,7 @@ exports.config = {
   port: portNumber,
   path: webServicePath,
 
-  protocol: protocol,   // <-- add this, from your JSON
+  protocol: protocol, // <-- add this, from your JSON
 
   // protocol: 'http',
   //
@@ -271,23 +259,18 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
 
-
   // services: argv.browserCapability
   //   ? [[TimelineService], webDriverService, NovusService]
   //   : argv.deviceName
   //   ? [[TimelineService], webDriverService, NovusService]
   //   : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
-  
-  
-
   services: argv.browserCapability
     ? [[TimelineService], serviceEntry, NovusService]
     : argv.deviceName
     ? [[TimelineService], serviceEntry, NovusService]
-    : [[TimelineService], "chromedriver", NovusService, webDriverService],  
+    : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
-    
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks
@@ -375,11 +358,14 @@ exports.config = {
     }
   },
 
-
   /**
    * LambdaTest hook: mark test as passed/failed/skipped etc.
    */
-  afterTest: async function (test, context, { error, result, duration, passed, retries }) {
+  afterTest: async function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
     if (webDriverService === "lambdatest") {
       let status = "unknown";
       if (passed) {
@@ -390,9 +376,7 @@ exports.config = {
         status = "skipped";
       }
 
-      await browser.execute(
-        `lambda-status=${status}`
-      );
+      await browser.execute(`lambda-status=${status}`);
     }
   },
 
@@ -402,7 +386,6 @@ exports.config = {
     }
   },
 
-
   /**
    * Gets executed just before initialising the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
@@ -411,7 +394,7 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
   before: async function (capabilities, specs) {
-    if (webDriverService !== 'lambdatest') {
+    if (webDriverService !== "lambdatest") {
       await setupCDPHeaders();
     }
   },
@@ -426,23 +409,16 @@ exports.config = {
   //   // console.log("🌐 [CDP] Headers will be injected using Chrome DevTools Protocol");
   //   // console.log("🌐 [CDP] global.headers:", global.headers);
 
-
-
-    
   // },
 
   beforeSession: async function (config, capabilities, specs) {
-
+    // Set the dynamic suite name for LambdaTest dashboard
     if (capabilities["LT:Options"]) {
-      capabilities["LT:Options"].name = `Suite- ${testEnvName} | ${execFileName}`;
+      capabilities[
+        "LT:Options"
+      ].name = `Suite- ${testEnvName} | ${execFileName}`;
     }
-
-    // console.log(
-    //   "🏗️ [LT] Build Name:",
-    //   capabilities["LT:Options"]?.build
-    // );
   },
-
 
   /**
    * Runs before a WebdriverIO command gets executed.
@@ -450,8 +426,8 @@ exports.config = {
    * @param {Array} args arguments that command would receive
    */
   beforeCommand: async function (commandName, args) {
-    if (commandName === 'url') {
-      if (webDriverService !== 'lambdatest') {
+    if (commandName === "url") {
+      if (webDriverService !== "lambdatest") {
         await setupCDPHeaders();
       }
     }
@@ -461,7 +437,6 @@ exports.config = {
    * Hook that gets executed before the suite starts
    * @param {Object} suite suite details
    */
-
 
   // beforeSuite: function (suite) {
   // },
@@ -522,7 +497,6 @@ exports.config = {
     require("./core/utils/reportUpdater.js").updateFunctionalObj();
   },
 
-  
   /**
    * Gets executed after all workers got shut down and the process is about to exit. An error
    * thrown in the onComplete hook will result in the test run failing.
@@ -609,12 +583,11 @@ exports.config = {
       }
     }
 
-
+    //Generate LambdaTest shareable link
     if (webDriverService === "lambdatest") {
       try {
         const buildName =
-          capabilities?.[0]?.["LT:Options"]?.build ||
-          "C1Automation - CI Build";
+          capabilities?.[0]?.["LT:Options"]?.build || "C1Automation - CI Build";
 
         //console.log("🔍 [LT] Resolving buildId for:", buildName);
 
@@ -623,7 +596,7 @@ exports.config = {
         if (buildId) {
           const shareUrl = await generateShareableLink({
             entityId: buildId,
-            expiresAt: 30
+            expiresAt: 30,
           });
 
           // 🔑 Make share URL available to mailer.js
@@ -632,13 +605,10 @@ exports.config = {
             console.log("🔗 [LT] Shareable Build Link:", shareUrl);
           }
         }
-
       } catch (err) {
         console.error("❌ [LT] Share link generation failed:", err.message);
       }
     }
-
-
 
     //require('./core/utils/reportUpdater.js').indexFileUpdate();
     await specGenerator.removingTempSpecs();

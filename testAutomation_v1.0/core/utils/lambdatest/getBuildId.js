@@ -17,11 +17,11 @@ async function getLatestBuildId() {
       {
         auth: {
           username: LT_USERNAME,
-          password: LT_ACCESS_KEY
+          password: LT_ACCESS_KEY,
         },
         params: {
-          limit: 1
-        }
+          limit: 1,
+        },
       }
     );
 
