@@ -39,7 +39,6 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
             - npx wdio  --appType=ExperienceApp --testEnv=thor --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
