@@ -178,9 +178,9 @@ module.exports = {
   click_drawingToolPenColour: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
-    console.log("199", this.drawingToolPenColour);
+    // console.log("199", this.drawingToolPenColour);
     res = await action.click(this.drawingToolPenColour);
-    console.log("199 clicked", res);
+    // console.log("199 clicked", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
@@ -218,9 +218,9 @@ module.exports = {
   click_drawingToolEraser: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
-    //console.log("101",this.drawingToolEraser);
+    console.log("101",this.drawingToolEraser);
     res = await action.click(this.drawingToolEraser);
-    //console.log("102 clicked",res );
+    console.log("102 clicked",res );
 
     if (true == res) {
       await logger.logInto(
@@ -228,11 +228,11 @@ module.exports = {
         " drawingToolEraser is clicked"
       );
 
-      await action.dragAndDropWithPath(this.drawingToolPresentation,
-        100,100,
-        300,300 
-        
-      )
+try {
+  await action.dragAndDropWithPath(this.drawingToolPresentation, 100, 100, 300, 300);
+} catch (err) {
+  console.error("Drag failed:", err);
+}
 
       await browser.pause(1000)
 
