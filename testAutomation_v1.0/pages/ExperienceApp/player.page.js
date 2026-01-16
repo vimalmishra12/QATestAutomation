@@ -119,6 +119,10 @@ module.exports = {
   click_hyperlinkActivity: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    await browser.waitUntil(async () => {
+      return await $(this.hyperlinkActivity).isDisplayed();
+    }, { timeout: 10000, timeoutMsg: 'Activity hyperlink not found within 10 seconds' });
+
     res = await action.click(this.hyperlinkActivity);
 
     if (true == res) {
