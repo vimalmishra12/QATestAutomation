@@ -32,7 +32,7 @@ module.exports = {
   // Test case to validate the Eraser tool is clickable.
   TST_DRAW_TC_4: async function (testdata) {
     sts = await drawingTool.click_drawingToolEraser();
-    console.log("102 clicked",sts );
+    // console.log("102 clicked",sts );
     await assertion.assertEqual(sts, true, "Eraser tool is not Clicked");
   },
 

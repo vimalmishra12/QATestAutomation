@@ -178,9 +178,9 @@ module.exports = {
   click_drawingToolPenColour: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
-    console.log("199", this.drawingToolPenColour);
+    // console.log("199", this.drawingToolPenColour);
     res = await action.click(this.drawingToolPenColour);
-    console.log("199 clicked", res);
+    // console.log("199 clicked", res);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
