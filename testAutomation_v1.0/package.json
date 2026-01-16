@@ -92,6 +92,21 @@
     "deleteClassTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='activeClass.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
 
+
+    "landingFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920",
+    "FooterFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='footerTest.json' --browserCapability=desktop-chrome-1920",
+    "loginFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920",
+    "visualAcceptance_qa": " npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='highlighterTest.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
+    "eBookFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='eBookTestMaster_v.0.json' --browserCapability=desktop-chrome-1920",
+    "notesFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='notesTest.json' --browserCapability=desktop-chrome-1920",
+    "highlighterFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='highlighterTest.json' --browserCapability=desktop-chrome-1920",
+    "timerFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='timerTest_VC.json' --browserCapability=desktop-chrome-1920",
+    "nextPreviousPageTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='nextPreviousPageButtonTest.json' --browserCapability=desktop-chrome-1920",
+    "toolsFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='toolsFeatureTest.json' --browserCapability=desktop-chrome-1920",
+    "drawingFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --browserCapability=desktop-chrome-1920",
+    "eBookHotLinkTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
+
+
     "loginFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-android-samsungS24"
 
   },
