@@ -10,6 +10,18 @@ var visualReportService = new visualTimelineReportService();
 
 const path = require("path");
 
+
+//to get browserCapability from command line arguments
+const browserCapabilityArg = process.argv.find(arg =>
+  arg.startsWith('--browserCapability=')
+);
+
+if (!process.env.BROWSER_CAPABILITY && browserCapabilityArg) {
+  process.env.BROWSER_CAPABILITY = browserCapabilityArg.split('=')[1];
+}
+
+
+
 // execution file (loginTest.json → loginTest)
 const execFileName = argv.testExecFile
   ? path.basename(argv.testExecFile, path.extname(argv.testExecFile))
