@@ -73,23 +73,23 @@ async function generateShareableLink({ entityId, expiresAt = 30 }) {
 }
 
 // Allow this file to run directly from CLI (Semaphore, local debug)
-if (require.main === module) {
-  (async () => {
-    try {
-      const { getLatestBuildId } = require("./getBuildId");
-      const buildId = await getLatestBuildId();
+// if (require.main === module) {
+//   (async () => {
+//     try {
+//       const { getLatestBuildId } = require("./getBuildId");
+//       const buildId = await getLatestBuildId();
 
-      if (!buildId) {
-        process.stdout.write("");
-        return;
-      }
+//       if (!buildId) {
+//         process.stdout.write("");
+//         return;
+//       }
 
-      const shareUrl = await generateShareableLink({ entityId: buildId });
-      process.stdout.write(shareUrl || "");
-    } catch {
-      process.stdout.write("");
-    }
-  })();
-}
+//       const shareUrl = await generateShareableLink({ entityId: buildId });
+//       process.stdout.write(shareUrl || "");
+//     } catch {
+//       process.stdout.write("");
+//     }
+//   })();
+// }
 
 module.exports = { generateShareableLink };

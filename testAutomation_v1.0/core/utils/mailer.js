@@ -19,8 +19,9 @@ var semaphoreJob =
 // const isLambdaTestRun = Boolean(process.env.LT_SHARE_URL);
 const isLambdaTestRun =
   typeof process.env.BROWSER_CAPABILITY === "string" &&
-  process.env.BROWSER_CAPABILITY.startsWith("lambdatest-") && process.env.LT_SHARE_URL;
+  process.env.BROWSER_CAPABILITY.startsWith("lambdatest-");
 
+const hasLambdaShareUrl = Boolean(process.env.LT_SHARE_URL);
 
 var funcReportDir = "../../output/reports/" + folder[0];
 var visReportDir = funcReportDir + "/visual";
@@ -84,7 +85,7 @@ async function main() {
 
       if (logData.skipAssertion != true) {
         // lambdatest run - use shareable link from env variable
-        reportUrl = isLambdaTestRun
+        reportUrl = isLambdaTestRun && hasLambdaShareUrl
           ? process.env.LT_SHARE_URL
           : baseurl +
             "/" +
@@ -106,7 +107,7 @@ async function main() {
 
       if (fs.existsSync(visReportDir)) {
         // lambdatest run - use shareable link from env variable
-        reportUrl = isLambdaTestRun
+        reportUrl = isLambdaTestRun && hasLambdaShareUrl
           ? process.env.LT_SHARE_URL
           : baseurl +
             "/" +
