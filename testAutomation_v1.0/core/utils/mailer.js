@@ -21,7 +21,10 @@ const isLambdaTestRun =
   typeof process.env.BROWSER_CAPABILITY === "string" &&
   process.env.BROWSER_CAPABILITY.startsWith("lambdatest-");
 
+  console.log("isLambdaTestRun:", isLambdaTestRun);
+
 const hasLambdaShareUrl = Boolean(process.env.LT_SHARE_URL);
+console.log("hasLambdaShareUrl:", hasLambdaShareUrl);
 
 var funcReportDir = "../../output/reports/" + folder[0];
 var visReportDir = funcReportDir + "/visual";
@@ -117,6 +120,8 @@ async function main() {
             "/" +
             folder[0] +
             "/visual/index.html";
+
+            console.log("🔗 [MAILER] Using Visual Report URL:", reportUrl);
 
         logData = updateLogDataObj(visReportDir);
         mailObj2 = await createMail(
