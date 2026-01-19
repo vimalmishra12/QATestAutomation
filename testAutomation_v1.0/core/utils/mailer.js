@@ -16,7 +16,11 @@ var semaphoreJob =
 // console.log('Semaphore Job URL:', semaphoreJob);
 
 // lambdatest shareable link detection
-const isLambdaTestRun = Boolean(process.env.LT_SHARE_URL);
+// const isLambdaTestRun = Boolean(process.env.LT_SHARE_URL);
+const isLambdaTestRun =
+  typeof process.env.BROWSER_CAPABILITY === "string" &&
+  process.env.BROWSER_CAPABILITY.startsWith("lambdatest-") && process.env.LT_SHARE_URL;
+
 
 var funcReportDir = "../../output/reports/" + folder[0];
 var visReportDir = funcReportDir + "/visual";

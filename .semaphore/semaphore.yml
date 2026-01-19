@@ -39,7 +39,6 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
-            - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
             - npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920
             - |
               RESULT=$?
@@ -95,21 +94,13 @@ blocks:
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
             - export mailingList="ashish.kushwaha@comprotechnologies.com"
+            - echo "Generating LambdaTest shareable link"
+            - export LT_SHARE_URL=$(node core/utils/lambdatest/shareableLink.js)
             - |
-              if [[ "$BROWSER_CAPABILITY" == lambdatest-* ]]; then
-                echo "LambdaTest execution detected: $BROWSER_CAPABILITY"
-
-                cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils/lambdatest
-                export LT_SHARE_URL=$(node shareableLink.js)
-
-                if [ -n "$LT_SHARE_URL" ]; then
-                  echo "LambdaTest Share URL generated: $LT_SHARE_URL"
-                else
-                  echo "LambdaTest Share URL not generated"
-                fi
+              if [ -n "$LT_SHARE_URL" ]; then
+                echo "LambdaTest Share URL generated: $LT_SHARE_URL"
               else
-                echo "Local execution detected"
-                export LT_SHARE_URL=""
+                echo "No LambdaTest Share URL generated"
               fi
             - echo "Running mailer.js with parameters and logging additional details"
             - 'cd /home/semaphore/QATestAutomation/testAutomation_v1.0/core/utils || { echo "Directory not found"; exit 1; }'
