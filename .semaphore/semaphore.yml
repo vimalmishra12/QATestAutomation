@@ -126,3 +126,7 @@ blocks:
           value: production
         - name: WDIO_PARAMS
           value: '--appType=ExperienceApp --testEnv=qa --testExecFile=loginTest.json --browserCapability=lambdatest-chrome-1920'
+        - name: WDIO_PARAMS
+          value: '--appType=ExperienceApp --testEnv=production --testExecFile=''loginTest.json'' --browserCapability=desktop-chrome-1920'
+        - name: WDIO_PARAMS
+          value: '--appType=ExperienceApp --testEnv=production --testExecFile=''eBookTestMaster_v.0.json'' --browserCapability=desktop-chrome-1920'
