@@ -41,14 +41,17 @@ blocks:
             - echo "Running test script"
             - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
             - npx wdio  --appType=ExperienceApp --testEnv=$TEST_ENV --testExecFile='landingTest.json' --browserCapability=lambdatest-chrome-1920
-            - RESULT=$?
-            - 'echo "Test result: $RESULT"'
-            - 'if [ "$RESULT" -eq 0 ]; then'
-            - '  STATUS="passed"'
-            - else
-            - '  STATUS="failed"'
-            - fi
-            - 'echo "STATUS set to: $STATUS"'
+            - |
+              RESULT=$?
+              echo "Test result: $RESULT"
+
+              if [ "$RESULT" -eq 0 ]; then
+                STATUS="passed"
+              else
+                STATUS="failed"
+              fi
+
+              echo "STATUS set to: $STATUS"
             - echo "Verifying directory structure"
             - echo "Listing files in the root directory"
             - ls -la || echo "No files found in root directory"
