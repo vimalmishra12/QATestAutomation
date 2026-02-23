@@ -121,7 +121,7 @@ blocks:
       secrets:
         - name: Cred
         - name: LambdaTest
-        - name: Login-Test
+        - name: landingFeatureTest
       env_vars:
         - name: TEST_ENV
-          value: thor
+          value: production
