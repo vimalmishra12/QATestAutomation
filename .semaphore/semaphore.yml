@@ -40,7 +40,7 @@ blocks:
             - cache store
             - echo "Running test script"
             - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
-            - $TEST_COMMAND
+            - $TEST_COMMAND --testEnv=$TEST_ENV
             - |
               RESULT=$?
               echo "Test result: $RESULT"
