@@ -1,14 +1,14 @@
 version: v1.0
-name: Update Semaphore configuration
+name: Pipeline 2
 agent:
   machine:
-    type: e2-standard-2
-    os_image: ubuntu2204
+    type: e1-standard-2
+    os_image: ubuntu2004
 blocks:
-  - name: C1AutomationTest
+  - name: Thor_C1Automation
     task:
       jobs:
-        - name: C1AutomationTest
+        - name: Thor_C1Automation
           commands:
             - echo "Starting prologue commands"
             - checkout
@@ -121,11 +121,7 @@ blocks:
       secrets:
         - name: Cred
         - name: LambdaTest
-        - name: eBookFeatureTest
+        - name: loginFeatureTest
       env_vars:
         - name: TEST_ENV
-          value: production
-    dependencies: []
-promotions:
-  - name: ThorC1Automation
-    pipeline_file: pipeline_2.yml
+          value: thor
