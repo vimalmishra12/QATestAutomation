@@ -126,6 +126,3 @@ blocks:
         - name: TEST_ENV
           value: production
     dependencies: []
-promotions:
-  - name: ThorC1Automation
-    pipeline_file: pipeline_2.yml
