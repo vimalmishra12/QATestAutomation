@@ -2,8 +2,8 @@ version: v1.0
 name: Update Semaphore configuration
 agent:
   machine:
-    type: a2-standard-4
-    os_image: macos-xcode16
+    type: e2-standard-2
+    os_image: ubuntu2204
 blocks:
   - name: C1ThorAutomation
     dependencies: []
