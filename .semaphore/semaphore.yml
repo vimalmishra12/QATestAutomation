@@ -125,5 +125,5 @@ blocks:
         - name: loginFeatureTest
       env_vars:
         - name: TEST_ENV
-          value: thor
+          value: production
     dependencies: []
