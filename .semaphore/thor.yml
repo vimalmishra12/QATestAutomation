@@ -120,3 +120,10 @@ blocks:
             - echo "mailer.js script execution completed with exit code $?"
             - 'echo "Mailer.js log:"'
             - cat /home/semaphore/mailer.log
+      secrets:
+        - name: Cred
+        - name: LambdaTest
+        - name: loginFeatureTest
+      env_vars:
+        - name: TEST_ENV
+          value: thor
