@@ -5,10 +5,10 @@ agent:
     type: e2-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: C1AutomationTest
+  - name: C1AutomationTestThor
     task:
       jobs:
-        - name: C1AutomationTest
+        - name: C1AutomationTestThor
           commands:
             - echo "Starting prologue commands"
             - checkout
