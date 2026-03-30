@@ -39,6 +39,7 @@ blocks:
             - echo "Storing npm cache"
             - cache store
             - echo "Running test script"
+            - echo "Running tests in $TEST_ENV"
             - export BROWSER_CAPABILITY="lambdatest-chrome-1920"
             - $TEST_COMMAND --testEnv=$TEST_ENV
             - |
@@ -124,5 +125,5 @@ blocks:
         - name: loginFeatureTest
       env_vars:
         - name: TEST_ENV
-          value: production
+          value: thor
     dependencies: []
