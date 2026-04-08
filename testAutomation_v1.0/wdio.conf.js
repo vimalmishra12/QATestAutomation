@@ -9,6 +9,9 @@ const visualTimelineReportService =
 var visualReportService = new visualTimelineReportService();
 
 const path = require("path");
+const electronAppPath = "C:\\Users\\Compro\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
+const useElectronApp = argv.electronApp === true || argv.electronApp === "true";
+const effectiveBrowserCapability = argv.browserCapability || "desktop-chrome-1920";
 
 // execution file (loginTest.json → loginTest)
 const execFileName = argv.testExecFile
@@ -29,46 +32,44 @@ if (argv.retry) retryTimes = 1;
 var resizeImage = true;
 if (argv.noCompressImage) resizeImage = false;
 
-var hostname = global.capabilitiesFile[argv.browserCapability].hostname;
-var portNumber = global.capabilitiesFile[argv.browserCapability].portNumber;
-var webServicePath =
-  global.capabilitiesFile[argv.browserCapability].webServicePath;
-var webDriverService =
-  global.capabilitiesFile[argv.browserCapability].webDriverService;
-var user = global.capabilitiesFile[argv.browserCapability].user;
-var key = global.capabilitiesFile[argv.browserCapability].key;
-var protocol = global.capabilitiesFile[argv.browserCapability].protocol;
+var hostname;
+var portNumber;
+var webServicePath;
+var webDriverService;
+var user;
+var key;
+var protocol;
+
+if (useElectronApp) {
+  hostname = "localhost";
+  portNumber = 9515;
+  webServicePath = "/";
+  webDriverService = "chromedriver";
+  user = "";
+  key = "";
+  protocol = "http";
+} else {
+  hostname = global.capabilitiesFile[effectiveBrowserCapability].hostname;
+  portNumber = global.capabilitiesFile[effectiveBrowserCapability].portNumber;
+  webServicePath =
+    global.capabilitiesFile[effectiveBrowserCapability].webServicePath;
+  webDriverService =
+    global.capabilitiesFile[effectiveBrowserCapability].webDriverService;
+  user = global.capabilitiesFile[effectiveBrowserCapability].user;
+  key = global.capabilitiesFile[effectiveBrowserCapability].key;
+  protocol = global.capabilitiesFile[effectiveBrowserCapability].protocol;
+}
 
 // allow secure override from environment variables (CI)
 user = process.env.LT_USERNAME || user;
 key = process.env.LT_ACCESS_KEY || key;
 
 var browserstackLocal =
-  global.capabilitiesFile[argv.browserCapability].browserstackLocal;
-var updateJob = global.capabilitiesFile[argv.browserCapability].updateJob;
+  global.capabilitiesFile[effectiveBrowserCapability].browserstackLocal;
+var updateJob = global.capabilitiesFile[effectiveBrowserCapability].updateJob;
 var enableEyesLogs =
-  global.capabilitiesFile[argv.browserCapability].enableEyesLogs;
-var eyes = global.capabilitiesFile[argv.browserCapability].eyes;
-// wdio.conf.js
-
-const chromedriverPath = require("chromedriver").path;
-
-exports.config = {
-  //
-  // ===== Services =====
-  services: [
-    [
-      "chromedriver",
-      {
-        // 👉 force WDIO to use the NPM‑installed binary
-        chromedriverCustomPath: chromedriverPath,
-      },
-    ],
-  ],
-
-  // … the rest of your config
-};
-
+  global.capabilitiesFile[effectiveBrowserCapability].enableEyesLogs;
+var eyes = global.capabilitiesFile[effectiveBrowserCapability].eyes;
 // setting parameters for novus service
 var NovusService = [
   "novus-visual-regression",
@@ -118,11 +119,22 @@ function getScreenshotName(basePath) {
 }
 
 let serviceEntry;
-if (webDriverService === "lambdatest") {
+if (useElectronApp) {
+  serviceEntry = [
+    "chromedriver",
+    {
+      port: 9515,
+      logFileName: "wdio-electron-chromedriver.log",
+      chromedriverCustomPath: path.join(__dirname, 'node_modules/.bin/chromedriver132.exe'),
+    },
+  ];
+} else if (webDriverService === "lambdatest") {
   // pass options to wdio-lambdatest-service
   serviceEntry = ["lambdatest", { tunnel: true, setSessionStatus: true }];
+} else if (webDriverService === "chromedriver") {
+  serviceEntry = ["chromedriver", { chromedriverCustomPath: path.join(__dirname, 'node_modules/.bin/chromedriver146.exe') }];
 } else {
-  // existing behavior (webDriverService is string like 'chromedriver' or 'appium')
+  // existing behavior (webDriverService is string like 'appium')
   serviceEntry = webDriverService;
 }
 exports.config = {
@@ -210,7 +222,17 @@ exports.config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: global.capabilities,
+  capabilities: argv.electronApp
+    ? [
+        {
+          browserName: "chrome",
+          "goog:chromeOptions": {
+            binary: electronAppPath,
+            args: ["--disable-infobars", "--no-sandbox"],
+          },
+        },
+      ]
+    : global.capabilities,
   //
   // ===================
   // Test Configurations
@@ -265,7 +287,9 @@ exports.config = {
   //   ? [[TimelineService], webDriverService, NovusService]
   //   : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
-  services: argv.browserCapability
+  services: argv.electronApp
+    ? [[TimelineService], serviceEntry, NovusService]
+    : argv.browserCapability
     ? [[TimelineService], serviceEntry, NovusService]
     : argv.deviceName
     ? [[TimelineService], serviceEntry, NovusService]
