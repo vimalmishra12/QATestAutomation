@@ -2,10 +2,14 @@
 
 module.exports = {
 
-	
+
 	launchUrl: async function () {
-		await browser.url(appUrl);
-		await logger.logInto(stackTrace.get(), "appURL:" + appUrl);
+		if (browser.capabilities.browserName !== 'electron') {
+			await browser.url(appUrl);
+			await logger.logInto(stackTrace.get(), "appURL:" + appUrl);
+		} else {
+			await logger.logInto(stackTrace.get(), "Skipping URL navigation for Electron desktop app");
+		}
 		/*if (global.maximizeWindow == true && global.view == 'desktop') { //this will cause browser to maximize on the client screen resolution
 			browser.maximizeWindow();
 			global.resolution = browser.getWindowSize();

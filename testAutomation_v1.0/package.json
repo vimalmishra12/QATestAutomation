@@ -26,7 +26,6 @@
     "createNewClassTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClassWithStudent.json' --browserCapability=desktop-chrome-1920",
     "deleteClassTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
-
     "landingFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --browserCapability=lambdatest-chrome-1920",
     "FooterFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --browserCapability=lambdatest-chrome-1920",
     "loginFeatureTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-chrome-1920",
@@ -47,7 +46,6 @@
     "createNewClassTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='createNewClassWithStudent.json' --browserCapability=lambdatest-chrome-1920",
     "deleteClassTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='activeClass.json' --browserCapability=lambdatest-chrome-1920",
     "eBookHotLinkTest_LT": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='player.json' --browserCapability=lambdatest-chrome-1920",
-
     "landingFeatureTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920",
     "FooterFeatureTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='footerTest.json' --browserCapability=desktop-chrome-1920",
     "loginFeatureTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920",
@@ -69,7 +67,6 @@
     "createNewClassTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='createNewClassWithStudent.json' --browserCapability=desktop-chrome-1920",
     "deleteClassTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='activeClass.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
-
     "landingFeatureTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920",
     "FooterFeatureTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='footerTest.json' --browserCapability=desktop-chrome-1920",
     "loginFeatureTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920",
@@ -91,8 +88,6 @@
     "createNewClassTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='createNewClassWithStudent.json' --browserCapability=desktop-chrome-1920",
     "deleteClassTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='activeClass.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
-
-
     "landingFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920",
     "FooterFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='footerTest.json' --browserCapability=desktop-chrome-1920",
     "loginFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920",
@@ -105,10 +100,11 @@
     "toolsFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='toolsFeatureTest.json' --browserCapability=desktop-chrome-1920",
     "drawingFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
-
-
-    "loginFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-android-samsungS24"
-
+    "loginFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-android-samsungS24",
+    "desktopApp_login_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=electron-app",
+    "desktopApp_dashboard_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='dashboardTest.json' --browserCapability=electron-app",
+    "desktopApp_eBook_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='eBookTestMaster_v.0.json' --browserCapability=electron-app",
+    "desktopApp_notes_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='notesTest.json' --browserCapability=electron-app"
   },
   "keywords": [],
   "author": "",
@@ -116,13 +112,13 @@
   "license": "ISC",
   "dependencies": {
     "@applitools/eyes-webdriverio": "^5.35.7",
-    "@wdio/allure-reporter": "^7.26.0",
-    "@wdio/appium-service": "^7.26.0",
-    "@wdio/cli": "^7.26.0",
+    "@wdio/allure-reporter": "^8.0.0",
+    "@wdio/appium-service": "^8.0.0",
+    "@wdio/cli": "^8.0.0",
     "@wdio/codemod": "^0.11.0",
-    "@wdio/local-runner": "^7.26.0",
-    "@wdio/mocha-framework": "^7.26.0",
-    "@wdio/spec-reporter": "^7.26.0",
+    "@wdio/local-runner": "^8.0.0",
+    "@wdio/mocha-framework": "^8.0.0",
+    "@wdio/spec-reporter": "^8.0.0",
     "allure-commandline": "^2.13.0",
     "appium": "^1.16.0",
     "browserstack-local": "^1.4.8",
@@ -149,7 +145,6 @@
     "rimraf": "^3.0.2",
     "selenium-webdriver": "^4.0.0",
     "tesults": "^1.1.1",
-    "wdio-chromedriver-service": "8.0.1",
     "wdio-novus-visual-regression-service": "^1.2.5",
     "wdio-timeline-reporter": "^5.1.4",
     "winston": "^3.2.1",
@@ -158,7 +153,9 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "chromedriver": "^146.0.0",
+    "chromedriver": "^120.0.0",
+    "electron": "^41.2.0",
+    "wdio-electron-service": "^9.2.1",
     "wdio-lambdatest-service": "^4.0.0"
   }
 }

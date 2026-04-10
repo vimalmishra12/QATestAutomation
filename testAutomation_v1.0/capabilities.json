@@ -263,7 +263,24 @@
   "protocol": "https",
   "webServicePath": "/wd/hub",
   "webDriverService": "lambdatest"
-}
+},
+    "electron-app": {
+        "capabilities": [
+            {
+                "browserName": "electron",
+                "wdio:electronServiceOptions": {
+                    "appBinaryPath": "C:\\Users\\Dhruv\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe",
+                    "browserVersion": "126"
+                }
+            }
+        ],
+        "resolution": "1920x1080",
+        "maximizeWindow": false,
+        "hostname": "localhost",
+        "portNumber": 9515,
+        "webServicePath": "/",
+        "webDriverService": "electron"
+    }
 
 
 

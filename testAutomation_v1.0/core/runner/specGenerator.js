@@ -28,7 +28,6 @@ var glob = require("glob");
 var path = require('path');
 var rimraf = require("rimraf");
 const { argv } = require("yargs");
-const { convertPackageHashToObject } = require("@wdio/cli/build/utils");
 
 module.exports = {
 
