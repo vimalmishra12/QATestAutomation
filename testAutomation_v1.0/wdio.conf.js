@@ -9,7 +9,7 @@ const visualTimelineReportService =
 var visualReportService = new visualTimelineReportService();
 
 const path = require("path");
-const electronAppPath = "C:\\Users\\Compro\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
+const electronAppPath = "C:\\Users\\Dhruv\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
 const useElectronApp = argv.electronApp === true || argv.electronApp === "true";
 const effectiveBrowserCapability = argv.browserCapability || "desktop-chrome-1920";
 
@@ -125,7 +125,6 @@ if (useElectronApp) {
     {
       port: 9515,
       logFileName: "wdio-electron-chromedriver.log",
-      chromedriverCustomPath: path.join(__dirname, 'node_modules/.bin/chromedriver132.exe'),
     },
   ];
 } else if (webDriverService === "lambdatest") {
@@ -228,7 +227,7 @@ exports.config = {
           browserName: "chrome",
           "goog:chromeOptions": {
             binary: electronAppPath,
-            args: ["--disable-infobars", "--no-sandbox"],
+            args: ["--disable-infobars", "--no-sandbox", "--remote-debugging-port=9222", "--user-data-dir=C:\\temp\\electron-user-data"],
           },
         },
       ]
