@@ -9,8 +9,19 @@ const visualTimelineReportService =
 var visualReportService = new visualTimelineReportService();
 
 const path = require("path");
-const electronAppPath = "C:\\Users\\Compro\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
+const os = require("os");
+
 const useElectronApp = argv.electronApp === true || argv.electronApp === "true";
+
+// Read electron app path from env.json
+const appConfig = global.envData[argv.appType] || {};
+const defaultElectronPath = "C:\\Users\\{USERNAME}\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
+const electronAppPath = (appConfig.electronAppPath || defaultElectronPath).replace("{USERNAME}", os.userInfo().username);
+
+// Get chromedriver version based on test type
+const chromedriverConfig = appConfig.chromedriver || { webVersion: "132.0.0", electronVersion: "126.0.0" };
+const chromedriverVersion = useElectronApp ? chromedriverConfig.electronVersion : chromedriverConfig.webVersion;
+const chromedriverPath = path.join(__dirname, 'node_modules/chromedriver/lib/chromedriver/chromedriver.exe');
 const effectiveBrowserCapability = argv.browserCapability || "desktop-chrome-1920";
 
 // execution file (loginTest.json → loginTest)
@@ -125,14 +136,14 @@ if (useElectronApp) {
     {
       port: 9515,
       logFileName: "wdio-electron-chromedriver.log",
-      chromedriverCustomPath: path.join(__dirname, 'node_modules/.bin/chromedriver132.exe'),
+      chromedriverCustomPath: chromedriverPath,
     },
   ];
 } else if (webDriverService === "lambdatest") {
   // pass options to wdio-lambdatest-service
   serviceEntry = ["lambdatest", { tunnel: true, setSessionStatus: true }];
 } else if (webDriverService === "chromedriver") {
-  serviceEntry = ["chromedriver", { chromedriverCustomPath: path.join(__dirname, 'node_modules/.bin/chromedriver146.exe') }];
+  serviceEntry = ["chromedriver", { chromedriverCustomPath: chromedriverPath }];
 } else {
   // existing behavior (webDriverService is string like 'appium')
   serviceEntry = webDriverService;
