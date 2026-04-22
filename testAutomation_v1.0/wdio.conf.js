@@ -18,10 +18,10 @@ const appConfig = global.envData[argv.appType] || {};
 const defaultElectronPath = "C:\\Users\\{USERNAME}\\AppData\\Local\\Programs\\CambridgeOne\\Cambridge One Desktop App.exe";
 const electronAppPath = (appConfig.electronAppPath || defaultElectronPath).replace("{USERNAME}", os.userInfo().username);
 
-// Get chromedriver version based on test type
-const chromedriverConfig = appConfig.chromedriver || { webVersion: "132.0.0", electronVersion: "126.0.0" };
-const chromedriverVersion = useElectronApp ? chromedriverConfig.electronVersion : chromedriverConfig.webVersion;
-const chromedriverPath = path.join(__dirname, 'node_modules/chromedriver/lib/chromedriver/chromedriver.exe');
+// Get local chromedriver binary path based on test type
+const chromedriverPath = useElectronApp 
+  ? path.join(__dirname, 'drivers', 'chromedriver-126.exe') 
+  : path.join(__dirname, 'drivers', 'chromedriver-146.exe');
 const effectiveBrowserCapability = argv.browserCapability || "desktop-chrome-1920";
 
 // execution file (loginTest.json → loginTest)

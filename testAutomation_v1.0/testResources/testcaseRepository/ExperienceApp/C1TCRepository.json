@@ -4282,6 +4282,20 @@
           "visualTest": true
         }
       ]
+    },
+    {
+      "modulename": "Electron Login Prototype",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/electronLoginPrototype.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "PROTO_ELEC_LOGIN",
+          "description": "Prototype: Click Log in with web browser in Electron",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
     }
   ]
 }
