@@ -17,9 +17,16 @@ var trace;
 
 //logger details
 function logMessageTrace(trace, msg) {
+    const caps = browser.capabilities || {};
+    const bConfig = browser.config || {};
+    const tEnv = bConfig.testEnv || (global.argv ? global.argv.testEnv : 'unknown');
+    const envString = `${caps.browserName || 'unknown'},${caps.browserVersion || 'unknown'},${tEnv},[${resolution.width}*${resolution.height}]`;
+
     var toLog = {
         sessionId: browser.sessionId,
-        ...(build != undefined && jobName != undefined ? { env: "#" + build + ',' + jobName + ',' + browser.capabilities.browserName + ',' + browser.capabilities.browserVersion + ',' + browser.config.testEnv + ',[' + resolution.width + '*' + resolution.height + "]" } : { env: browser.capabilities.browserName + ',' + browser.capabilities.browserVersion + ',' + browser.config.testEnv + ',[' + resolution.width + '*' + resolution.height + "]" }),
+        env: (typeof build !== 'undefined' && typeof jobName !== 'undefined' && build != null && jobName != null) 
+             ? `#${build},${jobName},${envString}` 
+             : envString,
         logger: "",
         trace: "",
         msg: ''
