@@ -283,7 +283,13 @@
       "dropdownBook": {
         "ebookOneName": "cqa-ebook-evolve",
         "ebookTwoName": "cqa-test-ebookonlyassets"
-
+      },
+      "drawingTool": {
+        "highlighterLocalStorageValidation": {
+          "expectedAction": "create",
+          "expectedType": "annotation",
+          "expectedMarker": "h"
+        }
       }
     },
     

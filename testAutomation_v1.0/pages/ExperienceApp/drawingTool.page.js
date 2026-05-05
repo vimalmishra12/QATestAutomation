@@ -4,6 +4,7 @@ var selectorFile = jsonParserUtil.jsonParser(selectorDir);
 var appShellPage = require("./appShell.page.js");
 
 module.exports = {
+  drawingLocalStorageKey: "drawingDataInLocalStorage",
   drawingToolScribble:
     selectorFile.css.ComproC1.drawingTool.drawingToolScribble,
   drawingToolPenColour:
@@ -108,7 +109,7 @@ module.exports = {
     return obj;
   },
 
-  click_drawingToolScribble: async function () {
+  click_drawingToolScribble: async function (cords) {
     await logger.logInto(await stackTrace.get());
     var res;
     res = await action.click(this.drawingToolScribble);
@@ -165,6 +166,7 @@ module.exports = {
         300,300 
       )
       await browser.pause(500);
+      
     } else {
       await logger.logInto(
         await stackTrace.get(),
@@ -174,6 +176,52 @@ module.exports = {
     }
     return res;
   },
+
+//   click_drawingToolHighlighter2: async function (coords) {
+//   await logger.logInto(await stackTrace.get());
+//   let res;
+
+//   await action.clearDrawingDataFromLocalStorage(this.drawingLocalStorageKey);
+//   res = await action.click(this.drawingToolHighlighter);
+
+//   if (res === true) {
+//     await logger.logInto(
+//       await stackTrace.get(),
+//       "drawingToolHighlighter is clicked"
+//     );
+
+//     // Use coordinates from testdata with default fallback
+//     // const startX = coords?.startX || 100;
+//     // const startY = coords?.startY || 100;
+//     // const endX = coords?.endX || 300;
+//     // const endY = coords?.endY || 300;
+
+//     const startX = coords?.startX ;
+//     const startY = coords?.startY ;
+//     const endX = coords?.endX ;
+//     const endY = coords?.endY ;
+
+//     await action.dragAndDropWithPath(
+//       this.drawingToolPresentation,
+//       startX,
+//       startY,
+//       endX,
+//       endY
+//     );
+
+//     await browser.pause(500);
+
+//   } else {
+//     await logger.logInto(
+//       await stackTrace.get(),
+//       res + " drawingToolHighlighter is NOT clicked",
+//       "error"
+//     );
+//   }
+
+//   return res;
+// },
+
 
   click_drawingToolPenColour: async function () {
     await logger.logInto(await stackTrace.get());
@@ -230,11 +278,13 @@ module.exports = {
 
 try {
   await action.dragAndDropWithPath(this.drawingToolPresentation, 100, 100, 300, 300);
+  
+  await browser.pause(100);
 } catch (err) {
   console.error("Drag failed:", err);
 }
 
-      await browser.pause(1000)
+      await browser.pause(200)
 
 
 
