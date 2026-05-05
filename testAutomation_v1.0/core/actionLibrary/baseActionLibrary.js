@@ -466,6 +466,166 @@ module.exports = {
         }
     },
 
+    getDrawingDataFromLocalStorage: async function (storageKey) {
+        try {
+            return await browser.execute((key) => {
+                return window.localStorage.getItem(key);
+            }, storageKey);
+        } catch (err) {
+            await logger.logInto(
+                await stackTrace.get(),
+                `Unable to read drawing data from localStorage: ${err.message}`,
+                "error"
+            );
+            return null;
+        }
+    },
+
+    
+
+    parseDrawingLocalStorageData: async function (rawDrawingData) {
+        if (!rawDrawingData) {
+            return null;
+        }
+
+        try {
+            const parsedDrawingData = JSON.parse(rawDrawingData);
+            const pageIds = Object.keys(parsedDrawingData || {});
+
+            if (pageIds.length === 0) {
+                return null;
+            }
+
+            const latestPageId = pageIds[pageIds.length - 1];
+            const latestEntry = parsedDrawingData[latestPageId];
+
+            if (latestEntry?.payload) {
+                try {
+                    latestEntry.payload = JSON.parse(latestEntry.payload);
+                } catch (payloadErr) {
+                    await logger.logInto(
+                        await stackTrace.get(),
+                        `Unable to parse drawing payload: ${payloadErr.message}`,
+                        "error"
+                    );
+                }
+            }
+
+            return {
+                pageId: latestPageId,
+                entry: latestEntry,
+                allEntries: parsedDrawingData,
+            };
+        } catch (err) {
+            await logger.logInto(
+                await stackTrace.get(),
+                `Unable to parse drawing localStorage data: ${err.message}`,
+                "error"
+            );
+            return null;
+        }
+    },
+
+    waitForDrawingLocalStorageData: async function (storageKey, validationOptions = {}) {
+        const {
+            timeout = 5000,
+            expectedAction,
+            expectedType = "annotation",
+            expectedMarker,
+            expectedPageId,
+            allowMissing = false,
+        } = validationOptions;
+
+        let latestRawData = null;
+
+        try {
+            await browser.waitUntil(
+                async () => {
+                    latestRawData = await this.getDrawingDataFromLocalStorage(storageKey);
+
+                    if (!latestRawData) {
+                        return allowMissing;
+                    }
+
+                    const parsedData = await this.parseDrawingLocalStorageData(latestRawData);
+
+                    if (!parsedData?.entry) {
+                        return false;
+                    }
+
+                    const { pageId, entry } = parsedData;
+                    const payloadData = entry?.payload?.data || "";
+
+                    if (expectedPageId && pageId !== String(expectedPageId)) {
+                        return false;
+                    }
+
+                    if (expectedAction && entry.action !== expectedAction) {
+                        return false;
+                    }
+
+                    if (expectedType && entry.type !== expectedType) {
+                        return false;
+                    }
+
+                    if (expectedMarker && !payloadData.includes(`"${expectedMarker}"`)) {
+                        return false;
+                    }
+
+                    return true;
+                },
+                {
+                    timeout,
+                    timeoutMsg: "Expected drawing data was not found in localStorage",
+                }
+            );
+        } catch (err) {
+            if (!allowMissing) {
+                throw err;
+            }
+        }
+
+        return {
+            raw: latestRawData,
+            parsed: await this.parseDrawingLocalStorageData(latestRawData),
+        };
+    },
+
+
+    validateDrawStored: async function (storageKey, validationOptions = {}, expectedType) {
+    const storageState = await this.waitForDrawingLocalStorageData(storageKey, validationOptions);
+
+    console.log(`Expected ${expectedType} data found in localStorage.`);
+    return Boolean(storageState?.parsed?.entry);
+    },
+
+    validateEraserClearedAllDrawings: async function (storageKey, validationOptions = {}) {
+        const {
+            settleTime = 300,
+            sampleCount = 3,
+            sampleInterval = 200,
+        } = validationOptions;
+
+        await browser.pause(settleTime);
+
+        for (let sampleIndex = 0; sampleIndex < sampleCount; sampleIndex += 1) {
+            const latestRawData = await this.getDrawingDataFromLocalStorage(storageKey);
+
+            if (latestRawData !== null) {
+                console.log("Remaining drawing data after eraser:", latestRawData);
+                return false;
+            }
+
+            if (sampleIndex < sampleCount - 1) {
+                await browser.pause(sampleInterval);
+            }
+        }
+        //sampleCount = 3;
+
+        console.log("No drawing data found after eraser.");
+        return true;
+    },
+
     isExisting: async function (selector) {
         message = "Checking if element exists" + selector;
     try {
