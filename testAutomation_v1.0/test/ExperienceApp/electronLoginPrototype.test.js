@@ -11,7 +11,6 @@ const exec = util.promisify(require('child_process').exec);
 //  CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
 
-const AUTH_FILE          = `$env:LOCALAPPDATA\\CambridgeOne\\thor\\meta-v16\\logged_in_user.txt`;
 const POST_LOGIN_SELECTOR = '[qid="user-avatar"], .home-dashboard, #user-profile';
 const MICRO_NEMO_HOST    = 'micro-nemo.comprodls.com';
 const CHROMEDRIVER_PORT  = 9516;
@@ -42,38 +41,70 @@ async function sendOsKeys(keys, delayMs = 300) {
     );
 }
 
-async function confirmChromeProtocolDialog({ maxAttempts = 3, waitBetween = 800 } = {}) {
+async function confirmChromeProtocolDialog({ maxAttempts = 3, waitBetween = 1000 } = {}) {
+    log("Attempting to confirm Chrome protocol dialog…");
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        log(`  Protocol dialog – ENTER attempt ${attempt}/${maxAttempts}`);
         try {
-            await sendOsKeys('{ENTER}', 400);
-            log("  ENTER sent ✓");
-            return true;
+            const psCommand = `
+                Add-Type -AssemblyName System.Windows.Forms;
+                Add-Type -AssemblyName Microsoft.VisualBasic;
+                
+                $chromes = Get-Process chrome | Where-Object { $_.MainWindowTitle -ne '' };
+                if (-not $chromes) { 
+                    Write-Output 'NO_CHROME_WINDOWS'; 
+                    exit; 
+                }
+                
+                # Find the most likely window (containing 'Cambridge One' or 'Login')
+                $target = $chromes | Where-Object { $_.MainWindowTitle -like '*Cambridge One*' -or $_.MainWindowTitle -like '*Login*' } | Select-Object -First 1;
+                if (-not $target) { 
+                    $target = $chromes | Select-Object -First 1; 
+                }
+                
+                Write-Output "FOUND_WINDOW: $($target.MainWindowTitle) (ID: $($target.Id))";
+                
+                # Activate the window
+                try {
+                    [Microsoft.VisualBasic.Interaction]::AppActivate($target.Id);
+                } catch {
+                    Write-Output "ACTIVATE_FAILED: $($_.Exception.Message)";
+                }
+                Start-Sleep -Milliseconds 1000;
+                
+                # Protocol dialogs often have focus on "Cancel" or "Always allow" checkbox.
+                # Common sequences:
+                # 1. TAB, TAB, ENTER (Checkbox -> Open -> Cancel? depends on version)
+                # 2. LEFT, ENTER (if "Open" is on the left)
+                # 3. ENTER (if "Open" is default)
+                
+                # We will try TAB -> TAB -> ENTER as the primary sequence
+                [System.Windows.Forms.SendKeys]::SendWait('{TAB}');
+                Start-Sleep -Milliseconds 200;
+                [System.Windows.Forms.SendKeys]::SendWait('{TAB}');
+                Start-Sleep -Milliseconds 200;
+                [System.Windows.Forms.SendKeys]::SendWait('{ENTER}');
+                Start-Sleep -Milliseconds 500;
+                
+                Write-Output 'KEYS_SENT';
+            `;
+            
+            const { stdout } = await exec(`powershell -NoProfile -Command "${psCommand.replace(/\r?\n/g, '; ').replace(/"/g, '\\"')}"`);
+            const lines = stdout.split('\n').map(l => l.trim()).filter(l => l);
+            
+            log(`  Attempt ${attempt} output:`, lines.join(' | '));
+            
+            if (stdout.includes('KEYS_SENT')) {
+                log(`  Keys sent to window: ${lines.find(l => l.startsWith('FOUND_WINDOW')) || 'unknown'}`);
+                return true;
+            }
         } catch (e) {
-            log(`  Attempt ${attempt} failed:`, e.message);
-            await new Promise(r => setTimeout(r, waitBetween));
+            log(`  Attempt ${attempt} error:`, e.message);
         }
+        await new Promise(r => setTimeout(r, waitBetween));
     }
-    log("WARNING: All dialog attempts exhausted");
     return false;
 }
 
-async function waitForElectronAuthFile({ timeout = 20000 } = {}) {
-    log(`Polling auth file…`);
-    let fileContent = "";
-    const found = await waitUntil(async () => {
-        const { stdout: exists } = await exec(
-            `powershell -Command "Test-Path '${AUTH_FILE}'"`
-        ).catch(() => ({ stdout: "False" }));
-        if (exists.trim() !== "True") return false;
-        const { stdout: content } = await exec(
-            `powershell -Command "Get-Content '${AUTH_FILE}' -Raw"`
-        ).catch(() => ({ stdout: "" }));
-        fileContent = content.trim();
-        return fileContent.length > 0;
-    }, { timeout, interval: 500, label: "logged_in_user.txt" });
-    return { success: found, content: fileContent };
-}
 
 async function switchToLoggedInElectronWindow() {
     log("Waiting for new Electron window handle…");
@@ -84,21 +115,33 @@ async function switchToLoggedInElectronWindow() {
     }, { timeout: 15000, interval: 1000, label: "second Electron window" });
 
     const handles = await browser.getWindowHandles();
-    log(`Final handles: ${handles.length}`, handles);
+    log(`Final handles: ${handles.length}`);
+    
+    for (let i = 0; i < handles.length; i++) {
+        await browser.switchToWindow(handles[i]);
+        const title = await browser.getTitle();
+        const url = await browser.getUrl();
+        log(`  Handle[${i}]: "${title}" | URL: ${url}`);
+    }
+
     const targetHandle = handles[handles.length - 1];
     await browser.switchToWindow(targetHandle);
-    log(`Switched to handle[${handles.length - 1}] ✓`);
+    const finalUrl = await browser.getUrl();
+    const isElectron = finalUrl.startsWith('file://');
+    log(`Switched to handle[${handles.length - 1}] ✓ — Context: ${isElectron ? "ELECTRON (Local File)" : "WEB (Remote URL)"}`);
 }
 
 async function verifyElectronLoginSuccess({ timeout = 20000 } = {}) {
-    log(`Checking selector: "${POST_LOGIN_SELECTOR}"`);
     try {
-        const el = await browser.$(POST_LOGIN_SELECTOR);
-        await el.waitForDisplayed({ timeout });
-        log("UI verification: PASSED ✓");
+        const collapseBtn = await $('[qid="tDashboard-9"]');
+        await collapseBtn.waitForDisplayed({ timeout });
+        
+        await collapseBtn.click();
+        console.log("Clicked Collapse all ✅");
+
         return true;
     } catch (e) {
-        log("UI verification: FAILED — update POST_LOGIN_SELECTOR.", e.message);
+        console.log("Element not found or not clickable ❌", e.message);
         return false;
     }
 }
@@ -228,6 +271,29 @@ module.exports = {
 
         // ── PHASE 1: Find Login button ────────────────────────────────────────
         log("PHASE 1 ▶ Locate Login Button in Electron");
+        
+        const initialHandles = await browser.getWindowHandles();
+        log(`  Initial Handles: ${initialHandles.length}`);
+        for (let i = 0; i < initialHandles.length; i++) {
+            await browser.switchToWindow(initialHandles[i]);
+            const title = await browser.getTitle();
+            const url = await browser.getUrl();
+            log(`  Handle[${i}]: "${title}" | URL: ${url}`);
+            if (title !== "DevTools" && title !== "" && !url.startsWith("devtools://")) {
+                log(`  Found potential main window at Handle[${i}]`);
+                // Stay on this handle
+                break;
+            }
+        }
+
+        // Check if already logged in
+        const currentUrl = await browser.getUrl();
+        if (currentUrl.includes('dashboard') || currentUrl.includes('teacher-dashboard')) {
+            log("⚠ Already logged in! Skipping to Phase 9/10…");
+            // Skip to verification
+            return await this.VERIFY_ONLY();
+        }
+
         const loginBtn = await $('button.btn-purple.login-btn');
         await loginBtn.waitForExist({ timeout: 15000 });
         await loginBtn.waitForDisplayed({ timeout: 15000 });
@@ -369,13 +435,18 @@ module.exports = {
                             '--start-maximized',
                             '--disable-popup-blocking',
                         ],
-                        // prefs: {
-                        //     'protocol_handler.allowed_origin_protocol_pairs': {
-                        //         'https://micro-nemo.comprodls.com': {
-                        //             'cambridgeone-app': true
-                        //         }
-                        //     }
-                        // }
+                        prefs: {
+                            'protocol_handler.excluded_schemes': {
+                                'cambridgeone-app': false,
+                                'cambridgeone': false
+                            },
+                            'protocol_handler.allowed_origin_protocol_pairs': {
+                                'https://micro-nemo.comprodls.com': {
+                                    'cambridgeone-app': true,
+                                    'cambridgeone': true
+                                }
+                            }
+                        }
                     }
                 }
             });
@@ -416,6 +487,7 @@ module.exports = {
 
             try {
                 log("Submitting credentials…");
+                await $(login.userName_tbox).waitForDisplayed({ timeout: 15000 });
                 await login.set_userName_tbox('teacher12june__@mailsac.com');
                 await login.set_password_tbox('Compro11');
                 await login.click_login_btn();
@@ -437,27 +509,13 @@ module.exports = {
                 await browser.pause(12000);
 
                 // ── PHASE 8: Confirm protocol dialog ─────────────────────────
-                // log("PHASE 8 ▶ Confirming Chrome protocol dialog");
-                // const dialogConfirmed = await confirmChromeProtocolDialog({
-                //     maxAttempts: 3,
-                //     waitBetween: 800,
-                // });
-                // log(`Dialog ${dialogConfirmed ? "confirmed ✓" : "uncertain ⚠"} — ${((Date.now() - t0) / 1000).toFixed(1)}s`);
+                log("PHASE 8 ▶ Confirming Chrome protocol dialog");
+                const dialogConfirmed = await confirmChromeProtocolDialog({
+                    maxAttempts: 3,
+                    waitBetween: 800,
+                });
+                log(`Dialog ${dialogConfirmed ? "confirmed ✓" : "uncertain ⚠"} — ${((Date.now() - t0) / 1000).toFixed(1)}s`);
 
-                // ── PHASE 8b: Poll for Electron auth file ─────────────────────
-                // log("PHASE 8b ▶ Polling for Electron auth file…");
-                // const { success: authOk, content: authData } =
-                //     await waitForElectronAuthFile({ timeout: 20000 });
-
-                // if (authOk) {
-                //     log("Auth file found ✓ — Electron accepted the JWT and user is logged in");
-                //     log("Auth content:", authData);
-                // } else {
-                //     log("⚠ Auth file NOT found within 20 s");
-                //     log("  1. u= token mismatch — check warnings above");
-                //     log("  2. JWT expired — total flow took > 5 min");
-                //     log("  3. ENTER missed the dialog Open button");
-                // }
 
             } catch (loginErr) {
                 log("ERROR in login flow:", loginErr.message || loginErr);
@@ -480,24 +538,30 @@ module.exports = {
             log("ChromeDriver stopped ✓");
         }
 
+        await this.VERIFY_ONLY();
+    },
+
+    VERIFY_ONLY: async function () {
         // ── PHASE 9: Switch to logged-in Electron window ──────────────────────
-        // log("PHASE 9 ▶ Switching to logged-in Electron window");
-        // try {
-        //     await switchToLoggedInElectronWindow();
-        // } catch (winErr) {
-        //     log("Window switch error:", winErr.message || winErr);
-        // }
+        log("PHASE 9 ▶ Switching to logged-in Electron window");
+        try {
+            await switchToLoggedInElectronWindow();
+        } catch (winErr) {
+            log("Window switch error:", winErr.message || winErr);      
 
-        // // ── PHASE 10: Verify logged-in UI ─────────────────────────────────────
-        // log("PHASE 10 ▶ Verifying logged-in UI in Electron");
-        // const uiOk = await verifyElectronLoginSuccess({ timeout: 20000 });
+        }
 
-        // if (uiOk) {
-        //     log("════ LOGIN FLOW COMPLETE — User authenticated in Electron ✓ ════");
-        // } else {
-        //     log("════ LOGIN FLOW ENDED — UI check failed. See warnings above. ════");
-        // }
+        // ── PHASE 10: Verify logged-in UI ─────────────────────────────────────
+        log("PHASE 10 ▶ Verifying logged-in UI in Electron");
+        const uiOk = await verifyElectronLoginSuccess({ timeout: 20000 });
 
-        // await browser.pause(300000); // debug only
+        if (uiOk) {
+            log("════ LOGIN FLOW COMPLETE — User authenticated in Electron ✓ ════");
+        } else {
+            log("════ LOGIN FLOW ENDED — UI check failed. See warnings above. ════");
+            throw new Error("Electron Login Verification Failed: UI dashboard not detected.");
+        }
+
+        await browser.pause(300000); // debug only
     }
 };
