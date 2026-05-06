@@ -1,0 +1,20 @@
+{
+    "Suite1": {
+        "Name": "Electron Login Prototype",
+        "TestCaseRepo": [
+            "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+        ],
+        "Before": [],
+        "BeforeEach": [],
+        "Test": [
+            {
+                "id": "PROTO_ELEC_LOGIN",
+                "description": "Prototype: Click Log in with web browser in Electron",
+                "testFile": "./test/ExperienceApp/electronLoginPrototype.test.js",
+                "testData": []
+            }
+        ],
+        "AfterEach": [],
+        "After": []
+    }
+}

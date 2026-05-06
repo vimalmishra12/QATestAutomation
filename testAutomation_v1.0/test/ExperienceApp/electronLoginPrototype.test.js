@@ -12,8 +12,21 @@ const exec = util.promisify(require('child_process').exec);
 // ─────────────────────────────────────────────────────────────────────────────
 
 const POST_LOGIN_SELECTOR = '[qid="user-avatar"], .home-dashboard, #user-profile';
-const MICRO_NEMO_HOST    = 'micro-nemo.comprodls.com';
 const CHROMEDRIVER_PORT  = 9516;
+
+// Extract hostname from global.appUrl (set by env.conf.js based on --testEnv)
+// Examples: https://micro-nemo.comprodls.com, https://qa.cambridgeone.org, etc.
+const getHostname = () => {
+    if (!global.appUrl) {
+        throw new Error('global.appUrl is not set. Ensure env.conf.js loaded and --testEnv provided.');
+    }
+    try {
+        const url = new URL(global.appUrl.includes('://') ? global.appUrl : `https://${global.appUrl}`);
+        return url.hostname;
+    } catch (e) {
+        throw new Error(`Failed to parse global.appUrl: ${global.appUrl}`);
+    }
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HELPERS
@@ -209,19 +222,23 @@ async function getChromeDebugPort() {
  * Returns the full URL if found, null otherwise.
  */
 async function getChromeUrlFromProcessArgs() {
-    log("Reading Chrome process command line for micro-nemo URL…");
+    const hostname = getHostname();
+    log(`Reading Chrome process command line for ${hostname} URL…`);
     try {
+        // Escape hostname for PowerShell -like operator (dots are wildcards in -like)
+        const escapedHostname = hostname.replace(/\./g, '.');
         const { stdout } = await exec(
             `powershell -Command "Get-WmiObject Win32_Process | ` +
-            `Where-Object { $_.Name -eq 'chrome.exe' -and $_.CommandLine -like '*${MICRO_NEMO_HOST}*' } | ` +
+            `Where-Object { $_.Name -eq 'chrome.exe' -and $_.CommandLine -like '*${hostname}*' } | ` +
             `Select-Object -ExpandProperty CommandLine | Select-Object -First 1"`
         );
         log("Chrome process raw output:", stdout.trim().substring(0, 300));
 
-        // Extract the full micro-nemo URL from the command line
-        const match = stdout.match(/(https?:\/\/micro-nemo\.comprodls\.com[^\s"']+)/);
+        // Extract the full URL from the command line (works for any environment)
+        const urlPattern = hostname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const match = stdout.match(new RegExp(`(https?:\/\/${urlPattern}[^\s"']+)`, 'i'));
         if (match) {
-            log("Found micro-nemo URL in Chrome process:", match[1]);
+            log(`Found ${hostname} URL in Chrome process:`, match[1]);
             return match[1];
         }
     } catch (e) {
@@ -241,13 +258,14 @@ async function getChromeUrlFromProcessArgs() {
  * bypasses all JS hooks in the Electron renderer.
  */
 async function captureUTokenFromChrome({ timeout = 10000 } = {}) {
-    log("Polling Chrome process list for micro-nemo URL…");
+    const hostname = getHostname();
+    log(`Polling Chrome process list for ${hostname} URL…`);
     let capturedUrl = null;
 
     await waitUntil(async () => {
         capturedUrl = await getChromeUrlFromProcessArgs();
         return !!capturedUrl;
-    }, { timeout, interval: 500, label: "Chrome process with micro-nemo URL" });
+    }, { timeout, interval: 500, label: `Chrome process with ${hostname} URL` });
 
     if (!capturedUrl) return null;
 
@@ -362,11 +380,12 @@ module.exports = {
                         }).on('error', reject);
                     });
                     const tabs = JSON.parse(tabsJson);
+                    const hostname = getHostname();
                     log(`  Open Chrome tabs: ${tabs.length}`);
-                    const microNemoTab = tabs.find(t => t.url && t.url.includes(MICRO_NEMO_HOST));
-                    if (microNemoTab) {
-                        log(`  Found micro-nemo tab: ${microNemoTab.url}`);
-                        originalUToken = extractUToken(microNemoTab.url);
+                    const envTab = tabs.find(t => t.url && t.url.includes(hostname));
+                    if (envTab) {
+                        log(`  Found ${hostname} tab: ${envTab.url}`);
+                        originalUToken = extractUToken(envTab.url);
                         log(`  Extracted token: ${originalUToken}`);
                     }
                 } catch (e) {
@@ -390,7 +409,8 @@ module.exports = {
         // Use /desktop-login?u=ORIGINAL_TOKEN — same path the app uses natively.
         // This preserves the token so the deep-link fires with the same u= value
         // that Electron already registered.
-        const targetUrl = `https://micro-nemo.comprodls.com/desktop-login?u=${originalUToken}`;
+        const hostname = getHostname();
+        const targetUrl = `https://${hostname}/desktop-login?u=${originalUToken}`;
         log(`Chrome target URL: ${targetUrl}`);
 
         // ── PHASE 4: Close the Chrome window Electron opened ──────────────────
@@ -441,7 +461,7 @@ module.exports = {
                                 'cambridgeone': false
                             },
                             'protocol_handler.allowed_origin_protocol_pairs': {
-                                'https://micro-nemo.comprodls.com': {
+                                [`https://${hostname}`]: {
                                     'cambridgeone-app': true,
                                     'cambridgeone': true
                                 }

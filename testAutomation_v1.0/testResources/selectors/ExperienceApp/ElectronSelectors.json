@@ -1,0 +1,14 @@
+{
+  "css": {
+    "ElectronApp": {
+      "loginBtn": "button.btn-purple.login-btn",
+      "userAvatar": "[qid=\"user-avatar\"]",
+      "homeDashboard": ".home-dashboard",
+      "userProfile": "#user-profile",
+      "collapseAllBtn": "[qid=\"tDashboard-9\"]",
+      "dashboardTitle": ".dashboard-title",
+      "teacherDashboard": ".teacher-dashboard",
+      "electronWindowTitle": "Cambridge One Desktop App"
+    }
+  }
+}
