@@ -113,6 +113,18 @@
       },
 
       {
+        "id": "TST_DRAW_TC_19",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/production/ebookData.json",
+            "jsonPath": "C1.ebook.drawingTool.scribbleLocalStorageValidation"
+          }
+        ]
+      },
+
+      {
         "id": "TST_DRAW_TC_5",
         "description": "",
         "testFile": "./test/ExperienceApp/drawingTool.test.js",
@@ -156,6 +168,13 @@
       },
       {
         "id": "TST_DRAW_TC_4",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_DRAW_TC_20",
         "description": "",
         "testFile": "./test/ExperienceApp/drawingTool.test.js",
         "testData": []
@@ -209,6 +228,13 @@
       },
       {
         "id": "TST_DRAW_TC_4",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": []
+      },
+
+      {
+        "id": "TST_DRAW_TC_20",
         "description": "",
         "testFile": "./test/ExperienceApp/drawingTool.test.js",
         "testData": []
