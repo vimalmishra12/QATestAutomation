@@ -283,6 +283,13 @@
       "dropdownBook": {
         "ebookOneName": "vm_automation_ebook_latest_01",
         "ebookTwoName": "vm_automation_ebook_latest_02"
+      },
+      "drawingTool": {
+        "highlighterLocalStorageValidation": {
+          "expectedAction": "create",
+          "expectedType": "annotation",
+          "expectedMarker": "h"
+        }
       }
     },
     "codesAndKeys": {

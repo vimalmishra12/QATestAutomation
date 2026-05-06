@@ -230,6 +230,17 @@
         "testData": []
       },
       {
+        "id": "TST_DRAW_TC_18",
+        "description": "",
+        "testFile": "./test/ExperienceApp/drawingTool.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/qa/ebookData.json",
+            "jsonPath": "C1.ebook.drawingTool.highlighterLocalStorageValidation"
+          }
+        ]
+      },
+      {
         "id": "TST_DRAW_TC_4",
         "description": "",
         "testFile": "./test/ExperienceApp/drawingTool.test.js",

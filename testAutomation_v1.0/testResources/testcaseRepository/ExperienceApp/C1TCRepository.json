@@ -1467,6 +1467,24 @@
           "description": "Validate that pen stroke width 1 is clickable and selected",
           "tags": "P3",
           "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_18",
+          "description": "Validate that highlighter draw data is captured in localStorage",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_19",
+          "description": "Validate that Pen draw data is captured in localStorage",
+          "tags": "P3",
+          "visualTest": false
+        },
+        {
+          "id": "TST_DRAW_TC_20",
+          "description": "Validate that drawing data is cleared from localStorage after erasing all items",
+          "tags": "P3",
+          "visualTest": false
         }
       ]
     },

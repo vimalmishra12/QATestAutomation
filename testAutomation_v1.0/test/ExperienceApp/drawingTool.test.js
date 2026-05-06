@@ -1,5 +1,6 @@
 "use strict";
 var drawingTool = require("../../pages/ExperienceApp/drawingTool.page.js");
+var action = require("../../core/actionLibrary/baseActionLibrary.js");
 var sts;
 
 module.exports = {
@@ -10,6 +11,19 @@ module.exports = {
       sts,
       true,
       "Pen Drawing (Scribble) tool is not Clicked"
+    );
+  },
+
+  TST_DRAW_TC_19: async function (testdata) {
+    sts = await action.validateDrawStored(
+      drawingTool.drawingLocalStorageKey,
+      testdata || {},
+      "scribble"
+    );
+    await assertion.assertEqual(
+      sts,
+      true,
+      "Pen drawing data was not captured in localStorage"
     );
   },
 
@@ -32,8 +46,19 @@ module.exports = {
   // Test case to validate the Eraser tool is clickable.
   TST_DRAW_TC_4: async function (testdata) {
     sts = await drawingTool.click_drawingToolEraser();
-    // console.log("102 clicked",sts );
     await assertion.assertEqual(sts, true, "Eraser tool is not Clicked");
+
+  },
+  TST_DRAW_TC_20: async function (testdata) {
+    sts = await action.validateEraserClearedAllDrawings(
+      drawingTool.drawingLocalStorageKey,
+      testdata || {}
+    );
+    await assertion.assertEqual(
+      sts,
+      true,
+      "Drawing data still exists in localStorage after erasing all items"
+    );
   },
 
   // Test case to validate the Undo action is clickable.
@@ -63,6 +88,21 @@ module.exports = {
     sts = await drawingTool.click_drawingToolHighlighter();
     await assertion.assertEqual(sts, true, "Highlighter tool is not Clicked");
   },
+
+  // Test case to validate that highlighter draw data is captured in localStorage.
+  TST_DRAW_TC_18: async function (testdata) {
+    sts = await action.validateDrawStored(
+      drawingTool.drawingLocalStorageKey,
+      testdata || {},
+      "highlighter"
+    );
+    await assertion.assertEqual(
+      sts,
+      true,
+      "Highlighter draw data was not captured in localStorage"
+    );
+  },
+
 
   // Test case to validate the Green Pen Colour option is clickable.
   TST_DRAW_TC_10: async function (testdata) {
