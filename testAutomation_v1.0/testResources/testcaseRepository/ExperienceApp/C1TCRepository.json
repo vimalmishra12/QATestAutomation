@@ -459,6 +459,19 @@
       ]
     },
     {
+      "modulename": "electronDashboard",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/electronDashboard.test.js",
+      "testcase": [
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "Validate that the selected eBook is launched in Electron",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Create New  Class",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/createNewClass.test.js",

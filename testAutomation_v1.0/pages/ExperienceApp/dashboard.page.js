@@ -129,6 +129,8 @@ module.exports = {
     var res;
     console.log("this is testdata 131" , testdata)
     const kthElement = await action.getKthElement(this.ebook_btn, testdata.launchEbook);
+    console.log("dhruv1111111111kthElement" , kthElement)
+
     if (kthElement) {
       res = await action.click(kthElement);
 

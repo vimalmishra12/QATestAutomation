@@ -10,8 +10,6 @@ const exec = util.promisify(require('child_process').exec);
 // ─────────────────────────────────────────────────────────────────────────────
 //  CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
-
-const POST_LOGIN_SELECTOR = '[qid="user-avatar"], .home-dashboard, #user-profile';
 const MICRO_NEMO_HOST    = 'micro-nemo.comprodls.com';
 const CHROMEDRIVER_PORT  = 9516;
 
@@ -133,15 +131,16 @@ async function switchToLoggedInElectronWindow() {
 
 async function verifyElectronLoginSuccess({ timeout = 20000 } = {}) {
     try {
-        const collapseBtn = await $('[qid="tDashboard-9"]');
-        await collapseBtn.waitForDisplayed({ timeout });
+        const welcomeElement = await $('.welcome');
+        await welcomeElement.waitForDisplayed({ timeout });
         
-        await collapseBtn.click();
-        console.log("Clicked Collapse all ✅");
-
+        const welcomeText = (await welcomeElement.getText()).trim();
+        log(`Welcome message detected: "${welcomeText}" ✅`);
+        
+        // The user asked to check if the div is present.
         return true;
     } catch (e) {
-        console.log("Element not found or not clickable ❌", e.message);
+        log("Welcome message not detected ❌", e.message);
         return false;
     }
 }
@@ -182,6 +181,9 @@ function extractUToken(url) {
  *
  * Fallback: use PowerShell to read Chrome's command line and find the port.
  */
+
+
+
 async function getChromeDebugPort() {
     log("Scanning for Chrome remote debugging port…");
     try {
@@ -488,7 +490,7 @@ module.exports = {
             try {
                 log("Submitting credentials…");
                 await $(login.userName_tbox).waitForDisplayed({ timeout: 15000 });
-                await login.set_userName_tbox('teacher12june__@mailsac.com');
+                await login.set_userName_tbox('student12.1june__@mailsac.com');
                 await login.set_password_tbox('Compro11');
                 await login.click_login_btn();
                 log("Credentials submitted ✓");
@@ -562,6 +564,6 @@ module.exports = {
             throw new Error("Electron Login Verification Failed: UI dashboard not detected.");
         }
 
-        await browser.pause(300000); // debug only
+        // await browser.pause(300000); // debug only
     }
 };
