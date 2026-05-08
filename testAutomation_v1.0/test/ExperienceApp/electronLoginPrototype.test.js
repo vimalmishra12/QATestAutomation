@@ -490,7 +490,7 @@ module.exports = {
             try {
                 log("Submitting credentials…");
                 await $(login.userName_tbox).waitForDisplayed({ timeout: 15000 });
-                await login.set_userName_tbox('student12.1june__@mailsac.com');
+                await login.set_userName_tbox('CQA_AUTO_STU_101@mailsac.com');
                 await login.set_password_tbox('Compro11');
                 await login.click_login_btn();
                 log("Credentials submitted ✓");

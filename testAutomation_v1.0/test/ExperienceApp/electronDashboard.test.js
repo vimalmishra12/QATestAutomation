@@ -10,7 +10,7 @@ module.exports = {
   TST_DASH_TC_5: async function (testdata) {
     console.log("Executing Electron Dashboard TC 5: Click Ebook Button", testdata);
     
-    const electronEbookSelector = 'a[qid="lDashboard-c1-0-1-0-2"]';
+    const electronEbookSelector = 'a[qid="lDashboard-c1-0-0-0-2"]';
     
     console.log("Clicking Electron eBook button using selector:", electronEbookSelector);
     
