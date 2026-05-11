@@ -132,6 +132,12 @@
             "class": [],
             "info": {}
           },
+          "electronProtoUser": {
+            "email": "CQA_AUTO_STU_101@mailsac.com",
+            "password": "Compro11",
+            "role": "student",
+            "name": "CQA_AUTO_STU_101 AUTO"
+          },
           "validStudent5": {
             "email": "difusionqa.stud44@yopmail.com",
             "password": "Compro@1234",
