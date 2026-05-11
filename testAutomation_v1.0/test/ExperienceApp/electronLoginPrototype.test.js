@@ -31,14 +31,6 @@ async function waitUntil(fn, { timeout = 10000, interval = 500, label = "conditi
     return false;
 }
 
-async function sendOsKeys(keys, delayMs = 300) {
-    const escaped = keys.replace(/'/g, "\\'");
-    await exec(
-        `powershell -Command "$wshell = New-Object -ComObject wscript.shell; ` +
-        `$wshell.SendKeys('${escaped}'); Start-Sleep -Milliseconds ${delayMs}"`
-    );
-}
-
 async function confirmChromeProtocolDialog({ maxAttempts = 3, waitBetween = 1000 } = {}) {
     log("Attempting to confirm Chrome protocol dialog…");
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {

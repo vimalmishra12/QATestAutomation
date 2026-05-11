@@ -151,10 +151,10 @@
         "myMaterialBtn": "[data-tid=button-materials]"
       },
       "dashboard": {
-        "help_btn": "a.help-click-btn,button[qid=\"cHeader-hlp-2\"]",
+        "help_btn": "a.help-click-btn,button[qid=\"cHeader-hlp-2\"],a[qid=\"cHeader-9\"],a#helpBttn",
         "progress_btn": "a.progress-link.d-flex.align-items-center",
         "praticeExtra_btn": "a.no-decoration.tile-section-1.tile-section-link",
-        "ebook_btn": "a.no-decoration.tile-section-1.tile-section-link",
+        "ebook_btn": "a.no-decoration.tile-section-1.tile-section-link, .book-image.d-flex.align-items-center.justify-content-center",
         "homework_btn": "button.btn.btn-lg.btn-main-1.homework-button",
         "myProgress_btn": "a.agg-progress-btn.btn-main-color-1-bordered",
         "createNewClass": ".btn.btn-main-color-1-bordered.add-button.d-flex.align-items-center.justify-content-center",
@@ -212,7 +212,7 @@
         "contentButton": "button[qid=\"72\"]",
         "toolsButton": "button[qid=\"73\"]",
         "closeButton": "button.close-button > em.nemo-close-new",
-        "homeButton": "button[qid=\"71\"]",
+        "homeButton": "button[qid=\"71\"], .button-container button",
         "myNotes": "div.notes-title",
         "cqaEbookEvolveDropdown": "button[qid=\"ebook-button-1\"]",
         "dropDownListTitle": "[qid^=\"ebook-list-item-",
