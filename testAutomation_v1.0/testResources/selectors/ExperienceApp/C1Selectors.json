@@ -948,6 +948,14 @@
       },
       "signUp": {
         "createAccountTitleTxt": "#teacher-radio > .r-container > .checkmark"
+      },
+      "electronLogin": {
+        "welcome": ".welcome",
+        "loginBtn": "button.btn-purple.login-btn",
+        "userName_tbox": "#gigya-loginID-56269462240752180",
+        "password_tbox": "#gigya-password-56383998600152700",
+        "login_btn": "input[value=\"Log in\"]",
+        "deepLinkBtn": "a[qid=\"home-2\"]"
       }
     }
   },
