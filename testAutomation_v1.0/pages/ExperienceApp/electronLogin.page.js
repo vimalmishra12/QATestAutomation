@@ -108,7 +108,7 @@ class ElectronLoginPage {
   async clickLoginButton() {
     console.log('PHASE 1: Locating Login Button in Electron');
 
-    const loginBtn = await $(selectors.css.electronLogin.loginBtn);
+    const loginBtn = await $(selectors.electronLogin.loginBtn);
     await loginBtn.waitForExist({ timeout: 15000 });
     await loginBtn.waitForDisplayed({ timeout: 15000 });
     console.log('Login button visible ✓');
@@ -289,7 +289,7 @@ class ElectronLoginPage {
       console.log('Credentials submitted ✓');
 
       // Wait for deep link button
-      const deepLinkBtn = await $(selectors.css.electronLogin.deepLinkBtn);
+      const deepLinkBtn = await $(selectors.electronLogin.deepLinkBtn);
       await deepLinkBtn.waitForDisplayed({ timeout: 30000 });
       console.log('Deep link button found ✓');
 
@@ -413,7 +413,7 @@ class ElectronLoginPage {
     console.log('PHASE 10: Verifying logged-in UI in Electron');
 
     try {
-      const welcomeElement = await $(selectors.css.electronLogin.welcome);
+      const welcomeElement = await $(selectors.electronLogin.welcome);
       await welcomeElement.waitForDisplayed({ timeout });
       const welcomeText = (await welcomeElement.getText()).trim();
       console.log(`Welcome message detected: "${welcomeText}" ✓`);
