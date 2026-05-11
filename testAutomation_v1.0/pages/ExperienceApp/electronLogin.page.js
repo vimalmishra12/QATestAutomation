@@ -309,6 +309,141 @@ class ElectronLoginPage {
       console.log('Restored Electron browser context');
     }
   }
+
+  /**
+   * Confirm Chrome protocol dialog using PowerShell
+   */
+  async confirmProtocolDialog({ maxAttempts = 3, waitBetween = 800 } = {}) {
+    console.log('PHASE 8: Confirming Chrome protocol dialog...');
+    const startTime = Date.now();
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        const psCommand = `
+          Add-Type -AssemblyName System.Windows.Forms;
+          Add-Type -AssemblyName Microsoft.VisualBasic;
+
+          $chromes = Get-Process chrome | Where-Object { $_.MainWindowTitle -ne '' };
+          if (-not $chromes) {
+            Write-Output 'NO_CHROME_WINDOWS';
+            exit;
+          }
+
+          $target = $chromes | Where-Object { $_.MainWindowTitle -like '*Cambridge One*' -or $_.MainWindowTitle -like '*Login*' } | Select-Object -First 1;
+          if (-not $target) {
+            $target = $chromes | Select-Object -First 1;
+          }
+
+          Write-Output "FOUND_WINDOW: $($target.MainWindowTitle) (ID: $($target.Id))";
+
+          try {
+            [Microsoft.VisualBasic.Interaction]::AppActivate($target.Id);
+          } catch {
+            Write-Output "ACTIVATE_FAILED: $($_.Exception.Message)";
+          }
+          Start-Sleep -Milliseconds 1000;
+
+          [System.Windows.Forms.SendKeys]::SendWait('{TAB}');
+          Start-Sleep -Milliseconds 200;
+          [System.Windows.Forms.SendKeys]::SendWait('{TAB}');
+          Start-Sleep -Milliseconds 200;
+          [System.Windows.Forms.SendKeys]::SendWait('{ENTER}');
+          Start-Sleep -Milliseconds 500;
+
+          Write-Output 'KEYS_SENT';
+        `;
+
+        const { stdout } = await execPromise(
+          `powershell -NoProfile -Command "${psCommand.replace(/\r?\n/g, '; ').replace(/"/g, '\\"')}"`
+        );
+
+        if (stdout.includes('KEYS_SENT')) {
+          const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+          console.log(`Dialog confirmed ✓ — ${elapsed}s`);
+          return true;
+        }
+      } catch (e) {
+        console.error(`Attempt ${attempt} error:`, e.message);
+      }
+      await new Promise(r => setTimeout(r, waitBetween));
+    }
+
+    console.log('Protocol dialog confirmation uncertain ⚠');
+    return false;
+  }
+
+  /**
+   * Switch back to Electron window after login
+   */
+  async switchToElectronWindow() {
+    console.log('PHASE 9: Switching to logged-in Electron window');
+
+    const deadline = Date.now() + 15000;
+    while (Date.now() < deadline) {
+      const handles = await browser.getWindowHandles();
+      if (handles.length >= 2) {
+        console.log(`Found ${handles.length} window handles`);
+
+        // Log all handles for debugging
+        for (let i = 0; i < handles.length; i++) {
+          await browser.switchToWindow(handles[i]);
+          const title = await browser.getTitle();
+          const url = await browser.getUrl();
+          console.log(`  Handle[${i}]: "${title}" | URL: ${url}`);
+        }
+
+        // Switch to last handle (Electron window after login)
+        const targetHandle = handles[handles.length - 1];
+        await browser.switchToWindow(targetHandle);
+        const finalUrl = await browser.getUrl();
+        const isElectron = finalUrl.startsWith('file://');
+        console.log(`Switched to handle[${handles.length - 1}] ✓ — Context: ${isElectron ? 'ELECTRON' : 'WEB'}`);
+        return;
+      }
+      await new Promise(r => setTimeout(r, 1000));
+    }
+
+    console.log('TIMEOUT waiting for Electron window handle');
+  }
+
+  /**
+   * Verify logged-in state in Electron
+   */
+  async verifyLoggedInState({ timeout = 20000 } = {}) {
+    console.log('PHASE 10: Verifying logged-in UI in Electron');
+
+    try {
+      const welcomeElement = await $(selectors.css.electronLogin.welcome);
+      await welcomeElement.waitForDisplayed({ timeout });
+      const welcomeText = (await welcomeElement.getText()).trim();
+      console.log(`Welcome message detected: "${welcomeText}" ✓`);
+      return welcomeText;
+    } catch (e) {
+      console.error('Welcome message not detected:', e.message);
+      throw new Error('Electron Login Verification Failed: UI dashboard not detected');
+    }
+  }
+
+  /**
+   * Cleanup: Close ChromeDriver and sessions
+   */
+  async cleanup() {
+    console.log('Cleaning up...');
+
+    if (this.webBrowser) {
+      try {
+        await this.webBrowser.deleteSession();
+        console.log('Chrome session closed ✓');
+      } catch (e) {
+        console.error('deleteSession error:', e.message);
+      }
+    }
+
+    if (this.driverProcess) {
+      this.driverProcess.kill();
+      console.log('ChromeDriver stopped ✓');
+    }
+  }
 }
 
 module.exports = new ElectronLoginPage();
