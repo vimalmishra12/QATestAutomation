@@ -205,6 +205,110 @@ class ElectronLoginPage {
 
     await new Promise(r => setTimeout(r, 1500));
   }
+
+  /**
+   * Create Chrome WebDriver session
+   */
+  async createChromeSession() {
+    console.log('PHASE 6: Creating Chrome WebDriver session');
+
+    this.webBrowser = await remote({
+      hostname: 'localhost',
+      port: CHROMEDRIVER_PORT,
+      path: '/',
+      capabilities: {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          args: [
+            '--no-sandbox',
+            '--start-maximized',
+            '--disable-popup-blocking',
+          ],
+          prefs: {
+            'protocol_handler.excluded_schemes': {
+              'cambridgeone-app': false,
+              'cambridgeone': false
+            },
+            'protocol_handler.allowed_origin_protocol_pairs': {
+              [envConfig.baseUrl]: {
+                'cambridgeone-app': true,
+                'cambridgeone': true
+              }
+            }
+          }
+        }
+      }
+    });
+
+    console.log('Chrome session created ✓');
+  }
+
+  /**
+   * Navigate to login URL
+   */
+  async navigateToLogin(url) {
+    await this.webBrowser.url(url);
+    const currentUrl = await this.webBrowser.getUrl();
+    console.log('Navigated to:', currentUrl);
+
+    // Verify token preserved
+    const tokenInUrl = this.extractUToken(currentUrl);
+    console.log(`u= token preserved ✓ (${tokenInUrl || 'not in URL'})`);
+
+    // Wait for login form
+    const loginHeader = await this.webBrowser.$('#onboarding-header-login-btn');
+    await loginHeader.waitForDisplayed({ timeout: 20000 });
+    console.log('Login page confirmed ✓');
+  }
+
+  /**
+   * Submit credentials in Chrome session
+   */
+  async submitCredentials(email, password) {
+    console.log('PHASE 7: Submitting credentials...');
+
+    // Save original browser context
+    const originalBrowser = global.browser;
+    const original$ = global.$;
+    const original$$ = global.$$;
+
+    // Switch to Chrome session
+    global.browser = this.webBrowser;
+    if (originalBrowser?.config) global.browser.config = originalBrowser.config;
+    global.$ = this.webBrowser.$.bind(this.webBrowser);
+    global.$$ = this.webBrowser.$$.bind(this.webBrowser);
+
+    try {
+      // Use existing login.page.js selectors
+      const loginSelectors = selectors.css.ComproC1.login;
+      await $(loginSelectors.userName_tbox).waitForDisplayed({ timeout: 15000 });
+      await $(loginSelectors.userName_tbox).setValue(email);
+      await $(loginSelectors.password_tbox).setValue(password);
+      await $(loginSelectors.login_btn).click();
+
+      console.log('Credentials submitted ✓');
+
+      // Wait for deep link button
+      const deepLinkBtn = await $(selectors.css.electronLogin.deepLinkBtn);
+      await deepLinkBtn.waitForDisplayed({ timeout: 30000 });
+      console.log('Deep link button found ✓');
+
+      // Click deep link button
+      await deepLinkBtn.click();
+      console.log('Deep link clicked ✓ — waiting for OS dialog...');
+      await new Promise(r => setTimeout(r, 12000));
+
+    } catch (error) {
+      console.error('ERROR in login flow:', error.message);
+      throw error;
+    } finally {
+      // Restore original browser context
+      global.browser = originalBrowser;
+      global.$ = original$;
+      global.$$ = original$$;
+      console.log('Restored Electron browser context');
+    }
+  }
 }
 
 module.exports = new ElectronLoginPage();
