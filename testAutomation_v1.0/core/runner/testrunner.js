@@ -46,18 +46,20 @@ class specRunner {
             if (count != 0) {
               await browser.reloadSession();
             }
-            if (global.maximizeWindow == true && global.view == "desktop") {
-              //this will cause browser to maximize on the client screen resolution
-              await browser.maximizeWindow();
-              global.resolution = await browser.getWindowSize();
-            } else if (
-              global.resolution.width != undefined &&
-              global.resolution.height != undefined
-            ) {
-              await browser.setWindowSize(
-                parseInt(global.resolution.width),
-                parseInt(global.resolution.height)
-              );
+            if (!argv.electronApp) {
+              if (global.maximizeWindow == true && global.view == "desktop") {
+                //this will cause browser to maximize on the client screen resolution
+                await browser.maximizeWindow();
+                global.resolution = await browser.getWindowSize();
+              } else if (
+                global.resolution.width != undefined &&
+                global.resolution.height != undefined
+              ) {
+                await browser.setWindowSize(
+                  parseInt(global.resolution.width),
+                  parseInt(global.resolution.height)
+                );
+              }
             }
 
             console.log(

@@ -251,6 +251,7 @@ module.exports = {
   click_homeButton: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    console.log("home button selector", this.homeButton);
     res = await action.click(this.homeButton);
     if (true == res) {
       await logger.logInto(await stackTrace.get(), " homeButton is clicked");

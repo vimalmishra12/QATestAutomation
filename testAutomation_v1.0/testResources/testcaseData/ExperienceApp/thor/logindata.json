@@ -25,6 +25,29 @@
             "launchEbook": "3",
             "info": {}
           },
+          "validStudentDA": {
+            "email": "CQA_AUTO_STU_101@mailsac.com",
+            "password": "Compro11",
+            "role": "student",
+            "name": "hutudibrulli-3717 auto",
+            "class": [
+              {
+                "key": "AEYP-p9hk",
+                "name": "future Class"
+              },
+              {
+                "key": "9q6x-QzFe",
+                "name": "course1"
+              },
+              {
+                "key": "Cw32-FLZ7",
+                "name": "Archive Class"
+              }
+            ],
+            "notes": "Test Note1",
+            "launchEbook": "1",
+            "info": {}
+          },
           "validStudent2": {
             "email": "jijetoullozo-4043@yopmail.com",
             "password": "Compro@1234",
@@ -50,6 +73,7 @@
             "country": "",
             "info": "Automation User.Do Not Touch."
           },
+          
           "acceptanceteacher": {
             "email": "acceptanceTeacher@yopmail.com",
             "password": "Compro@1234",
@@ -107,6 +131,12 @@
             "name": "CQA_AUTO_STU_101 AUTO",
             "class": [],
             "info": {}
+          },
+          "electronProtoUser": {
+            "email": "CQA_AUTO_STU_101@mailsac.com",
+            "password": "Compro11",
+            "role": "student",
+            "name": "CQA_AUTO_STU_101 AUTO"
           },
           "validStudent5": {
             "email": "difusionqa.stud44@yopmail.com",

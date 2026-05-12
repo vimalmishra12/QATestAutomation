@@ -4,6 +4,11 @@ module.exports = {
 
 	
 	launchUrl: async function () {
+		if (argv.electronApp) {
+			await browser.pause(3000);
+			await logger.logInto(stackTrace.get(), "Electron app launched");
+			return;
+		}
 		await browser.url(appUrl);
 		await logger.logInto(stackTrace.get(), "appURL:" + appUrl);
 		/*if (global.maximizeWindow == true && global.view == 'desktop') { //this will cause browser to maximize on the client screen resolution

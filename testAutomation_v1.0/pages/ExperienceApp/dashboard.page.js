@@ -127,8 +127,11 @@ module.exports = {
   click_ebook_btn: async function (testdata) {
     await logger.logInto(await stackTrace.get());
     var res;
-    console.log("this is testdata 131" , testdata)
+    console.log("lauchEbook Value: " +testdata.launchEbook)
+    console.log("selector: "+ this.ebook_btn)
     const kthElement = await action.getKthElement(this.ebook_btn, testdata.launchEbook);
+    console.log("dhruv1111111111kthElement" , kthElement)
+
     if (kthElement) {
       res = await action.click(kthElement);
 

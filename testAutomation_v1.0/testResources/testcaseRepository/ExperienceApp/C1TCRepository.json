@@ -459,6 +459,19 @@
       ]
     },
     {
+      "modulename": "electronDashboard",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/electronDashboard.test.js",
+      "testcase": [
+        {
+          "id": "TST_DASH_TC_5",
+          "description": "Validate that the selected eBook is launched in Electron",
+          "tags": "P3",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Create New  Class",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/createNewClass.test.js",
@@ -4298,6 +4311,20 @@
           "description": "Validate the content of the text editor tour",
           "tags": "P1",
           "visualTest": true
+        }
+      ]
+    },
+    {
+      "modulename": "Electron Login Prototype",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/electronLoginPrototype.test.js",
+      "testCaseRepo": "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json",
+      "testcase": [
+        {
+          "id": "PROTO_ELEC_LOGIN",
+          "description": "Prototype: Click Log in with web browser in Electron",
+          "tags": "P1",
+          "visualTest": false
         }
       ]
     }

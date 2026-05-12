@@ -117,70 +117,105 @@ module.exports = {
   // },
 
   click_hyperlinkActivity: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    await browser.waitUntil(async () => {
-      return await $(this.hyperlinkActivity).isDisplayed();
-    }, { timeout: 10000, timeoutMsg: 'Activity hyperlink not found within 10 seconds' });
+  await logger.logInto(await stackTrace.get());
 
-    res = await action.click(this.hyperlinkActivity);
+  console.log("===== START: click_hyperlinkActivity =====");
 
-    if (true == res) {
+  try {
+    console.log("Activity hyperlink selector:", this.hyperlinkActivity);
+
+    await browser.waitUntil(
+      async () => {
+        const isDisplayed = await $(this.hyperlinkActivity).isDisplayed();
+        console.log("Checking hyperlink visibility:", isDisplayed);
+        return isDisplayed;
+      },
+      {
+        timeout: 10000,
+        timeoutMsg: "Activity hyperlink not found within 10 seconds",
+      }
+    );
+
+    console.log("Clicking activity hyperlink...");
+
+    const res = await action.click(this.hyperlinkActivity);
+
+    console.log("Click result:", res);
+
+    if (res === true) {
       await logger.logInto(
         await stackTrace.get(),
-        " hyperLinkActivity is clicked"
+        "hyperLinkActivity is clicked"
       );
+
+      console.log("Activity hyperlink clicked successfully");
+
       await browser.pause(4000);
 
+      console.log("Finding iframe:", this.activityIFrame);
+
       const frameElement = await action.findElement(this.activityIFrame);
+
+      console.log("Iframe element found:", frameElement);
+
       const boole = await action.switchToFrame(frameElement);
-      //console.log(boole + "1008");
+
+      console.log("Switched to iframe:", boole);
 
       for (let i = 1; i <= 12; i++) {
-        // const selector = `li:nth-child(${i})`;
+        console.log(`===== Iteration ${i} START =====`);
+
         await browser.pause(2000);
-        //const selector =".draggable button[aria-labelledby^=\"content-\"]"
-        await action.click(this.activityAnsElement);
+
+        console.log(
+          `Clicking activity answer element:`,
+          this.activityAnsElement
+        );
+
+        const clickAns = await action.click(this.activityAnsElement);
+
+        console.log(`Iteration ${i} click result:`, clickAns);
+
         await browser.pause(2000);
+
+        console.log(`===== Iteration ${i} END =====`);
       }
-      //console.log("1008 ");
+
+      console.log("Finished all iterations");
+
+      console.log("Switching back to parent frame...");
 
       await action.switchToParentFrame();
 
+      console.log("Successfully switched to parent frame");
+
       await browser.pause(2000);
 
-      // await action.waitForDisplayed(this.activityScoreCheck);
-      // await action.click(this.activityScoreCheck);
-      
-
-      //await action.switchToParentFrame();
-
-      // await browser.pause(300);
-
-      // await action.waitForDisplayed(this.hyperActivityNext);
-      // await action.click(this.hyperActivityNext);
-      // await browser.pause(2000);
-
-      //const pageText = await $(this.activityGoodEffort).getText();
-      // const pageText = await action.getText(this.activityGoodEffort);
-      // res = pageText;
-
-      // await action.waitForDisplayed(this.startAgainActivity);
-      // await action.click(this.startAgainActivity);
-      // await browser.pause(2000);
-
-      // await action.waitForDisplayed(this.hyperAnswerClose);
-      // await action.click(this.hyperAnswerClose);
-      // await browser.pause(2000);
+      console.log("===== END SUCCESS: click_hyperlinkActivity =====");
     } else {
+      console.log("Activity hyperlink click failed");
+
       await logger.logInto(
         await stackTrace.get(),
-        res + "hyperLinkActivity is NOT clicked",
+        res + " hyperLinkActivity is NOT clicked",
         "error"
       );
     }
+
     return res;
-  },
+  } catch (error) {
+    console.error("ERROR in click_hyperlinkActivity:", error);
+
+    await logger.logInto(
+      await stackTrace.get(),
+      `ERROR in click_hyperlinkActivity: ${error.message}`,
+      "error"
+    );
+
+    return false;
+  }
+},
+
 
   click_hyperlinkNewTab: async function () {
     await logger.logInto(await stackTrace.get());
@@ -244,28 +279,65 @@ module.exports = {
   },
 
   click_hyperlinkAudioNoTranscript: async function () {
-    await logger.logInto(await stackTrace.get());
-    var res;
-    res = await action.click(this.hyperlinkAudioNoTranscript);
-    console.log("val of res is hyperlinkAudioNoTranscript: ", res);
-    if (true == res) {
-      await logger.logInto(
-        await stackTrace.get(),
-        " hyperlinkAudioNoTranscript is clicked"
-      );
+  await logger.logInto(await stackTrace.get());
 
-      await $(this.hyperAudioClose).waitForDisplayed();
-      await $(this.hyperAudioClose).click();
-      await browser.pause(3000);
-    } else {
+  try {
+    console.log(
+      "hyperlinkAudioNoTranscript:",
+      this.hyperlinkAudioNoTranscript
+    );
+
+    const isClicked = await action.click(
+      this.hyperlinkAudioNoTranscript
+    );
+
+    console.log(
+      "Value of isClicked for hyperlinkAudioNoTranscript:",
+      isClicked
+    );
+
+    if (!isClicked) {
       await logger.logInto(
         await stackTrace.get(),
-        res + "hyperlinkAudioNoTranscript is NOT clicked",
+        "hyperlinkAudioNoTranscript is NOT clicked",
         "error"
       );
+
+      return false;
     }
-    return res;
-  },
+
+    await logger.logInto(
+      await stackTrace.get(),
+      "hyperlinkAudioNoTranscript is clicked"
+    );
+
+    console.log("Hyper Audio Close:", this.hyperAudioClose);
+
+    await action.waitForDisplayed(this.hyperAudioClose);
+
+    const isCloseClicked = await action.click(this.hyperAudioClose);
+
+    console.log(
+      "Value of isCloseClicked for hyperAudioClose:",
+      isCloseClicked
+    );
+
+    return isCloseClicked;
+  } catch (error) {
+    console.error(
+      "Error in click_hyperlinkAudioNoTranscript:",
+      error
+    );
+
+    await logger.logInto(
+      await stackTrace.get(),
+      `Error in click_hyperlinkAudioNoTranscript: ${error.message}`,
+      "error"
+    );
+
+    return false;
+  }
+},
 
   click_hyperLinkGame: async function () {
     await logger.logInto(await stackTrace.get());

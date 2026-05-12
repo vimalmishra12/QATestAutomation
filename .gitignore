@@ -5,3 +5,10 @@ logs/
 output/
 core/utils/PageStructorGenerator/node_modules/
 core/utils/PageStructorGenerator/outputFile
+
+.planning/
+.cora/
+
+.kilo/
+
+drivers/
