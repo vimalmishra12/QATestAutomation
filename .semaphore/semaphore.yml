@@ -125,4 +125,3 @@ blocks:
       env_vars:
         - name: TEST_ENV
           value: thor
-imal
