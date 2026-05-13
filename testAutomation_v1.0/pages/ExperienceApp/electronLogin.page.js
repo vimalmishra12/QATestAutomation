@@ -4,6 +4,7 @@ const { remote } = require('webdriverio');
 const { spawn, exec } = require('child_process');
 const path = require('path');
 const util = require('util');
+const chromedriver = require('chromedriver');
 const selectors = require(process.cwd() + '/testResources/selectors/ExperienceApp/C1Selectors.json');
 
 const execPromise = util.promisify(exec);
@@ -133,7 +134,7 @@ class ElectronLoginPage {
     console.log('Reading Chrome process command line for micro-nemo URL...');
     try {
       const { stdout } = await execPromise(
-        `powershell -Command "Get-WmiObject Win32_Process | ` +
+        `powershell -Command "Get-CimInstance Win32_Process | ` +
         `Where-Object { $_.Name -eq 'chrome.exe' -and $_.CommandLine -like '*${MICRO_NEMO_HOST}*' } | ` +
         `Select-Object -ExpandProperty CommandLine | Select-Object -First 1"`
       );
@@ -193,7 +194,8 @@ class ElectronLoginPage {
    */
   async startChromeDriver() {
     console.log('PHASE 5: Starting ChromeDriver');
-    const driverPath = path.join(__dirname, '../../drivers/chromedriver-146.exe');
+    const driverPath = chromedriver.path;
+    console.log('  Using driver at:', driverPath);
     this.driverProcess = spawn(driverPath, [`--port=${CHROMEDRIVER_PORT}`]);
 
     this.driverProcess.stdout.on('data', d =>

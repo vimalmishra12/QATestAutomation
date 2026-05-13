@@ -124,7 +124,7 @@
     "appium": "^1.16.0",
     "browserstack-local": "^1.4.8",
     "chai": "^4.3.6",
-    "chromedriver": "^146.0.0",
+    "chromedriver": "^148.0.0",
     "combine-image": "1.0.3",
     "create-wdio": "^7.1.1",
     "css-selector-parser": "^1.4.1",
