@@ -4300,6 +4300,62 @@
           "visualTest": true
         }
       ]
+    },
+    {
+      "modulename": "Active Class",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/activeClass.test.js",
+      "testcase": [
+        {
+          "id": "TST_ACTI_TC_1",
+          "description": "Click Actions dropdown button inside a Class",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_ACTI_TC_2",
+          "description": "Click Delete Class option from Actions dropdown",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_ACTI_TC_3",
+          "description": "Click Yes Delete button on delete confirmation modal",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_ACTI_TC_4",
+          "description": "Validate Actions dropdown data",
+          "tags": "P2",
+          "visualTest": false
+        },
+        {
+          "id": "TST_ACTI_TC_5",
+          "description": "Validate delete modal data",
+          "tags": "P2",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Manage Reports Accessibility",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/manageReports.test.js",
+      "testcase": [
+        {
+          "id": "TST_MRPT_TC_1",
+          "description": "Click Manage Reports from Actions dropdown",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_MRPT_TC_2",
+          "description": "Verify Download button has correct button role for accessibility",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
     }
   ]
 }

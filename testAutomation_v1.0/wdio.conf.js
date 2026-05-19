@@ -266,10 +266,10 @@ exports.config = {
   //   : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
   services: argv.browserCapability
-    ? [[TimelineService], serviceEntry, NovusService]
+    ? [serviceEntry, NovusService]
     : argv.deviceName
-    ? [[TimelineService], serviceEntry, NovusService]
-    : [[TimelineService], "chromedriver", NovusService, webDriverService],
+    ? [serviceEntry, NovusService]
+    : ["chromedriver", NovusService, webDriverService],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -293,7 +293,7 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
     "spec",
-    [
+    /*[
       "timeline",
       {
         outputDir: global.reportOutputDir,
@@ -307,7 +307,7 @@ exports.config = {
         screenshotStrategy: "before:click",
         // screenshotStrategy: 'none'
       },
-    ],
+    ],*/
     [
       "allure",
       {
