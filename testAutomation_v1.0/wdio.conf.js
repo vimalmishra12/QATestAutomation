@@ -2,7 +2,32 @@
 require("./env.conf.js");
 //let QaTouchReporter = require('wdio-qatouch-reporter/lib/index');
 const novusVisualCompare = require("wdio-novus-visual-regression-service/compare");
-const { TimelineService } = require("wdio-timeline-reporter/timeline-service");
+const { TimelineService: BaseTimelineService } = require("wdio-timeline-reporter/timeline-service");
+
+// Custom subclass of TimelineService to resolve an asynchronous race condition.
+// By default, wdio-timeline-reporter's hook methods trigger browser.takeScreenshot()
+// without awaiting its completion. Consequently, the next test starts and updates
+// the reporter's active test reference before the screenshot command finishes,
+// resulting in mismapped screenshots (e.g., Test 2 receives Test 1's end screenshot).
+// Overriding these hooks to run asynchronously and explicitly await the screenshot
+// resolves this mapping issue without modifying the node_modules package.
+class TimelineService extends BaseTimelineService {
+  async beforeCommand(commandName) {
+    const { screenshotStrategy } = this.reporterOptions;
+    if (screenshotStrategy === "before:click" && "click" === commandName) {
+      await browser.takeScreenshot();
+    }
+  }
+  async afterTest(test) {
+    const { screenshotStrategy } = this.reporterOptions;
+    if (screenshotStrategy === "before:click") {
+      await browser.takeScreenshot();
+    }
+    if (screenshotStrategy === "on:error" && !test.passed) {
+      await browser.takeScreenshot();
+    }
+  }
+}
 const specGenerator = require(process.cwd() + "/core/runner/specGenerator.js");
 const visualTimelineReportService =
   require("./core/utils/visual-report-utility/report-service").TimelineService;
@@ -266,10 +291,10 @@ exports.config = {
   //   : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
   services: argv.browserCapability
-    ? [serviceEntry, NovusService]
+    ? [[TimelineService], serviceEntry, NovusService]
     : argv.deviceName
-    ? [serviceEntry, NovusService]
-    : ["chromedriver", NovusService, webDriverService],
+    ? [[TimelineService], serviceEntry, NovusService]
+    : [[TimelineService], "chromedriver", NovusService, webDriverService],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -293,7 +318,7 @@ exports.config = {
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
     "spec",
-    /*[
+    [
       "timeline",
       {
         outputDir: global.reportOutputDir,
@@ -307,7 +332,7 @@ exports.config = {
         screenshotStrategy: "before:click",
         // screenshotStrategy: 'none'
       },
-    ],*/
+    ],
     [
       "allure",
       {
