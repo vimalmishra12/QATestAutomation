@@ -205,6 +205,27 @@ This is a **WebDriverIO v7-based end-to-end test automation framework** for the 
 
 ---
 
+## Protected Files
+
+The following JS and configuration files are the architectural backbone of the framework.
+They MUST NOT be modified without explicit user confirmation. Any AI agent or developer
+must follow the confirmation protocol defined in `AGENTS.md` before touching these files.
+
+> JSON files (selectors, test data, execution files, TC repository) are NOT protected —
+> they are data/configuration and may be edited freely as part of normal work.
+
+| File | Layer | Impact of a Wrong Change |
+|---|---|---|
+| `wdio.conf.js` | Configuration | Breaks entire test execution silently |
+| `env.conf.js` | Configuration | Breaks environment resolution and all global variables |
+| `core/actionLibrary/baseActionLibrary.js` | Core | Breaks every page object in the framework |
+| `core/actionLibrary/baseAssertionLibrary.js` | Core | Breaks every assertion in every test case |
+| `core/runner/testrunner.js` | Core | Breaks all test runs |
+| `core/runner/specGenerator.js` | Core | Breaks spec execution entry point |
+| `core/runner/launchUrl.js` | Core | Breaks browser navigation to the application |
+
+---
+
 ## Dependency Rules
 
 ### Allowed Dependencies (→ means "may depend on")
