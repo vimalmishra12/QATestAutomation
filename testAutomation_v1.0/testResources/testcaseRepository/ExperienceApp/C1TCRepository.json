@@ -468,6 +468,18 @@
           "description": "Validate that the selected eBook is launched in Electron",
           "tags": "P3",
           "visualTest": false
+        },
+        {
+          "id": "PROTO_CLOSE_WALKTHROUGH",
+          "description": "Close Walkthrough popup in Electron",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "PROTO_ELECTRON_LOGOUT",
+          "description": "Logout user in Electron",
+          "tags": "P1",
+          "visualTest": false
         }
       ]
     },

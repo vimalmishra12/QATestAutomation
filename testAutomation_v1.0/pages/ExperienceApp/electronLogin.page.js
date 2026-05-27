@@ -88,6 +88,30 @@ class ElectronLoginPage {
       // Phase 9: Verify logged-in state
       const welcomeElement = await this.verifyLoggedInState();
 
+      // Close Electron DevTools if open
+      console.log('Checking for open DevTools in Electron...');
+      try {
+        await browser.execute(() => {
+          try {
+            const electron = window.require ? window.require('electron') : null;
+            const remote = electron ? (electron.remote || window.require('@electron/remote')) : null;
+            if (remote) {
+              const webContents = remote.getCurrentWindow().webContents;
+              if (webContents.isDevToolsOpened()) {
+                webContents.closeDevTools();
+                console.log('DevTools closed successfully');
+              }
+            }
+          } catch (err) {
+            console.log('Error closing DevTools inside execute:', err.message);
+          }
+        });
+      } catch (e) {
+        console.log('Failed to execute DevTools close script:', e.message);
+      }
+
+
+
       return {
         isLoggedIn: true,
         welcomeText: welcomeElement
@@ -223,7 +247,7 @@ class ElectronLoginPage {
         'goog:chromeOptions': {
           args: [
             '--no-sandbox',
-            '--start-maximized',
+            '--window-size=1280,800',
             '--disable-popup-blocking',
           ],
           prefs: {
@@ -295,7 +319,8 @@ class ElectronLoginPage {
       await deepLinkBtn.waitForDisplayed({ timeout: 30000 });
       console.log('Deep link button found ✓');
 
-      // Click deep link button
+      // Scroll and click deep link button
+      await deepLinkBtn.scrollIntoView();
       await deepLinkBtn.click();
       console.log('Deep link clicked ✓ — waiting for OS dialog...');
       await new Promise(r => setTimeout(r, 12000));

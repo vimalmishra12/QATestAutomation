@@ -19,6 +19,12 @@
                 ]
             },
             {
+                "id": "PROTO_CLOSE_WALKTHROUGH",
+                "description": "Close Walkthrough popup in Electron",
+                "testFile": "./test/ExperienceApp/electronDashboard.test.js",
+                "testData": []
+            },
+            {
                 "id": "TST_DASH_TC_5",
                 "description": "Click Ebook Button",
                 "testFile": "./test/ExperienceApp/dashboard.test.js",
@@ -186,6 +192,12 @@
                 "id": "TST_EBOO_TC_5",
                 "description": "",
                 "testFile": "./test/ExperienceApp/eBook.test.js",
+                "testData": []
+            },
+            {
+                "id": "PROTO_ELECTRON_LOGOUT",
+                "description": "Logout the user in Electron",
+                "testFile": "./test/ExperienceApp/electronDashboard.test.js",
                 "testData": []
             }
         ],

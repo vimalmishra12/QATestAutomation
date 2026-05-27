@@ -957,7 +957,11 @@
     "userName_tbox": "#gigya-loginID-56269462240752180",
     "password_tbox": "#gigya-password-56383998600152700",
     "login_btn": "input[value=\"Log in\"]",
-    "deepLinkBtn": "a[qid=\"home-2\"]"
+    "deepLinkBtn": "a[qid=\"home-2\"]",
+    "walkthroughSkipBtn": "a.introjs-skipbutton",
+    "profileDropdown": "a[qid='desk-Header-3']",
+    "logoutBtn": "button[qid='desk-Header-7']",
+    "confirmLogoutBtn": "button#logout-modal-btn"
   },
   "vhlLoginTest": {
     "welcome": "h1[class='u-txt-ctr']",
