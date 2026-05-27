@@ -102,7 +102,9 @@
     "drawingFeatureTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='drawingTool.json' --browserCapability=desktop-chrome-1920",
     "eBookHotLinkTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='player.json' --browserCapability=desktop-chrome-1920",
     "loginFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-android-samsungS24",
-    "manageReportsTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920"
+    "manageReportsTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
+    "manageReportsTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
+    "manageReportsTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920"
   },
   "keywords": [],
   "author": "",
