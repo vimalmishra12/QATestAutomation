@@ -4335,6 +4335,12 @@
         {
           "id": "PROTO_ELEC_LOGIN",
           "description": "Prototype: Click Log in with web browser in Electron",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
       "modulename": "Active Class",
       "moduleId": "",
       "testFile": "./test/ExperienceApp/activeClass.test.js",
