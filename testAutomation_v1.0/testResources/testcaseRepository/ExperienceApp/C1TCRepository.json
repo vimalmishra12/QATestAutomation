@@ -4356,6 +4356,201 @@
           "visualTest": false
         }
       ]
+    },
+    {
+      "modulename": "Do I Need A School Account",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/doINeedASchoolAccount.test.js",
+      "testcase": [
+        {
+          "id": "TST_DINS_TC_1",
+          "description": "Click Set up a school account CTA to reach wizard step 1",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 1 (Intro)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+      "testcase": [
+        {
+          "id": "TST_SUSA_TC_1",
+          "description": "Verify primary button hover color is #6019B5 (rgb(96,25,181)) on the current wizard step",
+          "tags": "P1",
+          "visualTest": true
+        },
+        {
+          "id": "TST_SUSA_TC_2",
+          "description": "Click Next on wizard step 1 (intro) to advance to step 2 (school type)",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 2 (School Type)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolType.test.js",
+      "testcase": [
+        {
+          "id": "TST_SCTY_TC_1",
+          "description": "Verify school type wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SCTY_TC_2",
+          "description": "Click Next on school type step to advance to number of teachers step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SCTY_TC_3",
+          "description": "Select first radio option (Primary school) to enable Next button on school type step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 3 (Number Of Teachers)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/numberOfTeachers.test.js",
+      "testcase": [
+        {
+          "id": "TST_NTCH_TC_1",
+          "description": "Verify number of teachers wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NTCH_TC_2",
+          "description": "Click Next on number of teachers step to advance to school name step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_NTCH_TC_3",
+          "description": "Select first radio option (2-14) to enable Next button on number of teachers step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 4 (School Name)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolName.test.js",
+      "testcase": [
+        {
+          "id": "TST_SNAM_TC_1",
+          "description": "Verify school name wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SNAM_TC_2",
+          "description": "Click Next on school name step to advance to school location step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SNAM_TC_3",
+          "description": "Fill school name field (Test School) to enable Next button on school name step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 5 (School Location)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolLocation.test.js",
+      "testcase": [
+        {
+          "id": "TST_SLOC_TC_1",
+          "description": "Verify school location wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SLOC_TC_2",
+          "description": "Click Next on school location step to advance to school address step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SLOC_TC_3",
+          "description": "Set location field (United Kingdom) to trigger validation on school location step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 6 (School Address)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolAddress.test.js",
+      "testcase": [
+        {
+          "id": "TST_SADR_TC_1",
+          "description": "Verify school address wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SADR_TC_2",
+          "description": "Click Next on school address step to advance to school contact details step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SADR_TC_3",
+          "description": "Fill street address (123 Test Street) and city (Test City) to enable Next on school address step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 7 (School Contact Details)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolContactDetails.test.js",
+      "testcase": [
+        {
+          "id": "TST_SCON_TC_1",
+          "description": "Verify school contact details wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SCON_TC_2",
+          "description": "Click Next on school contact details step to advance to school request summary step",
+          "tags": "P1",
+          "visualTest": false
+        },
+        {
+          "id": "TST_SCON_TC_3",
+          "description": "Fill telephone number (+441234567890) to enable Next button on school contact details step",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
+    },
+    {
+      "modulename": "Set Up School Account - Wizard Step 8 (School Request Summary)",
+      "moduleId": "",
+      "testFile": "./test/ExperienceApp/schoolRequestSummary.test.js",
+      "testcase": [
+        {
+          "id": "TST_SRQS_TC_1",
+          "description": "Verify school request summary wizard step is loaded",
+          "tags": "P1",
+          "visualTest": false
+        }
+      ]
     }
   ]
 }

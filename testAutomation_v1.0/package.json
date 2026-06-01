@@ -104,7 +104,9 @@
     "loginFeatureTest_LTmobile": "npx wdio  --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=lambdatest-android-samsungS24",
     "manageReportsTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
     "manageReportsTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
-    "manageReportsTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920"
+    "manageReportsTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
+    "setUpSchoolAccountTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24388.json' --browserCapability=desktop-chrome-1920",
+    "visualAcceptance_setUpSchoolAccount_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24388.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
   },
   "keywords": [],
   "author": "",
