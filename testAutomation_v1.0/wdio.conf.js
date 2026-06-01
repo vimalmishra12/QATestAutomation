@@ -21,7 +21,7 @@ const electronAppPath = (appConfig.electronAppPath || defaultElectronPath).repla
 // Get local chromedriver binary path based on test type
 const chromedriverPath = useElectronApp 
   ? path.join(__dirname, 'drivers', 'chromedriver-126.exe') 
-  : path.join(__dirname, 'drivers', 'chromedriver-146.exe');
+  : require('chromedriver').path;
 const effectiveBrowserCapability = argv.browserCapability || "desktop-chrome-1920";
 
 // execution file (loginTest.json → loginTest)

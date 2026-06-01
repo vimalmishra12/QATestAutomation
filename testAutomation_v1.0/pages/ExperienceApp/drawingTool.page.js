@@ -112,6 +112,7 @@ module.exports = {
   click_drawingToolScribble: async function (cords) {
     await logger.logInto(await stackTrace.get());
     var res;
+    console.log("[click_drawingToolScribble]", this.drawingToolScribble)
     res = await action.click(this.drawingToolScribble);
     if (true == res) {
       await logger.logInto(

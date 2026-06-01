@@ -243,11 +243,11 @@
         "hideSelectionBoxSelector": "[id^='mask-div-']"
       },
       "drawingTool": {
-        "drawingToolScribble": "button[qid=\"85\"] img[alt=\"Scribble\"]",
+        "drawingToolScribble": "button[qid=\"85\"] img[alt=\"Scribble\"],button[qid=\"84\"] img[alt=\"Scribble\"]",
         "drawingToolPenColour": "button[id=\"penColorDropdown\"]",
         "drawingToolPenWidth": "button[id=\"penStrokeDropdown\"]",
         "drawingToolHighlighter": "button[qid=\"86\"] img[alt=\"Highlighter\"]",
-        "drawingToolEraser": "#deleteBtn",
+        "drawingToolEraser": "#deleteBtn, div[title=\"Eraser\"] button",
         "drawingToolUndo": "button.undo-button[qid=\"88\"]",
         "drawingToolRedo": "button.redo-button[qid=\"89\"]",
         "drawingToolPresentation": "div[id=\"drawing-tools-container-B\"] canvas",

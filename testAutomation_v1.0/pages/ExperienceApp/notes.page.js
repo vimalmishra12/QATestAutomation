@@ -68,7 +68,9 @@ module.exports = {
   click_eBookAddNotesBtn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    console.log("selector to click add button is ", this.eBookAddNotesBtn);
     res = await action.click(this.eBookAddNotesBtn);
+
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
@@ -107,11 +109,12 @@ module.exports = {
   click_eBookSaveNotesBtn: async function () {
     await logger.logInto(await stackTrace.get());
     var res;
+    console.log('[click_eBookSaveNotesBtn]', this.eBookSaveNotesBtn);
     res = await action.click(this.eBookSaveNotesBtn);
     if (true == res) {
       await logger.logInto(
         await stackTrace.get(),
-        " eBookSaveNotesBtn is clicked"
+        "eBookSaveNotesBtn is clicked"
       );
       res = await action.getValue(this.eBookAddNotesTextarea);
     } else {
@@ -206,6 +209,7 @@ module.exports = {
   set_eBookAddNotesTextarea: async function (value) {
     var res;
     await logger.logInto(await stackTrace.get());
+    console.log("[set_eBookAddNotesTextarea]", value, this.eBookAddNotesTextarea);
     res = await action.setValue(this.eBookAddNotesTextarea, value);
 
     if (true == res) {

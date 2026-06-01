@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "setup:chromedriver:web": "node scripts/setup-chromedriver.js web",
-    "setup:chromedriver:electron": "node scripts/setup-chromedriver.js electron",
-    "launch:electron:debug": "node scripts/launchElectron.js",
     "landingFeatureTest_electron": "npx wdio --electronApp=true --appType=ExperienceApp --testEnv=thor --testExecFile='electronLoginTest.json' --browserCapability=desktop-chrome-1920",
-    "eBookHotLinkTest_electron": "npx wdio --electronApp=true --appType=ExperienceApp --testEnv=thor --testExecFile='electronLoginTest.json' --browserCapability=desktop-chrome-1920",
+    "eBookHotLinkTest_electron": "npx wdio --electronApp=true --appType=ExperienceApp --testEnv=thor --testExecFile='electronHotlinkTest.json' --browserCapability=desktop-chrome-1920",
+    "notesTest_electron": "npx wdio --electronApp=true --appType=ExperienceApp --testEnv=thor --testExecFile='notesTestelectron.json' --browserCapability=desktop-chrome-1920",
+    "highlighterTest_electron": "npx wdio --electronApp=true --appType=ExperienceApp --testEnv=thor --testExecFile='highlighterTestelectron.json' --browserCapability=desktop-chrome-1920",
+
     "landingFeatureTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='landingTest.json' --browserCapability=desktop-chrome-1920",
     "FooterFeatureTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='footerTest.json' --browserCapability=desktop-chrome-1920",
     "loginFeatureTest_prod": "npx wdio --appType=ExperienceApp --testEnv=production --testExecFile='loginTest.json' --browserCapability=desktop-chrome-1920",

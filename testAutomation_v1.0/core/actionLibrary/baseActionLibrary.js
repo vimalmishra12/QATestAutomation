@@ -659,10 +659,10 @@ dragAndDropWithPath: async function (
 
 
     // Calculate absolute screen coordinates
-    const absStartX = canvasLeft + startPoint_x1;
-    const absStartY = canvasTop + startPoint_y1;
-    const absEndX = canvasLeft + endPoint_x2;
-    const absEndY = canvasTop + endPoint_y2;
+    const absStartX = Math.round(canvasLeft + startPoint_x1);
+    const absStartY = Math.round(canvasTop + startPoint_y1);
+    const absEndX = Math.round(canvasLeft + endPoint_x2);
+    const absEndY = Math.round(canvasTop + endPoint_y2);
 
 
     function isWithinCanvas(x, y) {
@@ -680,8 +680,8 @@ dragAndDropWithPath: async function (
         type: "pointerMove",
         duration: 100,
         origin: "viewport",
-        x: canvasLeft + point.x,
-        y: canvasTop + point.y,
+        x: Math.round(canvasLeft + point.x),
+        y: Math.round(canvasTop + point.y),
     }));
 
     const actions = [

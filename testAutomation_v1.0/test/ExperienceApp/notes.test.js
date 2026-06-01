@@ -23,7 +23,7 @@ module.exports = {
   TST_NOTE_TC_3: async function (testdata) {
 
     await browser.pause(2000); // pause added to avoid element not interactable issue, we will see it later
-
+    console.log("[TST_NOTE_TC_3] test data is ", testdata.eBookSaveNotesBtn)
     sts = await notes.set_eBookAddNotesTextarea(testdata.eBookSaveNotesBtn);
 
     await assertion.assertEqual(
@@ -81,6 +81,7 @@ module.exports = {
 
   // Get the Notes Content and verify its values
   TST_NOTE_TC_9: async function (testdata) {
+    console.log("[TST_NOTE_TC_9]", testdata)
     sts = await notes.getData_notesContent(testdata);
     await assertion.assertEqual(
       sts.eBookNotesHeadingTxt,
