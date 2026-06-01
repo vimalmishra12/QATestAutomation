@@ -94,7 +94,7 @@ blocks:
             - echo "$SEMAPHORE_JOB_ID"
             - export SEMAPHORE_WORKFLOW_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
             - echo "$SEMAPHORE_WORKFLOW_NUMBER"
-            - export mailingList="ashish.kushwaha@comprotechnologies.com"
+            - 'export mailingList="ashish.kushwaha@comprotechnologies.com,vimal.mishra@comprotechnologies.com"'
             - |
               if [[ "$BROWSER_CAPABILITY" == lambdatest-* ]]; then
                 echo "LambdaTest execution detected: $BROWSER_CAPABILITY"

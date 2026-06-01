@@ -196,6 +196,10 @@
         "deleteClass": "a[qid='cView-13']",
         "yesDelete_Btn": "button[qid=\"cView-48\"]"
       },
+      "manageReports": {
+        "manageReports_link": "a#generateReportMenuBtn",
+        "downloadReport_btn": "button[qid^=\"aReport-2-\"]"
+      },
       "invitationNotification": {
         "notificationBtn": "#tippyDropdownMenuButton",
         "invitationNotify": "h3[class=\"title d-flex mb-1\"]",
