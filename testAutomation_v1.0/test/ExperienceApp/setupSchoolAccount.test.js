@@ -12,8 +12,8 @@ module.exports = {
     TST_SUSA_TC_1: async function (testdata) {
         sts = await setupSchoolAccount.getHoverColor_primaryButton();
         await assertion.assertEqual(sts.pageStatus, true, 'Primary button was not found or hover failed.');
-        // getCSSProperty returns an object; .value holds the resolved string e.g. "rgb(96, 25, 181)"
-        await assertion.assertEqual(sts.hoverColor.value, testdata.expectedHoverColor,
+        // getCSSProperty returns an object; .parsed.hex normalises rgb/rgba format differences
+        await assertion.assertEqual(sts.hoverColor.parsed.hex, testdata.expectedHoverColor,
             'Primary button hover color should be ' + testdata.expectedHoverColor + ' on ' + testdata.stepDescription);
     },
 

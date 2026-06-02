@@ -18,35 +18,35 @@
       },
       "hoverColor": {
         "setupSchoolAccount": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "Set up a school account (Step 1 - intro)"
         },
         "schoolType": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "What type of school best describes your institution? (Step 2)"
         },
         "numberOfTeachers": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "How many English teachers are employed by your school? (Step 3)"
         },
         "schoolName": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "What is the school name? (Step 4)"
         },
         "schoolLocation": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "Where is your school (which location)? (Step 5)"
         },
         "schoolAddress": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "Address (Step 6)"
         },
         "schoolContactDetails": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "What's your school's telephone number? (Step 7)"
         },
         "schoolRequestSummary": {
-          "expectedHoverColor": "rgb(96, 25, 181)",
+          "expectedHoverColor": "#6019b5",
           "stepDescription": "School request summary (Step 8)"
         }
       }

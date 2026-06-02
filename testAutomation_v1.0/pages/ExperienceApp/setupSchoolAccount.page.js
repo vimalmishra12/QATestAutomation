@@ -26,9 +26,15 @@ module.exports = {
         var res;
         // Resolves to C1Selectors.json → css.ComproC1.setupSchoolAccount.primaryBtn
         let selector = selectorFile.css.ComproC1.setupSchoolAccount.primaryBtn;
-        res = await action.moveTo(selector);
+        // This shared hover fn is reused across all 8 wizard steps (ADR-011). On the long Address
+        // step the button sits below the fold and moveTo() does not auto-scroll, so we use
+        // hoverCenter() which scrolls the button to viewport centre before the pointer move to
+        // avoid "move target out of bounds". Harmless on steps where the button is already in view.
+        res = await action.hoverCenter(selector);
         // true == res intentional loose equality per ADR-009
         if (true == res) {
+            // Pause 400ms to let CSS transition finish before reading the settled hover colour
+            await browser.pause(400);
             let color = await action.getCSSProperty(selector, 'background-color');
             return { pageStatus: true, hoverColor: color };
         }

@@ -28,6 +28,8 @@ module.exports = {
         res = await action.moveTo(selector);
         // true == res intentional loose equality per ADR-009
         if (true == res) {
+            // Pause 400ms to let CSS transition finish before reading the settled hover colour
+            await browser.pause(400);
             let color = await action.getCSSProperty(selector, 'background-color');
             return { pageStatus: true, hoverColor: color };
         }
