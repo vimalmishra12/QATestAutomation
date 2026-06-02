@@ -159,6 +159,34 @@ module.exports = {
         }
     },
 
+    hoverCenter: async function (selector) {
+        // Scrolls the element to the vertical centre of the viewport, then drives a real pointer
+        // move to its centre via the W3C Actions API. Unlike moveTo(), this guarantees the target
+        // is in-bounds even when it starts below the fold (e.g. long forms), avoiding the
+        // "move target out of bounds" error. Triggers CSS :hover for hover-state assertions.
+        message = "element:" + selector;
+        try {
+            let coords = await browser.execute(function (sel) {
+                var el = document.querySelector(sel);
+                el.scrollIntoView({ block: 'center', behavior: 'instant' });
+                var r = el.getBoundingClientRect();
+                return { x: Math.round(r.x + r.width / 2), y: Math.round(r.y + r.height / 2) };
+            }, selector);
+            await browser.performActions([{
+                type: 'pointer',
+                id: 'mouse',
+                parameters: { pointerType: 'mouse' },
+                actions: [{ type: 'pointerMove', duration: 0, origin: 'viewport', x: coords.x, y: coords.y }]
+            }]);
+            await browser.releaseActions();
+            await logger.logInto(await stackTrace.get(), message);
+            return true;
+        } catch (err) {
+            await logger.logInto(await stackTrace.get(), err.message, "error");
+            return err;
+        }
+    },
+
     dragAndDrop: async function (draggable, droppable) {
         await logger.logInto(await stackTrace.get());
         message = "draggable:" + draggable + " droppable:" + draggable;

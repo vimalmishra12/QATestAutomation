@@ -1,0 +1,55 @@
+{
+  "C1": {
+    "NEMO24388": {
+      "formFill": {
+        "schoolName": {
+          "schoolName": "Test School"
+        },
+        "location": {
+          "location": "United Kingdom"
+        },
+        "address": {
+          "streetAddress": "123 Test Street",
+          "city": "Cambridge"
+        },
+        "contactDetails": {
+          "telephone": "1234567890"
+        }
+      },
+      "hoverColor": {
+        "setupSchoolAccount": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "Set up a school account (Step 1 - intro)"
+        },
+        "schoolType": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "What type of school best describes your institution? (Step 2)"
+        },
+        "numberOfTeachers": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "How many English teachers are employed by your school? (Step 3)"
+        },
+        "schoolName": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "What is the school name? (Step 4)"
+        },
+        "schoolLocation": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "Where is your school (which location)? (Step 5)"
+        },
+        "schoolAddress": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "Address (Step 6)"
+        },
+        "schoolContactDetails": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "What's your school's telephone number? (Step 7)"
+        },
+        "schoolRequestSummary": {
+          "expectedHoverColor": "#6019b5",
+          "stepDescription": "School request summary (Step 8)"
+        }
+      }
+    }
+  }
+}

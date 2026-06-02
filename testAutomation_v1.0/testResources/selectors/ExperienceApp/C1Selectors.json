@@ -43,7 +43,7 @@
         "footerOurApproaches": "a[qid=\"cFooter-5\"]",
         "footerSiteFeedback": "a[qid=\"cFooter-4\"]",
         "footerFAQs": "a[qid=\"cFooter-9\"][aria-label=\"FAQs\"]",
-        "footerCambridgeOneSchool": "a[qid=\"cFooter-9\"][class*=\"insti-btn green-layout-insti-btn\"]",
+        "footerCambridgeOneSchool": "a[qid=\"cFooter-10\"][class*=\"insti-btn\"]",
         "footerHelp": "a[qid=\"cFooter-6\"]",
         "footerCambridgeUniversity": ".copyright.mb-0"
       },
@@ -199,6 +199,49 @@
       "manageReports": {
         "manageReports_link": "a#generateReportMenuBtn",
         "downloadReport_btn": "button[qid^=\"aReport-2-\"]"
+      },
+      "doINeedASchoolAccount": {
+        "pageHeading": "h1.heading-title",
+        "setupSchoolAccountBtn": "a.setup-btn"
+      },
+      "setupSchoolAccount": {
+        "pageHeading": "h2.heading",
+        "primaryBtn": "button.btn-purple"
+      },
+      "schoolType": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "firstOptionRadio": "input[type=\"radio\"]"
+      },
+      "numberOfTeachers": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "firstOptionRadio": "input[type=\"radio\"]"
+      },
+      "schoolName": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "schoolNameInput": "input[type=\"text\"]"
+      },
+      "schoolLocation": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "locationInput": "input[type=\"text\"]"
+      },
+      "schoolAddress": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "streetAddressInput": "textarea[qid=\"t-ss-ad-inpt-1\"]",
+        "cityInput": "input[qid=\"t-ss-ad-inpt-2\"]"
+      },
+      "schoolContactDetails": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple",
+        "telephoneInput": "input[qid=\"t-ss-cd-inpt-2\"]"
+      },
+      "schoolRequestSummary": {
+        "pageHeading": "h2.step-title",
+        "primaryBtn": "button.btn-purple"
       },
       "invitationNotification": {
         "notificationBtn": "#tippyDropdownMenuButton",
