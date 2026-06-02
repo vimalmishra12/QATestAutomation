@@ -1,0 +1,259 @@
+{
+  "Suite1": {
+    "Name": "NEMO-24388 | Verify primary button hover color is #6019B5 across all 8 steps of the Set up a school account wizard",
+    "TestCaseRepo": [
+      "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+    ],
+    "Before": [
+      {
+        "id": "launchUrl",
+        "description": "",
+        "testFile": "./core/runner/launchUrl.js",
+        "testData": []
+      },
+      {
+        "id": "TST_LAND_TC_3",
+        "description": "Click Login button on Landing page",
+        "testFile": "./test/ExperienceApp/landing.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_LOGI_TC_1",
+        "description": "Enter Instructor User Name",
+        "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json",
+            "jsonPath": "C1.login.user.successfulInstructorUser"
+          }
+        ]
+      },
+      {
+        "id": "TST_LOGI_TC_2",
+        "description": "Enter Instructor Password",
+        "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json",
+            "jsonPath": "C1.login.user.successfulInstructorUser"
+          }
+        ]
+      },
+      {
+        "id": "TST_LOGI_TC_5",
+        "description": "Click Login button",
+        "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_DASH_TC_1",
+        "description": "Verify Dashboard is loaded",
+        "testFile": "./test/ExperienceApp/dashboard.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_FOOT_TC_7",
+        "description": "Click Cambridge One for schools footer link",
+        "testFile": "./test/ExperienceApp/footer.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_DINS_TC_1",
+        "description": "Click Set up a school account CTA to reach wizard step 1",
+        "testFile": "./test/ExperienceApp/doINeedASchoolAccount.test.js",
+        "testData": []
+      }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on Set up a school account (Step 1 - intro)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.setupSchoolAccount"
+          }
+        ]
+      },
+      {
+        "id": "TST_SUSA_TC_2",
+        "description": "Click Next on step 1 to advance to step 2 (school type)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SCTY_TC_3",
+        "description": "Select first radio option (Primary school) to enable Next on step 2",
+        "testFile": "./test/ExperienceApp/schoolType.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on What type of school best describes your institution? (Step 2)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolType"
+          }
+        ]
+      },
+      {
+        "id": "TST_SCTY_TC_2",
+        "description": "Click Next on step 2 to advance to step 3 (number of teachers)",
+        "testFile": "./test/ExperienceApp/schoolType.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_NTCH_TC_3",
+        "description": "Select first radio option (2-14) to enable Next on step 3",
+        "testFile": "./test/ExperienceApp/numberOfTeachers.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on How many English teachers are employed by your school? (Step 3)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.numberOfTeachers"
+          }
+        ]
+      },
+      {
+        "id": "TST_NTCH_TC_2",
+        "description": "Click Next on step 3 to advance to step 4 (school name)",
+        "testFile": "./test/ExperienceApp/numberOfTeachers.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SNAM_TC_3",
+        "description": "Fill school name field to enable Next on step 4",
+        "testFile": "./test/ExperienceApp/schoolName.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.formFill.schoolName"
+          }
+        ]
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on What is the school name? (Step 4)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolName"
+          }
+        ]
+      },
+      {
+        "id": "TST_SNAM_TC_2",
+        "description": "Click Next on step 4 to advance to step 5 (school location)",
+        "testFile": "./test/ExperienceApp/schoolName.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SLOC_TC_3",
+        "description": "Set location field to trigger validation on step 5",
+        "testFile": "./test/ExperienceApp/schoolLocation.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.formFill.location"
+          }
+        ]
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on Where is your school (which location)? (Step 5)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolLocation"
+          }
+        ]
+      },
+      {
+        "id": "TST_SLOC_TC_2",
+        "description": "Click Next on step 5 to advance to step 6 (school address)",
+        "testFile": "./test/ExperienceApp/schoolLocation.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SADR_TC_3",
+        "description": "Fill street address and city to enable Next on step 6",
+        "testFile": "./test/ExperienceApp/schoolAddress.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.formFill.address"
+          }
+        ]
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on Address (Step 6)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolAddress"
+          }
+        ]
+      },
+      {
+        "id": "TST_SADR_TC_2",
+        "description": "Click Next on step 6 to advance to step 7 (contact details)",
+        "testFile": "./test/ExperienceApp/schoolAddress.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SCON_TC_3",
+        "description": "Fill telephone number to enable Next on step 7",
+        "testFile": "./test/ExperienceApp/schoolContactDetails.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.formFill.contactDetails"
+          }
+        ]
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on What's your school's telephone number? (Step 7)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolContactDetails"
+          }
+        ]
+      },
+      {
+        "id": "TST_SCON_TC_2",
+        "description": "Click Next on step 7 to advance to step 8 (school request summary)",
+        "testFile": "./test/ExperienceApp/schoolContactDetails.test.js",
+        "testData": []
+      },
+      {
+        "id": "TST_SUSA_TC_1",
+        "description": "NEMO-24388 | Verify primary button hover color is #6019B5 on School request summary (Step 8)",
+        "testFile": "./test/ExperienceApp/setupSchoolAccount.test.js",
+        "testData": [
+          {
+            "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24388.json",
+            "jsonPath": "C1.NEMO24388.hoverColor.schoolRequestSummary"
+          }
+        ]
+      }
+    ],
+    "AfterEach": [],
+    "After": []
+  }
+}
