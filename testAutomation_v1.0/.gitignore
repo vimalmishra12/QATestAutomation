@@ -1,0 +1,13 @@
+# Playwright MCP design-time tooling — browser/session artifacts must never be committed
+tooling/playwright-mcp/.profile/
+tooling/playwright-mcp/screenshots/
+tooling/playwright-mcp/node_modules/
+
+# General node_modules
+node_modules/
+
+# Allure and test output artifacts
+allure-results/
+output/
+logs/
+local.log
