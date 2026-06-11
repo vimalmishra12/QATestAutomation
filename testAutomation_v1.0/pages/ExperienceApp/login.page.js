@@ -165,6 +165,29 @@ module.exports = {
     return res;
   },
 
+  /**
+   * Clicks login and waits for the school admin dashboard ("My school accounts").
+   * Used instead of click_login_btn when logging in as a school administrator —
+   * school admins are redirected to /admin/admin/dashboard, not the student/teacher
+   * dashboard, so the standard isInitialized() check would fail. See NEMO-24306.
+   */
+  click_login_btn_schoolAdmin: async function () {
+    await logger.logInto(await stackTrace.get());
+    var res;
+    res = await action.click(this.login_btn);
+    if (true == res) {
+      await logger.logInto(await stackTrace.get(), "login_btn clicked for school admin");
+      res = await require("./schoolAdminDashboard.page").isInitialized();
+    } else {
+      await logger.logInto(
+        await stackTrace.get(),
+        res + " login_btn NOT clicked",
+        "error"
+      );
+    }
+    return res;
+  },
+
   set_userName_tbox: async function (value) {
     var res;
     await logger.logInto(await stackTrace.get());

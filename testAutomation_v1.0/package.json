@@ -106,7 +106,8 @@
     "manageReportsTest_qa": "npx wdio --appType=ExperienceApp --testEnv=qa --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
     "manageReportsTest_rel": "npx wdio --appType=ExperienceApp --testEnv=rel --testExecFile='manageReportsTest.json' --browserCapability=desktop-chrome-1920",
     "setUpSchoolAccountTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24388.json' --browserCapability=desktop-chrome-1920",
-    "visualAcceptance_setUpSchoolAccount_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24388.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true"
+    "visualAcceptance_setUpSchoolAccount_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24388.json' --browserCapability=desktop-chrome-1920 --visual=novus --skipAssertion=true",
+    "NEMO24306_csvUploadTest_thor": "npx wdio --appType=ExperienceApp --testEnv=thor --testExecFile='NEMO-24306_csvUpload.json' --browserCapability=desktop-chrome-1920"
   },
   "keywords": [],
   "author": "",

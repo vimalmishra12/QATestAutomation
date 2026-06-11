@@ -1033,5 +1033,29 @@
     "deleteNoteBtn": "[data-tid=\"button-primary-deleteNote\"]",
     "closeButton": "button[data-tid=\"notebox-button-cancel\"]",
     "addNotesCanvas": "div.konvajs-content canvas"
+  },
+  "schoolAdminDashboard": {
+    "firstSchoolLink": "[qid='aDashboard-1']",
+    "teacherAdminToggle": "[qid='teacher-admin-toggle']"
+  },
+  "createAdultStudentAccounts": {
+    "pageHeading": "h1",
+    "csvFileInput": "[qid='aBulkActions-1']",
+    "uploadFileBtn": "[qid='aBulkActions-2']",
+    "backBtn": "[qid='aBulkActions-29']",
+    "getCsvTemplateLink": "[qid='aBulkActions-30']",
+    "inlineErrorText": "div.error-rectification-wrapper",
+    "uploadErrorModalTitle": ".error-upload-CSV-modal.show .modal-title.error-text",
+    "uploadErrorModalBody": ".error-upload-CSV-modal.show .modal-body"
+  },
+  "createNewAccountsForChildren": {
+    "pageHeading": "h1",
+    "csvFileInput": "[qid='aBulkActions-1']",
+    "uploadFileBtn": "[qid='aBulkActions-2']",
+    "backBtn": "[qid='aBulkActions-29']",
+    "getCsvTemplateLink": "[qid='aBulkActions-30']",
+    "inlineErrorText": "div.error-rectification-wrapper",
+    "uploadErrorModalTitle": ".error-upload-CSV-modal.show .modal-title.error-text",
+    "uploadErrorModalBody": ".error-upload-CSV-modal.show .modal-body"
   }
 }

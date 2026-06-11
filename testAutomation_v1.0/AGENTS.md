@@ -246,6 +246,12 @@ Anything that was discussed but not completed, or that requires a future decisio
 4. **If unsure about a global variable**: `browser`, `$`, `$$`, `logger`, `stackTrace`, `assertion`, `argv`, `jsonParserUtil`, `selectorDir`, `appUrl`, `moduleOff` are all globals set by `wdio.conf.js` / `env.conf.js`
 5. **If a pattern doesn't exist**: consult `.architecture/decisions.md` before inventing new patterns
 6. **If a protected file needs changing**: always ask first — never assume the change is small enough to skip confirmation
+7. **Before validating a Jira ticket**, read `.architecture/product-knowledge.md`
+   for known error messages, validation rules, and bug notes so you do not
+   re-document what is already confirmed.
+   **After navigating a new area or learning new product behaviour**, append or
+   update that file following its per-app template, organised by app URL.
+   Mark unconfirmed items `[ASSUMED]`.
 
 ---
 
@@ -362,3 +368,18 @@ Visual test NPM scripts MUST follow this naming pattern:
 |---|---|---|
 | Functional NPM script | <feature>_<env> | manageReportsTest_thor |
 | Visual NPM script | visualAcceptance_<feature>_<env> | visualAcceptance_manageReports_thor |
+
+---
+
+### 8. `tooling/` — Design-Time Scaffolding (Non-Framework)
+
+The `tooling/` directory at the repo root is **not part of the test framework**.
+It contains design-time tooling used by Claude Code during development (e.g.,
+the Playwright MCP server for live page exploration and selector capture).
+
+**Rules:**
+- Nothing under `tooling/` may be `require()`-d by any framework file
+- Nothing under `tooling/` belongs in `core/`, `pages/`, `test/`, or `testResources/`
+- Browser/session artifacts under `tooling/playwright-mcp/.profile/` are gitignored
+  and must never be committed
+- See `tooling/playwright-mcp/README.md` for usage instructions
