@@ -4551,6 +4551,32 @@
           "visualTest": false
         }
       ]
+    },
+    {
+      "modulename": "NEMO-24306 | Bulk CSV Upload — Username, Password & Record-Count Validation (Adult and Children pages)",
+      "moduleId": "NEMO",
+      "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+      "testcase": [
+        { "id": "TST_NEMO24306_TC_LOGIN", "description": "School-admin login guard — confirms 'My school accounts' loaded after login (Before hook)", "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_1",  "description": "AC1.UC1.S1.TC1 | Valid adult CSV — no format validation errors",       "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_2",  "description": "AC1.UC1.S1.TC2 | Valid children CSV — no format validation errors",    "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_3",  "description": "AC2.UC2.S1.TC1 | Password with letter + number accepted",              "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_4",  "description": "AC2.UC2.S2.TC1 | Password with letter + special character accepted",   "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_5",  "description": "AC1.UC2.S1.TC1 | Username at 3-character minimum boundary accepted",   "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_6",  "description": "AC1.UC2.S2.TC1 | Username at 30-character maximum boundary accepted",  "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_7",  "description": "AC1.UC3.S1.TC1 | Username with hyphen and underscore accepted",        "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_8",  "description": "AC2.UC1.S1.TC1 | Password at minimum-length boundary accepted",        "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_9",  "description": "AC3.UC1.S1.TC1 | CSV with 200 records (upper boundary) accepted",      "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_10", "description": "AC1.UC1.S2.TC1 | Username starting with uppercase shows error",        "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_11", "description": "AC1.UC1.S3.TC1 | Username starting with a number shows error",         "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_12", "description": "AC1.UC1.S4.TC1 | [HEADLINE DEFECT] Empty username (adult) shows 'Enter Username'",    "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_13", "description": "AC1.UC1.S4.TC2 | [HEADLINE DEFECT] Empty username (children) shows 'Enter Username'", "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_14", "description": "AC1.UC2.S3.TC1 | Username 2 chars (below minimum) shows length error", "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_15", "description": "AC2.UC1.S2.TC1 | Password less than 8 chars shows error",              "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_16", "description": "AC2.UC2.S3.TC1 | Password letters-only (no number/special) shows error","tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_17", "description": "AC2.UC2.S4.TC1 | Password numbers-only (no letter) shows error",       "tags": "P1", "visualTest": false },
+        { "id": "TST_NEMO24306_TC_18", "description": "AC3.UC1.S2.TC1 | CSV with 201 records (above max) shows error",        "tags": "P1", "visualTest": false }
+      ]
     }
   ]
 }

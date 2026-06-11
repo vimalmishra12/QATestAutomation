@@ -1,0 +1,78 @@
+{
+  "Suite1": {
+    "Name": "NEMO-24306 | CSV Upload Validation — Adult page (Positive, Edge, Negative)",
+    "TestCaseRepo": [
+      "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+    ],
+    "Before": [
+      { "id": "launchUrl", "description": "Launch Thor base URL", "testFile": "./core/runner/launchUrl.js", "testData": [] },
+      { "id": "TST_LAND_TC_3", "description": "Click Login button on Landing page", "testFile": "./test/ExperienceApp/landing.test.js", "testData": [] },
+      { "id": "TST_LOGI_TC_1", "description": "Enter school admin username", "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json", "jsonPath": "C1.login.user.schoolAdmin" }] },
+      { "id": "TST_LOGI_TC_2", "description": "Enter school admin password", "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json", "jsonPath": "C1.login.user.schoolAdmin" }] },
+      { "id": "TST_NEMO24306_TC_LOGIN", "description": "Click Login and confirm school admin dashboard loaded", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js", "testData": [] }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      { "id": "TST_NEMO24306_TC_1",  "description": "AC1.UC1.S1.TC1 | Valid adult CSV — no format errors", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc1" }] },
+      { "id": "TST_NEMO24306_TC_3",  "description": "AC2.UC2.S1.TC1 | Password letter+number accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc3" }] },
+      { "id": "TST_NEMO24306_TC_4",  "description": "AC2.UC2.S2.TC1 | Password letter+special accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc4" }] },
+      { "id": "TST_NEMO24306_TC_5",  "description": "AC1.UC2.S1.TC1 | Username 3-char min boundary accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc5" }] },
+      { "id": "TST_NEMO24306_TC_6",  "description": "AC1.UC2.S2.TC1 | Username 30-char max boundary accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc6" }] },
+      { "id": "TST_NEMO24306_TC_7",  "description": "AC1.UC3.S1.TC1 | Username hyphen + underscore accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc7" }] },
+      { "id": "TST_NEMO24306_TC_8",  "description": "AC2.UC1.S1.TC1 | Password 8-char boundary accepted", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc8" }] },
+      { "id": "TST_NEMO24306_TC_9",  "description": "AC3.UC1.S1.TC1 | CSV with 200 records (upper boundary) accepted — 100 rows to w8k3-kK8U + 100 to 3N43-ABqV", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc9" }] },
+      { "id": "TST_NEMO24306_TC_10", "description": "AC1.UC1.S2.TC1 | Username starts with uppercase shows error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc10" }] },
+      { "id": "TST_NEMO24306_TC_11", "description": "AC1.UC1.S3.TC1 | Username starts with number shows error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc11" }] },
+      { "id": "TST_NEMO24306_TC_12", "description": "AC1.UC1.S4.TC1 | [HEADLINE DEFECT] Empty username (adult) shows 'Enter Username'", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc12" }] },
+      { "id": "TST_NEMO24306_TC_14", "description": "AC1.UC2.S3.TC1 | Username 2 chars (below min) shows length error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc14" }] },
+      { "id": "TST_NEMO24306_TC_15", "description": "AC2.UC1.S2.TC1 | Password less than 8 chars shows error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc15" }] },
+      { "id": "TST_NEMO24306_TC_16", "description": "AC2.UC2.S3.TC1 | Password letters-only shows error — KNOWN PRODUCT GAP, expected to FAIL until fixed", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc16" }] },
+      { "id": "TST_NEMO24306_TC_17", "description": "AC2.UC2.S4.TC1 | Password numbers-only shows error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc17" }] },
+      { "id": "TST_NEMO24306_TC_18", "description": "AC3.UC1.S2.TC1 | CSV with 201 records (above max) shows error", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc18" }] }
+    ],
+    "AfterEach": [],
+    "After": []
+  },
+  "Suite2": {
+    "Name": "NEMO-24306 | CSV Upload Validation — Children page (Positive, Negative)",
+    "TestCaseRepo": [
+      "./testResources/testcaseRepository/ExperienceApp/C1TCRepository.json"
+    ],
+    "Before": [
+      { "id": "launchUrl", "description": "Launch Thor base URL", "testFile": "./core/runner/launchUrl.js", "testData": [] },
+      { "id": "TST_LAND_TC_3", "description": "Click Login button on Landing page", "testFile": "./test/ExperienceApp/landing.test.js", "testData": [] },
+      { "id": "TST_LOGI_TC_1", "description": "Enter school admin username", "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json", "jsonPath": "C1.login.user.schoolAdmin" }] },
+      { "id": "TST_LOGI_TC_2", "description": "Enter school admin password", "testFile": "./test/ExperienceApp/login.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/logindata.json", "jsonPath": "C1.login.user.schoolAdmin" }] },
+      { "id": "TST_NEMO24306_TC_LOGIN", "description": "Click Login and confirm school admin dashboard loaded", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js", "testData": [] }
+    ],
+    "BeforeEach": [],
+    "Test": [
+      { "id": "TST_NEMO24306_TC_2",  "description": "AC1.UC1.S1.TC2 | Valid children CSV — no format errors", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc2" }] },
+      { "id": "TST_NEMO24306_TC_13", "description": "AC1.UC1.S4.TC2 | [HEADLINE DEFECT] Empty username (children) shows 'Enter Username'", "testFile": "./test/ExperienceApp/nemoUploadCsvValidation.test.js",
+        "testData": [{ "dataFile": "./testResources/testcaseData/ExperienceApp/thor/NEMO-24306.json", "jsonPath": "C1.NEMO24306.tc13" }] }
+    ],
+    "AfterEach": [],
+    "After": []
+  }
+}
